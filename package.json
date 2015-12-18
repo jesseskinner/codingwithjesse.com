@@ -22,6 +22,7 @@
   "homepage": "https://github.com/jesseskinner/codingwithjesse.com#readme",
   "dependencies": {
     "chai": "^3.4.1",
+    "express": "^4.13.3",
     "mocha": "^2.3.4"
   }
 }
