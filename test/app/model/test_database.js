@@ -4,9 +4,9 @@ var chaiAsPromised = require("chai-as-promised");
 chai.use(chaiAsPromised);
 
 var database = require('../../../app/model/database');
-var config = require('../../config');
+var config = require('../../../config');
 
-database.init(config.database);
+database.init(config.test.database);
 
 describe('database.query', function () {
 	it('should let me run a query without params', function () {
