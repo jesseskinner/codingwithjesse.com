@@ -7,8 +7,9 @@ exports.createTable = function () {
 			title varchar(255) NOT NULL,
 			body TEXT NOT NULL,
 			slug varchar(255) NOT NULL,
+			posted_at TIMESTAMP DEFAULT NOW(),
 			PRIMARY KEY (id),
-			INDEX (slug)
+			UNIQUE (slug)
 		)
 	`);
 };
@@ -32,4 +33,30 @@ exports.remove = function (id) {
 	}).then(function (result) {
 		return result.affectedRows;
 	});
+};
+
+exports.getAll = function () {
+	return database.query(`
+		SELECT *
+		FROM posts
+		ORDER BY posted_at DESC
+	`);
+};
+
+exports.getBySlug = function (slug) {
+	return database.query(`
+		SELECT *
+		FROM posts
+		WHERE slug = ?
+	`, slug).then(function (results) {
+		return results[0];
+	});
+};
+
+exports.update = function (id, params) {
+	return database.query(`
+		UPDATE posts
+		SET ?
+		WHERE id = ?
+	`, [params, id]);
 };

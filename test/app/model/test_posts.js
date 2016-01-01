@@ -48,12 +48,14 @@ describe('posts', function () {
 				posts.add({
 					title: 'Test',
 					body: 'Hello',
-					slug: 'test'
+					slug: 'test',
+					posted_at: new Date('2015-09-01')
 				}).then(function () {
 					return posts.add({
 						title: 'Test 2',
 						body: 'Another',
-						slug: 'test2'
+						slug: 'test2',
+						posted_at: new Date('2015-10-01')
 					});
 				}).then(function () {
 					return posts.getAll();
@@ -63,33 +65,37 @@ describe('posts', function () {
 					id: 2,
 					title: 'Test 2',
 					body: 'Another',
-					slug: 'test2'
+					slug: 'test2',
+					posted_at: new Date('2015-10-01')
 				},
 				{
 					id: 1,
 					title: 'Test',
 					body: 'Hello',
-					slug: 'test'
+					slug: 'test',
+					posted_at: new Date('2015-09-01')
 				}
 			]);
 		});
 	});
 
 	describe('#getBySlug', function () {
-		it('should update a post', function () {
+		it('should return a post from the slug', function () {
 			return expect(
 				posts.add({
 					title: 'Test',
 					body: 'Hello',
-					slug: 'test'
-				}).then(function (id) {
+					slug: 'test',
+					posted_at: new Date('2015-09-01')
+				}).then(function () {
 					return posts.getBySlug('test');
 				})
 			).to.eventually.deep.equal({
 				id: 1,
 				title: 'Test',
 				body: 'Hello',
-				slug: 'test'
+				slug: 'test',
+				posted_at: new Date('2015-09-01')
 			});
 		});
 	});
