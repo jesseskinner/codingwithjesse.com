@@ -22,11 +22,16 @@
   },
   "homepage": "https://github.com/jesseskinner/codingwithjesse.com#readme",
   "dependencies": {
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
     "chai": "^3.4.1",
     "chai-as-promised": "^5.1.0",
     "express": "^4.13.3",
     "mocha": "^2.3.4",
     "mysql2": "^0.15.8",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
     "webpack": "^1.12.11",
     "webpack-dev-server": "^1.14.1"
   }
