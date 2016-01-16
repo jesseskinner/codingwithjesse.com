@@ -34,6 +34,7 @@
     "mysql2": "^0.15.8",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
+    "react-router": "^2.0.0-rc5",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.11",
