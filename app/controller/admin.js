@@ -13,6 +13,17 @@ app.get('/api/posts', function (request, response) {
 		});
 });
 
+// add post
+app.post('/api/posts', function (request, response) {
+	postsModel.add(request.params)
+		.then(function (id) {
+			response.send(id);
+		})
+		.catch(function (error) {
+			response.send(error);
+		});
+});
+
 app.get('*', function (request, response){
 	response.sendFile(path.resolve(
 		__dirname, '..', '..', 'src', 'admin', 'index.html'
