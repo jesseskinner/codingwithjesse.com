@@ -5,17 +5,17 @@ export default () => (
 	<div>
 			<Link to="/admin/">&lt; Back</Link>
 			<h1>Add Post</h1>
-		<form>
+		<form method="post" action="">
 			<fieldset className="form-group">
-				<label for="title">Title</label>
+				<label htmlFor="title">Title</label>
 				<input name="title" className="form-control"/>
 			</fieldset>
 			<fieldset className="form-group">
-				<label for="slug">Slug</label>
+				<label htmlFor="slug">Slug</label>
 				<input name="slug" className="form-control"/>
 			</fieldset>
 			<fieldset className="form-group">
-				<label for="body">Body</label>
+				<label htmlFor="body">Body</label>
 				<textarea name="body" className="form-control" rows="10"></textarea>
 			</fieldset>
 			<button type="submit" className="btn btn-default">Add Post</button>

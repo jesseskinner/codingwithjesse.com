@@ -14,10 +14,12 @@ app.get('/api/posts', function (request, response) {
 });
 
 // add post
-app.post('/api/posts', function (request, response) {
-	postsModel.add(request.params)
+app.post('/posts/add', function (request, response) {
+	postsModel.add(request.body)
 		.then(function (id) {
-			response.send(id);
+			// successful, redirect to admin index
+			response.setHeader('Location', '/admin/');
+			response.send();
 		})
 		.catch(function (error) {
 			response.send(error);
