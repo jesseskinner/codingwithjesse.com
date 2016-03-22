@@ -18,7 +18,7 @@ app.post('/posts/add', function (request, response) {
 	postsModel.add(request.body)
 		.then(function (id) {
 			// successful, redirect to admin index
-			response.setHeader('Location', '/admin/');
+			response.redirect('/admin/');
 			response.send();
 		})
 		.catch(function (error) {
