@@ -1,11 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router';
-import $ from 'jquery';
+import postsStore from '../../model/posts';
 
 export default class PostList extends React.Component {
 	componentDidMount() {
-		// load posts via ajax
-		$.get('/admin/api/posts', posts => this.setState({ posts }));
+		this._unsubscribe = postsStore.getState(posts => this.setState({ posts }));
+	}
+
+	componentWillUnmount() {
+		this._unsubscribe();
 	}
 
 	render() {
