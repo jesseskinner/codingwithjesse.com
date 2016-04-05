@@ -22,6 +22,7 @@ export default class PostList extends React.Component {
 							<tr>
 								<td>{post.title}</td>
 								<td>{post.posted_at}</td>
+								<td><Link to={"/admin/posts/edit/" + post.id}>Edit</Link></td>
 							</tr>
 						))
 					}

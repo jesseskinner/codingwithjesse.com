@@ -7,8 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha --recursive",
-    "dev": "./node_modules/.bin/webpack-dev-server --content-base build/ --inline --hot"
+    "start": "nodemon app",
+    "test": "mocha --recursive",
+    "dev": "webpack-dev-server --content-base build/ --inline --hot"
   },
   "repository": {
     "type": "git",
