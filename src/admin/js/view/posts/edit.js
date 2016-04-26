@@ -48,6 +48,8 @@ export default class PostEdit extends React.Component {
 							defaultValue={body}></textarea>
 					</fieldset>
 					<button type="submit" className="btn btn-default">Save Post</button>
+					<button name="submit" value="delete"
+						type="submit" className="btn btn-danger">Delete Post</button>
 				</form>
 			</div>
 		);

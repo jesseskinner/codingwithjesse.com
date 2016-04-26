@@ -31,7 +31,11 @@ app.post('/posts/add', function (request, response) {
 
 // edit post
 app.post('/posts/edit/:id', function (request, response) {
-	handleRequest(response, postsModel.update(request.params.id, request.body));
+	if (request.body.submit === 'delete') {
+		handleRequest(response, postsModel.remove(request.params.id));
+	} else {
+		handleRequest(response, postsModel.update(request.params.id, request.body));
+	}
 });
 
 app.get('*', function (request, response){
