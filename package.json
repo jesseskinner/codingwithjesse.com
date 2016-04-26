@@ -7,9 +7,10 @@
     "test": "test"
   },
   "scripts": {
-    "start": "nodemon app",
-    "test": "mocha --recursive",
-    "dev": "webpack-dev-server --content-base build/ --inline --hot"
+    "start": "npm-run-all --parallel start:*",
+    "start:server": "nodemon app",
+    "start:webpack": "webpack-dev-server --content-base build/ --inline --hot",
+    "test": "mocha --recursive"
   },
   "repository": {
     "type": "git",
