@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 
 module.exports = {
+	mode: 'development',
 	context: __dirname + '/src',
 	entry: './admin/js/index.js',
 	output: {
