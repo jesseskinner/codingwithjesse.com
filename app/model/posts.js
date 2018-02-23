@@ -6,7 +6,7 @@ exports.createTable = function () {
 			id int NOT NULL AUTO_INCREMENT,
 			title varchar(255) NOT NULL,
 			body TEXT NOT NULL,
-			slug varchar(255) NOT NULL,
+			slug varchar(128) NOT NULL,
 			posted_at TIMESTAMP DEFAULT NOW(),
 			PRIMARY KEY (id),
 			UNIQUE (slug)
