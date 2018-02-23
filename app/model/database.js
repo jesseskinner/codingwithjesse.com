@@ -5,6 +5,10 @@ exports.init = function (config) {
 	connection = mysql.createConnection(config);
 };
 
+exports.disconnect = function () {
+	connection.end();
+};
+
 exports.query = function (sql, params) {
 	return new Promise(function (resolve, reject) {
 		connection.query(sql, params, function(error, result) {

@@ -7,6 +7,7 @@
     "test": "test"
   },
   "scripts": {
+    "setup": "node app/setup.js",
     "start": "npm-run-all --parallel start:*",
     "start:server": "nodemon app",
     "start:webpack": "webpack-dev-server --content-base build/ --inline --hot",
