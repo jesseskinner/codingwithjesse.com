@@ -1,21 +1,32 @@
-import React from 'react';
+import { h, Component } from 'preact';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { onRoute, getComponent } from './router';
 
 import AdminTemplate from './adminTemplate.js';
-import ListPosts from './posts/list.js';
-import AddPost from './posts/add.js';
-import EditPost from './posts/edit.js';
 
-export default () => (
-	<Router history={browserHistory}>
-		<Route path="/admin" component={AdminTemplate}>
-			<IndexRoute component={ListPosts} />
+export default class Admin extends Component {
+	constructor() {
+		super();
 
-			<Route path="posts">
-				<Route path="add" component={AddPost}/>
-				<Route path="edit/:id" component={EditPost}/>
-			</Route>
-		</Route>
-	</Router>
-);
+		this.state = {
+			Component: getComponent()
+		};
+	}
+
+	componentDidMount() {
+		onRoute(({ component, params }) => this.setState({
+			Component: component,
+			params: params
+		}));
+	}
+
+	render() {
+		const { Component, params } = this.state;
+
+		return (
+			<AdminTemplate>
+				<Component {...params} />
+			</AdminTemplate>
+		);
+	}
+}

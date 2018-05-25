@@ -1,10 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router';
+import { h, Component } from 'preact';
 import postsStore from '../../model/posts';
 
-export default class PostEdit extends React.Component {
+export default class PostEdit extends Component {
 	componentDidMount() {
-		const id = +this.props.params.id;
+		const id = +this.props.id;
 
 		this._unsubscribe = postsStore.getState((posts) => {
 			if (posts) {
@@ -21,14 +20,14 @@ export default class PostEdit extends React.Component {
 
 	render() {
 		if (!this.state || !this.state.post) {
-			return <p>Loading...</p>;
+			return <p>Loading edit page...</p>;
 		}
 
 		const { id, title, slug, body } = this.state.post;
 
 		return (
 			<div>
-					<Link to="/admin/">&lt; Back</Link>
+					<a href="/admin/">&lt; Back</a>
 					<h1>Edit Post #{id}</h1>
 
 				<form method="post" action="">

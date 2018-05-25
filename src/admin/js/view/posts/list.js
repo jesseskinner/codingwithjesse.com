@@ -1,8 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router';
+import { h, Component } from 'preact';
 import postsStore from '../../model/posts';
 
-export default class PostList extends React.Component {
+export default class PostList extends Component {
 	componentDidMount() {
 		this._unsubscribe = postsStore.getState(posts => this.setState({ posts }));
 	}
@@ -25,13 +24,13 @@ export default class PostList extends React.Component {
 							<tr>
 								<td>{post.title}</td>
 								<td>{post.posted_at}</td>
-								<td><Link to={"/admin/posts/edit/" + post.id}>Edit</Link></td>
+								<td><a href={"/admin/posts/edit/" + post.id}>Edit</a></td>
 							</tr>
 						))
 					}
 				</table>
 
-				<Link to="/admin/posts/add">Add new post</Link>
+				<a href="/admin/posts/add">Add new post</a>
 			</div>
 		);
 	}

@@ -2,6 +2,8 @@ var webpack = require('webpack');
 
 module.exports = {
 	mode: 'development',
+	devtool: 'eval-source-map',
+	
 	context: __dirname + '/src',
 	entry: './admin/js/index.js',
 	output: {
