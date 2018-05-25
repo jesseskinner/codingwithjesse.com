@@ -12,3 +12,4 @@
 - search box / results
 - non-blog-post pages / unlisted bosts
 - stylize frontend
+- secure admin panel - some kind of user auth
