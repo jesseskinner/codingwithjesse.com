@@ -30,7 +30,6 @@
     "body-parser": "^1.15.0",
     "bootstrap": "^3.3.6",
     "express": "^4.13.3",
-    "hoverboard": "^3.0.0-alpha.2",
     "jquery": "^3.3.1",
     "mysql2": "^0.15.8",
     "page": "^1.8.3",

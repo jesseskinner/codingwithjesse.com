@@ -1,11 +1,12 @@
-import Hoverboard from 'hoverboard';
 import $ from 'jquery';
 
-const store = Hoverboard({
-  set: (state=[], posts) => posts
-});
+const postsPromise = $.get('/admin/api/posts');
 
-// load posts via ajax
-$.get('/admin/api/posts', posts => store.set(posts));
+export function getAllPosts() {
+	return postsPromise;
+}
 
-export default store;
+export function getPost(id) {
+  id = +id;
+	return postsPromise.then(posts => posts.find(post => post.id === id));
+}

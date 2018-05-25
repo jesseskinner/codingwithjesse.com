@@ -1,15 +1,9 @@
 import { h, Component } from 'preact';
-import postsStore from '../../model/posts';
+import { getAllPosts } from '../../model/posts';
 
 export default class PostList extends Component {
 	componentDidMount() {
-		this._unsubscribe = postsStore.getState(posts =>
-			this.setState({ posts })
-		);
-	}
-
-	componentWillUnmount() {
-		this._unsubscribe();
+		getAllPosts().then(posts => this.setState({ posts }));
 	}
 
 	render() {
