@@ -3,10 +3,11 @@ var webpack = require('webpack');
 module.exports = {
 	mode: 'development',
 	devtool: 'eval-source-map',
-	
+
 	context: __dirname + '/src',
 	entry: './admin/js/index.js',
 	output: {
+		publicPath: 'http://localhost:8080/admin/',
 		path: __dirname + '/build/admin',
 		filename: 'admin.bundle.js'
 	},
@@ -35,5 +36,9 @@ module.exports = {
 				NODE_ENV: JSON.stringify('production')
 			}
 		})
-	]
+	],
+	devServer: {
+		contentBase: 'build/',
+		headers: { 'Access-Control-Allow-Origin': '*' }
+	}
 };
