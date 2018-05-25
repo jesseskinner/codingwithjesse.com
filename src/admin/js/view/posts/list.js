@@ -2,8 +2,8 @@ import { h, Component } from 'preact';
 import { getAllPosts } from '../../model/posts';
 
 export default class PostList extends Component {
-	componentDidMount() {
-		getAllPosts().then(posts => this.setState({ posts }));
+	async componentDidMount() {
+		this.setState({ posts: await getAllPosts() });
 	}
 
 	render() {

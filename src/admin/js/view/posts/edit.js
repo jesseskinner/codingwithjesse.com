@@ -2,8 +2,8 @@ import { h, Component } from 'preact';
 import { getPost } from '../../model/posts';
 
 export default class PostEdit extends Component {
-	componentDidMount() {
-		getPost(this.props.id).then(post => this.setState({ post }));
+	async componentDidMount() {
+		this.setState({ post: await getPost(this.props.id) });
 	}
 
 	render() {

@@ -5,7 +5,7 @@ module.exports = {
 	devtool: 'eval-source-map',
 
 	context: __dirname + '/src',
-	entry: './admin/js/index.js',
+	entry: ['babel-polyfill', './admin/js/index.js'],
 	output: {
 		publicPath: 'http://localhost:8080/admin/',
 		path: __dirname + '/build/admin',

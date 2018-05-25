@@ -26,6 +26,7 @@
   "homepage": "https://github.com/jesseskinner/codingwithjesse.com#readme",
   "dependencies": {
     "babel-core": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "body-parser": "^1.15.0",
     "bootstrap": "^3.3.6",

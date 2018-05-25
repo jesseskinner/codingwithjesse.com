@@ -13,3 +13,4 @@
 - non-blog-post pages / unlisted bosts
 - stylize frontend
 - secure admin panel - some kind of user auth
+- server-side rendering (Gatsby? Jekyll?)
