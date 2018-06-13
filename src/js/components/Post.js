@@ -1,4 +1,5 @@
 import { h } from 'preact';
+import ReactMarkdown from 'react-markdown';
 
 const shortMonths = [
 	'Jan',
@@ -29,7 +30,9 @@ export function Post({ post }) {
 				<a href={`/blog/${post.slug}`}>{post.title}</a>
 			</h1>{' '}
 			<span class="date">{dateString}</span>
-			<div class="section">{post.body}</div>
+            <div class="section">
+                <ReactMarkdown source={post.body} />
+            </div>
 		</li>
 	);
 }

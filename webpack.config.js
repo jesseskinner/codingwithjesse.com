@@ -43,5 +43,11 @@ module.exports = {
 	devServer: {
 		contentBase: 'build/',
 		headers: { 'Access-Control-Allow-Origin': '*' }
+	},
+	resolve: {
+		alias: {
+			'react': 'preact-compat',
+			'react-dom': 'preact-compat'
+		}
 	}
 };
