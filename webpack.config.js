@@ -5,11 +5,14 @@ module.exports = {
 	devtool: 'eval-source-map',
 
 	context: __dirname + '/src',
-	entry: ['babel-polyfill', './admin/js/index.js'],
+	entry: {
+		admin: ['babel-polyfill', './admin/js/index.js'],
+		blog: ['babel-polyfill', './js/index.js']
+	},
 	output: {
-		publicPath: 'http://localhost:8080/admin/',
-		path: __dirname + '/build/admin',
-		filename: 'admin.bundle.js'
+		publicPath: 'http://localhost:8080/',
+		path: __dirname + '/build',
+		filename: '[name].bundle.js'
 	},
 	module: {
 		rules: [
