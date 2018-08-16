@@ -27,7 +27,7 @@ export function Post({ post }) {
 	return (
 		<li>
 			<h1>
-				<a href={`/blog/${post.slug}`}>{post.title}</a>
+				<a href={post.url}>{post.title}</a>
 			</h1>{' '}
 			<span class="date">{dateString}</span>
             <div class="section">

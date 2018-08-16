@@ -2,14 +2,16 @@ import { h, Component } from 'preact';
 import 'bootstrap/dist/css/bootstrap.css';
 import { router } from './router';
 
-import AdminTemplate from './adminTemplate.js';
+import AdminTemplate from './adminTemplate';
 
 export default class Admin extends Component {
 	componentDidMount() {
-		router(ctx => this.setState({
-			Component: ctx.component,
-			params: ctx.params
-		}));
+		router(ctx =>
+			this.setState({
+				Component: ctx.component,
+				params: ctx.params
+			})
+		);
 	}
 
 	render() {

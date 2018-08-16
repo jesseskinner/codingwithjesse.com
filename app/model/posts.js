@@ -43,14 +43,14 @@ exports.getAll = function () {
 	`);
 };
 
-exports.getBySlug = function (slug) {
-	return database.query(`
+exports.getBySlug = async function (slug) {
+	const posts = await database.query(`
 		SELECT *
 		FROM posts
 		WHERE slug = ?
-	`, slug).then(function (results) {
-		return results[0];
-	});
+	`, slug);
+	
+	return posts[0];
 };
 
 exports.update = function (id, params) {
