@@ -1,4 +1,4 @@
-var database = require('./database');
+const database = require('./database');
 
 exports.createTable = function () {
 	return database.query(`

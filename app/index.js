@@ -1,11 +1,11 @@
-var express = require('express');
-var app = express();
-var config = require('../config');
-var adminController = require('./controller/admin');
-var blogApiController = require('./controller/blog');
-var bodyParser = require('body-parser');
+const express = require('express');
+const app = express();
+const config = require('../config');
+const adminController = require('./controller/admin');
+const blogApiController = require('./controller/blog');
+const bodyParser = require('body-parser');
 
-var database = require('./model/database');
+const database = require('./model/database');
 database.init(config.database);
 
 const staticRenderer = express.static(config.staticFolder);

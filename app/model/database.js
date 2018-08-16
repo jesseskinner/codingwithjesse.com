@@ -1,5 +1,5 @@
-var mysql = require('mysql2');
-var connection;
+const mysql = require('mysql2');
+const connection;
 
 exports.init = function (config) {
 	connection = mysql.createConnection(config);

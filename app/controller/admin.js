@@ -1,7 +1,7 @@
-var express = require('express');
-var app = express();
-var path = require('path');
-var postsModel = require('../model/posts');
+const express = require('express');
+const app = express();
+const path = require('path');
+const postsModel = require('../model/posts');
 
 function handleRequest(response, promise) {
 	promise.then(function () {
