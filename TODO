@@ -2,7 +2,7 @@ Admin:
     ☐ stylize the admin panel
     ☐ port over blog contents from thefutureoftheweb.com
     ☐ secure admin panel - some kind of user auth (twitch/github oauth)
-
+    
 Frontend:
     ☐ comments on blog posts
     ☐ categories (maybe?)
@@ -15,7 +15,7 @@ Frontend:
     ☐ side bar list of recent posts
     ☐ side bar list of months
     ☐ RSS feed
-    ☐ Integrate StoryBook for testing of react components
 
 Archive:
+  ✔ Integrate StoryBook for testing of react components @started(18-08-22 11:21) @done(18-08-22 12:49) @lasted(1h28m38s) @project(Frontend)
   ✔ individual blog post urls @done(18-08-16 13:02) @project(Frontend)

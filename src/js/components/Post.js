@@ -1,5 +1,6 @@
 import { h } from 'preact';
 import ReactMarkdown from 'react-markdown';
+import '../../css/article.css';
 
 const shortMonths = [
 	'Jan',
@@ -25,7 +26,7 @@ export function Post({ post }) {
 	].join(' ');
 
 	return (
-		<li>
+		<article>
 			<h1>
 				<a href={post.url}>{post.title}</a>
 			</h1>{' '}
@@ -33,6 +34,6 @@ export function Post({ post }) {
             <div class="section">
                 <ReactMarkdown source={post.body} />
             </div>
-		</li>
+		</article>
 	);
 }

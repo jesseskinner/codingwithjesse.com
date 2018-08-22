@@ -5,7 +5,9 @@ export function Posts({ posts }) {
 	return (
 		<ul id="main">
 			{posts.map(post => (
-				<Post post={post} />
+				<li>
+					<Post post={post} />
+				</li>
 			))}
 		</ul>
 	);

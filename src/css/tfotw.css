@@ -5,7 +5,6 @@ html, body {
 a { color: #000; text-decoration: underline; cursor: pointer }
 .tags, .tags * { color: #999 }
 #wrapper { background: #acf }
-.section { background: #fff }
 
 html, body {
 	font: 12px Verdana, sans-serif;
@@ -15,10 +14,6 @@ html, body {
 h1,h2,h3,h4,h5,h6 { font-family: Georgia, serif }
 
 a img { border: 0; }
-
-#main .section ul {
-	list-style: disc;
-}
 
 html { text-align: center; width: 100% }
 #body { margin: 0 auto; text-align: left }
@@ -37,7 +32,7 @@ html { text-align: center; width: 100% }
 	overflow: hidden;
 	padding-top: 99px;
 	display: block;
-	background: url(tfotw-logo.gif) no-repeat;
+	/* background: url(tfotw-logo.gif) no-repeat; */
 }
 
 #nav {
@@ -106,56 +101,9 @@ html { text-align: center; width: 100% }
 	margin: 0;
 	padding: 20px 0;
 }
-#main h1 {
-	font-size: 26px;
-	font-weight: normal;
-	text-align: left;
-	display: block;
-	margin: 0 0 3px 74px;
-	padding: 0;
-	line-height: 30px;
-}
 
 #main a:hover {
 	background: #D4E5FF;
-}
-
-#main .date {
-	display: block;
-	float: left;
-	background: #D3E4FF;
-	width: 64px;
-	padding: 5px 0;
-	margin: 45px 0 0 9px;
-	font: 16px Georgia;
-	line-height: 20px;
-	text-align: center;
-	border-left: 1px solid #758EAF;
-	border-bottom: 1px solid #758EAF;
-	position: absolute;
-}
-
-#main .section {
-	margin-left: 74px;
-	border-left: 1px solid #758EAF;
-	border-bottom: 1px solid #758EAF;
-	padding: 10px 20px;
-	line-height: 1.5;
-}
-#main .section li {
-	clear: none;
-	margin: 0 0 10px;
-	padding: 0;
-	zoom: 0;
-}
-
-#main .section h2, #main .section h3, #main .section h4, #main .section 
-h5, #main .section h6 {
-	font: bold 1em Verdana;
-	text-align: left;
-	border: 0;
-	margin: 0;
-	padding: 0;
 }
 
 .side {
@@ -182,7 +130,7 @@ h5, #main .section h6 {
 	padding: 0 0 0 7px;
 	margin: 0;
 	font-size: 11px;
-	background: transparent url(side_side.png) left repeat-y;
+	/* background: transparent url(side_side.png) left repeat-y; */
 	zoom: 1;
 }
 
@@ -190,13 +138,12 @@ h5, #main .section h6 {
 	margin-bottom: 20px;
 	padding: 0 0 8px 0;
 	zoom: 1;
-	background: transparent url(side_bottom.png) bottom left 
-no-repeat;
+	/* background: transparent url(side_bottom.png) bottom left no-repeat;*/
 }
 .side .section li {
 	border: 0;
 	padding: 0;
-	background: transparent url(side_side.png) -10px 0 repeat-y;
+	/* background: transparent url(side_side.png) -10px 0 repeat-y; */
 	margin-bottom: 5px;
 }
 .side ul, .side ol {
@@ -407,25 +354,12 @@ ul.portfolio li {
 }
 
 #body { width: 910px; }
-#main h1 { width: 651px; }
-#main .section { width: 594px; }
-#main.standalone .section { margin-left: 90px }
-#main.standalone h1 { margin-left: 90px; margin-top: 20px }
 
-body.thin #body { width: 760px; }
-body.thin #main h1 { width: 501px; }
-body.thin #main .section { width: 444px; }
-body.thin #main.standalone .section { width: 594px; margin-left: 15px }
-body.thin #nav li { margin-right: 7px }
+@media (max-width: 930px) {
+	#body { width: 760px; }
+	#nav li { margin-right: 7px }
+}
 
-form.sending .send-row {
-	width: 80px;
-	background: url(../images/ajax-loader.gif) right center 
-no-repeat;
-}
-.ajax-msg {
-	border:1px solid #000;padding:20px;background:#e3e3e3
-}
 #blog-all {
 	margin: 0;
 	padding: 0;
