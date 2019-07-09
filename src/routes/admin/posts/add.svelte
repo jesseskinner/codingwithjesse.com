@@ -1,51 +1,34 @@
-<!--
-    import { h, Component } from 'preact';
+<script>
+  let slug = '';
 
-export default class AddPost extends Component {
-	setSlug(text) {
-		const slug = text.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-		
-		this.setState({ slug });
-	}
+  function setSlug(text) {
+    slug = text.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  }
+</script>
 
-	render() {
-		return (
-			<div>
-				<a href="/admin/">&lt; Back</a>
-				<h1>Add Post</h1>
-				<form method="post" action="">
-					<fieldset className="form-group">
-						<label htmlFor="title">Title</label>
-						<input
-							name="title"
-							className="form-control"
-							onInput={event => this.setSlug(event.target.value)}
-						/>
-					</fieldset>
-					<fieldset className="form-group">
-						<label htmlFor="slug">Slug</label>
-						<input
-							name="slug"
-							className="form-control"
-							onInput={event => this.setSlug(event.target.value)}
-							value={this.state.slug}
-						/>
-					</fieldset>
-					<fieldset className="form-group">
-						<label htmlFor="body">Body</label>
-						<textarea
-							name="body"
-							className="form-control"
-							rows="10"
-						/>
-					</fieldset>
-					<button type="submit" className="btn btn-default">
-						Add Post
-					</button>
-				</form>
-			</div>
-		);
-	}
-}
+<a href="/admin/">Back</a>
 
--->
+<h1>Add Post</h1>
+
+<form method="post" action="">
+  <fieldset class="form-group">
+    <label for="title">Title</label>
+    <input
+      name="title"
+      class="form-control"
+      on:input={event => setSlug(event.target.value)} />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="slug">Slug</label>
+    <input
+      name="slug"
+      class="form-control"
+      on:input={event => setSlug(event.target.value)}
+      value={slug} />
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="body">Body</label>
+    <textarea name="body" class="form-control" rows="10" />
+  </fieldset>
+  <button type="submit" class="btn btn-default">Add Post</button>
+</form>
