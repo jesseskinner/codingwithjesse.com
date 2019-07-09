@@ -1,30 +1,25 @@
-import { h, Component } from 'preact';
-import { getPost } from '../../model/posts';
+<!--
+    import { h, Component } from 'preact';
 
-export default class PostEdit extends Component {
-	async componentDidMount() {
-		this.setState({ post: await getPost(this.props.id) });
+export default class AddPost extends Component {
+	setSlug(text) {
+		const slug = text.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+		
+		this.setState({ slug });
 	}
 
 	render() {
-		if (!this.state || !this.state.post) {
-			return <p>Loading edit page...</p>;
-		}
-
-		const { id, title, slug, body } = this.state.post;
-
 		return (
 			<div>
 				<a href="/admin/">&lt; Back</a>
-				<h1>Edit Post #{id}</h1>
-
+				<h1>Add Post</h1>
 				<form method="post" action="">
 					<fieldset className="form-group">
 						<label htmlFor="title">Title</label>
 						<input
 							name="title"
 							className="form-control"
-							defaultValue={title}
+							onInput={event => this.setSlug(event.target.value)}
 						/>
 					</fieldset>
 					<fieldset className="form-group">
@@ -32,7 +27,8 @@ export default class PostEdit extends Component {
 						<input
 							name="slug"
 							className="form-control"
-							defaultValue={slug}
+							onInput={event => this.setSlug(event.target.value)}
+							value={this.state.slug}
 						/>
 					</fieldset>
 					<fieldset className="form-group">
@@ -41,22 +37,15 @@ export default class PostEdit extends Component {
 							name="body"
 							className="form-control"
 							rows="10"
-							defaultValue={body}
 						/>
 					</fieldset>
 					<button type="submit" className="btn btn-default">
-						Save Post
-					</button>
-					<button
-						name="submit"
-						value="delete"
-						type="submit"
-						className="btn btn-danger"
-					>
-						Delete Post
+						Add Post
 					</button>
 				</form>
 			</div>
 		);
 	}
 }
+
+-->

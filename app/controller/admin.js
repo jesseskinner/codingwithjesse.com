@@ -1,47 +1,48 @@
+const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
-const path = require('path');
 const postsModel = require('../model/posts');
 
-function handleRequest(response, promise) {
-	promise.then(function () {
-		// successful, redirect to admin index
-		response.redirect('/admin/');
-		response.send();
-	})
-	.catch(function (error) {
-		response.send(error);
-	});
-}
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/api/posts', function (request, response) {
-	postsModel.getAll()
-		.then(function (posts) {
-			response.send(posts);
+function handleRequest(response, promise) {
+	promise
+		.then(function() {
+			// successful, redirect to admin index
+			response.redirect('/admin/');
+			response.send();
 		})
-		.catch(function (error) {
+		.catch(function(error) {
 			response.send(error);
 		});
+}
+
+app.get('/api/posts', async function(request, response) {
+	try {
+		const posts = await postsModel.getAll();
+
+		response.send(posts);
+	} catch (error) {
+		console.error(error);
+		response.send(error.message);
+	}
 });
 
 // add post
-app.post('/posts/add', function (request, response) {
+app.post('/posts/add', function(request, response) {
 	handleRequest(response, postsModel.add(request.body));
 });
 
 // edit post
-app.post('/posts/edit/:id', function (request, response) {
+app.post('/posts/edit/:id', function(request, response) {
 	if (request.body.submit === 'delete') {
 		handleRequest(response, postsModel.remove(request.params.id));
 	} else {
-		handleRequest(response, postsModel.update(request.params.id, request.body));
+		handleRequest(
+			response,
+			postsModel.update(request.params.id, request.body)
+		);
 	}
-});
-
-app.get('*', function (request, response){
-	response.sendFile(path.resolve(
-		__dirname, '..', '..', 'src', 'admin', 'index.html'
-	));
 });
 
 module.exports = app;

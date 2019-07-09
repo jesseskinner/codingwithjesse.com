@@ -3,3 +3,5 @@ config.js
 node_modules
 build
 package-lock.json
+/src/node_modules/@sapper/
+/__sapper__/

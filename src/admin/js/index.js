@@ -1,8 +1,9 @@
-import { h, render, Component } from 'preact';
-import Admin from './view/index';
+import Admin from './view/Admin.svelte';
 
-const root = document.createElement('div');
+const target = document.createElement('div');
 
-document.body.appendChild(root);
+document.body.appendChild(target);
 
-render(<Admin />, root);
+new Admin({
+	target
+});
