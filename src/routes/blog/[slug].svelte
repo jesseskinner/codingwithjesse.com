@@ -1,0 +1,21 @@
+<script context="module">
+  export async function preload(page, session) {
+    const res = await this.fetch(
+      "/api/article?slug=" + encodeURIComponent(page.params.slug)
+    );
+    const post = await res.json();
+
+    return { post };
+  }
+</script>
+
+<script>
+  import Template from "../../components/Template.svelte";
+  import Post from "../../components/Post.svelte";
+
+  export let post;
+</script>
+
+<Template>
+  <Post {post}/>
+</Template>

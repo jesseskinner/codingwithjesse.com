@@ -8,15 +8,14 @@
 </script>
 
 <script>
-  import Template from "./template.svelte";
+  import Template from "../components/Template.svelte";
+  import Post from "../components/Post.svelte";
+
   export let posts;
 </script>
 
 <Template>
-  {#each posts as { title, posted_at, id, body }}
-    <article>
-      <h1>{title}</h1>
-      <p>{body}</p>
-    </article>
+  {#each posts as post}
+    <Post {post} />
   {/each}
 </Template>

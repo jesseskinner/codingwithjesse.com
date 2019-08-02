@@ -10,7 +10,7 @@
 </script>
 
 <script>
-  import Template from "../../template.svelte";
+  import Template from "../../../../components/AdminTemplate.svelte";
 
   export let post;
 
