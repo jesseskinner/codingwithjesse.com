@@ -1,6 +1,6 @@
 <style>
   :global(body) {
-    background: #acf url("/images/background.png") repeat;
+    background: #acf url("/images/background.gif") repeat;
     font: 21px/1.58 Georgia, serif;
   }
 
@@ -31,7 +31,7 @@
     float: right;
     text-align: right;
     margin-right: 5%;
-    padding: 0 .5em;
+    padding: 0 0.5em;
     color: #000;
     background: #acf;
   }

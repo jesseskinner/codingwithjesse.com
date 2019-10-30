@@ -4,13 +4,14 @@ Admin:
     ☐ secure admin panel - some kind of user auth (twitch/github oauth)
     
 Frontend:
+    ☐ Date boxes
     ☐ comments on blog posts
     ☐ categories (maybe?)
-    ☐ embeded YouTube videos
+    ☐ embeded YouTube videos?
     ☐ search box / results
     ☐ non-blog-post pages / unlisted bosts
     ☐ server-side rendering (Gatsby? Jekyll?)
-    ☐ new logo - use Coding with Jesse banner maybe
+    ✔ new logo - use Coding with Jesse banner maybe @done(19-10-30 10:24)
     ☐ side bar list of categories
     ☐ side bar list of recent posts
     ☐ side bar list of months

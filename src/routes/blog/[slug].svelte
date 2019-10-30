@@ -17,5 +17,5 @@
 </script>
 
 <Template>
-  <Post {post}/>
+  <Post {post} link={false} />
 </Template>
