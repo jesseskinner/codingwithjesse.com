@@ -20,4 +20,4 @@ app.use('/article/:slug', staticRenderer);
 
 app.listen(config.port);
 
-console.log("Listening on port " + config.port);
+console.log('Listening on port ' + config.port);

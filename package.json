@@ -28,7 +28,10 @@
 	"dependencies": {
 		"compression": "^1.7.1",
 		"express": "^4.17.1",
+		"highlight.js": "^9.16.2",
+		"marked": "^0.7.0",
 		"mysql2": "^1.6.5",
+		"prismjs": "^1.17.1",
 		"sirv": "^0.4.0"
 	},
 	"devDependencies": {

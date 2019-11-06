@@ -8,8 +8,8 @@
   article {
     position: relative;
     background: white;
-    padding: 1em;
-    margin-bottom: 1em;
+    padding: 2em 3em;
+    margin-bottom: 3em;
     box-shadow: 2px 2px 2px #222;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
@@ -49,11 +49,11 @@
   }
 
   article :global(pre) {
-    width: 93%;
     overflow: auto;
-    padding: 15px 10px 15px;
-    border: 1px dashed black;
-    background: #e8f1ff;
+    margin: 0 -3em;
+    padding: 2em 3em;
+    background: #29292e;
+    color: #fff;
   }
 </style>
 
@@ -64,5 +64,5 @@
     {:else}{post.title}{/if}
   </h1>
   <div class="date">{formatDate(post.posted_at)}</div>
-  {@html post.body}
+  {@html post.html}
 </article>
