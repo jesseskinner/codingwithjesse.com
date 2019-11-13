@@ -1,6 +1,6 @@
 <script context="module">
   export async function preload(page, session) {
-    const res = await this.fetch("/api/homepage");
+    const res = await this.fetch("/homepage.json");
     const posts = await res.json();
 
     return { posts };

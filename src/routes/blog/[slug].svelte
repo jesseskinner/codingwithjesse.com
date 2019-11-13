@@ -1,8 +1,6 @@
 <script context="module">
   export async function preload(page, session) {
-    const res = await this.fetch(
-      "/api/article?slug=" + encodeURIComponent(page.params.slug)
-    );
+    const res = await this.fetch(`/blog/${page.params.slug}.json`);
     const post = await res.json();
 
     return { post };

@@ -5,7 +5,6 @@ import * as sapper from '@sapper/server';
 
 import config from './config';
 import adminController from '../app/controller/admin';
-import blogApiController from '../app/controller/blog';
 import database from '../app/model/database';
 
 const { PORT, NODE_ENV } = process.env;
@@ -14,7 +13,6 @@ const dev = NODE_ENV === 'development';
 database.init(config.database);
 
 express()
-	.use('/api', blogApiController)
 	.use('/admin', adminController)
 	.use(
 		compression({ threshold: 0 }),
