@@ -15,13 +15,17 @@ exports.createTable = function() {
 	return database.query(`
 		CREATE TABLE IF NOT EXISTS posts (
 			id int NOT NULL AUTO_INCREMENT,
-			title varchar(255) NOT NULL,
-			body TEXT NOT NULL,
+			title TEXT NOT NULL,
+			html TEXT NULL,
+			markdown TEXT NULL,
 			slug varchar(128) NOT NULL,
+			display tinyint NOT NULL DEFAULT 1,
+			tags text NOT NULL,
+			category int NOT NULL DEFAULT 0,
 			posted_at TIMESTAMP DEFAULT NOW(),
 			PRIMARY KEY (id),
-			UNIQUE (slug)
-		)
+			KEY (slug)
+		) ENGINE=MyISAM DEFAULT CHARSET=utf8
 	`);
 };
 
@@ -54,7 +58,20 @@ exports.getAll = async function() {
 		await database.query(`
 			SELECT *
 			FROM posts
+			WHERE display = 1
 			ORDER BY posted_at DESC
+		`)
+	);
+};
+
+exports.getRecent = async function() {
+	return addHTMLToPosts(
+		await database.query(`
+			SELECT *
+			FROM posts
+			WHERE display = 1
+			ORDER BY posted_at DESC
+			LIMIT 5
 		`)
 	);
 };
@@ -66,6 +83,8 @@ exports.getBySlug = async function(slug) {
 				SELECT *
 				FROM posts
 				WHERE slug = ?
+				ORDER BY posted_at DESC
+				LIMIT 1
 			`,
 			slug
 		)
@@ -87,6 +106,9 @@ exports.update = function(id, params) {
 
 function addHTMLToPosts(posts) {
 	return posts.map(p => {
-		return Object.assign({ html: marked(p.body) }, p);
+		if (p.html) {
+			return p;
+		}
+		return Object.assign({ html: marked(p.markdown) }, p);
 	});
 }

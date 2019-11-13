@@ -1,4 +1,4 @@
-const config = require('../config');
+const config = require('../src/config');
 const database = require('./model/database');
 
 console.log('Initializing database...');

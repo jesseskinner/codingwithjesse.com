@@ -63,6 +63,8 @@
       <a href="/blog/{post.slug}">{post.title}</a>
     {:else}{post.title}{/if}
   </h1>
-  <div class="date">{formatDate(post.posted_at)}</div>
+  {#if post.display}
+    <div class="date">{formatDate(post.posted_at)}</div>
+  {/if}
   {@html post.html}
 </article>

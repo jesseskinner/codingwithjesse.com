@@ -1,23 +1,30 @@
 Admin:
-    ☐ stylize the admin panel
-    ☐ port over blog contents from thefutureoftheweb.com
-    ☐ secure admin panel - some kind of user auth (twitch/github oauth)
-    
+    ☐ Add categories to posts
+    ☐ Add tags to posts
+    ☐ Header image (maybe with help from https://source.unsplash.com/ ?)
+    ☐ Maybe store everything in JSON in git repo instead of mysql database?
+
 Frontend:
-    ✔ Syntax highlighting @started(19-11-06 11:39) @done(19-11-06 11:39) @lasted(51s)
-    ✔ Date boxes @started(19-10-30 10:56) @done(19-11-06 10:23) @lasted(1w27m16s)
     ☐ comments on blog posts
-    ☐ categories (maybe?)
+    ☐ categories eg. /blog/cat/javascript
     ☐ embeded YouTube videos?
     ☐ search box / results
-    ☐ non-blog-post pages / unlisted bosts
-    ☐ server-side rendering (Gatsby? Jekyll?)
-    ✔ new logo - use Coding with Jesse banner maybe @done(19-10-30 10:24)
-    ☐ side bar list of categories
-    ☐ side bar list of recent posts
-    ☐ side bar list of months
-    ☐ RSS feed
+    ✔ non-blog-post pages / unlisted posts @done(19-11-13 12:14)
+    ✔ server-side rendering (Gatsby? Jekyll?) @done(19-11-13 12:12)
+    ✘ side bar list of categories @cancelled(19-11-13 12:14)
+    ✘ side bar list of recent posts @cancelled(19-11-13 12:14)
+    ✘ side bar list of months @cancelled(19-11-13 12:14)
+    ☐ RSS feed at /blog/feed (don't forget <meta> tag)
+
+Production:
+    ☐ Delete <script> block at end of each HTML file
 
 Archive:
+  ✘ stylize the admin panel @cancelled(19-11-13 12:09) @project(Admin)
+  ✔ port over blog contents from thefutureoftheweb.com @done(19-11-13 12:08) @project(Admin)
+  ✘ secure admin panel - some kind of user auth (twitch/github oauth) @cancelled(19-11-13 12:08) @project(Admin)
+  ✔ Syntax highlighting @started(19-11-06 11:39) @done(19-11-06 11:39) @lasted(51s) @project(Frontend)
+  ✔ Date boxes @started(19-10-30 10:56) @done(19-11-06 10:23) @lasted(1w27m16s) @project(Frontend)
+  ✔ new logo - use Coding with Jesse banner maybe @done(19-10-30 10:24) @project(Frontend)
   ✔ Integrate StoryBook for testing of react components @started(18-08-22 11:21) @done(18-08-22 12:49) @lasted(1h28m38s) @project(Frontend)
   ✔ individual blog post urls @done(18-08-16 13:02) @project(Frontend)
