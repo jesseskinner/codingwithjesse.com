@@ -1,4 +1,4 @@
-import postsModel from '../../app/model/posts';
+import postsModel, { getComments } from '../../app/model/posts';
 
 export async function getRecentArticles(count) {
 	const posts = await postsModel.getRecent(count);
@@ -7,7 +7,11 @@ export async function getRecentArticles(count) {
 
 export async function getArticle(slug) {
 	const post = await postsModel.getBySlug(slug);
-	return getArticleFromPost(post);
+	const article = getArticleFromPost(post);
+
+	article.comments = await getComments(post.id);
+
+	return article;
 }
 
 function getArticleFromPost(post) {

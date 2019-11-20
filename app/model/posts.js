@@ -1,6 +1,7 @@
 const database = require('./database');
 const marked = require('marked');
 const Prism = require('prismjs');
+const gravatar = require('gravatar');
 
 marked.setOptions({
 	highlight: function(code, lang) {
@@ -92,6 +93,25 @@ exports.getBySlug = async function(slug) {
 
 	return posts[0];
 };
+
+exports.getComments = async function (id) {
+	const comments = await database.query(`
+		SELECT *
+		FROM comments
+		WHERE item = ?
+		ORDER BY date ASC
+	`, [id]);
+
+	return comments.map(c => {
+		return {
+			title: c.title,
+			author: c.author,
+			avatar: gravatar.url(c.email),
+			date: c.date,
+			body: c.body,
+		}
+	});
+}
 
 exports.update = function(id, params) {
 	return database.query(
