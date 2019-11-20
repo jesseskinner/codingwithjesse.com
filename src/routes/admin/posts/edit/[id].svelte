@@ -14,7 +14,7 @@
 
   export let post;
 
-  $: ({ id, body, title, slug } = post);
+  $: ({ id, markdown, title, slug } = post);
 </script>
 
 <Template>
@@ -32,8 +32,12 @@
       <input name="slug" class="form-control" value={slug} />
     </fieldset>
     <fieldset class="form-group">
-      <label htmlFor="body">Body</label>
-      <textarea name="body" class="form-control" rows="10" value={body} />
+      <label htmlFor="markdown">Body</label>
+      <textarea
+        name="markdown"
+        class="form-control"
+        rows="10"
+        value={markdown} />
     </fieldset>
     <button type="submit" class="btn btn-default">Save Post</button>
     <button name="submit" value="delete" type="submit" class="btn btn-danger">

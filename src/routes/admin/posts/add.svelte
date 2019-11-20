@@ -33,8 +33,16 @@
         value={slug} />
     </fieldset>
     <fieldset class="form-group">
-      <label for="body">Body</label>
-      <textarea name="body" class="form-control" rows="10" />
+      <label for="markdown">Body</label>
+      <textarea name="markdown" class="form-control" rows="10" />
+    </fieldset>
+    <fieldset class="form-group">
+      <label for="tags">Tags</label>
+      <input name="tags" class="form-control" />
+    </fieldset>
+    <fieldset class="form-group">
+      <label for="category">Category</label>
+      <input name="category" class="form-control" value="12" />
     </fieldset>
     <button type="submit" class="btn btn-default">Add Post</button>
   </form>
