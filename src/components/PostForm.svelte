@@ -44,6 +44,14 @@
     rows="10"
     value={post.markdown} />
 </fieldset>
+<fieldset class="form-group">
+  <label htmlFor="markdown">HTML</label>
+  <textarea
+    name="html"
+    class="form-control"
+    rows="10"
+    value={post.html} />
+</fieldset>
 <fieldset>
   <label for="category">Category:</label>
   {#await categoriesFetch}

@@ -6,11 +6,11 @@ Frontend:
     ✔ categories eg. /blog/cat/javascript @done(19-11-20 12:21)
     ✔ month eg. /blog/2009/2 @done(19-11-20 12:28)
     ✔ pagination eg. /blog/page/2 @done(19-11-20 13:14)
-    ☐ search box / results
+    ✔ search box / results @done(19-11-20 14:33)
     ☐ embeded YouTube videos?
 
 Production:
-    ☐ Delete <script> block at end of each HTML file
+    ✘ Delete <script> block at end of each HTML file @cancelled(19-11-20 14:34)
 
 Archive:
   ✔ comments on blog posts @done(19-11-20 12:13) @project(Frontend)

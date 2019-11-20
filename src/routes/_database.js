@@ -1,4 +1,4 @@
-import postsModel, { getComments, getByCategory, getByMonth } from '../../app/model/posts';
+import postsModel, { getAll, getComments, getByCategory, getByMonth } from '../../app/model/posts';
 
 export async function getRecentArticles(count, page) {
 	const posts = await postsModel.getRecent(count, page);
@@ -12,6 +12,11 @@ export async function getArticlesByCategory(category) {
 
 export async function getArticlesByMonth(year, month) {
 	const posts = await getByMonth(year, month);
+	return posts.map(getArticleFromPost);
+}
+
+export async function getAllArticles() {
+	const posts = await getAll();
 	return posts.map(getArticleFromPost);
 }
 
