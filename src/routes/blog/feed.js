@@ -27,6 +27,7 @@ function getRSS(articles) {
 		// },
 		author: {
 			name: 'Jesse Skinner',
+			email: 'jesse@codingwithjesse.com',
 			link: 'https://codingwithjesse.com/'
 		}
 	});

@@ -8,8 +8,23 @@
 </script>
 
 <script>
-  import Posts from "../components/Posts.svelte";
+  import Template from "../components/Template.svelte";
+  import Post from "../components/Post.svelte";
   export let posts;
 </script>
 
-<Posts {posts} />
+<style>
+a {
+  background: #acf;
+}
+</style>
+
+<Template>
+  {#each posts as post}
+    <Post {post} />
+  {/each}
+
+  <section>
+    <a href="/blog/page/2">&lt;&lt; older posts</a>
+  </section>
+</Template>

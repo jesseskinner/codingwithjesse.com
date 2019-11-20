@@ -65,14 +65,14 @@ exports.getAll = async function() {
 	);
 };
 
-exports.getRecent = async function(count) {
+exports.getRecent = async function(count, page = 1) {
 	return addHTMLToPosts(
 		await database.query(`
 			SELECT *
 			FROM posts
 			WHERE display = 1
 			ORDER BY posted_at DESC
-			LIMIT ${count}
+			LIMIT ${count * (page - 1)}, ${count}
 		`)
 	);
 };

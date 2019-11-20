@@ -1,0 +1,45 @@
+<script context="module">
+  export async function preload(page, session) {
+    const res = await this.fetch(`/blog/page/${page.params.page}.json`);
+    const posts = await res.json();
+
+    return { posts, page: +page.params.page };
+  }
+</script>
+
+<script>
+  import Template from "../../../components/Template.svelte";
+  import Post from "../../../components/Post.svelte";
+  export let posts;
+  export let page;
+</script>
+
+<style>
+  .pagination {
+    margin-bottom: 2em;
+  }
+
+  a {
+    background: #acf;
+  }
+  .newer {
+    float: right;
+  }
+</style>
+
+<Template>
+  {#each posts as post}
+    <Post {post} />
+  {/each}
+
+  <section class="pagination">
+    {#if posts.length === 5}
+      <a href={`/blog/page/${page + 1}`}>&lt;&lt; older posts</a>
+    {/if}
+    {#if page <= 2}
+      <a class="newer" href="/">newer posts &gt;&gt;</a>
+    {:else}
+      <a class="newer" href={`/blog/page/${page - 1}`}>newer posts &gt;&gt;</a>
+    {/if}
+  </section>
+</Template>

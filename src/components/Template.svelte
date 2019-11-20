@@ -56,4 +56,4 @@
   <slot />
 </main>
 
-<footer>Copyright © {new Date().getFullYear()} Jesse Skinner</footer>
+<footer>Copyright © {new Date().getFullYear()} <a href="/contact/me">Jesse Skinner</a></footer>
