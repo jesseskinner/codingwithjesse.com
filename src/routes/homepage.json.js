@@ -1,7 +1,7 @@
-import { getHomepageArticles } from './_database.js';
+import { getRecentArticles } from './_database.js';
 
 export async function get(req, res, next) {
-	const articles = await getHomepageArticles();
+	const articles = await getRecentArticles(5);
 
 	if (articles !== null) {
 		res.setHeader('Content-Type', 'application/json');

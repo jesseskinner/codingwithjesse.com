@@ -1,7 +1,7 @@
 import postsModel from '../../app/model/posts';
 
-export async function getHomepageArticles() {
-	const posts = await postsModel.getRecent();
+export async function getRecentArticles(count) {
+	const posts = await postsModel.getRecent(count);
 	return posts.map(getArticleFromPost);
 }
 

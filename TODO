@@ -1,25 +1,25 @@
 Admin:
-    ☐ Add categories to posts
-    ☐ Add tags to posts
-    ☐ Header image (maybe with help from https://source.unsplash.com/ ?)
     ☐ Maybe store everything in JSON in git repo instead of mysql database?
+    ☐ Header image (maybe with help from https://source.unsplash.com/ ?)
 
 Frontend:
+    ✔ RSS feed at /blog/feed (don't forget <meta> tag) @done(19-11-20 11:43)
     ☐ comments on blog posts
     ☐ categories eg. /blog/cat/javascript
-    ☐ embeded YouTube videos?
     ☐ search box / results
-    ✔ non-blog-post pages / unlisted posts @done(19-11-13 12:14)
-    ✔ server-side rendering (Gatsby? Jekyll?) @done(19-11-13 12:12)
-    ✘ side bar list of categories @cancelled(19-11-13 12:14)
-    ✘ side bar list of recent posts @cancelled(19-11-13 12:14)
-    ✘ side bar list of months @cancelled(19-11-13 12:14)
-    ☐ RSS feed at /blog/feed (don't forget <meta> tag)
+    ☐ embeded YouTube videos?
 
 Production:
     ☐ Delete <script> block at end of each HTML file
 
 Archive:
+  ✔ Add categories to posts @done(19-11-20 11:20) @project(Admin)
+  ✔ Add tags to posts @done(19-11-20 11:20) @project(Admin)
+  ✔ non-blog-post pages / unlisted posts @done(19-11-13 12:14) @project(Frontend)
+  ✔ server-side rendering (Gatsby? Jekyll?) @done(19-11-13 12:12) @project(Frontend)
+  ✘ side bar list of categories @cancelled(19-11-13 12:14) @project(Frontend)
+  ✘ side bar list of recent posts @cancelled(19-11-13 12:14) @project(Frontend)
+  ✘ side bar list of months @cancelled(19-11-13 12:14) @project(Frontend)
   ✘ stylize the admin panel @cancelled(19-11-13 12:09) @project(Admin)
   ✔ port over blog contents from thefutureoftheweb.com @done(19-11-13 12:08) @project(Admin)
   ✘ secure admin panel - some kind of user auth (twitch/github oauth) @cancelled(19-11-13 12:08) @project(Admin)

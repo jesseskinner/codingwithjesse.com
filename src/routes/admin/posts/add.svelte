@@ -1,14 +1,6 @@
 <script>
+  import PostForm from "../../../components/PostForm.svelte";
   import Template from "../../../components/AdminTemplate.svelte";
-
-  let slug = "";
-
-  function setSlug(text) {
-    slug = text
-      .trim()
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-");
-  }
 </script>
 
 <Template>
@@ -17,33 +9,7 @@
   <h1>Add Post</h1>
 
   <form method="post" action="">
-    <fieldset class="form-group">
-      <label for="title">Title</label>
-      <input
-        name="title"
-        class="form-control"
-        on:input={event => setSlug(event.target.value)} />
-    </fieldset>
-    <fieldset class="form-group">
-      <label for="slug">Slug</label>
-      <input
-        name="slug"
-        class="form-control"
-        on:input={event => setSlug(event.target.value)}
-        value={slug} />
-    </fieldset>
-    <fieldset class="form-group">
-      <label for="markdown">Body</label>
-      <textarea name="markdown" class="form-control" rows="10" />
-    </fieldset>
-    <fieldset class="form-group">
-      <label for="tags">Tags</label>
-      <input name="tags" class="form-control" />
-    </fieldset>
-    <fieldset class="form-group">
-      <label for="category">Category</label>
-      <input name="category" class="form-control" value="12" />
-    </fieldset>
+    <PostForm />
     <button type="submit" class="btn btn-default">Add Post</button>
   </form>
 </Template>

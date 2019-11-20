@@ -2,6 +2,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 const postsModel = require('../model/posts');
+const { getCategories } = require('../model/categories');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -43,6 +44,10 @@ app.post('/posts/edit/:id', function(request, response) {
 			postsModel.update(request.params.id, request.body)
 		);
 	}
+});
+
+app.get('/categories', async (request, response) => {
+	response.send(await getCategories());
 });
 
 module.exports = app;
