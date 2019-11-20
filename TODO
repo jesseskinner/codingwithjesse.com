@@ -3,7 +3,9 @@ Admin:
     ☐ Header image (maybe with help from https://source.unsplash.com/ ?)
 
 Frontend:
-    ☐ categories eg. /blog/cat/javascript
+    ✔ categories eg. /blog/cat/javascript @done(19-11-20 12:21)
+    ✔ month eg. /blog/2009/2 @done(19-11-20 12:28)
+    ☐ pagination eg. /blog/page/2
     ☐ search box / results
     ☐ embeded YouTube videos?
 

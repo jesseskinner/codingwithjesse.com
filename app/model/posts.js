@@ -94,6 +94,41 @@ exports.getBySlug = async function(slug) {
 	return posts[0];
 };
 
+exports.getByCategory = async function(category) {
+	const posts = addHTMLToPosts(
+		await database.query(
+			`
+				SELECT posts.*
+				FROM posts
+				LEFT JOIN categories
+					ON categories.id = posts.category
+				WHERE categories.category = ?
+				ORDER BY posted_at DESC
+			`,
+			[category]
+		)
+	);
+
+	return posts;
+};
+
+exports.getByMonth = async function(year, month) {
+	const posts = addHTMLToPosts(
+		await database.query(
+			`
+				SELECT *
+				FROM posts
+				WHERE YEAR(posted_at) = ?
+				AND MONTH(posted_at) = ?
+				ORDER BY posted_at DESC
+			`,
+			[year, month]
+		)
+	);
+
+	return posts;
+};
+
 exports.getComments = async function (id) {
 	const comments = await database.query(`
 		SELECT *
