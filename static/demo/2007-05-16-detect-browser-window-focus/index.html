@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+
+function onBlur() {
+	document.body.className = 'blurred';
+};
+function onFocus(){
+	document.body.className = 'focused';
+};
+
+if (/*@cc_on!@*/false) { // check for Internet Explorer
+	document.onfocusin = onFocus;
+	document.onfocusout = onBlur;
+} else {
+	window.onfocus = onFocus;
+	window.onblur = onBlur;
+}
+
+</script>
+<style type="text/css">
+.focused #focused, .blurred #blurred { display: inline }
+.focused #blurred, .blurred #focused { display: none }
+
+.focused {
+	background: white;
+	color: black;
+}
+
+.blurred {
+	background: black;
+	color: white;
+}
+
+</style>
+</head>
+<body class="focused">
+
+<h1>window.onfocus() and window.onblur() demo</h1>
+
+<p>Switch to a different program to blur this page.</p>
+
+<p>You can also just click into the location bar (except in Safari).</p>
+
+<p>Click this page again to focus it.</p>
+
+<p>When blurred, this page will have a black background with white text.</p>
+
+<p>The window is currently <span id="focused">FOCUSED</span><span id="blurred">BLURRED</span>.
+
+<p><a href="http://www.thefutureoftheweb.com/blog/detect-browser-window-focus">Click here for a discussion of this demo.</a></p>
+
+<p id="log"></p>
+
+<input>
+
+</body>
+</html>

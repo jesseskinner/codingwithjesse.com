@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title></title>
+<script src="http://code.jquery.com/jquery-1.2.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('<span></span>').text("I have a closing tag.").appendTo('#one');
+	$('<span>').text("I don't have a closing tag.").appendTo('#two');
+
+	$('<div></div>').text("I have a closing tag.").appendTo('#three');
+	$('<div>').text("I don't have a closing tag.").appendTo('#four');
+
+	$('<b></b>').text("I have a closing tag.").appendTo('#five');
+	$('<b>').text("I don't have a closing tag.").appendTo('#six');
+
+});
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+<div id="one">The following was created with $('&lt;span&gt;&lt;/span&gt;'): </div>
+<div id="two">The following was created with $('&lt;span&gt;'): </div>
+
+<div id="three">The following was created with $('&lt;div&gt;&lt;/div&gt;'): </div>
+<div id="four">The following was created with $('&lt;div&gt;'): </div>
+
+<div id="five">The following was created with $('&lt;b&gt;&lt;/b&gt;'): </div>
+<div id="six">The following was created with $('&lt;b&gt;'): </div>
+
+</body>
+</html>

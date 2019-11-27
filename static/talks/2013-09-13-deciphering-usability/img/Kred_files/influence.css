@@ -1,0 +1,9189 @@
+@charset "utf-8";
+/* CSS Document */
+body #ifr_popup #content {background-image:none!important;background-color:#000!important;}
+
+img {border-color: transparent}
+img {border:none}
+
+/* Hide excess controls from the post box when in Kred.ly */
+#options-list li.sep,
+#options-list li#upload_button,
+#options-list li#calendar_button,
+#options-list li#shrink_button,
+.pb_expanded #pb_right .add-more-accounts {display:none!important}
+
+#postboxCell.pb_expanded textarea {font-size:20px}
+
+#top_banner[app="in"] #app_icons {z-index:1000;}
+
+#tiptip_holder #tiptip_content {
+	font-size:12px;
+	padding:1em;
+}
+
+	/*
+
+
+
+   .influencly-overview #logoCall {display:none;}
+  */
+
+.kred_green{
+	color:#75c240;
+}
+.kred_blue{
+	color:#278eb1;}
+
+
+body
+{
+	/*background:#fff;*/
+	padding:0;
+	font-family: helvetica neue, sans-serif;
+	font-size:13px;
+	margin:0px auto auto auto;
+	color:#000;
+/*overflow-y: scroll;*/
+}
+
+body.influencly{
+	background:url(../images/influencly/background-home.png) repeat-x;
+}
+
+body.influencly-overview,
+body.influencly-more,
+body.influencly-ranking,
+body.influencly-analyze,
+body.influencly-activity{
+	/*background:url(../images/influencly/about/background.png) repeat-x 0 -29px;*/
+	background:url(../images/bg.png);
+	padding-top: 135px;
+}
+
+.link,
+a {
+	color: #22bae6; /*#02BEEF;*/ /*#3530FC;*/
+	text-decoration:none;
+	cursor: pointer;
+}
+.link:hover,
+a:hover{
+	text-decoration:underline;
+}
+
+#inside-container-wrapper{
+	-moz-border-radius: 25px;
+/*	-webkit-border-radius: 25px;*/
+	border-radius: 25px;
+	background:url(../images/kred/main-bg02.png) repeat-x;
+	padding:25px 0 0;
+	margin:0 auto;
+	display:block;
+	width:940px;
+	min-height:600px;
+}
+
+.influencly-more  #inside-container-wrapper{
+	background:#fff !important;
+}
+
+.panel_inner{
+	padding:0 10px; /* padding:10px sure fucks up the activity statement */
+}
+
+#infl_right_panel,
+#infl_left_panel{
+	vertical-align:top;
+	min-height:600px;
+}
+
+.clearBoth{
+	clear:both;
+}
+
+#infl_right_panel{
+	display:inline-block;
+	width:84%; /*why it doesn't work for 85%???*/
+
+}
+
+#infl_left_panel,
+#infl_left_panel .infl_list{
+	border-color:#aaa;
+	border-style:solid;
+	border-width:0;
+}
+
+#infl_left_panel{
+	display:inline-block;
+	clear:both;
+	min-width:150px;
+	width:15%;
+	border-right-width:1px;
+}
+#infl_left_panel .infl_list{
+	border-bottom-width:1px;
+	padding:10px;
+}
+#infl_left_panel .infl_list .list_header{
+
+}
+#infl_left_panel .infl_list ul{
+
+}
+#infl_left_panel .infl_list ul li{
+	cursor:pointer;
+}
+
+#infl_header{
+	display:block;
+	width:1000px;
+	height: 42px;
+	position: relative;
+	top: 64px;
+	left: 0;
+/*	background-color: white; Turns out this looks awful.
+*/
+	z-index: 200;
+}
+
+#infl_header ul li:hover,
+#infl_header ul li.active{
+
+}
+
+
+#infl_header ul li.at-name{
+	background:#0bb0da;
+}
+
+#infl_header ul li.tall{
+	padding:8px 0 6px;
+}
+
+ul li:hover{
+	text-decoration:none;
+}
+.infl_box {
+	float: left;
+	margin: 10px;
+	padding: 10px;
+	width:200px;
+	height:160px;
+}
+
+.infl_box .infl_detail{
+	font-size: 35px;
+}
+.offline_statements{
+	border-width:0; /*1px 1px 0 1px;*/
+}
+
+.offline_statements .offline_action{
+	color: #888;
+	font-size: 12px;
+    margin: 0px;
+	width:78px;
+	display:inline-block;
+	text-align:center;
+}
+
+.offline_statements .offline_action.off_approve{
+	margin-left:46px;
+}
+
+.offline_statements .stat_desc,
+.offline_statements .off_community,
+.offline_statements .gained_points,
+.offline_statements .offline_status,
+.offline_statements .off_actions{
+	display:inline-block;
+	margin:0px 5px;
+}
+
+.offline_statements .gained_points{
+	font-weight:bold;
+	width:80px;
+}
+.offline_statements .stat_desc{
+	width:220px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.offline_statements .off_community{
+	width:280px;
+	color:#888888;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	text-decoration:italic;
+	vertical-align:middle;
+}
+
+.offline_statements .off_community a{
+	text-decoration:none;
+	color:#888;
+}
+.offline_statements .offline_status{
+	font-weight:bold;
+	width:0;
+	opacity:0;
+}
+.offline_statements .off_actions{
+	width:auto;
+	cursor:pointer;
+}
+
+.plus_statements,
+.vote_statements{
+	border: none; /* 1px solid #d1d1d1; */
+	border-bottom: none;
+	border-left: none;
+	overflow-x:hidden;
+	overflow-y:scroll;
+	width:100%;
+	max-height:9.23em; /* looks good man */
+	display:none;
+}
+
+.plus_statements {
+	max-height: 299px;
+}
+
+.plus_statements .plus_community,
+.vote_statements .vote_community{
+	width:273px;
+	color:#888888;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	text-decoration:italic;
+	vertical-align:middle;
+}
+
+.kredv2 .stat_desc .plus_community {
+	display: inline-block;
+	width: 95px;
+}
+
+.statements{
+	height:230px;
+	border-width:0px;
+	overflow-y:scroll;
+}
+.offline_statements,
+.statements{
+	margin:0;
+	border-style:solid;
+	border-color:#FFF;
+	width:100%;
+	overflow-x:hidden;
+	clear:both;
+	margin-left: -5em;
+	padding-left: 5em;
+	border-right: 1px solid #aaa;
+}
+
+.offline_statements {
+	padding-right:1px;
+	border-right:1px solid #ddd;
+}
+
+.statements > p { /* Loading... */
+	margin-left:1em;
+}
+
+.statements > p.sorry { /* Sorry... */
+	text-align:center;
+	font-size:150%;
+}
+
+.statement.section_title {
+	font-weight: bold;
+	border-top: 1px solid #ddd;
+	background-color: #fff;
+	width: 909px!important;
+}
+
+.kredv2 .statement.section_title {
+	background-color: #aadae6; /* I picked this colour myself! I'm a designer!! */
+}
+
+.no-statements {
+	text-align: center;
+	margin-top: 1em;
+	font-size: 18px;
+	color: #999;
+}
+.statements .statement-direction-i,
+.statements .statement-direction-o{
+	display:none;
+}
+
+.show_infl .statement-direction-i,
+.show_outr .statement-direction-o{
+	display:block;
+}
+
+.statements.filtering .statement {
+	display:none;
+}
+
+.offline_statements .statement,
+.plus_statements .statement,
+.vote_statements .statement,
+.statements .statement{
+	position:relative;
+	border-top:1px solid #d1d1d1;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	font-size:14px;
+	color:#333;
+	width:100%;
+	vertical-align:top;
+	padding-left:10px;
+	line-height:2;
+}
+
+.statement.doublelove {
+	background-color: pink; /* It's that simple, folks. */
+}
+
+.statement.doublelove .plus_community a {
+	color: #900;
+	position: relative;
+}
+
+.plus_statements .statement:hover .kredible .shield,
+.vote_statements .statement:hover .kredible .shield,
+.statements .statement:hover .kredible .shield {
+	background-position:3px 0;
+	opacity: 1;
+}
+
+.offline_statements .statement:nth-child(even),
+.statements .statement:nth-child(even){
+	background:#f3f3f3;
+}
+
+.statements .statement.leader,
+.statements .statement.leader.significant,
+.plus_statements .statement.leader {
+	background-color: #f9e7ac;
+}
+
+.statements .statement.leader a,
+.statements .statement.leader .tweet,
+.statements .statement.leader .kredible,
+.plus_statements .statement.leader a,
+.plus_statements .statement.leader .tweet,
+.plus_statements .statement.leader .kredible {
+	color: #666;
+}
+
+.statements .statement.leader .out_points,
+.statements .statement.leader .out_points a,
+.plus_statements .statement.leader .out_points,
+.plus_statements .statement.leader .out_points a {
+	color:#000;
+}
+
+.plus_statements .statement .stat_desc,
+.vote_statements .statement .stat_desc,
+.offline_statements .statement .stat_desc {
+	color:#888;
+}
+
+.plus_statements .action,
+.vote_statements .action {
+	color:#333;
+}
+
+.plus_statements .statement .stat_date,
+.vote_statements .statement .stat_date,
+.offline_statements .statement .stat_date,
+.statements .statement .stat_date,
+.offline_statements .statement .stat_desc,
+.statements .statement .stat_desc,
+.offline_statements .statement .stat_points,
+.statements .statement .stat_points,
+.offline_statements .statement .gained_points,
+.statements .statement .gained_points{
+	display:inline-block;
+	vertical-align:middle; /* Hey apparently this fixes everything. Thanks, vertical-align! Take 5! */
+}
+
+.statement a {
+	text-decoration:none;
+}
+
+.statements .statement .running_inf,
+.plus_statements .statement .running_inf
+ {
+	font-size: 10px;
+	display: inline-block;
+	margin-left: 12px;
+	opacity: 1; /* Change me back to 0 some day */
+	min-width:42px;
+}
+
+.statements .statement:hover .running_inf {
+	opacity: 1;
+}
+
+.offline_statements .statement .stat_tweet,
+.plus_statements .statement .stat_tweet,
+.vote_statements .statement .stat_tweet,
+.statements .statement .stat_tweet {
+	width:55px;
+	height:20px;
+	background: transparent url(/components/com_pages/views/images/kred/statement-tweet.png) no-repeat;
+	background-position:top left;
+	display:inline-block;
+	margin:0px 2px;
+	cursor:pointer;
+	vertical-align:middle;
+}
+
+.statement .stat_tweet:hover,
+.statements .statement.fb .stat_tweet:hover {
+	background-position:bottom left;
+}
+
+.statements .statement.fb .stat_tweet {
+	background: transparent url(/components/com_pages/views/images/kred/fbshare-button.png) no-repeat;
+	width: 64px;
+	height: 20px;
+
+	-moz-transform: scale(0.85);
+	-moz-transform-origin: left top;
+	-ms-transform: scale(0.85);
+	-ms-transform-origin: left top;
+	-o-transform: scale(0.85);
+	-o-transform-origin: left top;
+	-webkit-transform: scale(0.85);
+	-webkit-transform-origin: left top;
+}
+
+.offline_statements .statement .stat_tweet {
+	display:inline-block; /*none!important;*/
+	float:right;
+	margin-right:28px;
+	margin-top:6px;
+}
+
+.offline_statements:hover .statement .stat_tweet,
+.plus_statements:hover .statement .stat_tweet,
+.vote_statements:hover .statement .stat_tweet {
+	display: inline-block!important;
+}
+
+.plus_statements .statement .stat_tweet,
+.vote_statements .statement .stat_tweet {
+	display: inline-block; /* none!important;*/
+	position: absolute;
+	right:13px;
+	top:5px;
+}
+
+.plus_statements:hover .statement .stat_tweet,
+.vote_statements:hover .statement .stat_tweet {
+	display: inline-block!important;
+}
+
+.flag_influence_levelup,
+.flag_outreach_levelup{
+	width:20px;
+	height:20px;
+	position:absolute;
+	right:-25px;
+	top:0;
+	display:inline-block;
+}
+.flag_influence_levelup{
+	background:transparent url(/components/com_pages/views/images/kred/fire.png) no-repeat 0 0;
+}
+.flag_outreach_levelup{
+	background:transparent url(/components/com_pages/views/images/kred/blue_star.png) no-repeat 0 0;
+}
+
+.plus_statements .statement .stat_date,
+.vote_statements .statement .stat_date,
+.offline_statements .statement .stat_date,
+.statements .statement .stat_date{
+	width:46px;
+	height:28px;
+	overflow:hidden;
+	white-space:nowrap;
+	color:#666;
+	/*border-right:1px solid #aaa;ed-h*/
+	padding:0;
+}
+
+.plus_statements .statement .stat_desc,
+.vote_statements .statement .stat_desc,
+.statements .statement .stat_desc{
+	width:527px;
+	padding: 0;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+
+.plus_statements .statement .subject,
+.vote_statements .statement .subject,
+.statements .statement .subject{
+	width:140px;
+}
+.plus_statements .statement .action,
+.vote_statements .statement .action,
+.statements .statement .action{
+	width:115px;
+	text-align:left;
+	text-transform:capitalize;
+}
+.statements .statement .extra{
+	font-size:11px;
+}
+.statements .statement .friendaction{
+	width:120px;
+	text-align:left;
+	display:inline-block;
+}
+
+.offline_statements .statement{
+	font-size: 14px;
+	line-height: 30px;
+	padding: 0 10px;
+	clear: both;
+}
+
+.plus_statements .statement .object,
+.vote_statements .statement .object,
+.statements .statement .object{
+	width:118px; /* This is a little bigger specifically to fit @peoplebrowsr and the shield */
+	color:#888;
+	cursor:pointer;
+}
+
+.plus_statements .kredible,
+.vote_statements .kredible {
+	color:#888;
+	cursor:pointer;
+}
+
+.plus_statements .kredible:hover,
+.vote_statements .kredible:hover {
+	color:#00b8e6;
+}
+
+.plus_statements .statement .subject,
+.plus_statements .statement .action,
+.plus_statements .statement .object,
+.vote_statements .statement .subject,
+.vote_statements .statement .action,
+.vote_statements .statement .object,
+.statements .statement .subject,
+.statements .statement .action,
+.statements .statement .object{
+	display:inline-block;
+	vertical-align:middle;
+
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.statements .statement .stat_desc a{
+	color: #888;
+/*color: #00C1F1;*/
+}
+
+.statements .kredible {
+	cursor: pointer;
+}
+
+.statements .statement .subject .kredible {
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	max-width:130px;
+	display:block;
+	overflow:hidden;
+}
+
+.statements .statement .stat_desc a:hover{
+	/*color: #00C1F1; */
+	color: #00b8e6;
+	text-decoration:none;
+}
+
+.statements .statement .stat_desc .tweet {
+	color: #aaa;
+	margin-left:2px;
+}
+
+.statements .statement .uid{
+	/*color:#00C1F1;*/
+	color: #00b8e6;
+}
+
+.plus_statements .gained_points,
+.vote_statements .gained_points,
+.statements .statement .stat_points,
+.statements .statement .gained_points{
+	font-weight:bold;
+	text-align:center;
+	height:24px;
+	margin-left:2px;
+	text-indent:0;
+	position:relative;
+	min-width:74px;
+}
+
+.fb .gained_points a {
+	min-width:86px;
+	display:inline-block;
+}
+
+.plus_statements .gained_points,
+.vote_statements .gained_points {
+	float:right;
+	margin-right:16.9em;
+	margin-left:-1.1em; /* Prevents wrapping, somehow, magically */
+	margin-top:2px; /* Man I hate the activity statement. */
+}
+
+/*.statements .statement.tw,
+.statements .statement.fb{
+	border-width:0 0 0 4px;
+	border-style:solid;
+}
+.statements .statement.tw{
+	border-color:#C3F0F2;
+}
+.statements .statement.fb{
+	border-color:#6D8BC9;
+}
+*/
+
+.statements .statement.significant{
+	background-color:#d1ffd1;
+}
+
+.statements .statement .gained_points .kred_blue {
+	color:#00b8e6;
+}
+
+.guide-infl ul li,
+.statements .statement .stat_points{
+	padding:0px;
+/*	width:86px;
+*/
+	width:72px;
+	display:inline-block;
+	color:#333;
+}
+
+.statements .statement .stat_points.out_points {
+	text-align: right;
+}
+
+.statements .statement .stat_points a {
+	color:#000;
+}
+
+.statements .statement .stat_points a .level {
+	color:#333;
+	font-size:60%;
+}
+
+.stat_points.inf_points {
+	left: 27px;
+}
+
+.recalculating .badge-tw-button,
+.recalculating .share-badge {
+	display:none!important;
+}
+
+.recalculating .gained_points .running_inf,
+.recalculating .stat_points {
+	overflow: hidden!important;
+	height: 0!important;
+}
+
+.small_under {
+	font-size: 10px;
+	color: #666;
+	margin: 0;
+}
+
+.statements .statement .stat_points.engagement{
+	color:#227313;
+}
+
+/*.statements .kred_green {
+  color:#000;
+  }
+  */
+#influnecy-wrapper{
+	width:1244px;
+	margin:0px auto 0;
+	position:relative;
+	z-index: 0;
+}
+
+#landing-header {
+	position:absolute;
+	top:0;
+	right:0;
+	width:100%;
+	box-shadow: 0 1px 3px 3px #ccc;
+}
+
+#landing-header a.logo {
+	position:absolute;
+	top:20px;
+	left:20px;
+}
+
+#landing-header .search-form {
+	font-family: helvetica neue, sans-serif;
+	font-size:16px;
+	width:100%;
+	color:#fff;
+	background:#545454 url(/components/com_pages/views/images/kred/kred-landing-header-bg-tile.png) repeat-x;
+	text-align:center;
+	margin-top:-29px;
+	padding-top:0;
+	padding-bottom:2em;
+	position:relative;
+	height:110px;
+}
+
+#landing-header .shine {
+	position:absolute;
+	top:0;
+	opacity:0.3;
+	z-index:0;
+	width:100%;
+	height:191px;
+	background-color:#bababa;
+	background-image: -moz-radial-gradient(50% 50%, circle cover, #bababa, rgba(0, 0, 0, 0.8) 100%);
+	background-image: -webkit-radial-gradient(50% 50%, circle cover, #bababa, rgba(0, 0, 0, 0.8) 100%);
+	background-image: -o-radial-gradient(50% 50%, circle cover, #bababa, rgba(0, 0, 0, 0.8) 100%);
+	background-image: -ms-radial-gradient(50% 50%, circle cover, #bababa, rgba(0, 0, 0, 0.8) 100%);
+	background-image: radial-gradient(50% 50%, circle cover, #bababa, rgba(0, 0, 0, 0.8) 100%)
+}
+
+#landing-header .search-form form {
+	position:relative;
+	z-index:2;
+}
+
+#landing-header .form-div{
+	position:relative;
+	width:900px;
+	margin: auto;
+}
+
+#landing-header .input-div,
+#landing-header .button-div
+{
+	position: relative;
+	height: 55px;
+	float:left;
+}
+
+#landing-header .button-div{
+	margin-left: 5px;
+}
+
+#landing-header .search-form h1 {
+	font-family: helvetica neue, sans-serif;
+	font-weight:normal;
+	font-size:32px;
+	margin-top:30px;
+	padding-top:5px;
+	margin-bottom:-5px;
+}
+
+#landing-header .search-form a {
+	color:#00ccff;
+}
+
+#landing-header .search-form .atname {
+	border-radius: 7px 7px 7px 7px;
+    font-size: 24px;
+    height: 52px;
+    padding: 0 1em;
+}
+
+#landing-header .search-form input.atname {
+	font-style:italic;
+	width:26em;
+}
+
+/*IE 8 */
+@media \0screen {
+	#landing-header .search-form input.atname {
+		font-style:italic;
+		width:500px;
+	    font-size: 24px;
+	    height: 52px;
+	    padding: 0;
+	}
+}
+
+#landing-header .search-form input.atname.focus {
+	font-style:normal;
+}
+
+/*
+#landing-header .search-form input.submit {
+	cursor:pointer;
+	color:#fff;
+	background-color: #6fba3c;
+	border:none;
+	letter-spacing:-1px;
+	text-shadow: #55972b -1px -1px 0;
+	background-image: -webkit-gradient(linear,
+								left top,
+								left bottom,
+								from(#7ac943),
+								to(#509128));
+	background-image: -moz-linear-gradient( top,
+									#7ac943,
+									#509128);
+}
+*/
+
+#landing-header .search-form input.submit{
+	cursor:pointer;
+	background:url(../images/influencly/see_your_kred_normal.png) no-repeat;
+    border: none;
+    height: 55px;
+    width: 202px;
+}
+
+#landing-header .search-form input.submit:hover{
+	cursor:pointer;
+	background:url(../images/influencly/see_your_kred_active.png) no-repeat;
+}
+
+#landing-header .search-form input.submit:active{
+	cursor:pointer;
+	background:url(../images/influencly/see_your_kred_clicked.png) no-repeat;
+}
+
+.celeb-picker-wrapper {
+	position:relative;
+	width:100%;
+	height:80px;
+	padding:2px 0 4px;
+	background-color:#000;
+	text-align:center;
+}
+
+.celeb-picker {
+	width:878px;
+	margin:3px auto;
+	position:relative;
+}
+
+.celeb-picker p{
+	float:left;
+	color:#fff;
+	font-family: helvetica neue, sans-serif;
+	font-size:18px;
+	width:8.2em;
+	margin-left:-1.5em;
+	margin-right:1.5em;
+}
+
+.celeb-picker ul.celebs {
+	margin:1px 0;
+	padding: 0;
+	display:inline-block;
+	width: 685px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.celeb-picker ul.celebs li {
+	display:inline;
+}
+
+.celeb-picker ul.celebs li img {
+	width:73px;
+	height:73px;
+}
+
+.celeb-picker .arrow {
+	position:absolute;
+	top:6px;
+	color:#fff;
+	font-size:250%;
+	line-height:2;
+	cursor:pointer;
+	font-family: helvetica neue, sans-serif;
+	z-index:1; /* Makes the damn arrows clickable */
+}
+
+.celeb-picker .arrow.left{
+	left:147px;
+}
+
+.celeb-picker .arrow.right{
+	right:0px;
+}
+
+.landing {
+	margin-top:175px;
+	position:relative;
+}
+
+.landing h1.glimpse, .landing #kred-overview, .landing .partners {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+
+
+.big_shield .spinner {
+	margin: -50px auto 0;
+	display:block;
+	position: relative;
+	z-index: 1;
+}
+
+.big_shield .kr {
+	display: block;
+	margin: 25px 0 0 45px;
+	height: 100px;
+}
+
+.big_shield .influence,
+.big_shield .outreach {
+	display:none;
+}
+
+.influencer-wrapper {
+	position:relative;
+	float:left;
+}
+
+.influencer-wrapper .top-communities {
+	position:absolute;
+	top:220px;
+	left:350px;
+}
+
+/*
+.landing .influence-outreach {
+	width:auto;
+	padding: 0 23px;
+}
+
+.landing .big_shield_flip_stage {
+	margin-bottom:30px;
+
+}
+*/
+
+.landing .influence-profile-wrapper {
+	float:left;
+	margin-right:50px;
+}
+
+.landing .influencer-profile .influencer-profile{
+	margin-right:0;
+}
+
+.influencer-summary {
+	float:left;
+	width:570px;
+
+	margin-top:60px;
+	padding-bottom:10px;
+
+/*
+	-moz-box-shadow: 0px 30px 30px -24px #eee;
+	-webkit-box-shadow:  0px 30px 30px -24px #eee;
+	box-shadow: 0px 30px 30px -24px #eee;
+*/
+}
+
+.influencer-summary .img_container {
+	float:left;
+	margin-right:20px;
+	width:128px;
+	min-height:100px;
+	height:128px;
+	overflow:hidden;
+}
+.influencer-summary .img_container img.avatar{
+	width:100%;
+}
+
+.influencer-summary .bio {
+	float:left;
+}
+
+.influencer-summary h2.real_name {
+	margin-top:0;
+}
+
+.influencer-profile h2 {
+	margin:0;
+	font-size:24px;
+}
+
+.influencer-profile .influencer-communities {
+	padding:10px;
+	color:#666;
+	background-color:#f7f7f7;
+	font-size:16px;
+	width:910px;
+	float:left;
+	clear:both;
+	margin:30px 0;
+	border:1px solid #ebebeb;
+	border-radius:5px;
+	-moz-border-radius: 5px;
+/*	-webkit-border-radius: 5px;*/
+
+	display:none;
+}
+
+.influence-outreach .halp{
+	display:none!important;
+	cursor: help;
+	color:#666;
+	position:absolute;
+	right:7px;
+	top:17px;
+	padding:0;
+	z-index:1; /* auto; */ /* 10; */ /* Memmmories... */
+/*
+	background-color:initial;
+	border:none;
+	color:#333;
+	font-size:12px;
+	float:left;
+	margin-top:-3em;
+	margin-left:-2em;
+*/
+}
+
+.influence-outreach .opener{
+	display:none;
+}
+
+.influencer-profile .influencer-communities .halp:hover{
+	background-color:initial;
+}
+
+.influencer-profile .influencer-communities .actions {
+	font-size:12px;
+	margin-bottom:1em;
+}
+
+.influencer-profile .influencer-communities .actions p {
+	display:inline;
+	margin:0 18em 0em 0.3em;
+	color:#333;
+}
+
+.specificcommunity {
+	clear:both;
+	text-transform:capitalize;
+	text-align:center;
+}
+
+.badgecommselection .specificcommunity {
+	color: #666;
+	font-weight:bold;
+	font-size:23px;
+	padding-right: 5px;
+}
+
+.influencer-profile .influencer-communities > span {
+	padding:10px;
+	background-color:#efeded;
+	float:left;
+	border:1px solid #ebebeb;
+	border-radius:5px;
+	-moz-border-radius: 5px;
+/*	-webkit-border-radius: 5px;*/
+	margin-right:4px;
+	text-transform:capitalize;
+	cursor:pointer;
+}
+
+.influencer-profile .influencer-communities > span.active,
+.influencer-profile .influencer-communities > span:hover {
+	color:#000;
+	background-color:#fff;
+}
+
+.influencer-profile .influencer-communities > span.dropper a {
+	color:#000;
+}
+
+.influencer-profile .influencer-communities > span.dropper {
+	position: relative;
+	display:none /* Revealed in influence.js as required */
+}
+
+.influencer-profile .influencer-communities span ul {
+	display:none;
+	background-color:#fff;
+	position:absolute;
+	list-style:none;
+	top:21px;
+	left:0;
+	z-index:100;
+	border:1px solid #ebebeb;
+	border-top:none;
+	white-space: nowrap;
+	padding: 10px 20px;
+}
+
+.influencer-profile .influencer-communities span ul li.active {
+	font-weight:bold;
+}
+
+.influencer-profile .influencer-communities span ul li.descriptive {
+	font-size:100%;
+	cursor:default;
+	white-space:nowrap;
+	margin-bottom: 6px;
+}
+
+.influencer-profile .influencer-communities .networks {
+	float:right;
+}
+
+.influencer-profile .shield_outer {
+	float:left;
+	clear:both;
+	margin-top:1em;
+}
+
+.badgecommselection {
+	text-align:center;
+	margin:1em 0;
+	padding-bottom:8px;
+	position:relative;
+	border-bottom:1px solid #999;
+	display:none;
+}
+
+.badgecommselection a {
+	color:#00B8E6;
+	font-size:23px;
+	position:relative;
+}
+
+/* This leaves .direction-down initially visible. */
+.badgecommselection a.direction-up {
+	display:none;
+}
+
+.badgecommselection a:hover {
+	text-decoration:none;
+}
+
+.influence-outreach .badgecommselection ul {
+	top:2em;
+}
+
+.badgecommselection ul {
+	display:none;
+	position:absolute;
+	z-index: 10;
+	top:2em;
+	list-style: none;
+	text-transform: capitalize;
+	background-color: #e5f8fe;
+	padding: 0 1em;
+	text-align: left;
+	border:1px solid #999;
+	border-top:none;
+	height: 350px;
+	overflow: auto;
+	width: 170px;
+}
+
+/* IE8 HACK*/
+@media \0screen {
+	.badgecommselection ul { left: 10px !important; }
+	.usr-det-kr{ z-index : 10 !important; }
+}
+
+.badgecommselection ul li {
+	color:#666;
+	font-size:14pt;
+	cursor:pointer;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.badgecommselection ul li:hover {
+	color:#00B8E6;
+}
+
+#generaldarkness {
+	position: absolute;
+	z-index: 1000;
+	width: 100%;
+	min-height: 1020px;
+	height:100%;
+	background-color: #000;
+	opacity: 0.6;
+	top: 0;
+	left: 0;
+	display:none;
+}
+
+.viralcomms {
+	background-color: #f4f2f2;
+	max-width: 730px;
+	width: auto;
+	border: 3px solid #000;
+	border-radius: 10px;
+	padding-bottom:2em;
+	position: fixed;
+	z-index: 1001;
+	top: 15%;
+	left: 24%;
+	display: none;
+}
+
+.viralcomms a.close {
+	float:right;
+	margin-right:2px;
+	margin-top:1px;
+}
+
+.viralcomms h2 {
+	color:#333;
+}
+.viralcomms h2.title {
+	line-height:2;
+	margin: 2em 1.5em 0.5em;
+	font-size:30px;
+	font-weight:normal;
+	border-bottom: 1px solid #aaa;
+}
+
+.viralcomms h2.title .kredible .shield {
+	display:none;
+}
+
+.viralcomms .column {
+/*
+	width: 44%;
+*/
+	width: 580px;
+	float: left;
+	padding-left:45px;
+	margin-right:15px;
+	height:218px;
+	overflow-y: auto;
+	padding-top: 10px;
+}
+
+.viralcomms .places {
+	display:none; /* Hidden until available */
+}
+
+.viralcomms h2 .note{
+	font-weight:normal;
+	font-size: 0.65em;
+	color:#999;
+}
+
+.viralcomms table {
+	font-size: 14px;
+	margin-right:1em;
+	color: #333;
+}
+
+.viralcomms table td:first-child {
+	width: 20em;
+	white-space: nowrap; /* Muahaha */
+	overflow:hidden;
+	text-overflow: ellipsis;
+}
+
+.viralcomms table tr.extra {
+	/* display: none; */
+}
+
+.viralcomms table td.community:hover {
+	cursor: pointer;
+}
+
+.viralcomms table td.scores {
+	color:#999;
+	padding-right:1em;
+}
+
+.viralcomms .tweet, .viralcomms .share, .viralcomms .pluskr, .landing .share, .overview .share {
+	opacity: 0.8;
+	cursor: pointer;
+	margin:3px;
+}
+
+.landing .share {
+	display: inline-block;
+}
+
+.viralcomms .tweet:hover, .viralcomms .share:hover, .landing .share:hover, .overview .share:hover {
+	opacity: 1;
+}
+
+.viralcomms .pluskr:hover {
+	background-position: bottom left;
+}
+
+.viralcomms .pluskr.submitted, .viralcomms .pluskr.submitted:hover {
+	cursor: default;
+	opacity: 0.6;
+}
+
+.viralcomms .tweet,
+.pluskr.landing table .tweet,
+.pluskr.overview table .tweet {
+	width:55px;
+	height:22px;
+	background: transparent url(/components/com_pages/views/images/kred/hot_tweet.png) no-repeat;
+}
+.viralcomms .facebook,
+.pluskr.landing table .facebook,
+.pluskr.overview table .facebook {
+	background: transparent url(/components/com_pages/views/images/kred/hot_fbshare.png) no-repeat;
+	width:54px;
+	height:22px;
+}
+.viralcomms .pluskr {
+	background: transparent url(/components/com_pages/views/images/kred/plus_kred.png) top left no-repeat;
+	width:52px;
+	height:20px;
+	opacity:1;
+	margin-top: 1px;
+}
+
+.viralcomms .showmore {
+	position: absolute;
+	bottom: 1em;
+	right: 1em;
+}
+
+/* Temporary measures */
+.viralcomms .communities > h2 {
+	display: none;
+}
+
+.viralcomms tr:hover td.community {
+	color: #02beef;
+}
+
+.viralcomms tr .arrow {
+	margin-right: 2em;
+}
+
+.viralcomms tr:hover .arrow {
+	color: #000;
+}
+
+/* End temporary measures */
+
+.kred-services .service {
+	width:30px;
+	height:30px;
+	background:transparent url(/components/com_pages/views/images/kred/kred-service-selector-spritemap.png) no-repeat bottom left;
+	float:right;
+	margin-right:7px;
+	opacity:0.7;
+}
+
+.kred-services .service:hover {
+	/*background-position: top;*/
+	opacity:1;
+}
+
+.kred-services .service.twitter {background-position:0 bottom}
+.kred-services .service.facebook {background-position:-30px bottom; cursor:pointer;}
+.kred-services .service.linkedin {background-position:-60px bottom}
+.kred-services .service.checkmark {background-position:-90px bottom}
+.kred-services .service.youtube {background-position:-120px bottom}
+.kred-services .service.flickr {background-position:-150px bottom}
+.kred-services .service.tsomething {background-position:-180px bottom}
+.kred-services .service.blogger {background-position:-210px bottom}
+.kred-services .service.squiggle {background-position:-240px bottom}
+.kred-services .service.dots {background-position:-270px bottom}
+.kred-services .service.other {background-position:-300px bottom}
+
+.kred-services .service.tsomething.selected{
+	background:url(../images/kred/service_twitter.png) !important;
+}
+.kred-services {
+	color: #666666;
+	font-size: 14px;
+	line-height: 30px;
+	white-space: nowrap;
+}
+
+.influencer-summary p.biography {
+	color:#666;
+	margin:4px 0;
+	/*white-space:nowrap;*/
+	text-overflow:ellipsis;
+	overflow:hidden;
+	width:230px;
+}
+
+.influencer-summary span {
+}
+
+.influencer-summary a.atname {
+	font-size:14px;
+	color:#00c0f2;
+}
+
+.influencer-summary div.level-member {
+	width:173px;
+	height:36px;
+	padding-left:43px;
+	padding-top:4px;
+	background:transparent url(/components/com_pages/views/images/kred/kred-star-bg.png) no-repeat 0 0;
+	margin-top:8px;
+}
+
+.influencer-summary div.level-member .level {
+	font-size:14px;
+	font-weight:bold;
+	color:#333;
+}
+
+.influencer-summary div.level-member .note {
+	font-size:10px;
+	color:#666;
+}
+
+.landing .top-communities {
+	float:left;
+	margin-top:20px;
+	font-size:13px;
+	color:#333;
+	display:none;
+}
+
+.landing .top-communities .comm_name {
+	font-size:34px;
+	font-weight:bold;
+	color:#000;
+	text-transform: capitalize;
+	display:block;
+}
+
+.pluskr {
+	font-size:14pt;
+	color: #666;
+}
+
+.pluskr.landing {
+	position:relative;
+	top:9px;
+	padding: 0.3em 0.5em;
+	clear:both;
+/*	background-color: #f7f7f7;
+*/
+	background-color:#fff;
+	border: 1px solid #ebebeb;
+	border-radius: 15px;
+	margin-top: 148px;
+	margin-left: -3px;
+	width: 580px; /* Flush with the activity statement */
+}
+
+.pluskr.landing table {
+	width: 100%;
+}
+
+.pluskr.landing table td.comm:hover {
+	cursor:pointer;
+	color: #00b8e6;
+}
+
+.pluskr.overview {
+	position:relative;
+	top:9px;
+	padding: 0.3em 0.5em;
+	margin-left: -70px;
+	clear:both;
+/*	background-color: #f7f7f7;
+*/
+	background-color:#fff;
+	border: 1px solid #ebebeb;
+	border-radius: 15px;
+
+	padding-left:60px; /* These more neatly align the +Kred table */
+	padding-right:30px;
+}
+
+.pluskr.overview table {
+	width: 100%;
+}
+
+.pluskr.overview table td.comm:hover {
+	cursor:pointer;
+	color: #00b8e6;
+}
+
+.addpluskr {
+	width: 52px;
+	height: 20px;
+	background: transparent url(/components/com_pages/views/images/kred/plus_kred.png) top left no-repeat;
+	cursor: pointer;
+}
+
+.addpluskr:hover {
+	background-position: bottom left;
+}
+
+.addpluskr.submitted:hover {
+	background-position: top left;
+	cursor: default;
+}
+
+.big_shield .addpluskr {
+	background: transparent url(/components/com_pages/views/images/kred/badge-pluskred.png) top left no-repeat;
+	margin: 2em auto 0;
+	height: 37px;
+	width: 102px;
+}
+
+.big_shield .addpluskr:hover {
+	background-position: bottom left;
+}
+
+.influencers .addpluskr,
+.outreachers .addpluskr {
+	display: block;
+	float: right;
+	margin-right:1em;
+}
+
+
+.landing .pluskr {
+
+}
+
+
+.guide-infl{
+	float:right;
+	margin:35px 8px 0 0;
+}
+
+.landing .guide-infl{
+	margin-right:0px;
+}
+
+.guide-infl ul {
+	padding:0;
+	margin:0;
+}
+
+.guide-infl ul li{
+	display:inline-block;
+	text-align:center;
+	padding:0;
+	background:url(../images/influencly/list-bg.png) repeat-x;
+	font-weight:bold;
+	min-height:32px;
+	height:36px;
+	line-height: 1.4;
+}
+
+.guide-infl ul li.points{
+	margin-right:-1px;
+	padding-bottom:0;
+	width: 100px;
+}
+
+.guide-infl ul li.points.left{
+	color:#333;
+}
+
+.guide-infl ul li.inf{
+	width:93px;
+}
+
+.guide-infl ul li.left{
+	border: 1px solid #AAA;
+	float: left;
+	border-bottom: 0;
+	width: 114px;
+	color:#75C240;
+}
+
+.guide-infl ul li.right{
+	border-top: 1px solid #AAA;
+	border-right: 1px solid #AAA;
+	width: 125px;
+	color:#00B8E6;
+}
+
+.guide-infl ul li input {
+	display:block;
+	float:left;
+	margin-top:11px;
+	margin-left:9px;
+}
+
+.monthly-activity-statements{
+	/*width:100%;*/
+	margin:18px -26px -27px 165px;
+	float:left;
+}
+
+.monthly-activity-statements .show-community{
+	float:right;
+	font-size:14px;
+	font-weight:bold;
+	margin-top:11px;
+	color:#ffffff;
+	padding:9px 10px;
+	margin-right:17px;
+	-moz-border-radius: 5px;
+/*	-webkit-border-radius: 5px;*/
+	border-radius: 5px;
+}
+
+
+.monthly-activity-statements .show-activity{
+	float:right;
+	font-size:14px;
+	font-weight:bold;
+	margin-top:11px;
+	color:#ffffff;
+	padding:9px 10px;
+	margin-right:17px;
+	-moz-border-radius: 5px;
+/*	-webkit-border-radius: 5px;*/
+	border-radius: 5px;
+}
+
+.monthly-activity-statements .show-activity select{
+	padding: 9px;
+	border: 1px solid #aaa;
+}
+
+#top_banner {
+	height: 288px !important;
+	/*width: 1244px; why would we ever want this?*/
+	/*position:relative !important;*/
+}
+
+#top_banner_inner {
+	margin-top:0!important; /* This should prevent the usual banner animation we enjoy elsewhere. */
+}
+
+#banner_content {
+	width:940px; /* And this makes the banner contents stop moving around, at least for me. */
+}
+#banner_content .banner_about{
+	position: relative;
+	margin: 0 auto;
+	display: block;
+	width: 940px;
+}
+#banner_content .banner_about .kr-logo{
+	margin-left:0px;
+}
+
+.influencly-overview #top_banner,
+.influencly-more #top_banner,
+.influencly-ranking #top_banner,
+.influencly-analyze #top_banner,
+.influencly-activity #top_banner{
+	height:45px !important;
+}
+
+#top_banner_placeholder{
+	height:0 !important;
+}
+
+#kred-notifications {
+	display: none;
+	height:16em;
+	width: 100%;
+	top: 0;
+	position:fixed;
+	z-index:1;
+	color:#fff;
+
+	background-color: #73cf51;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#73cf51), to(#448b2a));
+	background-image: -webkit-linear-gradient(top, #73cf51, #448b2a);
+	background-image: -moz-linear-gradient(top, #73cf51, #448b2a);
+	background-image: -ms-linear-gradient(top, #73cf51, #448b2a);
+	background-image: -o-linear-gradient(top, #73cf51, #448b2a);
+	background-image: linear-gradient(to bottom, #73cf51, #448b2a);
+}
+
+#kred-notifications #pluskred-notification-body {
+	width: 940px;
+	margin: 0.5em auto;
+	font-size:56px;
+	font-weight:bold;
+	text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.5);
+	white-space: nowrap;
+	position:relative;
+}
+
+#kred-notifications #facebook-notification-body {
+	width: 940px;
+	margin: 0.5em auto;
+	font-size:18px;
+	font-weight:bold;
+	text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.5);
+	white-space: nowrap;
+	position:relative;
+	display:none;
+}
+
+#kred-notifications #facebook-notification-body p {
+	width:44em;
+	white-space: normal;
+}
+
+#kred-notifications .butwait {
+	position: absolute;
+	left: -4.5em;
+	font-size:50%;
+	bottom: 1.2em;
+	text-align: center;
+}
+
+#kred-notifications .whom{
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	max-width: 8em;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#kred-notifications .close{
+	width: 77px;
+	height: 51px;
+	position:absolute;
+	right:18px;
+	top:-28px;
+	background: transparent url(/components/com_pages/views/images/kred/yaclose.png) no-repeat top left;
+}
+
+#kred-notifications .close:hover{
+	background-position: bottom left;
+}
+
+#kred-notifications img.avatar{
+	width: 66px;
+	vertical-align:middle;
+	border:1px solid #fff;
+}
+
+#kred-notifications .viral {
+	position:absolute;
+	top:20px;
+	right:-27px;
+}
+
+#kred-notifications .viral .whoelse {
+	font-size: 16px;
+	color:#fff;
+	position:absolute;
+	left:-2em;
+}
+
+#kred-notifications .viral .yatwitter {
+	display: block;
+	width: 169px;
+	height: 50px;
+	background: transparent url(/components/com_pages/views/images/kred/yatweet.png) no-repeat top left;
+	margin: 9px 0;
+
+	opacity: 0.8;
+}
+
+#kred-notifications .viral .yafacebook {
+	display: block;
+	width: 170px;
+	height: 49px;
+	background: transparent url(/components/com_pages/views/images/kred/yafbshare.png) no-repeat top left;
+	margin: 9px 0;
+
+	opacity: 0.8;
+}
+
+#kred-notifications .viral .yafacebook:hover,
+#kred-notifications .viral .yatwitter:hover {
+	opacity: 1;
+}
+
+
+
+#influence-top #top_banner {
+	background-color:#373737;
+	background-image: none;
+	height:  45px !important;
+}
+#influence-top #top_banner_outer{
+	height: 45px;
+	background: none;
+}
+
+#influence-top #top_banner_inner{
+	height: 45px;
+	background: none;
+	line-height:45px !important;
+}
+
+#influence-top .banner_about span,
+#influence-top .banner_about a,
+#influence-top .banner_about a:hover {
+	color:#999999;
+	margin-right:8px;
+}
+
+#influence-top #pb_fake {
+	float: left;
+    margin: 7px 0 0 60px; /* 170px; */
+    position: relative;
+}
+
+#influence-top #banner_content{
+	width:100% !important;
+}
+
+#influence-top #bannerCommands {
+	top:54px;
+}
+
+#influence-top #userCell {
+	margin-top:-50px;
+}
+
+#inside-container{
+	width:940px;
+	position:relative;
+	margin:0 auto;
+	padding:15px 0;
+}
+
+.top-influencers{
+	color:#000000;
+	font-size:30px;
+	font-weight:normal;
+	display:block;
+	margin-bottom:20px;
+	padding-left:10px;
+}
+
+.influencer-profile{
+	margin-left:9px;
+}
+
+.influence-outreach{
+	position:relative;
+	width:285px;
+/*	background:#e5f8fe;
+*/
+	background: #fff;
+	-moz-border-radius:10px;
+/*	-webkit-border-radius:10px;*/
+	border-radius:10px;
+	display:inline-block;
+/*	padding-bottom: 35px;
+*/
+	padding-bottom: 60px;
+}
+
+.tabcontent{
+	margin-top: -8px;
+}
+
+/*remove this  when embed kred & +kred buttons were implemented */
+.other-buttons{
+	display:none;
+}
+
+.influencer-profile select.compare,
+.influence-outreach select.compare {
+	width:8em;
+	height: 22px; /*3em;   */
+	display:none;
+	color:#333;
+	font-weight:bold;
+	padding:0; /*1em*/
+	border:none;
+	position:absolute;
+	bottom:5px;
+	left:5px;
+	border-radius:5px;
+display:none!important;
+}
+
+.influencer-profile:hover select.compare, .influence-outreach:hover select.compare, select.compare:focus,
+.influencer-profile:hover .badge-tw-button, .influence-outreach:hover .badge-tw-button,
+.influencer-profile:hover .share-badge, .influence-outreach:hover .share-badge {
+	display:block!important;
+}
+
+.big_shield{
+	cursor:pointer;
+	background:url("http://pbcdn.peoplebrowsr.com/components/com_pages/views/images/kred/kred-badge.png") no-repeat scroll 0 0 transparent;
+	background-position: bottom;
+	height:183px;
+	width:190px;
+	padding:5px;
+	margin:18px auto 0;
+	color:#fff;
+}
+
+*:hover .big_shield {
+	background-position: top;
+}
+
+.influence-of,
+.outreach-of {
+	color: #ccc !important;
+}
+
+*:hover .influence-of {
+	color: #50903e !important;
+}
+
+*:hover .outreach-of {
+	color: #108fab !important;
+}
+
+.influence-count {
+	text-shadow: none !important;
+}
+
+*:hover .influence-count {
+	text-shadow: 1px 1px 0 #55972b !important;
+}
+
+.leader .big_shield{
+	background:url("../images/kred/kred-badge-leader.png") no-repeat scroll 7px 11px transparent;
+}
+
+.big_shield.offline-profile,
+.big_shield.network-profile,
+.big_shield.stars-profile {
+	text-align:center;
+}
+
+.big_shield ul.offline {
+	list-style:none;
+	padding-left:0;
+	margin:0 0.5em initial;
+}
+
+.big_shield ul.offline p {
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+	width:11.6em;
+	font-size:14px;
+	margin-top: 3px;
+	margin-left:1em;
+	text-align: left;
+}
+
+.big_shield ul.offline p.addoffline {
+	white-space:normal;
+}
+
+.big_shield ul.offline img {
+	 margin-right: 5px;
+	vertical-align:bottom;
+}
+
+/* .big_shield ul.offline span {
+	font-size:13px;
+} there is no such span tag, until i add one now.*/
+
+.big_shield ul.offline a.certificate,
+.big_shield ul.offline p.seemore {
+	color:#fff;
+	font-size:10px;
+	text-align:center;
+	margin: 0 auto;
+}
+
+.big_shield.network-profile {
+
+}
+
+.big_shield.network-profile .network {
+	text-align:left;
+	margin-left:2em;
+}
+
+
+.big_shield_flip_stage {
+	height:193px;
+	width:200px;
+	margin:0 auto 0;
+/*	padding-bottom:33px;*/
+	z-index:1;
+	position: relative;
+}
+
+.big_shield h2 {
+	font-size:26px;
+	font-weight:normal;
+	line-height:1;
+	white-space:nowrap;
+}
+
+.big_shield h3 {
+	margin:1.4em auto 0;
+}
+
+.big_shield h4 {
+	font-size:22px;
+	font-weight:normal;
+	margin: 1em auto 0;
+	position:relative;
+}
+
+.big_shield h4 .badge-communities-kred-popup {
+	text-align:left;
+	line-height:1.2;
+	display:none;
+	color:#000;
+}
+
+.big_shield h4.debugging .badge-communities-kred-popup,
+.big_shield h4:hover .badge-communities-kred-popup {
+	display:block;
+	z-index:100;
+	top:-39px;
+	right:-189px;
+	background-position: 0px 0px;
+}
+
+.big_shield.stars-profile span.descripty {
+	display: block;
+	opacity:0;
+}
+
+.stars span.selected,
+.stars span.lit {
+	color:gold;
+}
+
+.big_shield span.stars span {
+	font-size:24px;
+	transition: all 2s ease-in-out;
+}
+
+
+
+.big_shield span.stars span:hover,
+.big_shield span.stars span.hover {
+	transform: rotate(540deg)
+}
+
+.big_shield span.stars .dim{
+	opacity: 0.5;
+}
+
+.big_shield span.stars .dim:hover{
+	opacity: 1;
+}
+
+.big_shield p {
+	margin: 0 auto;
+	font-size:12px;
+}
+
+.vote .copy.prompt {
+	color: gold;
+}
+
+.big_shield .vote {
+	background-color: #4ecff0;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#4ecff0), to(#1cabd5)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #4ecff0, #1cabd5); /* Chrome 10+, Saf5.1+, iOS 5+ */
+	background-image: -moz-linear-gradient(top, #4ecff0, #1cabd5); /* FF3.6 */
+	background-image: -ms-linear-gradient(top, #4ecff0, #1cabd5); /* IE10 */
+	background-image: -o-linear-gradient(top, #4ecff0, #1cabd5); /* Opera 11.10+ */
+	background-image: linear-gradient(top, #4ecff0, #1cabd5);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#4ecff0', EndColorStr='#1cabd5'); /* IE6-IE9 */
+	border:1px solid #1482a6;
+	border-radius:5px;
+	-moz-border-radius: 5px;
+/*	-webkit-border-radius: 5px;*/
+	font-weight:bold;
+	margin:3px auto;
+	width:50px;
+	padding:5px;
+	position:relative;
+}
+
+.big_shield .vote .ear{
+	position:absolute;
+	padding: 0 2px;
+	top:3px;
+	right:-27px;
+	color:#fff;
+}
+
+.big_shield .vote .ear .votes{
+	background-color:#fff;
+	color:#666;
+	padding:0 4px;
+	margin-left:-7px;
+}
+
+.groupsummary .big_shield {
+	background:url("../images/kred/kred-shield-double02.png") no-repeat scroll 0 right transparent;
+	width:220px;
+	cursor: default;
+}
+
+.groupsummary .big_shield.side2 {
+	background-image:none;
+}
+
+.groupsummary .switcher,
+.groupsummary select.compare {
+	display:none!important;
+}
+
+.groupsummary .big_shield .spinner {
+	/*margin:45px 74px;*/
+	margin:-48px 74px 0;
+}
+
+.km-flags{
+	padding: 0;
+	display:none;
+	color:#333;
+}
+.km-flags.flagged{
+	color: #999;
+	display:inline-block;
+}
+.km-flags div{
+	background:transparent url(/components/com_pages/views/images/kred/red-flag.png) no-repeat 0px -15px;
+	padding:0px 10px 0px 17px;
+}
+
+.influencly-overview .influence, .big_shield .influence {
+	float: left;
+	margin: 14px 15px 5px;
+	text-align:center;
+}
+
+.leader .outreach {
+	margin-top: 18;
+}
+
+.influence .title-pr {
+
+}
+
+/* 4th badge side goodness */
+.global_score,
+.top_community_score {
+	display:none;
+}
+
+.top_community_score h4,
+.global_score h4 {
+	text-transform:capitalize;
+}
+.top_community_score .influence,
+.global_score .influence {
+	margin:0px 35px;
+}
+.top_community_score .influence .influence-score,
+.global_score .influence .influence-score {
+	height:35px;
+	font-size:30px;
+}
+.top_community_score .outreach,
+.global_score .outreach {
+	margin:0 85px;
+}
+.top_community_score .outreach .outreach-score {
+
+}
+
+.top_community_score .influence-score,
+.global_score .influence-score,
+.influence-count{
+	display:block;
+	color:#ffffff;
+	font-size:55px;
+	text-align:center;
+	height:51px;
+	text-shadow:1px 1px 0 #55972B;
+}
+
+.influence-count img {
+	margin-top:12px;
+}
+
+.top_community_score .outreach-score,
+.global_score .outreach-score,
+.outreach-count{
+	color:#ffffff;
+	font-size:32px;
+	text-align:center;
+}
+
+.outreach{
+	float: left;
+	margin: -5px 92px;
+	text-align:center;
+	width:63px;
+}
+
+.leader .outreach {
+	margin: -5px 87px;
+}
+
+.title-pr{
+	font-size:12px;
+	font-weight:bold;
+	color:#ffffff;
+}
+
+.influencer-details{
+	display:inline-block;
+	margin-top:0.7em;
+	margin-left:75px;
+	width:560px;
+	vertical-align:top;
+	float:right;
+	position:relative;
+	z-index:0;
+}
+
+.influencer-details p {
+	font-size:13px;
+	padding: 0 20px;
+	margin-top:0;
+}
+
+.influencer-details > p {
+	width:41em;
+	float:left;
+}
+
+.influencer-details p span {
+	font-size:20px;
+	font-weight:bold;
+	display:block;
+	margin-bottom:12px;
+}
+
+.influencer-details p.personal {
+	display: none;
+}
+
+
+.influencer-details.analyze{
+	margin-left:0px !important;
+}
+
+
+.influencer-details .avatar{
+	height:100px;
+	max-width:100px;
+	float:left;
+}
+.influencer-details .username{
+	font-weight:bold;
+	color:#000000;
+	font-size:20px;
+}
+.influencer-details .bio{
+	color:#666666;
+	margin:2px 0;
+}
+.influence-level{
+	font-size:15px;
+	margin:10px 0;
+	min-width:219px;
+	height:37px;
+	color:#333333;
+	background:url(../images/influencly/platinum-member.png) no-repeat;
+	width:186px;
+	height:37px;
+	display:block;
+	padding:10px 0 0 45px;
+	font-weight:bold;
+/*padding:5px 10px;
+  background:#eee;
+  border:1px solid #ccc;*/
+}
+
+.influencer-details-top{
+	float:left;
+	width:570px;
+	margin-bottom:20px;
+}
+
+.avatar-wrapper{
+/*float:left;*/
+}
+.detailed-user-info{
+	float:left;
+	margin-left:15px;
+	width:425px;
+}
+
+.panel_inner h3{
+	font-size:32px;
+	margin:50px 0 10px;
+	padding:0;
+}
+
+.influ_boxes .infl_list li img{
+	height:30px;
+	width:30px;
+	margin-bottom:-10px;
+	margin-right:5px;
+	padding:0 2px 0 0px;
+}
+
+.influ_boxes{
+	width:100%;
+	background:url(../images/influencly/infl-boxes-bg.png) no-repeat;
+	padding:0px 0 100px;
+	float:left;
+	margin:0px 0 0;
+	display:none; /* This is shown in JS */
+}
+
+.influ_boxes h3{
+	margin:5px 0;
+	color:#333333;
+	font-size:30px;
+	font-weight:normal;
+	display:block;
+	padding:0 0 20px;
+}
+.influ_boxes .infl_list{
+	vertical-align:top;
+	width:32%;
+	margin:5px 14px 0 0;
+	display:inline-block;
+}
+
+.influ_boxes .infl_list.top_comm {
+	margin-right:0;
+}
+
+.influ_boxes h3.overview-pb{
+	font-size:18px;
+	font-weight:bold;
+}
+
+.infl_list h4{
+	font-size:17px;
+	color:#333333;
+	height:42px;
+	margin:0;
+	padding:8px 0;
+}
+
+.infl_list ul{
+	padding:0;
+	margin:0;
+	border-left:1px solid #c2c2c2;
+	border-right:1px solid #c2c2c2;
+	border-top:1px solid #c2c2c2;
+}
+
+.infl_list.top_comm ul li{
+	font-size:16px;
+}
+.infl_list.top_comm ul li a{
+	color:#000;
+}
+
+.infl_list ul li{
+	padding:7px 0 12px 10px;
+	list-style:none;
+	color:#000000;
+	font-size:13px;
+	border-bottom:1px solid #c2c2c2;
+	height:24px;
+}
+.infl_list ul li:nth-child(even){
+	background:#f0f0f0;
+}
+
+.infl_list_head{
+	display: none;
+	padding: 5px 25px;
+	color: white;
+	font-weight: bold;
+	font-size: 13px;
+	height:auto;
+	min-height:49px;
+	background-color:#333;
+}
+
+.infl_list_head .sub {
+	font-weight:normal;
+}
+
+.infl_list_head.green{
+	background:#333 url(../images/influencly/green-star.png) no-repeat;
+	background-position:5px 5px;
+}
+
+.infl_list_head.blue{
+	background:#333 url(../images/influencly/blue-star.png) no-repeat;
+	background-position:5px 5px;
+}
+
+#infl_footer{
+	width:100%;
+	background:url(../images/influencly/footer.png) repeat-x;
+	color:#ffffff;
+	margin-top:100px;
+}
+
+#footer-main{
+	width:1030px;
+	display:block;
+	position:relative;
+	margin:0 auto;
+	height:85px;
+}
+
+a.infl_footer{
+	display:block;
+	background:url(../images/influencly/pb-logo.png) repeat-x;
+	width:157px;
+	height:30px;
+	display:block;
+	float:right;
+	margin-top:20px;
+}
+
+.bubble{
+	padding: 10px;
+	position: absolute;
+	z-index:10;
+	font-size: 12px;
+	display:none;
+	text-align:justify;
+	line-height:1.3;
+}
+
+.big_shield .influence:hover .bubble.inf{
+	display:block;
+	/* margin:-42px 0 0 75px; */
+	margin: -14px 0 0 0px;
+	top: -65px;
+}
+
+.big_shield .outreach:hover .bubble.out{
+	display:block;
+	/* margin:-5px 0 0 -46px;*/
+	margin:-58px 0 0 -70px;
+	bottom: -70px;
+	right: -59px;
+}
+
+.big_shield .outreach:hover .bubble.out .arr-up {
+	margin-left: 50px;
+}
+
+.how-to{
+	background: #231F20;
+	/*display: none;*/
+	width: 185px;
+	color: #ffffff;
+	padding:10px;
+	-moz-border-radius: 5px;
+/*	-webkit-border-radius: 5px;*/
+	border-radius: 5px;
+}
+
+.bubble.coming{
+	top: 0px;
+}
+.coming-msg{
+	background: #231F20;
+	/*display: none;*/
+	width: 130px;
+	color: #ffffff;
+	padding:10px;
+	-moz-border-radius: 5px;
+/*	-webkit-border-radius: 5px;*/
+	border-radius: 5px;
+}
+
+.kred-services .kred-popup-close{
+	margin:-7px;
+}
+
+.arr-down{
+	display:block;
+	background:url(../images/influencly/down-arrow.png) no-repeat;
+	width:185px;
+	height:13px;
+	background-position:26px -2px;
+}
+
+.an-arrow-down {
+    width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #f6f6f6;
+}
+
+.arr-up{
+	display:block;
+	background:url(../images/influencly/up-arrow.png) no-repeat;
+	width:185px;
+	height:13px;
+	background-position:35px 2px;
+}
+
+.gmkarrow {
+	background-image: url('/components/com_pages/views/images/gmkarrow.png');
+	width: 33px;
+	height: 18px;
+	position: absolute;
+	z-index: 20;
+}
+
+
+.question{
+	font-weight:bold;
+}
+
+.starprompt {
+	float:left;
+	margin-left:1.2em;
+	color:#666;
+}
+
+.ra-wrapper {
+	clear:both;
+}
+
+.recent-activity-header{
+/*	display:inline-block;*/
+	margin: 19px 0 0 15px;
+    position: relative;
+    width: 100%;
+}
+
+.landing .recent-activity-header {
+	margin-left:0;
+}
+
+.recent-activity-header .activity_title{
+	font-size:16px;
+	font-weight:bold;
+	display: inline-block;
+	width: 231px;
+	height:	20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-top: 44px;
+	position:absolute;
+}
+
+.recent-activity-header .activity_update{
+	color: #999999;
+	display: inline-block;
+	font-size: 11px;
+	text-align: left;
+	width: 160px;
+
+	display:none;
+}
+
+h1.glimpse {margin-left:25px;display:inline;clear:both;}
+h1.partners {margin-left:25px;margin-top:40px; margin-bottom:0;float:left;clear:both;}
+h1.whattheysay {margin-left:25px;clear:both;}
+
+#kred-overview{
+	border:1px solid #d1d0d1;
+	background:#fff url(../images/influencly/overview.png) repeat-x;
+	float:left;
+	width:942px;
+	margin-left:25px;
+}
+
+#overview-wrapper ul{
+	width:225px;
+	background:url(../images/influencly/ul-bg.png) repeat-y;
+	padding:37px 0;
+	margin:0;
+	float:left;
+	height:285px;
+}
+
+#tabs-details{
+	float:left;
+	position:relative;
+}
+
+#overview-wrapper ul li{
+	display:block;
+	width:190px;
+	height:35px;
+	font-size:16px;
+	padding:10px 0 0 15px;
+	color:#666666;
+	border-bottom:1px solid #d1d0d1;
+	cursor:pointer;
+}
+
+#overview-wrapper ul li:hover,
+#overview-wrapper ul li.active
+{
+	background:#00b8e6;
+	background:url(../images/influencly/li-hover.png) no-repeat 0 -4px;
+	padding-right:22px;
+	color:#ffffff;
+	border-color:transparent;
+}
+
+#tabs-details > div{
+	display:none;
+	width:415px;
+	padding-right:250px;
+	height:345px;
+	margin-right:5px;
+
+	padding-left:45px;
+
+	/*background:url(http://placehold.it/310x320) no-repeat right;*/
+	position:absolute;
+	top:0;
+	left:0;
+
+}
+
+#kred-summarized {
+	background: url(/components/com_pages/views/images/kred/glimpse-overview.jpg) no-repeat right 20px;
+}
+
+#kred-activity {
+	background: url(/components/com_pages/views/images/kred/glimpse-recent.jpg) no-repeat right 20px;
+}
+
+#kred-more {
+	background: url(/components/com_pages/views/images/kred/glimpse-more.jpg) no-repeat right 20px;
+}
+
+#kred-community {
+	background: url(/components/com_pages/views/images/kred/glimpse-community.jpg) no-repeat right 20px;
+}
+
+#kred-analyze {
+	background: url(/components/com_pages/views/images/kred/glimpse-analyze.jpg) no-repeat right 20px;
+}
+
+#kred-friends {
+	background: url(/components/com_pages/views/images/kred/glimpse-friends.png) no-repeat right 20px;
+}
+
+#kred-kredentials {
+	background: url(/components/com_pages/views/images/kred/glimpse-kredentials.png) no-repeat right 20px;
+}
+
+
+#tabs-details span,
+#tabs-details p {
+	width:335px;
+	margin-left: -20px;
+}
+
+
+#tabs-details .overview-header
+{
+	font-size:23px;
+	font-weight:bold;
+	color:#000000;
+	display:block;
+	line-height:30px;
+	margin-top:60px;
+	margin-bottom:15px;
+	padding-top:20px;
+	margin-left: -20px;
+}
+
+#tabs-details .overview-title
+{
+	color:#333;
+	font-weight:bold;
+	font-size:14px;
+}
+
+#tabs-details p
+{
+	color:#666;
+	font-size:16px;
+}
+
+.analytics-influence{
+	float:left;
+	color:#666;
+}
+
+.analytics-engagement{
+	float:right;
+	color:#666;
+}
+
+.analytics-influence h1,
+.analytics-engagement h1{
+	margin:0;
+	padding:5px 0 10px;
+	border-bottom:1px solid #fff;
+}
+
+
+.analytics-influence ul,
+.analytics-engagement ul{
+	padding:0;
+	margin:0;
+	width:300px;
+}
+
+.analytics-influence ul li.mention_in,
+.analytics-engagement ul li.mention_out{
+	border-top: 1px solid #EFEFEF;
+	font-size: 15px;
+	line-height: 18px;
+	padding-left: 6px;
+	padding-top: 13px;
+	width: 284px;
+}
+.analytics-influence ul li.mention_in .counter,
+.analytics-engagement ul li.mention_out .counter{
+	font-size:20px;
+	vertical-align:top;
+}
+
+.analytics-influence ul li.twitter-followers{   background: url("/components/com_pages/views/images/kred/twit-gray.png") no-repeat; }
+.analytics-engagement ul li.twitter-followers{  background: url("/components/com_pages/views/images/kred/twit-gray.png") no-repeat; }
+
+.analytics-influence ul li.rts-sent{      background: url("/components/com_pages/views/images/kred/rt-gray.png") no-repeat; }
+.analytics-engagement ul li.rts-sent{     background: url("/components/com_pages/views/images/kred/rt-gray.png") no-repeat; }
+
+.analytics-influence ul li.rep-sent{      background: url("/components/com_pages/views/images/kred/replies-gray.png") no-repeat; margin-top: 10px; }
+.analytics-engagement ul li.rep-sent{     background: url("/components/com_pages/views/images/kred/replies-gray.png") no-repeat; }
+
+.analytics-influence ul li.links-posted{  background: url("/components/com_pages/views/images/kred/clicks-gray.png") no-repeat; }
+.analytics-engagement ul li.links-posted{ background: url("/components/com_pages/views/images/kred/clicks-gray.png") no-repeat; }
+
+
+.analytics-influence ul li,
+.analytics-engagement ul li{
+	list-style:none;
+	display:block;
+	padding:0px 5px 10px 33px;
+	float:left;
+	width:255px;
+}
+
+.analytics-influence ul li .counter,
+.analytics-engagement ul li .counter{
+	float:right;
+	font-weight:20px;
+	font-weight:bold;
+}
+
+.analytics-influence li{
+	padding: 5px 0;
+	margin: 0;
+	display: block;
+	padding-left: 30px;
+	font-size: 16px;
+	line-height: 19px;
+	background-position: 0 4px;
+}
+
+.analytics-engagement li{
+	padding: 5px 0;
+	margin: 0;
+	display: block;
+	padding-left: 30px;
+	font-size: 16px;
+	line-height: 19px;
+	background-position: 0 4px;
+}
+
+/*influencly about*/
+body.influencly-about{
+	background:url(../images/influencly/about/background.png) repeat-x;
+}
+
+.influencly-about #top_banner{
+	height:84px !important;
+}
+
+.subpage-wrapper{
+	width:950px;
+	float:left;
+	padding:15px;
+	background:#ffffff;
+	-moz-border-radius: 0px 10px 0 0;
+/*	-webkit-border-radius: 0px 10px 0 0;*/
+	border-radius: 0px 10px 0 0;
+}
+
+
+.influencly-more  #top-user-name ,
+.influencly-ranking  #top-user-name,
+.influencly-analyze #top-user-name{
+	margin-left:0px !important;
+}
+
+#about-wrapper h1,
+#morew-wrapper h1{
+	color:#000000;
+	font-size:40px;
+	font-weight:normal;
+}
+
+#about-wrapper .about-blurb,
+#more-wrapper .about-blurb{
+	color:#333333;
+	font-size:20px;
+	font-weight:normal;
+	display:block;
+	margin-bottom:50px;
+}
+
+#about-slideshow{
+	width:980px;
+	height:305px;
+	display:block;
+	background:url(../images/influencly/about/slide-show.png) no-repeat;
+}
+
+#earn-points{
+	width:980px;
+	height:auto;
+	padding-top:35px;
+	background:url(../images/influencly/header.png) no-repeat;
+	float:left;
+	margin-top:50px;
+}
+
+#action-sources{
+	margin-top:25px;
+}
+
+#action-sources ul{
+	float:left;
+	width:180px !important;
+	border-right:1px solid #c2c2c2;
+	height:150px;
+	padding:60px 0 0 15px !important;
+}
+
+#action-sources ul li{
+	list-style:none;
+	padding:0;
+	margin:0;
+	line-height:20px;
+	font-size:14px;
+	font-weight:bold;
+	color:#333333;
+	height:auto !important;
+	width:165px;
+}
+
+ul#twitter{
+	background:url(../images/influencly/about/twitter.png) no-repeat;
+	background-position:15px 0;
+}
+
+ul#facebook{
+	background:url(../images/influencly/about/facebook.png) no-repeat;
+	background-position:15px 0;
+}
+
+ul#linkedin{
+	background:url(../images/influencly/about/linkedin.png) no-repeat;
+	background-position:15px 0;
+}
+
+ul#foursquare{
+	background:url(../images/influencly/about/foursquare.png) no-repeat;
+	background-position:15px 0;
+}
+
+ul#quora{
+	background:url(../images/influencly/about/quora.png) no-repeat;
+	background-position:15px 0;
+	border-right:0;
+}
+
+.user-info-analyze{
+	float:left;
+	margin-bottom:-40px;
+}
+
+
+.user-info-analyze .user-analyze-img,
+.user-info-analyze .user-analyze-img img{
+	float:left;
+	width:65px;
+}
+
+.user-info-analyze .user-info-details{
+	float:right;
+	margin-left:10px;
+	width:195px;
+}
+
+.user-info-analyze .user-info-details .ana-name{
+	color:#000000;
+	font-size:27px;
+	display: block;
+}
+
+.user-info-analyze .user-info-details .ana-atname{
+	/*color:#00bff2;*/
+	color:#00b8e6;
+	font-size:16px;
+	display: block;
+}
+
+.ana-infl-out{
+	width:625px;
+	float:right;
+	background:#f0f6f6;
+	padding:10px;
+	-moz-border-radius: 5px;
+/*	-webkit-border-radius: 5px;*/
+	border-radius: 5px;
+}
+
+.ana-infl-out .ana-infl,
+.na-infl-out .ana-out{
+	width:305px;
+}
+
+.ana-infl-out  h2{
+	text-align:center;
+	color:#000000;
+	font-size:32px;
+	font-weight:normal;
+	padding:0;
+	margin:0 0 5px;
+}
+
+.ana-infl-out  h1.new{
+	text-align:left;
+	margin-bottom:0 !important;
+}
+
+.ana-infl-out .ana-infl{
+	float:left;
+}
+
+.ana-infl-out .ana-out{
+	float:right;
+}
+
+.ana-infl-out .infl-ele,
+.ana-infl-out .infl-ele-big{
+	background:#e5f8fd;
+	text-align:center;
+	display:inline-block;
+	margin-right:10px;
+	padding:2px 5px;
+	margin-bottom:10px;
+	-moz-border-radius: 5px;
+/*	-webkit-border-radius: 5px;*/
+	border-radius: 5px;
+}
+
+.ana-infl-out .infl-ele{
+	width:79px;
+}
+
+.ana-infl-out .infl-ele-big{
+	width:285px;
+}
+
+.ana-infl-out .ana-count{
+	color:#333;
+	font-size:24px;
+	display:block;
+	width:100%;
+}
+
+.ana-tags{
+	color:#696969;
+	font-size:13px;
+	display:block;
+	width:100%;
+	margin-top:1px;
+}
+
+#option-modes{
+	width: 100%;
+	float: left;
+	margin-top: 75px;
+	padding-top: 50px;
+	background:url(../images/influencly/infl-boxes-bg.png) no-repeat;
+}
+
+#option-modes ul{
+	margin:0;
+	padding:0;
+	float:right;
+}
+
+#option-modes ul li{
+	list-style:none;
+	display:inline-block;
+	font-size:13px;
+	color:#696969;
+	font-weight:bold;
+	margin-left:15px;
+}
+
+li.drop-down{
+	background: url(../images/td/menu-li.png) right no-repeat;
+	padding-right: 21px;
+}
+
+.va-options{
+	clear: both;
+	float:left;
+	width:100%;
+}
+
+.va-settings{
+	height:30px;
+	width:100%;
+	float:left;
+	margin:30px 0 10px;
+}
+
+.va-chart-det{
+	width:100%;
+	float:left;
+	border-bottom: 1px solid #DEDEDE;
+	padding-bottom: 6px;
+	margin-bottom: 20px;
+}
+
+.chart-container{
+	margin:0 0 10px 0;
+}
+.chart-container .data-wrapper{
+	width:915px;
+	margin:0 auto;
+}
+
+.chart-container .chart-title{
+	color: #000000;
+	font-size: 19px;
+	padding: 0 15px;
+	line-height:30px;
+	font-weight:bold;
+}
+
+.chartLegendIO{
+	display:block;
+	font-weight:bold;
+	height: 30px;
+	padding-right: 100px;
+	text-align: right;
+}
+.chartLegendIO br:first-of-type {
+	display: none;
+}
+
+.scores-container{
+	width:620px;
+	float:right;
+}
+.va-chart-det ul{
+	display:inline;
+	float:left;
+	margin: 3px 0 0 20px;
+	padding: 0;
+}
+
+.va-chart-det ul li{
+	display:inline-block;
+	width:19px;
+	height:18px;
+	cursor:pointer;
+}
+
+.va-chart-det ul li.facebook{
+	background:url(../images/influencly/facebook.png) no-repeat;
+}
+
+.va-chart-det ul li.twitter{
+	background:url(../images/influencly/twitter.png) no-repeat;
+}
+
+.va-chart-det ul li.blog{
+	background:url(../images/influencly/blog.png) no-repeat;
+}
+
+.settings{
+	background:url(../images/influencly/settings.png) no-repeat;
+	display:block;
+	cursor:pointer;
+	width:22px;
+	height:22px;
+	float:right;
+}
+
+.top_comm ul li{
+	text-transform:capitalize;
+	font-weight:bold;
+	line-height:2;
+}
+
+/*search box over-writing*/
+.influencly .EC_searchbox_Cell,
+.influencly-overview .EC_searchbox_Cell,
+.influencly-more .EC_searchbox_Cell,
+.influencly-ranking .EC_searchbox_Cell,
+.influencly-analyze .EC_searchbox_Cell,
+.influencly-activity .EC_searchbox_Cell{
+	background:url(../images/influencly/banner-bg.png) no-repeat !important;
+	width: 685px;
+	margin-top: 82px;
+	padding: 85px 30px 0;
+	margin-right:175px !important;
+	display:block;
+}
+
+.influencly-overview .EC_searchbox_Cell,
+.influencly-more .EC_searchbox_Cell,
+.influencly-ranking .EC_searchbox_Cell,
+.influencly-analyze .EC_searchbox_Cell,
+.influencly-activity .EC_searchbox_Cell{
+	display:none;
+}
+
+.influencly #searchboxCell,
+.influencly-overview #searchboxCell,
+.influencly-more #searchboxCell,
+.influencly-ranking #searchboxCell,
+.influencly-analyze #searchboxCell,
+.influencly-activity #searchboxCell{
+	width:460px;
+	background:url(../images/influencly/search-bg.png) repeat-x !important;
+	height:47px !important;
+	margin-right:5px !important;
+	-moz-border-radius: 5px !important;
+/*	-webkit-border-radius: 5px !important;*/
+	border-radius: 5px !important;
+}
+
+.influencly #searchbox_button_EC,
+.influencly-overview #searchbox_button_EC,
+.influencly-more #searchbox_button_EC,
+.influencly-ranking #searchbox_button_EC,
+.influencly-analyze #searchbox_button_EC,
+.influencly-activity #searchbox_button_EC{
+	background:url(../images/influencly/see-kred.png) repeat-x !important;
+	display:block !important;
+	width:213px !important;
+	height:54px !important;
+}
+
+.influencly #searchbox_button_EC img,
+.influencly-overview #searchbox_button_EC img,
+.influencly-more #searchbox_button_EC img,
+.influencly-ranking #searchbox_button_EC img,
+.influencly-analyze #searchbox_button_EC img,
+.influencly-activity #searchbox_button_EC img{
+	display:none;
+}
+
+.influencly #searchbox_input,
+.influencly-overview #searchbox_input ,
+.influencly-more #searchbox_input,
+.influencly-ranking #searchbox_input,
+.influencly-analyze #searchbox_input,
+.influencly-activity  #searchbox_input{
+	width:445px !important;
+	height:40px !important;
+}
+#point-system {
+	background:url(../images/influencly/header.png) no-repeat;
+	float:left;
+	padding-top:30px;
+	width:980px;
+	margin-bottom:100px;
+}
+#point-system .learn-more{
+	background:url(../images/influencly/about/badge.png) no-repeat;
+	width:267px;
+	height:236px;
+	float:left;
+}
+
+#point-system .learn-more a,
+.point-system-details a{
+	/*color:#00bff2;*/
+	color:#00b8e6;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+#point-system .learn-more a{
+	margin:208px 0 0 40px;
+	float:left;
+}
+
+.point-system-details a{
+	font-size:17px;
+}
+
+.point-system-details{
+	width:690px;
+	float:right;
+}
+
+.point-system-details p{
+	color:#696969;
+	font-size:17px;
+}
+
+/*influencly about
+
+.influencly-activity #guide-infl {
+float: right;
+margin: -17px 8px;
+}
+
+.influencly-activity  #monthly-activity-statements {
+position: absolute;
+margin: -45px 0 0 506px;
+width: auto;
+*margin: -33px 0 0 506px !important;
+
+#select-community ul{
+display: block;
+margin: 0;
+padding: 0;
+position: absolute;
+background: #dedede;
+width: 186px;
+margin-top: 28px;
+z-index:5;
+border-top:1px solid #333;
+cursor:pointer;
+-moz-border-radius:0 0 5px 5px;
+-webkit-border-radius: 0 0 5px 5px;
+border-radius: 0 0 5px 5px;
+}
+
+#select-community ul li{
+display: block;
+padding:5px;
+color:#333;
+}
+
+}*/
+
+.influencly-activity .statements{
+	height:auto !important;
+}
+
+/*infl-header*/
+
+#inlf-main-header{
+	width:900px;
+	position:relative;
+	margin:0 auto;
+	display:block;
+	height:100px;
+	padding-top:25px;
+}
+
+#infl-main-title{
+	float:left;
+}
+
+#infl-main-title #title,
+#infl-main-title #title-blurb{
+	display:block;
+}
+
+#infl-main-title #title{
+	color:#61a833;
+	font-size:42px;
+	font-weight:bold;
+}
+
+#infl-main-title #title-blurb{
+	font-size:17px;
+	color:#999999;
+}
+
+#gift-kred{
+	float:right;
+}
+
+#gift-top{
+	background:url(../images/kred/orange-bg.png) no-repeat;
+	display:block;
+	width:75px;
+	height:34px;
+	color:#fff;
+	padding-top:7px;
+	text-align:center;
+	font-size:28px;
+	cursor:pointer;
+}
+
+#gift-kred #gift{
+	font-size:11px;
+	color:#474646;
+	display:block;
+	width:75px;
+	text-align:center;
+}
+
+#gift-kred #give{
+	font-size:11px;
+	color:#ff973b;
+	display:block;
+	width:75px;
+	text-align:center;
+}
+
+#give-more-icon{
+	background:url(../images/kred/star.png) no-repeat;
+	display:block;
+	width:27px;
+	height:27px;
+	position:absolute;
+	top:14px;
+	right:-12px;
+	z-index:3;
+	cursor:pointer;
+}
+
+#gift-form-wrapper{
+	margin: 0;
+	right: 0;
+	position: absolute;
+}
+
+#gift-form{
+	display:none;
+	width:340px;
+	background:#f7f7f7;
+	z-index:2;
+	color:#fff;
+	float:right;
+	font-size:12px;
+	padding:10px;
+	-moz-border-radius: 5px;
+/*	-webkit-border-radius: 5px;*/
+	border-radius: 5px;
+	-moz-box-shadow: 0.1px -2px #D0D1D1, 0.8px -4px #E1E1E1;
+/*	-webkit-box-shadow: 0.1px -2px #D0D1D1, 0.8px -4px #E1E1E1;*/
+	box-shadow: 0.1px -2px #D0D1D1, 0.8px -4px #E1E1E1;
+}
+
+.kr-tech-infl ul li #gift-form {
+	position:absolute;
+	right:0;
+}
+
+#close-gift-form{
+	float:right;
+	cursor:pointer;
+	color:#ee7b2f;
+	font-size:11px;
+	font-weight:bold;
+}
+
+#gift-form #top-form{
+	display:block;
+	color:#ee7b2f;
+	font-size:21px;
+	margin-top:15px;
+}
+
+#gift-form .row-form{
+	display:block;
+	margin:10px 0;
+	width:100%;
+}
+
+#gift-form #row-form #gift-atname{
+	float:left;
+}
+
+#gift-form .row-form #gift-atname input[type="text"]{
+	background:url(../images/kred/input.png) repeat-x;
+	color:#333;
+	font-size:12px;
+	padding:7px;
+	width:131px;
+	border:0;
+	-moz-border-radius: 5px;
+/*	-webkit-border-radius: 5px;*/
+	border-radius: 5px;
+}
+
+#drp-down{
+	background:url(../images/kred/down.png) no-repeat;
+	height:16px;
+	width:16px;
+	display:block;
+	position:absolute;
+	right: 15px;
+	margin-top: 6px;
+	cursor:pointer;
+}
+/*#gift-form .row-form select,*/
+#community-selected{
+	background:url(../images/kred/input.png) repeat-x;
+	color:#333;
+	font-size:12px;
+	padding:5px;
+	width:170px;
+	padding:8px;
+	border:0;
+	float:right;
+	-moz-border-radius: 5px;
+/*	-webkit-border-radius: 5px;*/
+	border-radius: 5px;
+}
+
+
+#gift-form .row-form #select-community{
+	float:right;
+}
+
+#give-btn{
+	background:url(../images/kred/give.png) no-repeat;
+	width:106px;
+	height:36px;
+	display:block;
+	float:right;
+	border:0;
+}
+
+#row-blurb{
+	position: absolute;
+	margin: 20px 0 0 90px;
+	font-size:11px;
+	font-weight:bold;
+	color:#ee7b2f;
+}
+
+
+/*influencly get more kred*/
+
+#invite-follow  h2{
+	color:#333333;
+	font-weight:normal;
+	display:block;
+	font-size:24px;
+	line-height:30px;
+	margin:0;
+}
+
+#invite-follow  span.blurb{
+	color:#696969;
+	font-size:17px;
+	padding-bottom:20px;
+	float:left;
+}
+
+#invite-follow ul{
+	padding:0;
+	margin:0;
+	width:475px;
+}
+
+.invite,
+.follow{
+	width:475px;
+	float:left;
+}
+#invite-follow ul li{
+	list-style:none;
+	float:left;
+	margin-bottom:15px;
+	height:80px;
+}
+
+.img-container{
+	float:left;
+	width:80px;
+}
+
+.user-profile-kred{
+	float:left;
+	margin-left:15px;
+	width:315px;
+}
+
+.user-profile{
+	float:left;
+	width:230px;
+}
+
+.invite-friend{
+	float:right;
+}
+
+.invite-friend #invite{
+	background:#6cb739;
+	color:#ffffff;
+	padding:5px;
+	width:80px;
+	display:block;
+	font-weight:bold;
+	text-align:center;
+	-moz-border-radius: 10px;
+/*	-webkit-border-radius:  10px;*/
+	border-radius:  10px;
+}
+
+.influencly-more #trending-retweet{
+	background:url(../images/influencly/header.png) no-repeat;
+	padding-top:45px;
+	float:left;
+	margin-top:50px;
+}
+.influencly-more h3,
+.influencly-more h4{
+	font-size:20px;
+	color:#000000;
+	margin:0;
+	font-weight:bold;
+}
+
+.blurb-trending{
+	font-size:17px;
+	color:#696969;
+	float:left;
+	margin-bottom:20px;
+}
+
+.kr-emerging-topics p,
+.kr-tech-infl p{
+	font-size: 14px;
+	color: #8B8B8B;
+	border-bottom: 1px solid white;
+	padding-bottom: 19px;
+	margin:10px 0 0;
+}
+
+#retweet-lists{
+	border-left:1px solid #c2c2c2;
+	border-right:1px solid #c2c2c2;
+	border-top:1px solid #c2c2c2;
+	margin:0 0 100px 0 !important;
+	padding:0;
+	float:left;
+	width:100% !important;
+}
+
+#retweet-lists li{
+	border-bottom:1px solid #c2c2c2;
+	padding:15px;
+	list-style:none;
+	margin:0 !important;
+}
+
+#retweet-lists li:nth-child(even){
+	background:#f5f5f5
+}
+
+.trend-atname{
+	color:#0099cc;
+	font-size:17px;
+}
+
+.trend-username{
+	color:#333333;
+	font-size:22px;
+}
+
+.trend-tweet{
+	color:#696969;
+	font-size:17px;
+	float:left;
+	padding:5px 0;
+}
+
+.trend-time{
+	color:#a9a9a9;
+	font-size:14px;
+	float:left;
+	width:100%;
+}
+
+/*more kred*/
+.em-flw-wrapper{
+	float: left;
+	margin-left: 30px;
+	width: 620px;
+	background:#F1F6F7;
+	-moz-border-radius:10px;
+/*	-webkit-border-radius:10px;*/
+	border-radius:10px;
+}
+
+.greydiant {
+	background: #f7f7f7;
+	background: -moz-linear-gradient(top, #f7f7f7 0%, #ededed 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f7f7), color-stop(100%,#ededed));
+	background: -webkit-linear-gradient(top, #f7f7f7 0%,#ededed 100%);
+	background: -o-linear-gradient(top, #f7f7f7 0%,#ededed 100%);
+	background: -ms-linear-gradient(top, #f7f7f7 0%,#ededed 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#ededed',GradientType=0 );
+	background: linear-gradient(top, #f7f7f7 0%,#ededed 100%);
+	border: 1px solid #ededed;
+}
+
+.kred-meter-wrapper {
+	border: 1px solid #EDEDED;
+}
+
+.kred-meter{
+	background: transparent url(/components/com_pages/views/images/kred/meter_bg.png) no-repeat 0 0;
+	width:564px;
+	height:296px;
+	margin:10px auto;
+	position:relative;
+}
+.kred-meter-descr{
+	font-weight:bold;
+	color:#636363;
+	text-align:center;
+	position:absolute;
+	top:237px;
+	width:100%;
+	font-size:16px;
+}
+.meter-status{
+	left: 67px;
+	position: absolute;
+	top: -5px;
+}
+
+.meter-status {
+	-webkit-transition: all 2s ease-in-out;
+	-moz-transition: all 2s ease-in-out;
+	-o-transition: all 2s ease-in-out;
+	-ms-transition: all 2s ease-in-out;
+}
+
+.meter-status.preanimate {
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
+}
+
+.meter-status.preanimate.perc1 {
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+}
+
+.meter-status.preanimate.perc2 {
+	-webkit-transform: rotate(-13deg);
+	-moz-transform: rotate(-13deg);
+	-o-transform: rotate(-13deg);
+	-ms-transform: rotate(-13deg);
+}
+
+.meter-status.preanimate.perc3 {
+	-webkit-transform: rotate(-34deg);
+	-moz-transform: rotate(-34deg);
+	-o-transform: rotate(-34deg);
+	-ms-transform: rotate(-34deg);
+}
+
+.meter-status.preanimate.perc4 {
+	-webkit-transform: rotate(-47deg);
+	-moz-transform: rotate(-47deg);
+	-o-transform: rotate(-47deg);
+	-ms-transform: rotate(-47deg);
+}
+
+.meter-status.preanimate.perc5 {
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+}
+
+.meter-status.preanimate.perc6 {
+	-webkit-transform: rotate(-132deg);
+	-moz-transform: rotate(-132deg);
+	-o-transform: rotate(-132deg);
+	-ms-transform: rotate(-132deg);
+}
+
+.meter-status.preanimate.perc7 {
+	-webkit-transform: rotate(-145deg);
+	-moz-transform: rotate(-145deg);
+	-o-transform: rotate(-145eg);
+	-ms-transform: rotate(-145deg);
+}
+
+.meter-status.preanimate.perc8 {
+	-webkit-transform: rotate(-165deg);
+	-moz-transform: rotate(-165deg);
+	-o-transform: rotate(-165deg);
+	-ms-transform: rotate(-165deg);
+}
+
+.meter-status.preanimate.perc9 {
+	-webkit-transform: rotate(-180deg);
+	-moz-transform: rotate(-180deg);
+	-o-transform: rotate(-180deg);
+	-ms-transform: rotate(-180deg);
+}
+
+.kred-meter .current-level,
+.kred-meter .next-level{
+	color: #FFFFFF;
+	font-size: 50px;
+	font-weight: bold;
+	height: 40px;
+	position: absolute;
+	text-align: center;
+	width: 100px;
+	bottom: 30px;
+}
+.kred-meter .current-level{
+	left: 46px;
+}
+.kred-meter .next-level{
+	right: 42px;
+	z-index:1;
+}
+
+.kred-meter .levelup {
+	position:absolute;
+	background: transparent url(/components/com_pages/views/images/kred/kred-next-lvl-bg.png) no-repeat 0 0;
+	width:184px;
+	height:109px;
+	color:#fff;
+	font-weight:bold;
+	padding:10px;
+	top:20%;
+	left:34%;
+
+	text-shadow:none;
+}
+
+.kred-meter .levelup h3 {
+	margin:0;
+	font-size:18.5px;
+	color:#fff;
+}
+
+.kred-meter .levelup p{
+	font-size:11px;
+	margin:4px 0;
+	text-align:justify;
+}
+
+.kred-meter .levelup .share {
+	text-align:right;
+}
+
+.kred-meter .kred-meter-nextlevel-bg {
+	display:none!important;
+	position:absolute;
+	width:86px;
+	height:80px;
+	bottom:3px;
+	right:49px;
+	z-index:0;
+}
+
+.kred-meter .kred-meter-nextlevel-bg,
+.kred-meter .levelup {
+	display:none;
+}
+
+.kred-meter:hover .kred-meter-nextlevel-bg,
+.kred-meter:hover .levelup {
+/*display:block;*/
+}
+
+.more-online-wrapper .callout {
+	background-color:#e3f2f7;
+	padding:23px 27px 17px;
+}
+
+.more-online-wrapper .callout h2 {
+	background: transparent url(/components/com_pages/views/images/kred/kred-increase.png) no-repeat 5px center;
+	padding-left:35px;
+	font-size:30px;
+	font-weight:bold;
+	margin:0;
+}
+
+.more-online-wrapper .callout p {
+	font-size:15px;
+	color:#666; /* This really doesn't look right but whatever, Photoshop. */
+	margin: 8px 0 0;
+}
+
+.blind {
+	background-color:#f6f6f6;
+}
+
+.blind .close {
+	float:right;
+	font-size:12px;
+	font-weight:bold;
+	color:#999;
+	line-height: 4;
+}
+
+.blind .close .ballad_of_a_thin_span {
+	font-size: 10px;
+	font-weight:normal;
+}
+
+.blind:hover .close {
+	color:#000;
+}
+
+.blind .deets {
+	height: 200px;
+	margin-left: 26px;
+	display: none;
+}
+
+.blind h3 {
+	margin-left: 26px;
+	font-size:16px;
+	font-weight:bold;
+	float:left;
+	line-height: 1;
+}
+
+.blind h4 {
+	clear:both;
+	font-size:18px;
+	font-weight:bold;
+	color:#000;
+	margin:0;
+	padding-top:20px;
+}
+
+.blind ol {
+	margin-top:5px;
+	padding-left:20px;
+}
+
+.blind ol li {
+	font-size:15px;
+	color:#000;
+}
+
+.freshcontent {
+	background-color: #f6f6f6;
+}
+.freshcontent .fresh:nth-child(-n+5){
+	display:block;
+}
+.freshcontent .fresh {
+	display:none;
+	padding:19px 27px;
+	clear:both;
+	position:relative;
+	border-bottom: solid 1px #eee;
+}
+
+.freshcontent .fresh .graphics {
+	display:inline-block;
+	vertical-align:top;
+}
+
+.influencer .close_infl,
+.freshcontent .fresh .close_fresh,
+.activity-earn-now .close-callout {
+	color:#aaa;
+	font-size:10px;
+	position:absolute;
+	right:10px;
+	top:4px;
+	font-weight:bold;
+	cursor:pointer;
+}
+.activity-earn-now .close-callout {
+	font-size:16px;
+	color:#333;
+}
+
+.freshcontent .fresh .graphics img {
+	display:block;
+	width:50px;
+}
+
+.freshcontent div.reply {
+	background:url(/components/com_pages/views/images/kred/kred-reply.png?) no-repeat;
+}
+
+.freshcontent div.retweet {
+	background:url(/components/com_pages/views/images/kred/kred-retweet.png?) no-repeat;
+}
+
+.freshcontent div.reply,
+.freshcontent div.retweet {
+	width:95px;
+	height:28px;
+	background-position:0 -28px;
+	float:right;
+	cursor:pointer;
+}
+.freshcontent div.fresh:hover div.retweet,
+.freshcontent div.fresh:hover div.reply {
+	background-position:0 0;
+	opacity:1;
+}
+
+.freshcontent .fresh .lilshield {
+	width:39px;
+	height:36px;
+	background: transparent url(/components/com_pages/views/images/kred/kred-lil-kred-shield.png) no-repeat top left;
+	margin:5px auto;
+
+	font-size:11px;
+	font-weight:bold;
+	color:#fff;
+}
+
+.freshcontent .fresh .lilshield div {
+	margin:0;
+	width:66%;
+	padding:0 0.6em;
+}
+
+.freshcontent .fresh .lilshield .influence {
+	text-align:left;
+}
+
+.freshcontent .fresh .lilshield .outreach {
+	text-align:right;
+}
+
+
+.freshcontent .fresh .tweet {
+	color:#666;
+	font-size:15px;
+	width:365px;
+	display:inline-block;
+	padding:0 1em;
+	word-wrap: break-word;
+}
+
+.freshcontent .fresh .tweet p {
+	margin:4px 0;
+	font-size:13px;
+}
+
+.freshcontent .fresh .tweet a {
+	color:#00bff0;
+}
+
+.freshcontent .fresh .tweet .name {
+	color:#2abcf1;
+}
+.freshcontent .fresh .tweet .screen_name {
+	font-weight:bold;
+	margin-left:10px;
+	color:#000;
+	font-size:13px;
+}
+
+.freshcontent .fresh .tweet .timestamp {
+	font-size:11px;
+	color:#999;
+}
+
+
+
+.followpane {
+	width:100%
+	margin-top:15px;
+	background-color: #f6f6f6;
+	clear:both;
+}
+
+.followpane .title {
+	display:block;
+	height: 48px;
+}
+
+.followpane .title h3 {
+	float:left;
+}
+
+.followpane .title select {
+	float:right;
+}
+
+.followpane .influencers {
+	margin: 0 23px;
+}
+
+.followpane .influencer:nth-child(-n+6){
+	display:inline-block;
+}
+.followpane .influencer{
+	display:none;
+	width:276px;
+	margin:4px;
+	position:relative;
+}
+.followpane .influencer .graphics{
+	display:inline-block;
+	vertical-align:top;
+	width:70px;
+}
+.followpane .influencer .details{
+	display:inline-block;
+	margin-left:5px;
+	vertical-align:top;
+}
+.followpane .influencer .details a{
+	color:#2abcf1;
+}
+
+.followpane .influencer .details .name{
+	display:block;
+	font-weight:bold;
+}
+
+.infl_list ul li .action{
+	float:right;
+	text-align:center;
+	width:95px;
+	color:#999;
+	line-height:2;
+}
+.infl_list ul li .inf_follow,
+.followpane .influencer .details .inf_follow{
+	cursor:pointer;
+	margin: 5px 10px;
+	display:block;
+	width:75px;
+	height:24px;
+	background:url(/components/com_pages/views/images/kred/kred-follow.png) no-repeat;
+	background-position:0 -24px;
+	opacity:0.5;
+}
+.infl_list ul li .inf_follow:hover,
+.followpane .influencer .details .inf_follow:hover{
+	background-position:0 0;
+	opacity:1;
+}
+
+.followpane .influencer .graphics img{
+	height:60px;
+	width:60px;
+	margin:0 auto;
+}
+
+
+.more-lhp{
+	float:left;
+	width:288px;
+}
+
+.more-lhp .your-kred{
+	width:238px;
+	padding:25px 25px 15px 25px;
+	background:#f1f6f7;
+	-moz-border-radius: 5px;
+/*	-webkit-border-radius:  5px;*/
+	border-radius:  5px;
+}
+
+.more-lhp .actions-kr{
+	width:235px;
+	padding:20px 25px 5px 25px;
+	background:#E7F9FB;
+	margin-top:20px;
+	border:1px solid #c2c2c2;
+	-moz-border-radius: 5px;
+/*	-webkit-border-radius:  5px;*/
+	border-radius:  5px;
+}
+
+.more-lhp .actions-kr ul{
+	padding:0;
+	margin:0;
+}
+
+.more-lhp .actions-kr ul li{
+	padding:0 0 6px 55px;
+	margin:7px 0;
+	border-bottom:1px solid #fff;
+	display:block;
+	min-height:42px;
+	color:#8b8b8b;
+	font-size:11px;
+}
+
+.more-lhp .actions-kr ul li.axn-twitter{
+	background:url(../images/kred/twitter-n.png) no-repeat;
+}
+
+.more-lhp .actions-kr ul li.axn-facebook{
+	background:url(../images/kred/facebook.png) no-repeat;
+}
+
+.more-lhp .actions-kr ul li.axn-linkedin{
+	background:url(../images/kred/linkedin.png) no-repeat;
+}
+
+.more-lhp .actions-kr ul li.axn-mayor{
+	background:url(../images/kred/mayor.png) no-repeat;
+}
+
+.more-lhp .actions-kr ul li.axn-question{
+	background:url(../images/kred/question.png) no-repeat;
+}
+
+.etlr-retweet{
+	display:block;
+	background:url(../images/kred/retweet-kr.png) no-repeat;
+	width:71px;
+	height:20px;
+	cursor:pointer;
+}
+
+.kr-learn-more{
+	display:block;
+}
+
+.kr-learn-more a{
+	display:block;
+	/*color:#00bff2;*/
+	color:#00b8e6;
+}
+
+.kr-score{
+
+}
+
+
+.kr-infl-score{
+	color:#fff;
+	position:absolute;
+	margin:35px 30px;
+}
+
+.kr-infl-score .kr-infl-score{
+	position:absolute;
+	width:75px;
+	text-align:left;
+}
+
+.kr-infl-score .kr-infl-title{
+	font-size:13px;
+	display:block;
+	font-weight:bold;
+}
+
+.kr-infl-score .kr-infl-count{
+	font-size:36px;
+	display:block;
+	font-weight:bold;
+}
+
+.kr-out-score{
+	position:absolute;
+	width:75px;
+	text-align:right;
+	margin:76px 85px;
+	color:#fff;
+}
+
+.kr-out-score .kr-out-title{
+	font-size:13px;
+	display:block;
+	font-weight:bold;
+}
+
+.kr-out-score .kr-out-count{
+	font-size:26px;
+	display:block;
+	font-weight:bold;
+}
+
+.more-lhp h1{
+	font-size:32px;
+	color:#61a833;
+	font-weight:bold;
+	border-bottom:1px solid #fff;
+	display:block;
+	padding:0;
+	margin:0;
+}
+
+.more-lhp h2{
+	line-height:1.15;
+	color:#000000;
+	padding: 5px 0 10px;
+	margin: 0;
+	font-size: 20px;
+}
+
+.more-lhp h2:hover{
+	color:##00B8E6;
+}
+
+.kr-emerging-topics{
+	float: left;
+	width: 240px;
+	padding: 25px 25px 0;
+	background: #F7F7F7;
+	border:1px solid #dedede;
+	-moz-border-radius: 5px;
+/*	-webkit-border-radius:  5px;*/
+	border-radius:  5px;
+}
+
+.emerging-tweets-list{
+	padding:0;
+	margin:0;
+}
+
+.emerging-tweets-list li,
+.kr-tech-infl ul li{
+	padding: 0 0 5px;
+	margin: 24px 0 0;
+	display: block;
+	float: left;
+	border-bottom: 1px solid white;
+	position:relative;
+}
+
+.emerging-tweets-list li{
+	min-height: 130px;
+}
+
+.kr-tech-infl ul li{
+	min-height: 58px;
+}
+
+.etl-left{
+	float:left;
+	width:50px;
+}
+
+.etl-right{
+	float:left;
+	width:178px;
+	margin-left:10px;
+}
+
+.etl-right .etlr-top{
+	width:100%;
+	float:left;
+	margin-bottom:5px;
+}
+
+.etl-right .etlr-top .kr-bg,
+.kr-tech-infl .kr-bg-tech{
+	display:block;
+	background:url(../images/kred/kr-bg.png) no-repeat;
+	width:17px;
+	height:17px;
+	cursor:pointer;
+	float:left;
+	margin-top:2px;
+}
+
+.etl-score,
+.kr-tech-score{
+	display:block;
+	background:url(../images/kred/kred-badge-sml.png) no-repeat;
+	width:53px;
+	height:53px;
+	cursor:pointer;
+	color:#fff;
+	float:left;
+}
+
+.etl-score .etl-inf{
+	position:absolute;
+	margin:5px;
+}
+
+.etl-score .etl-out{
+	position:absolute;
+	margin:23px;
+}
+
+.etl-right .etlr-top .kr-popup{
+	position:absolute;
+	margin:0px;
+	z-index:3;
+}
+
+.etl-right .etlr-top .etl-kr-name{
+	display:inline-block;
+	float:left;
+	margin-left:5px
+}
+
+.etl-kr-name{
+	color:#00bff0;
+}
+
+.etl-name{
+	color:#666666;
+	font-weight:bold;
+}
+
+.etlr-tweet{
+	color:#666666;
+	font-size:13px;
+}
+
+.etlr-tweet-time{
+	display:block;
+	color:#999999;
+	font-size:11px;
+}
+
+.etlr-right .etlr-retweet{
+	display:block;
+}
+
+.kr-tech-infl .kr-popup-tech{
+	position:absolute;
+}
+
+.high-kred{
+	color:#00add8;
+}
+
+.kr-tech-infl{
+	float:right;
+	width:240px;
+	padding:25px;
+	background:#f7f7f7;
+	border:1px solid #dedede;
+	margin-right:8px;
+	-moz-border-radius: 5px;
+/*	-webkit-border-radius: 5px;*/
+	border-radius: 5px;
+}
+
+.kr-tech-infl ul{
+	padding:0;
+	margin:0;
+}
+
+.kr-tech-infl ul li{
+	float:left;
+	display:block;
+	padding:0 0 10px;
+	border-bottom:1px solid #fff;
+	width:270px
+}
+
+.kr-tech-score{
+	float:left;
+}
+
+.kr-tech-img{
+	float:left;
+	margin:0 10px;
+}
+.kr-tech-det{
+	float:right;
+}
+
+.kr-usr{
+	display:block;
+	font-size:17px;
+	color:#333;
+}
+
+.kr-usr{
+	display:block;
+}
+
+.kr-usr-list{
+	width:100%;
+	float:left;
+}
+
+.kr-usr-list .kr-bg-tech{
+	float:left;
+}
+
+.kr-usr-list .kr-at-name{
+	float:left;
+	/*color:#00BFF2;*/
+	color:#00b8e6;
+}
+
+.kr-tech-follow{
+	float:left;
+	display: block;
+	background: url(../images/kred/follow.png) no-repeat;
+	width: 62px;
+	height: 18px;
+}
+
+.kr-score{
+	display:block;
+	background:url(http://pbcdn.peoplebrowsr.com/components/com_pages/views/images/kred/kred-badge.png) no-repeat;
+	width:200px;
+	height:191px;
+	float:left;
+	margin:10px 0 0 10px;
+}
+
+
+
+/*Leaderboard*/
+
+.communityname {text-transform:capitalize}
+
+.influencly-ranking h1{
+	font-size:40px;
+	color:#000000;
+	float:left;
+}
+
+.lilshield {
+	width:63px;
+	height:60px;
+	background: transparent url(/components/com_pages/views/images/kred/kred-badge-community.png) 0 0;
+	display:inline-block;
+	vertical-align:middle; /* LOL */
+	position:relative;
+}
+
+.lilshield p {
+	position:absolute;
+	left:-13px;
+	top:-25px;
+	font-size:11px;
+	color:#000;
+	width:8em;
+	text-align:center;
+	text-transform:none;
+}
+
+.lilshield img.loader {
+	width:35px;
+	margin-top:11px;
+	margin-left:15px;
+}
+
+.lilshield span {
+	display:block;
+	font-size:16px;
+	color:#fff;
+	position:absolute;
+}
+
+.lilshield span.lilinfluence {
+	top:8px;
+	left:10px;
+}
+
+.lilshield span.liloutreach {
+	bottom:8px;
+	right:13px;
+	min-width:1em;
+}
+
+.influencly-ranking #top-leaderboard{
+	margin:50px 0;
+	background:url(../images/influencly/bg-rank.png) no-repeat bottom;
+	padding-bottom:20px;
+	float:left;
+}
+
+.influencly-ranking #top-leaderboard a{
+	float:right;
+	color:#0bb0da;
+	text-decoration:none;
+	margin-top:10px;
+	font-weight:bold;
+}
+
+.influencly-ranking #top-leaderboard p{
+	display:block;
+	width:100%;
+	color:#999999;
+	font-size:17px;
+	line-height:24px;
+	float:left;
+}
+
+.influencly-ranking #tech-infl-leader,
+.influencly-ranking #tech-out-leader{
+	width:435px;
+}
+
+.influencly-ranking #tech-infl-leader{
+	float:left;
+}
+
+.influencly-ranking #tech-out-leader{
+	float:right;
+}
+
+.techleaders{
+	display:none;
+}
+
+.techleaders > div {
+	background-color:#f3f3f3;
+	border-radius:10px;
+	-moz-border-radius: 10px;
+/*	-webkit-border-radius: 10px;*/
+}
+
+.techleaders .infl-leaders,
+.techleaders .out-leaders{
+	width:435px;
+	margin-bottom:3em;
+}
+
+.techleaders .infl-leaders{
+	float:left;
+	display:none;
+}
+.techleaders .out-leaders{
+	float:right;
+	display:none;
+}
+
+.techleaders .viral_leaders {
+	float:right;
+	clear:both;
+	margin-right:0.85em;
+	margin-bottom:0.7em;
+}
+
+.groupsummary .stats .counts div.viral_counts {
+	float:right;
+	text-align:right;
+	padding-right:0;
+}
+
+.counts .viral_counts .tweet,
+.techleaders .viral_leaders .tweet {
+	width:55px;
+	height:20px;
+	background: transparent url(/components/com_pages/views/images/kred/statement-tweet.png) no-repeat;
+	background-position:top left;
+	display:inline-block;
+	margin-top:3px;
+	margin-bottom:-5px;
+	margin-left:-20px;
+	cursor:pointer;
+}
+
+.counts .viral_counts .tweet:hover,
+.techleaders .viral_leaders .tweet:hover {
+	background-position:bottom left;
+}
+
+.counts .viral_counts .facebook,
+.techleaders .viral_leaders .facebook {
+	width: 65px;
+	height: 20px;
+	background:url(/components/com_pages/views/images/kred/fbshare-button.png) no-repeat;
+	background-position: top left;
+	display:inline-block;
+	margin-top:3px;
+	margin-bottom:-5px;
+	cursor:pointer;
+	zoom: 0.9; /* Bahahaha */
+}
+
+.counts .viral_counts .facebook:hover,
+.techleaders .viral_leaders .facebook:hover {
+	background-position:bottom left;
+}
+
+.techleaders .col_headings {
+	line-height:2;
+	float:right;
+	margin-right:37px;
+}
+
+.techleaders .col_headings div {
+	float:left;
+	border-right:1px solid #fff;
+	border-top:1px solid #fff;
+
+	width:20px;
+	text-align:center;
+	background-color:#ededed;
+}
+
+.techleaders .col_headings img {
+	margin:auto;
+}
+
+table .kred {
+	width:25px;
+	text-align:center;
+}
+
+.techleaders .col_headings div.kred-global,
+.techleaders .col_headings div.peerindex {
+	line-height:1;
+}
+
+.techleaders span.compare_toggle {
+	color:#666;
+	cursor:pointer;
+	text-align:center;
+	line-height:2;
+	display:none;
+}
+
+.techleaders tr:hover span.compare_toggle {
+	color:#000;
+}
+
+.techleaders .infl-leaders table,
+.techleaders .out-leaders table{
+	padding:0;
+	margin:0;
+	width:100%;
+	border-spacing:0;
+}
+
+.techleaders .infl-leaders tr,
+.techleaders .out-leaders tr{
+	padding:10px 5px;
+	margin:0;
+	background:#dfdfdf;
+}
+
+.techleaders .infl-leaders tr:nth-child(even),
+.techleaders .out-leaders tr:nth-child(even){
+	background:#efefef;
+}
+
+.techleaders .personal-rank{
+	width:413px;
+	height:84px;
+	color:#ffffff;
+	padding:24px 8px 0;
+}
+
+.techleaders .personal-rank.green{
+	background:url(../images/influencly/green-bg.png) repeat-x;
+}
+
+.techleaders .personal-rank.blue{
+	background:url(../images/influencly/blue-bg.png) repeat-x;
+}
+
+.techleaders .personal-rank .rank{
+	width:60px;
+	float:left;
+}
+
+.techleaders .personal-rank .rank .your-rank{
+	display:block;
+	text-align:center;
+}
+
+.techleaders .personal-rank .rank .your-position{
+	display:block;
+	font-size:24px;
+	text-align:center;
+}
+
+
+.techleaders .personal-rank .rank-user-img{
+	float:left;
+	width:65px;
+	margin-right:23px;
+}
+
+.techleaders .personal-rank .rank-user-profile{
+	margin-left:10px;
+}
+
+.techleaders .personal-rank .rank-user-profile .rank-user-name{
+	display:block;
+	font-size:24px;
+
+}
+
+.techleaders .personal-rank .rank-user-profile p{
+	display:block;
+	font-size:10px;
+}
+
+.techleaders table th {
+	border-bottom:1px solid #fff;
+	background-color:#F3F3F3;
+}
+
+.techleaders table.comparing th.comparable {
+	border-right:1px solid #fff;
+	border-top:1px solid #fff;
+	background-image: -webkit-gradient(   linear,
+														left top,
+														left bottom,
+														from(#fefefe),
+														to(#ededed));
+	background-image: -moz-linear-gradient(  top,
+															#fefefe,
+															#ededed);
+}
+
+.techleaders table.comparing th.comparable.leftmost {
+	border-left:1px solid #fff;
+}
+
+.position,
+.pos-img-user,
+.pos-at-name{
+
+}
+
+.position{
+	padding: 10px;
+	font-weight: bold;
+	width: 10px;
+	text-align: center;
+	color:#666;
+}
+
+.pos-at-name{
+	font-weight:bold;
+	padding:5px 8px;
+	display:block;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	width:130px;
+	white-space:nowrap;
+	text-align:center;
+}
+
+.pos-img-user,
+.pos-img-user img{
+	width:30px;
+	height:30px;
+}
+
+.comparator {
+	float:right;
+	height:50px;
+	margin-top:-11px;
+	line-height:3.6;
+}
+
+td.comparable {
+	width:25px;
+	text-align:center;
+}
+
+td.kred,
+td.comparable {
+	color:#666;
+	font-size:12px;
+}
+
+.comparator > div {
+	float:left;
+	border-right:1px solid #fff;
+	/*padding:0 9px;*/
+	height:100%;
+	width:36px;
+	text-align:center;
+	font-size:12px;
+}
+
+table div.inf {
+	border-bottom:1px solid #666;
+}
+
+table div.inf,
+table div.out {
+	height:29%;
+	line-height:0.9;
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.comparable span {
+	display:none;
+}
+
+.comparing .comparable span {
+	border-color:#fff;
+	display:inline;
+}
+
+.comparing .comparable {
+	border-color: #fff!important;
+}
+
+table td.comparable {
+	border-right:1px solid transparent;
+}
+
+table .kred-global.comparable {
+	border-left:1px solid transparent;
+}
+
+h1.infl-det{
+	font-size:36px;
+	color:#000000;
+	display:block;
+	padding:0;
+	margin:0;
+	margin-left:24px;
+	text-transform:capitalize;
+	position:relative;
+	text-align:left;
+	white-space:nowrap;
+}
+
+h1.infl-det-new{
+	font-size:17px;
+	color:#000;
+	display:block;
+	padding:0;
+	margin:0 0 10px;
+}
+
+.inf-det-blurb{
+	color:#999999;
+	font-size:17px;
+	float:left;
+	width:100%;
+}
+
+a.more-comm{
+	float:left;
+	color: #0BB0DA;
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 10px;
+	text-decoration:none;
+}
+
+li.show-more{
+	background:#ffffff url(../images/influencly/show-more.png) no-repeat !important;
+	background-position: 0px 17px !important;
+}
+
+#show-more-list{
+	float:right;
+	margin-right:10px;
+	color: #0BB0DA;
+	font-size: 14px;
+	margin-top:9px;
+}
+
+.ana-prf {
+	position:relative;
+	margin-top: 2em;
+}
+
+.community
+Selector {
+	text-align:left;
+	background-color: #f6f6f6;
+}
+
+.communitySelector .container {
+	position:absolute;
+	left:0;
+	bottom:0;
+}
+
+.ana-prf ul.communities,
+.communitySelector ul.commSelect {
+	display:none;
+	position:absolute;
+	top:1.1em;
+	left:1em;
+	font-size:14pt;
+	font-weight:normal;
+	z-index:1;
+	list-style:none;
+	text-transform:capitalize;
+	background-color:#f1f6f7;
+	padding:0;
+	text-align:left;
+
+	border: 1px solid #ebebeb;
+	border-top:none;
+}
+
+.ana-prf ul.communities {
+	overflow:auto;
+	height:18.6em; /* Bottom of the badge panel */
+	min-width:15em;
+	left:1px;
+	top:2em;
+}
+
+
+
+.communitySelector {
+	position:relative;
+}
+
+.communitySelector ul.commSelect {
+	left:0em;
+	top:0em;
+	border:1px solid #ebebeb;
+	border-top:none;
+	font-size:14pt;
+	font-weight:normal;
+	margin-top:0;
+	padding-bottom:0.4em;
+	padding-left:0;
+}
+.ana-prf ul.communities a,
+.communitySelector ul.commSelect a {
+	color:#666;
+	margin:0 1.2em;
+}
+
+.communitySelector ul.commSelect a {
+	font-size:18px;
+	color:#666;
+	white-space:nowrap;
+}
+
+.communitySelector a.direction-up {
+	display:none;
+}
+
+.ana-prf ul.communities a:hover,
+.communitySelector ul.commSelect a:hover {
+	text-decoration:none;
+	color:#00b8e6;
+}
+
+.ana-prf h1 a {
+	color:#00b8e6;
+	display:none; /* Obsoleted */
+}
+
+.ana-prf h1 a:hover {
+	text-decoration:none;
+}
+
+.groupsummary {
+	float:left;
+	clear:both;
+	margin:2em 0;
+}
+
+.groupsummary .shield_outer {
+	float:left;
+	background-color:#fff;
+	height:356px;
+	-moz-border-radius:10px;
+/*	-webkit-border-radius:10px;*/
+	border-radius:10px;
+}
+
+.groupsummary .shield_outer h2 {
+	text-align:center;
+	margin:1em 1em 0;
+}
+
+.groupsummary .shield_outer .grp_info{
+    float: right;
+    margin: 0 0 0 -26px;
+}
+
+.groupsummary .usr-det-kr {
+	display:none;
+}
+
+.groupsummary .influence-outreach {
+	background-color:#fff;
+}
+
+.groupsummary > div {
+	border-radius:10px;
+	-moz-border-radius: 10px;
+/*	-webkit-border-radius: 10px;*/
+	margin:0 0 0 10px;
+	padding:15px;
+	background-color:#f1f6f9;
+	float:left
+}
+
+.groupsummary .badge {
+	width:288px;
+	height:231px;
+}
+
+.groupsummary .stats {
+	width: 597px;
+	min-height: 318px;
+	padding: 1.5em;
+
+	border-radius:10px;
+	-moz-border-radius: 10px;
+/*	-webkit-border-radius: 10px;*/
+}
+
+.groupsummary .stats .counts {
+	background-color: #fff;
+	padding:7px 8px;
+	width:97%;
+	float:left;
+	border-radius:10px;
+	-moz-border-radius: 10px;
+/*	-webkit-border-radius: 10px;*/
+	border: 1px solid #ebebeb;
+	margin-bottom:1.5em;
+	color:#676767;
+}
+
+.groupsummary .stats .counts > p {
+	font-size:150%;
+	font-weight:bold;
+	margin: 0.15em;
+}
+
+.groupsummary .stats .counts > div {
+	float:left;
+	padding: 2px 25px 2px 6px;
+	width:43%;
+}
+
+.groupsummary .stats .counts div.posts {
+
+}
+
+.groupsummary .stats .counts div.right {
+	margin-left:36px;
+	padding-left:40px;
+}
+
+.groupsummary .stats .counts div.boys {
+	background: transparent url(/components/com_pages/views/images/kred/leaderboard-m.png) no-repeat top left;
+}
+
+.groupsummary .stats .counts div.girls {
+	background: transparent url(/components/com_pages/views/images/kred/leaderboard-f.png) no-repeat top left;
+}
+
+.groupsummary .stats .counts div.followers {
+	background: transparent url(/components/com_pages/views/images/kred/leaderboard-twitter.png) no-repeat top left;
+}
+
+.groupsummary .stats .counts > div span.blurb {
+	line-height:2.5;
+}
+
+.groupsummary .stats .counts > div span.count {
+	color:#000;
+	line-height:2.5;
+	font-size:15;
+}
+
+.groupsummary .stats .counts > div.right span {
+	float:inherit;
+	width:4em;
+}
+
+.groupsummary .wordcloud {
+	color: #676767;
+}
+.wordcloud span{
+	margin-right: 5px;
+	display:inline-block;
+	margin-top:1px;
+}
+.wordcloud .freq1 {
+	font-size:300%;
+}
+.wordcloud .freq2 {
+	font-size:280%;
+}
+.wordcloud .freq3 {
+	font-size:260%;
+}
+.wordcloud .freq4 {
+	font-size:240%;
+}
+.wordcloud .freq5 {
+	font-size:220%;
+}
+
+.wordcloud .freq6 {
+	font-size:200%;
+}
+.wordcloud .freq7 {
+	font-size:180%;
+}
+
+.wordcloud .freq8 {
+	font-size:160%;
+}
+
+.wordcloud .freq9 {
+	font-size:140%;
+}
+
+.wordcloud .freq10 {
+	font-size:120%;
+}
+
+.out-leaders h1,
+.infl-leaders h1{
+	font-size:21px;
+	color:#333333;
+	display:block;
+	width:100%;
+	margin-top:3px;
+	margin-bottom:0;
+}
+
+.out-leaders .header .score,
+.infl-leaders .header .score {
+	color:#fff;
+	font-size:55px;
+	position:absolute;
+	left:24px;
+	top:20px;
+	text-align:center;
+	width:100px;
+	text-shadow:1px 1px 0 #55972B;
+}
+
+.techleaders h1 {
+	clear:both;
+}
+
+.techleaders .tech-blurb, .infl-leaders .tech-blurb{
+	font-size:20px;
+	padding-right:3em;
+}
+
+.infl-leaders .header {
+	position:relative;
+	background: transparent url(/components/com_pages/views/images/kred/leaderboard-influence.png) no-repeat 16px 9px;
+}
+
+.out-leaders .header {
+	position:relative;
+	background: transparent url(/components/com_pages/views/images/kred/leaderboard-outreach.png) no-repeat 16px 9px;
+}
+
+.infl-leaders .header, .out-leaders .header {
+	background-color:#f3f3f3;
+	height:125px;
+	padding-left:150px;
+	padding-top:10px;
+}
+
+.tech-blurb{
+	color:#666666;
+	font-size:13px;
+}
+
+#reciprical-followers,
+#reciprical-retweeters,
+#reciprical-repliers{
+	width:280px;
+	float:left;
+	margin-right:35px;
+}
+
+#top-activites,
+#hastag-clouds{
+	background:url(../images/influencly/infl-boxes-bg.png) no-repeat;
+	padding-top:30px;
+	float:left;
+	margin-top:30px;
+	width:100%;
+}
+
+#hastag-clouds{
+	margin-bottom:50px;
+}
+
+#top-activities h3{
+	color:#333333;
+	font-size:17px;
+	font-weight:bold;
+	display:block;
+}
+
+#top-activites ul {
+	padding:0;
+	margin:0;
+	border-left:1px solid #aaa;
+	border-top:1px solid #aaa;
+	border-right:1px solid #aaa;
+	float:left;
+}
+
+#top-activites ul li{
+	list-style:none;
+	display:block;
+	padding:5px 25px 5px 10px;
+	float:left;
+	width:258px;
+	border-bottom:1px solid #aaa;
+}
+
+#top-activites ul li:nth-child(even){
+	background:#f0f0f0;
+}
+
+.flw-count{
+	color:#ffffff;
+	font-weight:bold;
+	float:right;
+	margin:5px;
+	width:26px;
+	height:24px;
+	display:block;
+	padding:4px;
+	text-align:center;
+}
+
+.flw-count.green{
+	background:url(../images/influencly/green-b.png) no-repeat;
+}
+
+.flw-count.grey{
+	background:url(../images/influencly/grey-b.png) no-repeat;
+}
+
+.flw-count.blue{
+	background:url(../images/influencly/blue-b.png) no-repeat;
+}
+
+#hashtag-lists{
+	margin:0;
+	padding:0;
+}
+
+#hashtag-lists li{
+	padding:5px 7px;
+	display:inline-block;
+	color:#00c3f3;
+	font-size:20px;
+	font-weight:bold;
+}
+
+#hashtag-lists h4{
+	font-size:17px;
+	color:#333;
+	font-weight:bold;
+}
+
+#choosen-community{
+	margin:20px 0;
+	width:100%;
+	float:left;
+}
+
+#choosen-community ul{
+	padding:0;
+	margin:0;
+	width:100%;
+}
+
+#choosen-community ul li{
+	padding:0;
+	margin:0;
+	width:25%;
+	float:left;
+	list-style:none;
+	text-align:center;
+	color:#00C3F3;
+	font-size:20px;
+	font-weight:bold;
+	text-align:center;
+}
+
+.reach-out{
+	float: right;
+	margin: 5px 10px;
+	display:block;
+	width:75px;
+	height:24px;
+	background:url(/components/com_pages/views/images/kred/kred-follow.png) no-repeat;
+	background-position:0 -24px;
+	opacity:0.5;
+
+}
+
+.reach-out:hover{
+	background-position:0 0;
+	opacity:1;
+}
+
+.stat_followed{
+    float: right;
+    margin-right: 20px;
+}
+
+ul#comm-leader{
+	width:100%;
+	padding:0;
+	margin:0 0 10px 25px;
+	float:left;
+	height:91px;
+	overflow:hidden;
+}
+
+ul#comm-leader.show-all{
+	height:auto !important;
+}
+
+ul#comm-leader li,
+#see-more{
+	list-style:none;
+	padding: 0;
+	margin: 0;
+	color: #00C3F3;
+	font-size: 15px;
+	font-weight: bold;
+	display:block;
+	width:100%;
+	line-height:22px;
+	cursor:pointer;
+}
+
+#see-more{
+	float:left;
+	margin:-10px 0 0 25px;
+}
+
+/*overview page*/
+#overview-top{
+	height:50px;
+	position:absolute;
+	top: 49px;
+	z-index: 201;
+	/* width: 100%; NO NO NO! */ /* --(lol <3) */
+	width:940px;
+}
+#inside-container .tabcontent{
+	clear:both;
+	height: 0;
+	overflow: hidden;
+	position:relative;
+}
+#inside-container .active {
+	height: auto;
+	overflow: visible;
+}
+.top-user-name{
+	float: left;
+
+	margin-right: 10px;
+	margin-top:5px;
+
+	padding: 5px 15px;
+	height: 35px;
+
+	border-radius: 20px 20px 0 0;
+	border-top: 1px solid #ddd;
+
+	text-align:center;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+
+	background: #fafafa;
+	color:#ccc;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 36px;
+
+	position:relative;
+	overflow:hidden;
+}
+
+.top-user-name.yourTab{
+}
+
+.top-user-name .tab_label{
+	display: inline-block;
+	cursor:pointer;
+	overflow: hidden;
+	width: 100%;
+	text-overflow: ellipsis;
+}
+
+#overview-top .top-user-name[source=twitter] .tab_label:before{
+	content: "@";
+}
+
+#overview-top.squished .top-user-name .tab_label:before{
+	content: "";
+}
+
+#overview-top.squished #search-at-name {
+	float:right;
+	margin-right:31px;
+}
+
+.top-user-name:hover,
+.top-user-name.current {
+	background: #fff;
+	color: #333;
+	border-top: 1px solid #ccc;
+}
+
+.top-user-name .close {
+	display:none;
+}
+
+.top-user-name:hover .close {
+	display:block;
+	position:absolute;
+	top:4px;
+	right:7px;
+	cursor:pointer;
+	font-size:67%;
+}
+
+.top-user-name:hover .close{
+}
+
+#search-at-name{
+	/*background:url(../images/influencly/bbg.png) repeat-x;*/
+	float: left;
+	width: auto;
+	padding: 5px 3px 2px 40px;
+	margin-top:9px;
+	color:#ffffff;
+	font-weight:bold;
+	-moz-border-radius:  5px 5px 0 0;
+/*	-webkit-border-radius:  5px 5px 0 0;*/
+	border-radius:   5px 5px 0 0;
+}
+
+/*.influencly-overview #inside-container {
+  -moz-border-radius: 0px 10px 0 0;
+  -webkit-border-radius: 0px 10px 0 0;
+  border-radius: 0px 10px 0 0;
+  }
+  */
+#txt-container{
+	margin-top: 0px;
+	float: left;
+	height:23px;
+	margin-left: -35px;
+	padding-right:25px;
+	position:relative;
+	background: url("../images/influencly/search.png") no-repeat right 5px;
+	cursor:pointer;
+}
+
+#txt-container::after{
+	width: 35px;
+	height: 28px;
+	display: block;
+	content: "";
+	border-radius: 5px;
+	position: absolute;
+	right: -10px;
+	top: 0px;
+	background-color: #000;
+	z-index: -1;
+	cursor:pointer;
+}
+
+#txt-container input[type="text"]{
+	border:0;
+	background:#fff;
+	width:160px;
+	color: #333;
+	height:19px;
+	border-radius:5px;
+	font-size: 11px;
+	margin-right: 4px;
+	padding: 5px;
+	padding-left: 10px;
+}
+
+#txt-container input[type="text"]:focus{
+	background:#fff;
+	color:#000;
+}
+.influencly-overview  .influ_boxes {
+	margin:20px 0 0 !important;
+}
+
+.get-more-kred{
+	float: left;
+	padding: 0;
+	margin: -40px 0 0 55px;
+	font-weight: bold;
+	/*color:#00c1f1;*/
+	color: #00b8e6;
+}
+
+.user-at-name{
+	/*color:#00c1f1;*/
+	color: #00b8e6;
+}
+
+.top-infl-community{
+	background:url(../images/influencly/tech-banner.png) no-repeat;
+	padding-top:30px;
+	float:left;
+	width:615px;
+}
+
+.top-infl-community .infl-header,
+.top-infl-community .infl-comm-header,
+.top-infl-community .rank-comm{
+	float:left;
+	width:100%;
+}
+
+.top-infl-community .infl-header{
+	color:#333333;
+	font-size:13px;
+	font-weight:bold;
+}
+
+.top-infl-community .infl-comm-header{
+	color:#000000;
+	font-size:32px;
+	margin:2px 0;
+	padding:0;
+}
+
+.top-infl-community .rank-comm{
+	color:#666666;
+	font-size:12px;
+}
+
+.activity{
+	margin:50px 0 -11px 10px;
+}
+
+#invite-follow{
+	float:left;
+	background:url(../images/influencly/bg-border.png) no-repeat;
+	background-position:440px 30px;
+	margin-top:30px;
+}
+
+/*invite page*/
+
+body.influencly-invite{
+	background:#353535;
+	font-family: helvetica neue, sans-serif;
+	color:#fff;
+}
+
+#invite_header_outer{
+	background: #333 url("/components/com_pages/views/images/td/dotted-rs-bg.png") repeat-x 0 0;
+	width:100%;
+	height:130px;
+}
+#invite_header{
+	height:100px;
+	width:747px;
+	margin:10px auto 20px;
+	background: url("/components/com_pages/views/images/kred/invite_header.png") no-repeat scroll 0 0 transparent;
+}
+#comingsoon{
+	margin:10px auto;
+	width:130px;
+	height:23px;
+	background: url("/components/com_pages/views/images/kred/comingsoon.png") no-repeat scroll 0 0 transparent;
+}
+#invite-wrapper{
+	background: url("/components/com_pages/views/images/kred/shield_extra.png") no-repeat scroll 0 0 transparent;
+	display: block;
+	height: 574px;
+	margin: 10px auto 0;
+	padding: 20px 40px 40px;
+	width: 607px;
+}
+#defaultCountdown{
+	-moz-border-radius: 5px;
+/*	-webkit-border-radius: 5px;*/
+	border-radius: 5px;
+	border-color:#6daa41;
+	border-width:2px;
+	height: 59px;
+	margin: 35px auto 25px;
+	width: 400px;
+	background:#333;
+	color:#fff;
+	font-size:12px;
+}
+#defaultCountdown .countdown_amount{
+	/*color:#2abcf1;*/
+	color:#00b8e6;
+	font-size:38px;
+}
+
+#invitePopup{
+	background:#fff;
+	color: #333;
+	font-size: 18px;
+	margin: 20px auto;
+	padding: 16px 4px;
+	text-align: center;
+	width: 485px;
+}
+
+#invite-form{
+	width:462px;
+	position:relative;
+	margin:44px auto 0;
+	padding:0;
+	display:block;
+	color:#ffffff;
+}
+
+#invite-form h1{
+	font-size:30px;
+	font-weight:normal;
+	text-align:center;
+	padding:0;
+	margin:0;
+}
+
+#invite-form h1 .invite-sml{
+	font-size:23px;
+}
+#invite-form textarea{
+	width:400px;
+	margin:10px auto;
+	border:1px solid #666;
+	text-align:left;
+	padding:5px;
+	display:block;
+	-moz-border-radius:5px;
+/*	-webkit-border-radius:5px;*/
+	border-radius:5px;
+}
+#invite-form h3{
+	color:#fff;
+	text-align:center;
+}
+#invite-form h4{
+	color:#fff;
+	text-align:center;
+}
+
+.form-row{
+	width:90%;
+	margin: 10px auto;
+	text-align:center;
+}
+
+.form-row .form-label,
+.form-row .input-wrap,
+.form-row .err-message{
+	display:block;
+	font-size:14px;
+}
+
+.form-row .form-label{
+	width:138px;
+	text-align:right;
+}
+
+#invite-form .form-row .form-label {
+	text-align:left;
+	padding:0 10px;
+}
+
+#invite-form .missing {
+	border-color:#f00;
+}
+
+.form-row .input-wrap input[type="text"]{
+	width:90%;
+	padding: 5px 10px;
+	font-size:16px;
+	margin:0 5px;
+	-moz-border-radius:5px;
+/*	-webkit-border-radius:5px;*/
+	border-radius:5px;
+}
+
+.form-row .err-message{
+	color:#d50810;
+	font-size:16px;
+	margin:0 0 0 20px;
+	padding-left:10px;
+	background:url(../images/influencly/arr.png) no-repeat;
+	background-position:0 2px;
+	display:none;
+}
+
+#request-inv,
+#invite-form #loginbar{
+	display:inline-block;
+	position:relative;
+	margin:16px 10px;
+	background:#EBEBEB;
+	border:2px solid #eee;
+	text-align:center;
+	color:#000;
+	font-size:16px;
+	cursor:pointer;
+	-moz-border-radius:5px;
+/*	-webkit-border-radius:5px;*/
+	border-radius:5px;
+	font-weight:bold;
+	padding:10px;
+}
+#invite-form #loginbar a{
+	color:#000;
+}
+
+#enter{
+	color:#696969;
+	font-size:18px;
+	text-align:center;
+	display:block;
+	padding:8px 0;
+	margin:15px 0 0;
+}
+
+#invite-error{
+	color:#d50810;
+	font-size:18px;
+	text-align:center;
+	/*display:block;*/
+	display:none;
+	padding:8px 0;
+}
+
+#invite-login{
+	position:absolute;
+	right:-85px;
+	top:-41px;
+	font-size:17px;
+	color:#00bff3;
+	text-decoration:underline;
+}
+
+#invite-wrapper #signupbar {display:none;}
+
+.guide-wrapper{
+/*	float:right;*/
+  	/*margin: 0 0 0 -6px;*/
+  	margin: 0 0 0 -2px;
+    position: relative;
+}
+
+#kr-login-div .foreign_uid{
+    display: none;
+}
+.creds,
+.b-creds{
+	display:block;
+}
+
+.act-title{
+	float: left;
+	margin-top: 28px;
+	font-weight: bold;
+	/*color:#00C1F1;*/
+	color: #00b8e6;
+	margin-right:45px;
+	min-width:3em;
+}
+
+.act-title a{
+	/*color:#00C1F1;*/
+	color: #00b8e6;
+	text-decoration:none;
+}
+
+.act-title.guides {
+	float:right;
+	padding-bottom:1em;
+	margin-top:10px;
+}
+
+.act-title.learn {
+	display:block;
+	float:none;
+	margin:2em;
+	text-align:center;
+}
+
+.act-title.guides a {
+	margin-right:0;
+	margin-left:25px;
+}
+
+h1.act-kred{
+	font-size:18px;
+	margin:0;
+	padding:0;
+}
+
+.creds,
+.b-creds{
+	color:#1a1a1a;
+}
+
+.show-community-title{
+	/*color:#00BFF2;*/
+	color:#00b8e6;
+	cursor:pointer;
+	width: 140px;
+	display: block;
+/*
+	background:  url(../images/influencly/list-bg.png) repeat-x;
+*/
+	text-align: left;
+	padding: 9px 10px 6px;
+	margin-top: -3px;
+/*
+	border-left:1px solid #aaa;
+	border-top:1px solid #aaa;
+	border-right:1px solid #aaa;
+	border-bottom:0;
+*/
+	border:none;
+	text-align:center;
+   line-height: 1.5;
+	font-size:14px;
+	font-weight:bold;
+	text-transform:capitalize;
+}
+
+.show-activity-title{
+	/*color:#00BFF2;*/
+	color:#00b8e6;
+	cursor:pointer;
+	width: 127px;
+	display: block;
+/*
+	background:  url(../images/influencly/list-bg.png) repeat-x;
+*/
+	text-align: left;
+	padding: 9px 10px 6px;
+	margin-top: -3px;
+/*
+	border-left:1px solid #aaa;
+	border-top:1px solid #aaa;
+	border-right:1px solid #aaa;
+	border-bottom:0;
+*/
+	border:none;
+	text-align:center;
+   line-height: 1.5;
+}
+
+.activity_panel_inner {
+    /*margin-top: 155px;*/
+    margin-top: 95px;
+    padding-top: 0;
+}
+.activity_panel_inner.callout-expanded {
+	margin-top: 115px;
+}
+
+.show-community ul{
+	z-index:1;
+	display:none;
+	position:absolute;
+	margin:0;
+	padding:10px;
+	background:#fff;
+	border:1px solid #aaa;
+	width:190px;
+	background:#f2f2f2;
+	max-height:20em;
+	overflow:auto;
+}
+
+.show-community ul li{
+	display:block;
+	line-height:25px;
+	color:#333;
+	cursor:pointer;
+	padding-left:25px;
+	font-size:14px;
+	font-weight:bold;
+	text-transform:capitalize;
+}
+
+.show-commnity ul li a{
+	color:#333;
+}
+
+.show-community ul li a:hover{
+	/*color:#00BFF2;*/
+	color:#00b8e6;
+	text-decoration:none;
+}
+
+.show-activity ul{
+	z-index:1;
+	display:none;
+	position:absolute;
+	margin:0;
+	padding:10px;
+	background:#fff;
+	border:1px solid #aaa;
+	width:190px;
+	background:#f2f2f2;
+}
+
+.show-activity ul li{
+	display:block;
+	line-height:25px;
+	color:#333;
+	cursor:pointer;
+	padding-left:25px;
+}
+
+.show-activity ul li a{
+	color:#333;
+}
+
+.show-activity ul li a:hover{
+	/*color:#00BFF2;*/
+	color:#00b8e6;
+	text-decoration:none;
+}
+
+.show-activity ul li.ticked{
+	background:url(../images/kred/tick.png) no-repeat left;
+}
+
+
+.friends h2 {
+	color:#333;
+	font-size:23px;
+	font-weight:normal;
+	margin:0;
+}
+
+.friends .panel_inner {
+	padding:1em 0;
+}
+
+.friends .recent-activity-header {
+/*	margin:1em 0;*/
+	margin:1.5em 0 0;
+	padding:0;
+}
+
+.friends .guide-infl {
+	margin-right:-2px;
+}
+
+.friends .guide-infl ul li {
+	width:90px;
+}
+
+.friends .statement {
+    /*height:50px;*/
+	/*line-height: 50px;*/
+}
+
+.friends .statements .statement {
+    font-size:14px;
+	/*line-height: 50px;*/
+}
+
+.friends .statements .statement .stat_date {
+	width:80px;
+	/* height:50px; */
+	/*line-height: 50px;*/
+}
+
+.friends .statements .statement .object, .friends .statements .statement .subject{
+	color: #666;
+	width: 200px;
+	overflow: hidden;
+	position: relative;
+	left: 10px;
+}
+
+.friends .statements .statement .friendaction{
+	width: 120px;
+    /*overflow: hidden;*/
+}
+
+.friends .statements .statement .subject .kredible {
+	max-width: 190px;
+}
+
+.friends .friendavatar {
+	display:inline-block;
+	width: 30px;
+	height: 30px;
+	position: relative;
+	vertical-align:top;
+}
+
+.friends .statements .statement .stat_points, .friends .statements .statement .gained_points {
+	height:auto;
+	overflow:hidden;
+	width: 80px;
+}
+
+.kred-drp-down{
+	float:right;
+	background:url(../images/kred/drp.png);
+	display:block;
+	width:13px;
+	height:10px;
+	margin: 12px 7px 0 0;
+	cursor:pointer;
+}
+
+.ra-kr{
+	display:none !important;
+}
+
+.ra-kr.active{
+	display:block !important;
+}
+
+#analyze_va_frame{
+	width: 1000px;
+	height: 640px;
+	border: none;
+	overflow: hidden;
+}
+
+#va-data-wrapper{
+	padding: 21px 0 33px;
+	border-bottom: 1px solid #C2C2C2;
+	float: left;
+	width: 100%;
+}
+
+#va-data{
+	background: #EEE;
+	float: left;
+	width: 1054px;
+	padding:5px 10px 15px 10px;
+	-moz-border-radius: 0 0 10px 10px;
+/*	-webkit-border-radius: 0 0 10px 10px;*/
+	border-radius: 0 0 10px 10px;
+}
+
+.days-mentions{
+	background: transparent url(../images/pb_homepage/chart.png) repeat-x;
+	width: 100%;
+	float: left;
+	height:28px;
+	padding:7px 0;
+	text-indent:10px;
+	font-size: 18px;
+	color: #4a4a4a;
+	-moz-border-radius: 10px 10px 0px 0px;
+/*	-webkit-border-radius:10px 10px 0px 0px;*/
+	border-radius: 10px 10px 0px 0px;
+}
+
+#va-data .va-legend{
+	float:right;
+	width:155px;
+}
+
+#va-data .va-legend ul{
+	padding:0;
+	margin:0;
+}
+
+#va-data .va-legend ul li{
+	list-style:none;
+	display:block;
+	background: url(../images/reddot.png) no-repeat;
+	color:#4a4a4a;
+	font-size:14px;
+	padding: 0 0 0 18px;
+	line-height:24px;
+	background-position:0 3px;
+}
+
+#va-results{
+	display:none;
+}
+
+#kr-most-clicked a.mc-blue{
+	color:#40B9E3 !important;
+}
+
+#comm-list-btn{
+	margin-top:-143px !important;
+	border: 1px solid #aeaeae !important;
+	cursor: pointer;
+	width:180px !important;
+	padding:3px !important;
+	-moz-border-radius: 5px !important;
+/*	-webkit-border-radius: 5px !important;*/
+	border-radius: 5px !important;
+}
+
+.clear-both{
+	clear:both;
+	width:100%;
+	height:50px;
+}
+.sliders_block {
+	margin:5px;
+	display:inline-block;
+	width:613px;
+	float:right;
+	positon:relative;
+}
+
+.sliders_block p {
+	margin:0 0 0 33px;
+}
+
+.sliders_block.outer {
+	margin-right:0;
+}
+.va-chart-container,
+.chart-container,
+.sliders_block {
+/*	background:#f7f7f7;
+*/
+	background-color:#fff;
+	border:1px solid #ebebeb;
+	-moz-border-radius: 15px;
+/*	-webkit-border-radius: 15px;*/
+	border-radius: 15px;
+	padding:5px;
+	position:relative;
+	color:#666;
+}
+.sliders_block .sliders_group_title{
+	padding-left:37px;
+	background:transparent url(/components/com_pages/views/images/kred/tweet.png) no-repeat 0 0;
+	height:24px;
+	font-size:18px;
+	text-transform:capitalize;
+	margin:1em;
+}
+.slider{
+	clear:both;
+	margin:5px 0;
+/*height:50px;*/
+}
+
+/*
+  .kred-services {
+  width:84%;
+  padding:10px;
+  margin:5px 6% 15px;
+  float:left;
+  clear:both;
+  border:1px solid #ccc;
+  }
+  */
+
+.greenarrow {
+	width:36px;
+	height:36px;
+	background: transparent url(/components/com_pages/views/images/kred/kred-green-arrows.png) 0 0;
+	position:absolute;
+	top:161px;
+	cursor:pointer;
+	opacity:0.8;
+}
+
+.greenarrow:hover {
+	opacity:1;
+}
+
+.greenarrow.left {
+	left:5px;
+}
+
+.greenarrow.right {
+	right:5px;
+	background-position:-36px 0;
+}
+
+.getMoreTrans{
+	width:100%;
+	line-height:30px;
+	text-align:center;
+	cursor:pointer;
+}
+
+.usr-det-kr{
+	height:auto;
+	display: block;
+	margin: 10px auto 0;
+	position: relative;
+	width: 240px;
+}
+
+
+.usr-det-kr .usr-img{
+	display:inline-block;
+	height:60px;
+	width:60px;
+	margin-right: 0.5em;
+	margin-bottom: 0.4em;
+}
+.usr-det-kr .usr-img img{
+	max-width:60px;
+	max-height:60px;
+	margin:0px 10px 3px 0;
+	float:left;
+}
+.usr-det-kr .usr-dtl{
+	display:none;
+	vertical-align:top;
+	max-width:165px;
+	clear:both;
+	margin-bottom: 0.4em;
+}
+.usr-det-kr .usr-dtl .username{
+	color:#000000;
+	font-size:24px;
+	display:block;
+	max-width:175px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+
+.usr-det-kr .usr-dtl .leader{
+	display:none;
+}
+.leader .usr-det-kr .usr-dtl .atname{
+	display:none!important;
+}
+.leader .usr-det-kr .usr-dtl .leader{
+	display:block;
+	color: #ca9b15;
+	font-size:13px;
+	margin-top:2px;
+	margin-bottom:0px;
+}
+
+.usr-det-kr .usr-dtl .atname{
+	display:block;
+	white-space: nowrap;
+}
+.usr-det-kr .usr-dtl .atname a{
+	color:#00b8e6;
+	font-size:14px;
+	float:left;
+}
+
+.usr-det-kr .atname span.kredible {
+	color:#E5F8FE;
+	color:transparent; /* This is not for you, IE */
+	width:20px;
+	margin-top:-13px;
+	float:left;
+	overflow:hidden;
+	display:block;
+	text-indent:2em;
+}
+
+.va-outreach-influence {
+	width: 940px;
+	height: 400px;
+}
+
+.loading-block {
+	background: none repeat scroll 0 0 #F7F7F7;
+	border: 1px solid #F1F1F1;
+	border-radius: 5px 5px 5px 5px;
+	color: #666666;
+	font: 18px/56px bold Arial,sans-serif;
+	margin-bottom: 20px;
+	text-align: center}
+
+ul.partners {
+	float:left;
+	margin-left:-15px;
+	margin-bottom:40px;
+	width:946px;
+}
+
+ul.partners li {
+	width:149px;
+	height:100px;
+	display:inline;
+	float:left;
+	border:1px solid #ddd;
+	border-radius:5px;
+	margin-right:6px;
+}
+
+.testimonials {
+	background-color:#ededed;
+	border-radius:10px;
+	color:#333;
+	font-size:1.8em;
+	padding:0.2em 2em;
+	margin: 0 15px 0 25px;
+}
+
+.testimonials .arrow {
+	display:none;
+	position:absolute;
+	top:70px;
+	border-style:solid;
+	border-width:1em 1em;
+	border-color: transparent rgb(102,102,102);
+	width:0;
+	height:0;
+}
+
+.testimonials .arrow.left {
+	left:0px;
+	border-left-color:transparent;
+}
+
+.testimonials .arrow.right {
+	right:0px;
+	border-right-color:transparent;
+}
+
+.testimonials .testimony {
+	margin: 0 1em;
+}
+
+.testimonials .attribution {
+	font-size:80%;
+	color:#999;
+}
+
+.testimonials .attribution a{
+	color:#00add7;
+}
+
+#inside-container-wrapper {
+	background-image: none;
+}
+
+#infl_header ul {
+	margin: 0 0 0 -65px;
+	display: inline-block;
+}
+
+
+#infl_header ul li {
+	display: inline-block;
+	position: relative;
+	margin-left: 15px;
+}
+
+#infl_header ul li .pointything {
+	display: none;
+}
+
+#infl_header ul li.active .pointything {
+	display: block;
+	width:25px;
+	height:9px;
+	top: 42px;
+	position:absolute;
+	left:44%; /* Strange as angels */
+	background-image: url("../images/kred/pointything.png"); /* Vale, css triangle */
+}
+
+#infl_header ul li a{
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	color: #333;
+	font-weight: bold;
+	padding: 4px 12px;
+	line-height: 1.4;
+	border-radius: 20px;
+}
+
+#infl_header ul li:hover a {
+	background-color: #e7e7e7;
+	box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+	text-decoration: none;
+}
+
+#infl_header ul li.active a {
+	background-color: #68ba34;
+	background-image: -webkit-linear-gradient(#79cc46, #529625);
+	background-image: -moz-linear-gradient(#79cc46, #529625);
+	background-image: -ms-linear-gradient(#79cc46, #529625);
+	background-image: linear-gradient(#79cc46, #529625);
+	color: white;
+	box-shadow: inset 0 0 2px rgba(66,66,66,0.4), inset 1px 1px 0px rgba(255,255,255,0.8), -1px -1px rgba(33,33,33,0.2);
+
+}
+
+
+
+/* END NEW TABS DEMO */
+.va-chart-container {
+	float: left;
+	width: 448px;
+	margin: 0 10px 20px;
+    *margin: 0 10px 20px 0 !important;
+}
+.va-chart-container .title{
+	font-weight:bold;
+}
+
+/* better experience for advanced browsers */
+.va-chart-container:nth-child(odd) {
+	margin: 0 20px 20px 0;
+}
+.va-chart-container:nth-child(even) {
+	margin: 0 0 20px;
+}
+
+.communitySelector{
+	clear:both;
+	text-align:center;
+}
+
+.communitySelector select,
+.communitySelector select *{
+	text-transform:capitalize;
+}
+
+.kred-popup-maindiv:hover{
+	background-position: 0px 0px;
+	color:#000;
+}
+
+.kred-popup-maindiv{
+	display:none;
+	position: absolute;
+	height: 119px;
+	width: 201px;
+	background: url(../images/kred/call-out02.png) no-repeat 0 -119px;
+	color:#999;
+	font-family: helvetica neue, sans-serif;
+	font-size:15px;
+	line-height:1.3;
+	z-index: 100;
+	display: block;
+}
+
+.homepage-kred-popup{
+/* Pointing at the icon
+	top: 109px;
+	left: 217px;
+*/
+/* Pointing at the big shield */
+	top:240px;
+	left:211px;
+}
+
+.overview-kred-popup {
+	top: 220px;
+	left: 211px;
+}
+#pb_inner .kred-popup-maindiv {
+	top: 17px;
+	left: 275px;
+}
+.kred-popup-content {
+	height: 119px;
+	width: 165px;
+	margin: 5px 30px;
+}
+.kred-popup-close{
+	float:right;
+	height:16px;
+	width:16px;
+	background: url(../images/kred/call-out-close.png) no-repeat;
+	cursor: pointer;
+	position: relative;
+}
+
+.kred-popup-heading,
+.kr-text-bold {
+	width:165px;
+	float:left;
+}
+.kr-head-ico {
+	height: 12px;
+	width: 14px;
+	background:url(../images/kred/kred_ico.png) no-repeat;
+	display:inline-block;
+}
+.kr-head-txt {
+	color:#61ab32;
+	font-style:italic;
+	float:left;
+	font-weight:bold;
+	margin: -2px 5px;
+}
+.kr-text-bold{
+	font-weight: bold;
+	margin: -3px 0 0;
+	float: left;
+}
+
+.kr-text-reg{
+	font-weight: normal;
+	width: 165px;
+	float: left;
+}
+
+.inactive_holder {
+	position: absolute;
+	width: 100%;
+	height: auto;
+	left: 0;
+	top:18%;
+	z-index:100;
+}
+
+.inactive_notice {
+	background-color: #f1f6f8;
+	color:#000;
+	border: 2px solid #fff;
+	border-radius: 6px;
+	box-shadow: 1px 1px 1px #ccc;
+	font-size:26px;
+	width: 832px;
+	padding:1em;
+	margin:auto;
+	position:relative;
+}
+
+.inactive_notice a.kill {
+	position:absolute;
+	right:0.3em;
+	top:0em;
+	text-decoration:none;
+}
+
+.contact_tag{
+	height: 13px;
+	background: url(../images/kred/contact_tag.png) no-repeat;
+	float: left;
+	position: relative;
+	cursor: pointer;
+	font-weight:bold;
+}
+
+.contact_button{
+	width: 180px;
+	height: 34px;
+	background: url(../images/kred/contact_us.png) no-repeat;
+	float: right;
+	position: relative;
+	cursor: pointer;
+	zoom: 60%; /* Don't like this? IF THIS WASN'T AN IMAGE I WOULDN'T HAVE TO */
+	-moz-transform: scale(0.6);
+	margin-top:-5px;
+}
+
+#contact_top{
+	position: absolute;
+	top:6px;
+	right: 161px;
+	width: 469px
+	text-align:right;
+	font-size:1.6em;
+}
+
+#contact_top .contact_tag{
+	margin: 3px 10px 0 0;
+/*	width: 285px;*/
+	width: 265px; /* Better layout in Fx */
+	background-image:none;
+	margin-right:15px!important;
+	white-space:nowrap; /* Bah */
+	line-height:0.5;
+}
+
+#contact_bottom{
+	position: absolute;
+	bottom: -18px;
+	right: 85px;
+	width: 765px;
+}
+
+#contact_bottom .contact_tag{
+	margin: 12px 10px 0 0px;
+    background: url(../images/kred/contact_tag_bottom.png) no-repeat;
+    width:510px;
+}
+
+#contact_bottom .contact_button{
+	margin-top:10px;
+	margin-right:9.5em;
+}
+
+.dailyio {
+	position: relative;
+}
+.dailyio .data-wrapper {
+	height: 270px;
+}
+
+.influence-axis, .outreach-axis {
+	position: absolute;
+	font-size: 10px;
+	color: #999;
+	top: 65px;
+}
+
+.influence-axis {
+	left: 15px;
+}
+
+.outreach-axis {
+	right: 15px;
+}
+
+.earfold {
+	position:absolute;
+	top:0;
+	right:40px;
+	height:25px;
+	width:34px;
+	background:transparent url(/components/com_pages/views/images/kred/earfold.png) no-repeat bottom left;
+}
+
+.earfold:hover {
+	background:position: 0 -25px;
+}
+
+.earfold.open {
+	background-position:0 -50px;
+}
+
+
+/*RRL invite */
+.kr-invite-body {
+	background: #464646 url(../images/kred/kred_background.png) repeat-x;
+	font-family: helvetica neue, sans-serif;
+}
+.kr-heading{
+	background: url(../images/kred/invite_header.png) no-repeat;
+	height:100px;
+	width:747px;
+	margin: 10px auto;
+}
+.kr-big-badge{
+	background:url(../images/kred/kred_big_badge.png) no-repeat;
+	width:689px;
+	height:641px;
+	margin: 50px auto;
+}
+.kr-sub-head{
+	color: #559820;
+	width: 600px;
+	margin: auto;
+	text-align:center;
+	padding: 20px 0 0;
+}
+.kr-sub-head-big{
+	font-size: 13px;
+	font-weight:bold;
+}
+.kr-sub-head-small{
+	font-size: 12px;
+}
+.kr-mentions-box{
+	height:74px;
+	width: 526px;
+	margin: 20px auto;
+	background-color:#282828;
+	border-radius: 5px;
+	color: #33C1F3;
+	text-align:center;
+	font-size:36px;
+}
+.kr-mentions-count{
+	margin: auto;
+	padding: 15px 0 0;
+}
+.kr-main-text{
+	margin:auto;
+	color:#fff;
+	width:490px;
+	padding:15px 0 0 0;
+}
+.kr-main-text-stress{
+	font-size: 34px;
+	font-weight:bold;
+}
+.kr-main-text-reg{
+	font-size: 34px;
+}
+
+.kr-invite-types{
+	width:540px;
+	height:230px;
+	margin: auto auto 0 auto;
+}
+.kr-invite-box,
+.kr-tweet-box {
+	width: 250px;
+	float:left;
+	margin:25px 10px;
+}
+
+.kr-invite-button{
+	height: 53px;
+	width: 245px;
+	background:url(../images/kred/kr-invite-button.png) no-repeat;
+	cursor:pointer;
+}
+.kr-invite-form{
+	width: 243px;
+	display:none;
+    height: 140px !important;
+}
+.kr-tweet-form{
+	width: 247px;
+	display:none;
+}
+
+.kr-invite-form,
+.kr-tweet-form{
+	background-color: #FFFFFF;
+	border: 1px solid #8F8D8E;
+	border-radius: 0 0 5px 5px;
+	height: 125px;
+	margin-top: -5px;
+	position:relative;
+	z-index: 2;
+}
+
+
+.kr-tweet-button{
+	height: 53px;
+	width: 249px;
+	background: url(../images/kred/kr-tweet-button.png) no-repeat;
+	cursor:pointer;
+}
+.kr-login-box{
+	color: #FFFFFF;
+    display: block;
+    margin: -70px 250px;
+    position: absolute;
+    text-align: center;
+    width: 200px;
+}
+.kr-login-link{
+	height: 33px;
+	width: 183px;
+	background: url(../images/kred/kr-log-button.png) no-repeat;
+	background: url(/components/com_pages/views/images/ifr_popup/tw_login.png) no-repeat;
+	cursor:pointer;
+	margin: auto;
+}
+
+.kr-login-link #loginbar{
+	height: 61px;
+	display: block;
+}
+
+.kr-invite-form input {
+	border: 1px solid #EAEAEA;
+	color: #000000;
+	font-size: 16px;
+	height: 25px;
+	margin: 5px 8px 0;
+	width: 225px;
+}
+
+.kr-invite-form #emailme{
+    width: 15px;
+    float:left;
+    margin-top:5px;
+}
+.kr-invite-form .emailme_txt{
+    float: left;
+    font-size: 11px;
+    margin-top: 5px;
+    width: 200px;
+}
+.kr-login-msg{
+	color: #FFF;
+	font-size:17px;
+	font-weight:bold;
+	margin: 10px 0;
+}
+#request-inv{
+	background: url(../images/kred/submit-invite.png) no-repeat scroll 0 0 transparent;
+	border: medium none;
+	cursor: pointer;
+	float: right;
+	height: 24px;
+	width: 100px;
+    margin-top: 8px;
+}
+
+#tweet_msg{
+	border: 1px solid #EAEAEA;
+	color: #666666;
+	font-family: helvetica neue, sans-serif;
+	font-size: 16px;
+	height: 70px;
+	margin: 10px 8px 0;
+	width: 225px;
+}
+
+#tweet-inv{
+	background: url(../images/kred/submit-tweet.png) no-repeat scroll 0 0 transparent;
+	border: medium none;
+	cursor: pointer;
+	float: right;
+	height: 24px;
+	width: 94px;
+	margin:10px;
+}
+
+.kr-invite-form .missing,
+.kr-tweet-form .missing {
+	border-color:#f00;
+}
+
+#login_here{
+	cursor: pointer;
+}
+.kr-login-link #signupbar {display:none;}
+
+.kr-login-link a {
+	color: #fff;
+	font-weight: bold;
+	font-size: 16px;
+	cursor:pointer;
+	text-decoration: none;
+	height: 60px;
+	display:block;
+	text-indent:-99999em;
+}
+
+.round-top {
+	border-radius: 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0;
+}
+
+.round-bottom {
+	border-radius: 0 0 10px 10px;
+	-moz-border-radius: 0 0 10px 10px;
+}
+
+.round-left {
+	border-radius: 10px 0 0 10px;
+	-moz-border-radius: 10px 0 0 10px;
+}
+
+.round-right {
+	border-radius:  0 10px 10px 0;
+	-moz-border-radius: 0 10px 10px 0;
+}
+
+.round-corners {
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+
+.pretty-box, .pretty-head {
+	font-family: helvetica neue, sans-serif;
+}
+
+.pretty-head h1 {
+	font-size: 42px;
+	letter-spacing: 0.5px;
+	color: #000;
+	margin:0;
+
+}
+
+.pretty-head h1 > .kred-name {
+	color: #61a833;
+	text-shadow: 0 0 1px #b1e883;
+}
+
+.pretty-head h3 {
+	color: #999;
+	font-size: 17px;
+	font-weight: normal;
+	margin:0;
+	text-shadow: 0 0 1px #eee;
+	letter-spacing: -0.1px;
+	margin-top: 10px;
+}
+
+.pretty-head-left {
+	display: inline-block;
+	line-height: 29px;
+	width: 262px;
+}
+
+
+.pretty-head-right {
+	display: none;
+	line-height: 29px;
+	border-left: 1px solid #3a3939;
+	margin-left: 10px;
+	padding-left: 14px;
+}
+
+
+.pretty-head h2 {
+	font-weight: normal;
+	letter-spacing: -0.5px;
+	color: #000;
+	margin:0;
+	text-shadow: 0 0 1px #ccc;
+}
+
+.pretty-box {
+	background-color: #f6f6f6;
+	margin-top: 2px;
+	padding: 20px;
+	text-shadow: 0 0 1px #eee;
+}
+
+.pretty-box:first-child {
+	margin-top: 37px;
+}
+
+.pretty-box.first-pretty-box {
+	/* to quell joel's superstitions */
+	margin-top: 37px;
+}
+
+.pretty-box a {
+	color: #00b8e6;
+}
+
+.pretty-box a:hover {
+	text-decoration: underline; /* ^______________________________^ */
+}
+
+.pretty-box a.code {
+	font-weight: bold;
+}
+
+.pretty-box h3 {
+	margin: 0 0 5px 0;
+	color: #333;
+	font-size: 18px;
+	font-weight: normal;
+	letter-spacing: 0.3px;
+}
+
+.pretty-box h4 {
+	margin: 0 5px 20px 0;
+	color: #666;
+	font-size: 14px;
+	letter-spacing: -0.4;
+	font-weight: normal;
+}
+
+.plist-bar {
+	-moz-border-radius: 5px;
+	border-radius:      5px;
+	border-left:        1px solid #ddd;
+	border-bottom:      1px solid #ddd;
+	margin-top:         37px;
+	padding:            0;
+	position:           relative;
+	color:              #474543;
+}
+
+.plist-bar h3 {
+	display: inline-block;
+}
+
+.plist-bar div {
+	color:              #474543;
+	font-weight: bold;
+	font-size: 12px;
+	border-left: 1px solid #ddd;
+	display: inline-block;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+.plist-bar div:hover {
+	background-color: #dddddf;
+}
+
+.plist-bar > div:first-child, .plist-title {
+	border-radius: 5px 0 0 5px;
+	border-left: 0;
+}
+
+.plist-bar.listing > div:first-child, .listed .plist-title {
+	border-radius: 5px 0 0 0;
+	border-left: 0;
+
+}
+
+.plist-upcsv-button {
+	border-radius: 0 5px 5px 0;
+}
+
+.plist-links {
+	position: absolute;
+	top:0;
+	right: 0;
+	line-height: 28px;
+}
+
+.plist-bar.listing {
+	-moz-border-radius: 5px 5px 0 0;
+	border-radius:      5px 5px 0 0;
+}
+
+.plist-drop {
+	margin-top: 0;
+}
+
+/* this surely shouldn't be necessary */
+.plist-drop-list-wrap {
+	position: absolute;
+	z-index: 200;
+	border: 1px solid #ddd;
+	border-top: none;
+	border-radius: 0 0 5px 5px;
+	overflow: hidden;
+	width: 692px;
+}
+
+/* srsly */
+.plist-drop-list tr:last-child td {
+	border-radius: 0 0 5px 5px;
+}
+
+.plist-drop-list {
+	width: 692px;
+	border-radius: 0 0 5px 5px;
+	font-size: 12px;
+	line-height: 34px;
+	color: #666;
+}
+
+.plist-drop-list a {
+	color: #666;
+}
+
+.plist-drop-list a.remove {
+	color: #02beef;
+	display: none;
+}
+
+.plist-drop-list tr:hover a.remove {
+	display: inline;
+}
+
+.plist-table, .plist-drop-list {
+	border-collapse: collapse;
+}
+
+.plist-table {
+	width: 100%;
+	position:relative; /* OMG LOL */
+}
+
+.plist-drop-list td {
+	padding-left: 1em;
+}
+
+.plist-drop-list tr:nth-child(odd), .plist-table tr:nth-child(odd) {
+	background-color:#f6f6f6;
+}
+
+.plist-drop-list tr:nth-child(even), .plist-table tr:nth-child(even) {
+	background-color:#fff;
+}
+
+.plist-drop-csv, .plist-drop-addnew {
+	border: 5px solid #cfeef3;
+	background-color: #e5f4f7;
+	padding: 30px 93px;
+}
+
+.plist-drop-csv td {
+	vertical-align:top;
+}
+
+.plist-drop-csv td.middle {
+	vertical-align:middle;
+}
+
+.plist-drop-csv h3, .plist-drop-addnew h3 {
+	font-size: 18px;
+	font-weight: normal;
+	margin: 5px;
+}
+
+.plist-drop-csv input[type=text], .plist-drop-addnew input[type=text], .pretty-white-entry {
+	border: none;
+	font-size: 16px;
+	line-height: 30px;
+	color: #666;
+	padding: 5px;
+	background-color: white;
+	height: 40px;
+	border-radius: 5px;
+	border: 1px solid #f0f0f0;
+}
+
+.plist-drop-csv input[type=text], .plist-drop-addnew input[type=text], .pretty-white-entry {
+	width:720px;
+}
+
+.plist-drop-csv .list-addnew-button {
+	float:right;
+}
+
+.plist-drop-csv p.explanatory {
+	width: 19em;
+}
+
+input.offline-certname.but-wait:-moz-placeholder,
+input.offline-certname.but-wait::-webkit-input-placeholder {
+    color:    #ccc;
+}
+
+.offline-certname.but-wait {
+	width: 515px;
+}
+
+.inf-ufile-field.but-wait {
+	width: 435px;
+}
+
+.plist-drop-addnew input[type=button] {
+	position: relative;
+	left: 651px;
+	top: 10px;
+}
+
+.list-ufile-button, .inf-ufile-button {
+	position: relative;
+	top: -3px;
+}
+
+.offline-ufile-button.but-wait {
+	top: 0;
+	right: 0;
+	margin-top:10px;
+}
+
+table.empty-feeling {
+	border-collapse: collapse;
+	width: 730px;
+	margin: 10px 0 50px;
+	border:1px solid #cae0e6;
+	background-color:#fff;
+}
+
+table.empty-feeling.but-wait {
+	width: 528px;
+}
+
+table.empty-feeling tr {
+	border:1px solid #cae0e6;
+}
+
+table.empty-feeling th {
+	font-weight:normal;
+	font-size: 14px;
+	line-height: 1.8;
+	padding-left: 10px;
+	text-align: left;
+}
+
+table.empty-feeling td {
+	color: #67989d;
+	font-size: 14px;
+	line-height: 2.4;
+	padding: 0 10px;
+}
+
+table.file-up td {
+	line-height: 3.43;
+	font-size: 16px;
+}
+
+table #list-twitterlist {
+	width: auto;
+}
+
+.plist-table-box {
+    margin-top: 15px;
+}
+
+.plist-table th {
+	height: 57px;
+}
+
+/* Y U NO WORK? */
+.plist-table th:last-child {
+	border-top: 1px solid #999;
+	border-right: 1px solid #999;
+}
+
+.plist-table td, .plist-c-com, .plist-c-num {
+	border: 1px solid #bbb;
+	border-left-color: #aaa;
+	border-right-color: #aaa;
+
+	color: #444;
+	font-size: 16px;
+	line-height: 47px;
+}
+
+.plist-table td > p {
+	padding: 0 12px;
+	line-height: 0;
+	white-space: nowrap;
+}
+
+.plist-r-kred {
+	font-size: 24px !important;
+}
+
+/* Y U NO WORK, RULES */
+td.plist-r-name a.remove {
+	display: none;
+}
+
+td.plist-r-name:hover a.remove {
+	display: inline;
+}
+
+.plist-label {
+	display: inline-block;
+	color: #666;
+	font-size: 20px;
+}
+
+.plist-h-title > h3 {
+/* I TOLD YOU I'D SHOOT, WHY DIDN'T YOU BELIEVE ME
+   Was this important, Graeme?
+	position: absolute;
+*/
+	top: 10px;
+	font-weight: normal;
+	color: #666;
+}
+
+.plist-h-title input[type="text"] {
+	width:35em;
+}
+
+.plist-name {
+	font-weight: bold;
+	display: block;
+	width: 31em;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+span.pipe {
+    color: #ccc;
+}
+
+.plist-titlenum {
+    color: black;
+    font-weight: bold;
+}
+
+.plist-label-over {
+	font-weight: normal;
+	background-color: #ddd;
+}
+
+.plist-label-under {
+	font-size:9px;
+	color: #666;
+}
+
+.plist-sortable {
+	cursor: pointer;
+	background: #edebea;
+	background: -moz-linear-gradient(top, #edebec 0%, #dbd9da 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#edebec), color-stop(100%,#dbd9da));
+	background: -webkit-linear-gradient(top, #edebec 0%,#dbd9da 100%);
+	background: -o-linear-gradient(top, #edebec 0%,#dbd9da 100%);
+	background: -ms-linear-gradient(top, #edebec 0%,#dbd9da 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edebec', endColorstr='#dbd9da',GradientType=0 );
+	background: linear-gradient(top, #edebec 0%,#dbd9da 100%);
+}
+
+.plist-sortby {
+	background: #d1eef4;
+	background: -moz-linear-gradient(top, #d1eef4 0%, #c0dde1 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d1eef4), color-stop(100%,#c0dde1));
+	background: -webkit-linear-gradient(top, #d1eef4 0%,#c0dde1 100%);
+	background: -o-linear-gradient(top, #d1eef4 0%,#c0dde1 100%);
+	background: -ms-linear-gradient(top, #d1eef4 0%,#c0dde1 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1eef4', endColorstr='#c0dde1',GradientType=0 );
+	background: linear-gradient(top, #d1eef4 0%,#c0dde1 100%);
+}
+
+.plist-label-img {
+	background:transparent;
+}
+
+
+.plist-h-title {
+	position: relative;
+	text-align: left;
+	min-width:534px;
+}
+
+.plist-h-labels {
+	position:absolute;
+	text-align: center;
+	right: 10px;
+	top:10px;
+}
+
+th.plist-r-com {
+	font-weight: normal;
+	color: #999;
+	text-align: center;
+}
+
+.plist-r-position, .plist-f-plus {
+	text-align: center;
+}
+
+.plist-r-img > img {
+	width: 36px;
+	height:36px;
+	border: 1px solid #ccc;
+	margin-left: 2px;
+}
+
+.plist-c-position {
+	width: 54px;
+}
+
+.plist-c-img {
+	width:47px;
+}
+
+.plist-c-name {
+	width:355px;
+}
+
+.plist-c-com, .plist-r-com {
+	width:135px;
+	text-align: right;
+	font-size: 14px;
+}
+
+.plist-c-num, .plist-r-num {
+	width:84px;
+	text-align: center;
+}
+
+.plist-f-plus {
+	height: 47px;
+	line-height: 47px;
+}
+
+.plist-plusbox {
+	margin: 0 1em;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	border: 1px solid #ccc;
+	border-radius:3px;
+	font-weight: bold;
+}
+
+.plist-f-new input {
+	border-radius: 3px;
+	border: 1px solid #ccc;
+	padding: 5px;
+	line-height: 20px;
+	width: 392px;
+
+	margin-left: 5px;
+}
+
+.readonly a.remove,
+.readonly table.plist-table tfoot,
+.readonly .plist-links {
+	display:none!important;
+}
+
+.choice {
+	padding: 13px 0 13px 0;
+}
+
+.choice label {
+	cursor: pointer;
+	display: inline-block;
+}
+
+.choice input[type=radio] {
+	cursor: pointer;
+}
+
+.choice-image {
+	display: inline-block;
+	width: 72px; height: 72px;
+	border: 1px solid #cdcdcd;
+	vertical-align: middle;
+	margin-left: 18px;
+	background-repeat: no-repeat;
+	background-position: 50%;
+}
+
+.choice-image.checked {
+	background-color: #fff;
+}
+
+#privacy-public .choice-image {
+	background-image: url("/components/com_pages/views/images/kred/privacy-public.png");
+}
+
+#privacy-private .choice-image {
+	background-image: url("/components/com_pages/views/images/kred/privacy-private.png");
+}
+
+#privacy-anonymous .choice-image {
+	background-image: url("/components/com_pages/views/images/kred/privacy-anonymous.png");
+}
+
+#privacy-invisible .choice-image {
+	background-image: url("/components/com_pages/views/images/kred/privacy-invisible.png");
+}
+
+.choice-text {
+	display: inline-block;
+	width: 741px;
+	font-size: 13px;
+	vertical-align: middle;
+	line-height: 20px;
+	margin-left: 18px;
+}
+
+.choice-text h3 {
+	margin:0;
+	margin-bottom: 5px;
+}
+
+.choice-text p {
+	margin:0;
+}
+
+#end-of-privacy {
+	text-align: right;
+	margin-top: 15px;
+}
+
+/*IE 8 */
+@media \0screen {
+  .kredUploadFrame{
+	display: none;
+	}
+}
+
+.pretty-button {
+	padding: 8px 22px;
+	color: white;
+	font-weight: bold;
+	font-size: 12px;
+	background-color: #00b1dd;
+	border: none;
+	border-radius: 5px;
+	background: -moz-linear-gradient(top, #b6effd 0%, #00c5f6 4%, #00add8 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b6effd), color-stop(4%,#00c5f6), color-stop(100%,#00add8));
+	background: -webkit-linear-gradient(top, #b6effd 0%,#00c5f6 4%,#00add8 100%);
+	background: -o-linear-gradient(top, #b6effd 0%,#00c5f6 4%,#00add8 100%);
+	background: -ms-linear-gradient(top, #b6effd 0%,#00c5f6 4%,#00add8 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b6effd', endColorstr='#00add8',GradientType=0 );
+	background: linear-gradient(top, #b6effd 0%,#00c5f6 4%,#00add8 100%);
+	cursor: pointer;
+}
+
+.pretty-button.notyetactive, .pretty-button.notyetactive:hover {
+	background-color: #777;
+	background: -moz-linear-gradient(top, #666 0%, #999 4%, #666 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#666), color-stop(4%,#999), color-stop(100%,#666));
+	background: -webkit-linear-gradient(top, #666 0%,#999 4%,#666 100%);
+	background: -o-linear-gradient(top, #666 0%,#999 4%,#666 100%);
+	background: -ms-linear-gradient(top, #666 0%,#999 4%,#666 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666', endColorstr='#666',GradientType=0 );
+	background: linear-gradient(top, #666 0%,#999 4%,#666 100%);
+	cursor: default;
+}
+
+.pretty-button:hover {
+	background: #00c5f6;
+	background: -moz-linear-gradient(top, #b6effd 0%, #00c5f6 4%, #00b5e6 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b6effd), color-stop(4%,#00c5f6), color-stop(100%,#00b5e6));
+	background: -webkit-linear-gradient(top, #b6effd 0%,#00c5f6 4%,#00b5e6 100%);
+	background: -o-linear-gradient(top, #b6effd 0%,#00c5f6 4%,#00b5e6 100%);
+	background: -ms-linear-gradient(top, #b6effd 0%,#00c5f6 4%,#00b5e6 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b6effd', endColorstr='#00b5e6',GradientType=0 );
+	background: linear-gradient(top, #b6effd 0%,#00c5f6 4%,#00b5e6 100%);
+}
+
+.shinyaddoffline {
+	display: block;
+	width: 94%;
+	color: #fff!important;
+	text-decoration:none;
+
+	font-size: 200%;
+	text-align: center;
+	font-weight: bold;
+
+	text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5); /* Lifted from snaek.org, thanks snaek! */
+
+	margin-bottom: 1em;
+	padding: 0.5em 1em;
+
+/*	-webkit-border-radius: 7px; */
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+
+	background-color: #6dd737;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#6dd737), to(#49a51c));
+	background-image: -webkit-linear-gradient(top, #6dd737, #49a51c);
+	background-image: -moz-linear-gradient(top, #6dd737, #49a51c);
+	background-image: -ms-linear-gradient(top, #6dd737, #49a51c);
+	background-image: -o-linear-gradient(top, #6dd737, #49a51c);
+	background-image: linear-gradient(to bottom, #6dd737, #49a51c);
+
+	cursor: pointer;
+}
+
+.shinyaddoffline:hover {
+	text-decoration: none!important;
+}
+
+.offline-medal {
+	display: inline-block
+}
+
+.medal-image {
+	display: inline-block;
+	width: 42px; height: 42px;
+	border: 1px solid #cdcdcd;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-color: #fff;
+	margin: 0 19px;
+}
+
+.offline-flyer.medal-image {
+	background-image: url("/components/com_pages/views/images/kred/offline-flyer.png");
+}
+
+.offline-memberships.medal-image {
+	background-image: url("/components/com_pages/views/images/kred/offline-memberships.png");
+}
+
+.offline-degrees.medal-image {
+	background-image: url("/components/com_pages/views/images/kred/offline-degrees.png");
+}
+
+.offline-ceremonies.medal-image {
+	background-image: url("/components/com_pages/views/images/kred/offline-ceremonies.png");
+}
+
+.offline-charity.medal-image {
+	background-image: url("/components/com_pages/views/images/kred/offline-charity.png");
+}
+
+.offline-sports.medal-image {
+	background-image: url("/components/com_pages/views/images/kred/offline-sports.png");
+}
+
+.medal-label {
+	display: inline-block;
+	width: 340px;
+	line-height: 24px;
+	margin: 19px 0;
+}
+
+.medal-label h3 {
+	letter-spacing:0.3px;
+	font-size:18px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.medal-label p {
+	font-size: 17px;
+	letter-spacing: -0.6px;
+	color: #333;
+	margin: 0;
+}
+
+.offline-statements {
+	display:none;
+	background-color: #fff;
+	border: 1px solid #dedede;
+	width: 848px;
+	padding: 0;
+	margin: auto;
+}
+
+.offline-statements > div:nth-child(even){
+	background-color: #f3f3f3; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;
+}
+
+.offline-statements > div {
+	background-color: #fff;
+	height: 50px;
+	font-size: 20px;
+	line-height: 50px;
+}
+
+.offline-statements .smallk {
+	display: inline-block;
+	width: 62px;
+	background-image: url("/components/com_pages/views/images/kred/offline-smallk.png");
+	background-repeat: no-repeat;
+	height: 50px;
+	background-position: 50%;
+	padding: 0;
+	margin: 0;
+	vertical-align: middle;
+}
+
+.offline-statements .offline-achievement {
+	display: inline-block;
+	width: 629px;
+}
+
+.offline-statements .offline-points {
+	display: inline-block;
+	font-weight: bold;
+	font-size: 22px;
+	letter-spacing: 0.3;
+	color: #71bd37;
+	margin:  0 16px;
+}
+
+.offline-email-box {
+	margin-top: 2px;
+	background-color: #ceedf2;
+	color: #343235;
+	line-height: 24px;
+	padding: 5px;
+	text-shadow: 0 0 1px #eee;
+}
+
+.offline-email-box-head {
+	text-align: center;
+}
+
+.offline-email-box-head h2 {
+	text-shadow: 2px 2px 1px white;
+	font-size: 24px;
+}
+.offline-email-box h3 {
+	color: #333;
+	font-size: 18px;
+	font-weight: normal;
+	letter-spacing: 0.3px;
+	margin: 0;
+}
+
+.offline-email-box h4 {
+	color: #666;
+	margin: 0;
+	font-size: 14px;
+	letter-spacing: -1px;
+	font-weight: normal;
+}
+
+.offline-email-inner {
+	background-color: #E7F6F9;
+	padding: 40px 100px;
+	color: #666;
+	margin-top: 15px;
+}
+
+.offline-email-inner {
+	padding: 20px 40px;
+}
+
+.offline-email-inner h3 {
+	font-weight: normal;
+	font-size: 16px;
+	color: #666;
+	margin-left: 5px;
+}
+
+.offline-private {
+	margin: 10px 0 20px 0;
+}
+
+div.offline-pointsworth {
+	position: relative;
+	top: -10px;
+}
+
+div.offline-pointsworth.but-wait {
+	position: initial;
+}
+
+input.offline-pointsworth-field {
+	width: 180px;
+}
+
+input.offline-pointsworth-field.but-wait {
+	width: 140px;
+	vertical-align: top;
+}
+
+p.pointslabel {
+	line-height: 1.4;
+	font-size: 16px;
+	display: inline-block;
+	position: relative;
+	top: 11px;
+	margin-top: 0;
+}
+
+p.pointslabel.but-wait {
+	position: initial;
+	font-size: 12px;
+}
+
+.offline-example-points-col {
+	width: 120px;
+	padding-right: 10px;
+}
+
+.offline-example-points {
+	text-align: right;
+}
+
+#offline-email-box iframe{
+/*	display:none;*/
+	border:0;
+	width:530px;
+}
+
+/* WAT
+#offline-email-box form{
+	border: 1px solid #AAAAAA;
+	margin: 10px auto;
+	padding: 5px;
+	text-align: left;
+	width: 400px;
+}
+#offline-email-box form label{
+	font-size:12px;
+	margin-top:20px;
+	display:block;
+}
+
+#offline-email-box form textarea{
+	width:100%;
+	margin:5px 0 20px;
+}
+
+#offline-email-box form input{
+
+}
+
+#offline-email-box p {
+	margin: 5px;
+}
+WAT */
+
+/* probably unnecessary! asdfjlshdfndklf !! */
+.offline-email-box a{
+	color: #00bbe9;
+	text-decoration: underline;
+}
+
+/* but wait! there's more.php */
+.pretty-head.but-wait {
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.but-wait .pretty-head-left {
+	width: 140px
+}
+
+.but-wait .pretty-head-right {
+	border: none;
+	margin-left: 5px;
+	padding-left: 0;
+	vertical-align: top;
+}
+
+.but-wait h1 {
+	font-size: 42px;
+	letter-spacing: 0.5px;
+	color: #414141;
+}
+
+.but-wait h2 {
+	font-size: 19px;
+	letter-spacing: -0.4px;
+	color: #424242;
+}
+
+.but-wait .medal-label {
+	width: 235px;
+}
+
+.but-wait .medal-image {
+	margin: 2px;
+}
+
+.but-wait .medal-label p {
+	font-size: 15px;
+}
+
+
+#offline-statements.but-wait {
+	width: 561px;
+}
+
+#offline-statements.but-wait > div {
+	height: 40px;
+	font-size: 15px;
+	line-height: 40px;
+}
+
+#offline-statements.but-wait .smallk {
+	display: inline-block;
+	width: 50px;
+	height: 40px;
+	background-position: 50%;
+	padding: 0;
+	margin: 0;
+	vertical-align: middle;
+}
+
+.offline-statements.but-wait .offline-achievement {
+	width: 360px;
+}
+
+.offline-statements.but-wait .offline-points {
+	font-size: 21px;
+}
+
+.offline-email-box.but-wait h3 {
+	font-size: 16px;
+	letter-spacing: 0.2px;
+}
+
+.offline-email-box.but-wait h4 {
+	font-size: 13px;
+}
+
+.pretty-nav {
+	border-radius: 5px;
+	height: 44px;
+	vertical-align: middle;
+	margin-bottom: 10px;
+	color: #444446;
+	font-size: 15px;
+	position: relative;
+}
+
+.pretty-nav-button {
+	display: inline-block;
+	width: 102px;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.pretty-nav-button > img {
+	vertical-align: text-bottom ;
+}
+
+a.addnow,
+.more-slides-button {
+	background-color: #333;
+	background: -moz-linear-gradient(top, #505050 0%, #363636 4%, #2a2a2a 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#505050), color-stop(4%,#363636), color-stop(100%,#2a2a2a));
+	background: -webkit-linear-gradient(top, #505050 0%,#363636 4%,#2a2a2a 100%);
+	background: -o-linear-gradient(top, #505050 0%,#363636 4%,#2a2a2a 100%);
+	background: -ms-linear-gradient(top, #505050 0%,#363636 4%,#2a2a2a 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#505050', endColorstr='#2a2a2a',GradientType=0 );
+	background: linear-gradient(top, #505050 0%,#363636 4%,#2a2a2a 100%);
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #eaeaea;
+	width: 190px;
+	border-radius: 0 5px 5px 0;
+	display: none;
+}
+
+a.addnow {
+	display:block;
+	color:#02beef;
+	position:absolute;
+	right:10px;
+	text-align:center;
+	top:54px;
+	padding-top:12px;
+	height:32px;
+	text-decoration:none;
+	text-shadow:none;
+}
+
+.more-slides-button:hover {
+	background-color: #555;
+	background: -moz-linear-gradient(top, #505050 0%, #444 4%, #333 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#505050), color-stop(4%,#444), color-stop(100%,#333));
+	background: -webkit-linear-gradient(top, #505050 0%,#444 4%,#333 100%);
+	background: -o-linear-gradient(top, #505050 0%,#444 4%,#333 100%);
+	background: -ms-linear-gradient(top, #505050 0%,#444 4%,#333 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#505050', endColorstr='#333',GradientType=0 );
+	background: linear-gradient(top, #505050 0%,#444 4%,#333 100%);
+}
+
+.more-online-button {
+	background: url("/components/com_pages/views/images/kred/more-online-gray.png") no-repeat scroll 10px 12px;
+	display: none;
+}
+
+.more-online-button.pretty-nav-button:hover,
+.more-online-button.pretty-nav-button.chosen {
+	background-color: #c6dadf;
+	background: url("/components/com_pages/views/images/kred/more-online.png") no-repeat scroll 10px 12px #c6dadf;
+}
+
+.more-offline-button {
+	background: url("/components/com_pages/views/images/kred/more-offline-gray.png") no-repeat scroll 10px 12px;
+}
+
+.more-offline-button.pretty-nav-button:hover,
+.more-offline-button.pretty-nav-button.chosen {
+	background-color: #c6dadf;
+	background: url("/components/com_pages/views/images/kred/more-offline.png") no-repeat scroll 10px 12px #c6dadf;
+}
+
+.more-online-button span,
+.more-offline-button span{
+	margin-left: 15px;
+}
+.wrapper {
+	/* just add water */
+	margin: 0 auto;
+}
+
+#main-wrapper {
+	width: 940px;
+	margin: 0 auto;
+	padding-bottom: 20px;
+}
+div#crossAppBanner {
+	width: 940px;
+}
+
+
+.open-callout {
+	text-align:right;
+	color:#00b8e6;
+	cursor:pointer;
+	display:none;
+	padding-right:0.8em;
+}
+
+.activity-earn-now {
+	background: #E7F9FB;
+	padding: 0px 0 0; /* 16px; */
+	text-align: center;
+	color: #333;
+	cursor: pointer;
+	margin-right:7px;
+	position:relative;
+}
+
+.tabcontent > .activity-earn-now {
+	padding-top:16px;
+}
+
+.activity-earn-now-big {
+	font-size: 21px;
+}
+.activity-earn-now-action {
+	font-weight: bold;
+	color: #333;
+}
+
+.actions-kr:hover .activity-earn-now,
+.activity-earn-now:hover .activity-earn-now-action {
+	color: #00B8E6;
+}
+
+.actions-kr .activity-earn-now {
+	margin-right:0;
+	padding:initial;
+}
+
+.activity-earn-now-small {
+	font-size: 15px;
+	line-height: 26px;
+	padding-bottom:1em;
+}
+
+.kred-activity-grid {
+	width: 100%;
+}
+
+.commsSelector {
+	float: left;
+	margin: 38px 19px 0 0;
+}
+
+/* user mentions chart is hidden for now, this will make post-effect chat move-up*/
+.va-chart-containers .post-effect {
+	margin: 0 0 20px !important;
+}
+
+.landing_atname{
+	color: #fff;
+	float: right;
+	padding-top: 10px;
+	margin-right:10px;
+	position:relative;
+	z-index:2; /* Could it really be this easy? */
+	cursor:pointer;
+}
+
+.viral_buttons{
+	position:relative;
+}
+.viral_buttons a{
+
+}
+/*
+  .influence-outreach:hover .tweet-badge,
+  .influence-outreach:hover .share-badge{
+  display:block;
+  }
+  */
+
+.badge-tw-button,
+.share-badge{
+	display: none!important;
+}
+.tweet-badge{
+	background:url(../images/kred/tweet-button.png) no-repeat;
+	background-position: 0px -0px;
+	cursor:pointer;
+	padding-top: 22px;
+	height: 0;
+	width: 55px;
+	overflow: hidden;
+	display: block;
+}
+
+/*
+  .tweet-badge:hover {
+  background: none;
+  }
+  */
+
+.tweet-badge:hover {
+  background-position: 0 -20px;
+}
+
+.badge-tw-button{
+	/*	display:none;
+			z-index: 2 !important;*/
+	height: 22px;
+	width: 64px;
+	position: absolute;
+	left: 5px;
+	bottom:6px;
+}
+
+.pin-it-holder {
+	position: absolute;
+	bottom: 5px;
+	left: 116px;
+}
+
+.share-badge {
+	position: absolute;
+	right: 5px;
+	bottom: 6px;
+	height: 22px;
+	width: 64px;
+}
+
+
+.badge-fb-button {
+	background:url(../images/kred/fbshare-button.png) no-repeat;
+	background-position: 0px 0px;
+	cursor:pointer;
+	height: 20px;
+	width: 64px;
+	display:block;
+}
+
+.badge-fb-button:hover {
+	background-position: 0px -20px;
+}
+
+
+.influence-of{
+	font-size: 11px;
+	color: #50903e;
+}
+
+.outreach-of{
+	font-size: 11px;
+	color:#108FAB;
+}
+
+.influence-max,
+.outreach-max {
+	font-size: 11px;
+	color: #ccc;
+}
+
+.outreach-of,
+.outreach-max,
+.outreach-note{
+	vertical-align:top;
+}
+.influence-note{
+/*  	left: 94px;
+		position: absolute;
+		top: 85px;
+		*/}
+
+.outreach-note {
+	margin-left:-2px;
+}
+
+.callout-note{
+	float: right;
+	margin: -15px 0 0;
+	right: 10px;
+	width: 90px;
+}
+.note-hd{
+	font-size: 14px;
+	font-weight: bold;
+}
+.note-line{
+	font-size: 11px;
+}
+
+#statements-callout {
+	right: -109px;
+	top: 312px;
+}
+
+.kr-invite-body {
+	min-width: 1000px;
+}
+
+#kr-side-links {
+	position: absolute;
+	right: 50px;
+	top: 250px;
+	text-align: left;
+}
+#kr-side-links, #kr-side-links a {
+	font-size: 16px;
+	cursor: pointer;
+	color: #fff;
+}
+#kr-side-links a:hover {
+	text-decoration: none;
+}
+.kr-slide-link {
+	height:36px;
+	width: 138px;
+	cursor:pointer;
+}
+
+.kr-invite-body .kr-slide-link{
+}
+
+.kr-rs-link {
+	background: url(/components/com_pages/views/images/pb_homepage/li_search.png) 5px 0 no-repeat;
+	padding-left: 44px;
+	height: 30px;
+}
+
+.influencly-overview .rules_head{
+	font-weight: normal !important;
+}
+
+
+.kred_slider_outer{
+	font-family: helvetica neue, sans-serif;
+	background:#F2F2F2 url(/templates/iloli/images/kred_slider/bars.png) repeat 0 0;
+	border:7px solid #f0f0f0;
+	position:relative;
+	margin:2px auto 16px;
+}
+.kred_slider{
+	position:relative;
+	overflow:visible !important;
+	opacity: 0.7;
+	-moz-opacity: 0.7;
+	filter: alpha(opacity=70);
+
+	border-radius-top-right: 28px;
+/*	-moz-border-radius-topright: 28px;
+	-webkit-border-top-right-radius: 28px;*/
+	border-radius-bottom-right: 28px;
+/*	-moz-border-radius-bottomright: 28px;
+	-webkit-border-bottom-right-radius: 28px;*/
+}
+.kred_pointer{
+	position:absolute;
+	width:36px;
+	height:25px;
+	color:#fff;
+	font-weight:bold;
+	text-align:center;
+	right:-28px;
+	background: url(/templates/iloli/images/kred_slider/pointer_bg.png) 50% 0;
+	border-radius:3px;
+	bottom:24px;
+	margin-right:11px;
+	font-size:18px;
+}
+.bar_title{
+	color:#333;
+	font-size:11px;
+	font-weight:bold;
+	display:none;
+}
+.slider:nth-child(odd) .bar_title {
+	color:#00b8e6;
+}
+
+.slider:nth-child(even) .bar_title {
+	color:#75c240;
+}
+
+.bar_next {
+	position:absolute;
+	top:0;
+	height:57px;
+	border-right: 2px solid #00b8e6;
+}
+
+.bar_next b {
+	position: absolute;
+	right: -4px;
+	bottom: -16px;
+}
+
+.bar_min,
+.bar_max{
+	position:absolute;
+	margin-top:2px;
+	color:#333;
+	font-size:11px;
+	font-weight:bold;
+}
+
+.bar_min{
+	left:0;
+}
+.bar_max{
+	right:0;
+}
+.green_bar{
+	background:#7fd64a;
+	background-image: -webkit-gradient(	linear,
+						left top,
+						left bottom,
+						from(#7fd64a),
+						to(#509a1c));
+	background-image: -moz-linear-gradient(	top,
+						#7fd64a,
+						#509a1c);
+}
+.blue_bar{
+	background:#78e4ff;
+	background-image: -webkit-gradient(	linear,
+						left top,
+						left bottom,
+						from(#78e4ff),
+						to(#008fb7));
+
+	background-image: -moz-linear-gradient(	top,
+						#78e4ff,
+						#008fb7);
+
+
+}
+
+.kred_slider .vipstripe {
+	top:34%;
+	width:0;
+	height:0;
+	border:3px solid #888;
+	border-radius:4px;
+	position:absolute;
+	/*display:none;*/
+	opacity:0.6;
+}
+
+.kred_slider_outer:hover .vipstripe {
+	display:block;
+}
+
+.vipstripe:hover {
+	opacity:1;
+}
+
+.kred_slider_outer .vipstripe:hover,
+.kred_slider_outer .vipstripe.active {
+	border:4px solid #4C4C4C;
+	opacity:1;
+}
+
+.kred_slider .vipstripe:hover .kred_pointer {
+	display:block;
+}
+
+.kred_slider .vipstripe .kred_pointer {
+	display:none;
+}
+
+
+.kred_slider .vipstripe .kred_pointer .kred_details {
+	background-color:#4c4c4c;
+	width:170px;
+	text-align:center;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	padding:2px 2px 4px;
+	margin-top:-5px;
+}
+
+.kred_slider .vipstripe .kred_pointer .kred_details a{
+	color:#fff;
+}
+
+.kred_slider .vipstripe .kred_pointer {
+	display:none;
+	color:#81b960;
+	top:-25px;
+	left:-23px;
+	width:auto;
+	background-position:bottom right;
+	margin-right:0;
+}
+
+.kred_slider .vipstripe .kred_pointer img{
+	width:13px;
+	height:13px;
+	margin:-2px 2px;
+	padding: 0 2px;
+}
+
+
+#community_add_popup .add-header {
+	color:#FFF;
+	font-size: 24px;
+	margin-top: -20px;
+	margin-top: -70px;
+    padding-bottom: 30px;
+}
+
+.scores-share-container {
+	float: right;
+}
+.scores-share-twitter, .scores-share-facebook {
+	float: left;
+	margin-left: 5px;
+}
+
+/* kred rules */
+.lower-part-indent{
+	margin-left: 243px;
+}
+
+/*jusst in case we want to revert red highlight */
+.highlight_red{
+	color: #000;
+}
+.highlight_blue{
+	color: #02BEEF;
+}
+
+.maybe-november { font-weight: bold !important; display: inline; font-size: 11px !important; margin-left: 15px !important; }
+
+#influence-top {
+	background: #fff url("../images/bg.png") repeat-x 0 50px;
+    height: 151px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1; /* Changed from 10 to make the Kred search on the landing page clickable */
+	box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+#influence-top #top_banner {
+	position: static;
+}
+#influence-top-inner {
+	width: 940px;
+	margin: 0 auto;
+}
+
+.certviewer {
+	position:fixed;
+	width:100%;
+	height:100%;
+	top:0; left:0;
+	text-align:center;
+	z-index:9999;
+}
+
+.certviewer .veil {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:#000;
+	opacity:0.6;
+}
+
+.certviewer img {
+	margin:5% auto auto;
+	opacity:1;
+	position:relative;
+}
+
+#ajaxMsg{
+	z-index:202;
+	position:fixed;
+	top:0;
+	left:47%;
+	margin-left:-100px;
+	width:300px;
+	display:none;
+}
+#ajaxMsg p{
+	text-align:center;
+	background-color:#555;
+	font-size:20px;
+	color:#02BEEF;
+	padding:5px 10px;
+	margin:0 auto;
+	-moz-border-radius: 0px 0px 3px 3px;
+/*	-webkit-border-radius: 0px 0px 3px 3px;*/
+	border-radius: 0px 0px 3px 3px;
+	box-shadow: 0 0px 10px 5px #333;
+	line-height:1;
+}
+
+#ajaxMsg p.flash{
+	background-color:#02beef;
+}
+.tabcontent .fixed-header {
+	background: transparent url(/components/com_pages/views/images/bg.png);
+	padding-top:16px;
+	top:151px;
+}
+.tabcontent.active .fixed-header {
+    padding-top: 10px;
+    position: fixed;
+    /*top: 157px;*/
+    top:150px;
+    width: 940px;
+    z-index: 1;
+}
+.tabcontent .fixed-header .fetch_selector{
+	margin-bottom: -17px;
+	color: #00B8E6;
+	font-size: 13px;
+	margin-top:13px;
+	float:left;
+	margin-left: 20px;
+	width: 170px;
+	padding-top:5px;
+}
+.tabcontent .fixed-header .fetch_selector ul{
+	list-style:none;
+}
+.tabcontent .fixed-header .fetch_selector ul li{
+	display:inline-block;
+	cursor:pointer;
+	margin-right:3px;
+	width: 28px;
+	height: 27px !important;
+	background-color: transparent;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+.tabcontent .fixed-header .fetch_selector ul li img{
+	opacity:0.5;
+}
+.tabcontent .fixed-header .fetch_selector ul li.active img{
+	opacity:1;
+}
+/*.tabcontent .fixed-header .fetch_selector ul li[fetch=twitter]{
+	background-image: url("../images/td/sources/twitter.png");
+}
+.tabcontent .fixed-header .fetch_selector ul li[fetch=facebook]{
+	background-image: url("../images/td/sources/facebook.png");
+}
+.tabcontent .fixed-header .fetch_selector ul li.active{
+	font-weight: bold;
+	background-position: 0 -27px;
+}
+*/
+#colorpicker {
+	position: absolute;
+	display: none;
+    padding: 15px;
+
+	/* make a black circle background */
+    background: #222222;
+    border-radius: 113px;
+/*    -webkit-border-radius: 113px;*/
+    -moz-border-radius: 113px;
+}
+
+#score-table-sw {
+	background: url("../images/influencly/arrow_down_gray.png") no-repeat scroll right 3px transparent;
+    color: #666;
+    display: block;
+    width: 75px;
+    cursor:pointer;
+}
+
+#score-table-sw.active {
+	background: url("../images/influencly/arrow_up_gray.png") no-repeat scroll right 3px transparent;
+}
+
+#score-table{
+	background: url("../images/influencly/offline-kred-table.png") no-repeat;
+	width:605px;
+	height:411px;
+	display:none;
+/* 	margin-left: -38px;	*/
+}
+
+.login-twit, .login-fook {
+	position: relative;
+	display: block;
+	width: 466px;
+	height: 78px;
+	background-image: url("/components/com_pages/views/images/kred/login-twit.png");
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
+.login-fook {
+	background-image: url("/components/com_pages/views/images/kred/login-fook.png");
+}
+
+.login-twit:hover {
+	background-position: bottom left;
+}
+
+.login-twit .label, .login-fook .label {
+	color: white;
+	display: inline-block;
+	font-family: helvetica neue, sans-serif;
+	font-size: 24px;
+	left: 70px;
+	position: absolute;
+	text-shadow: 0 -1px 1px #999999;
+	top: 12px;
+	z-index: 0;
+}
+
+/*RL: IE 8 */
+@media \0screen {
+  .login-twit .label, .login-fook .label { top: 15px; }
+}
+
+
+.vote_statements {display:none!important}
+
+tr:hover .activity-statement-overlay		 {
+	display:block;
+}
+
+/* set a relative point, because position:relative doesn't work on <td>s in FF */
+.activity-statement-overlay {
+	display: none;
+	position: relative;
+	z-index: 1;
+	height: 90px;
+}
+
+.activity-statement-overlay-contents {
+	position:absolute;
+	left: -2px;
+    top: -60px;
+	min-height: 122px;
+	width:983px; /* This looks good on the community activity statement */
+	z-index: 0;
+	text-align:left;
+}
+
+.activity-statement-overlay .info {
+	min-height:84px;
+	background-color: #ccc;
+	color: #323232;
+}
+
+.activity-statement-overlay .useravi {
+	width: 90px;
+	height:100%;
+	float:left;
+}
+
+.activity-statement-overlay .useravi img {
+	margin: 6px auto;
+	display:block;
+}
+
+.activity-statement-overlay p {
+	margin: 0;
+}
+
+.activity-statement-overlay p.what {
+	padding-top:1em;
+	font-weight:bold;
+	font-size:80%;
+}
+
+.activity-statement-overlay p.post {
+	font-size: 120%;
+	white-space: normal;
+	line-height:1;
+}
+
+.activity-statement-overlay .cta {
+	background-color: #00b9e8;
+	color: #fff;
+	height:38px;
+	border-top:1px solid #fff;
+}
+
+.activity-statement-overlay .cta p {
+	font-weight:bold;
+	font-size: 120%;
+	margin: 0.2em 1em;
+	padding-right:1em;
+}
+
+.activity-statement-overlay .cta .update {
+	float: left;
+	display:none; /* seemy no data for this yet */
+}
+
+.activity-statement-overlay .cta .increase {
+	float: right;
+	margin-right: 0;
+}
+
+.activity-statement-overlay .cta .increase .tweet {
+	width:60px;
+	height:20px;
+	background: transparent url(/components/com_pages/views/images/kred/statement-tweet.png) no-repeat;
+	background-position:top left;
+	display:inline-block;
+	margin:-4px 2px 0;
+	cursor:pointer;
+	vertical-align:middle;
+
+	/* LOLOLOL Tweet button floats in space */
+	position:absolute;
+	left:-60px;
+	bottom:30px;
+}
+
+.activity-statement-overlay .cta .increase .tweet:hover {
+	background-position:bottom left;
+}
+
+.login-twit {
+	  /*RL not supported in IE8 reduced the actual imaged instead
+	  -webkit-transform: scale(0.7);
+	  -ms-transform: scale(0.7);
+	  -o-transform: scale(0.7);
+	  -moz-transform: scale(0.7);
+	  transform: scale(0.7);
+	  margin-left: -53px;
+	  */
+	  height: 55px;
+	  width:  329px;
+ }
+
+/* account settings*/
+
+.user-accouts{
+	width: 600px;
+	min-height: 450px;
+	-moz-border-radius: 10px;
+/*	-webkit-border-radius: 10px;*/
+	border-radius: 10px;
+	border: solid 1px #D9D9D9;
+	padding: 20px;
+	font-size: 18px;
+	background-color: #FFF;
+	overflow-x: hidden;
+}
+
+.account-details ul{
+	list-style-type:none;
+	padding-left:0;
+}
+/*
+.account-details li {
+	border-bottom: 1px solid #D9D9D9;
+    height: 60px;
+    margin-bottom: 10px;
+    width: 100%;
+	font-size:15px;
+}
+*/
+.account-details li {
+    border-bottom: 1px solid #D9D9D9;
+    font-size: 15px;
+    height: 90px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.account-details li span{
+	display: inline-block;
+}
+
+/*.source-profile img,
+.acct-icon img{
+	height: 52px;
+	width: 52px;
+	border: none;
+	vertical-align: middle;
+}
+*/
+
+.source-profile img{
+    border: medium none;
+    border-radius: 5px;
+    height: 80px;
+    vertical-align: middle;
+    width: 80px;
+}
+
+.acct-icon img{
+	width: 32px;
+	height: 32px;
+    border: medium none;
+    border-radius: 3px;
+	vertical-align: middle;
+}
+
+.acct-icon,
+.source-profile{
+	margin-right: 20px;
+}
+
+.id-connected{
+	color: #6EC03C;
+	font-style: italic;
+	padding-left: 10px;
+}
+
+.id-notconnected{
+	color: red;
+	font-style: italic;
+	padding-left: 10px;
+}
+
+.source-profile,
+.user-id{
+	color: #666666;
+	font-weight:bold;
+	padding-left: 10px;
+}
+
+.acct-button{
+	float:right;
+	margin-top: 16px;
+	color: #FFF;
+	text-decoration: none;
+	font-size: 15px;
+	height: 40px;
+	width: 190px;
+	background: transparent url(/components/com_pages/views/images/kred/identity/connect-button2.png) no-repeat;
+	background-size: 190px 40px;
+}
+
+.delete-link{
+	float:right;
+	margin-top: 13px;
+	font-size:13px;
+}
+.hcount #count{
+	display:none;
+}
+
+.src_icon{
+	display:none;
+	margin-left:-42px;
+	margin-top:7px;
+	width:20px;
+	height:20px;
+	position:absolute;
+}
+.statement:hover .src_icon{
+	display:inline-block;
+}
+.src_icon.tw{
+	background: transparent url(/components/com_pages/views/images/kred/src_icon_tw.png) no-repeat;
+}
+.src_icon.fb{
+	background: transparent url(/components/com_pages/views/images/kred/src_icon_fb.png) no-repeat;
+}
+
+#identity_ifr{
+	background:transparent;
+	height: 600px;
+	width: 650px;
+	border: 0;
+}
+
+/*activity tab */
+.activity-tab{
+	width : 940px;
+	height : 60px;
+	border-bottom: 1px solid #ccc;
+}
+
+.own-activity-tab,
+.friends-activity-tab{
+	background: transparent url(/components/com_pages/views/images/kred/activity_tab.png) no-repeat;
+	width: 190px;
+	height: 55px;
+	cursor: pointer;
+	margin-top: 6px;
+	float:left;
+}
+.friends-activity-tab{
+	margin-left: -16px;
+}
+.own-activity-tab.selected,
+.friends-activity-tab.selected{
+	background: transparent url(/components/com_pages/views/images/kred/activity_tab_active.png) no-repeat;
+}
+
+.friends-activity-tab.selected{
+	margin-left: -20px;
+}
+
+.own-activity-tab.selected a,
+.friends-activity-tab.selected a{
+	color: #000;
+}
+
+
+.kr-menu-list a,
+.own-activity-tab a,
+.friends-activity-tab a{
+  	color: #999;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 19px;
+    margin-top: 22px;
+    text-decoration: none;
+}
+
+.friends-activity-tab a{
+	margin-left: 24px;
+}
+
+#kr-more-menu{
+	/*
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    height: 32px;
+    width: 55px;
+    margin-left: 30px;
+    background: transparent url(/components/com_pages/views/images/kred/arrow_down_grey.png) no-repeat scroll right 3px;
+ 	*/
+  	background: url("/components/com_pages/views/images/kred/arrow_down_grey.png") no-repeat scroll right 3px transparent;
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    height: 32px;
+    left: 1030px;
+    margin-left: 30px;
+    position: absolute;
+    top: 256px;
+    width: 55px;
+}
+
+.kr-menu-list{
+	/*
+	display:none;
+	width: 263px;
+	background: transparent url(/components/com_pages/views/images/kred/more_menu.png) no-repeat;
+    height: 209px;
+    left: 702px;
+    position: absolute;
+    top: -19px;
+    */
+  	background: url("/components/com_pages/views/images/kred/more_menu.png") no-repeat scroll 0 0 transparent;
+    display: none;
+    float: left;
+    height: 209px;
+    margin: -40px 0 0 -178px;
+    position: relative;
+    width: 263px;
+}
+
+.kr-pop-more {
+    color: #000000;
+    display: block;
+    float: right;
+    font-size: 14px;
+    height: 30px;
+    margin: 23px 50px 12px 0;
+    text-align: right;
+    width: 200px;
+}
+
+.kr-menu-list a {
+    color: #000000;
+    float: left;
+    font-size: 14px;
+    margin-top: 24px;
+    position: relative;
+    width: 200px;
+}
+
+.kr-menu-list.displayed{
+	display:block;
+	z-index: 20;
+}
+
+.pluskr-info{
+	display: none;
+	position: relative;
+	height: 25px;
+	padding-top: 12px;
+	font-size: 16px;
+	font-weight: bold;
+	float: left;
+}
+.add-fb-button{
+	width: 287px;
+	height: 33px;
+	background: url(/components/com_pages/views/images/kred/identity/add_FB.png) no-repeat;
+	display: block;
+}
+
+.add-in-button{
+	width: 287px;
+	height: 33px;
+	background: url(/components/com_pages/views/images/kred/identity/add_IN.png) no-repeat;
+	display: block;
+}
+
+/* Double Wide version for new Top Row */
+.kredv2_wide {
+	height: 285px;
+}
+
+.kredv2_wide .tabcontent {
+	margin: 0;
+}
+
+.kredv2_wide .influence-outreach {
+	height: 285px;
+	width: 457px;
+	border-radius: 0;
+	padding: 0;
+}
+
+.kredv2_wide .usr-det-kr {
+	width: auto;
+	height: 100%;
+	margin: 0 15px;
+}
+
+.kredv2_wide .big_shield_flip_stage {
+	position: absolute;
+	top: 10px;
+	right: 19px;
+}
+
+.kredv2_wide .usr-det-kr .usr-img {
+	width: 50px;
+	height: 50px;
+	margin: 0 6px 0 0;
+}
+.kredv2_wide .usr-det-kr .usr-img img {
+	width: 50px;
+	height: 50px;
+	margin: 0;
+}
+.kredv2_wide .usr-det-kr .usr-dtl .username {
+	font-size: 18px;
+}
+.kredv2_wide .usr-det-kr .usr-dtl .atname a {
+	font-size: 11px;
+}
+
+.kredv2_wide .badgeshadow {
+	position: absolute;
+	top: 210px;
+	right: 36px;
+}
+
+.kredv2_wide .switcher {
+	position: absolute;
+	top: 235px;
+	left: auto;
+	right: 36px;
+	width: 166px;
+	text-align: center;
+}
+
+.kredv2_wide .badgecommselection {
+	position: absolute;
+	bottom: 1em;
+	left: 0;
+	border: 0;
+	overflow: hidden;
+}
+
+.kredv2_wide .badgecommselection:hover {
+	overflow: auto;
+}
+
+.kredv2_wide ul.communities {
+    display: block !important;
+	position: static;
+	height: 150px;
+	background: transparent;
+	border: 0;
+	padding: 0;
+	margin-bottom: 0;
+	overflow: scroll;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	height: 180px;
+}
+.kredv2_wide ul.communities li {
+    line-height: 29px;
+    border-top: 1px solid #dfdfdf;
+    width: 190px;
+}
+.kredv2_wide ul.communities li.active {
+	background: url("/components/com_pages/views/images/kred_v2/active-community.png") no-repeat;
+	border-top-color: #fff;
+	margin: 0 0 0 -14px;
+	padding: 0 10px 0 14px;
+	position: relative;
+	z-index: 1;
+}
+.kredv2_wide ul.communities li.active + li {
+	border-top-color: #fff;
+}
+.kredv2_wide .specificcommunity, .kredv2_wide .direction-up, .kredv2_wide .direction-down {
+	display: none;
+}
+.kredv2_wide .badgecommselection .specificcommunity {
+	font-size: 19px;
+	padding-bottom: 12px;
+}
+
+.kredv2_wide .switch {
+	left: 320px;
+}
+
+.kredv2_wide .plus-kred-received {
+	text-align: center;
+}
+.kredv2_wide .plus-kred-received h4 {
+	margin: 35px 0 0;
+}
+.kredv2_wide .plus-kred-received .count {
+    font-size: 48px;
+}

@@ -1,0 +1,30 @@
+<html><head><title>Rich Text Editing Demo</title>
+
+<style type="text/css">
+#edit{ border:1px solid black; overflow: scroll; width:300px; height:200px; font: 10pt Courier;}
+</style>
+
+<script>
+function Start() {
+	editframe = document.getElementById('edit');
+	editdoc = editframe.contentWindow.document;
+
+	editdoc.open();
+	editdoc.write('<html><body>this is great content. <ol><li>one<li>two<li>three</ol></body></html>');
+	editdoc.close();
+
+    try {
+	    editdoc.designMode = "on";
+		editdoc = editframe.contentWindow.document;
+        editdoc.execCommand("undo", false, null);
+    }  catch (e) {
+    }
+}
+</script>
+
+</head>
+<body onload="Start()">
+
+<iframe id="edit"></iframe>
+
+</body></html>

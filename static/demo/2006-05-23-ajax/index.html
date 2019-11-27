@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Simple Ajax Demo</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<script type="text/javascript">//<!--
+function httpRequest(url, callback) {
+    var httpObj = false;
+    if (typeof XMLHttpRequest != 'undefined') {
+        httpObj = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        try{
+            httpObj = new ActiveXObject('Msxml2.XMLHTTP');
+        } catch(e) {
+            try{
+                httpObj = new ActiveXObject('iMicrosoft.XMLHTTP');
+            } catch(e) {}
+        }
+    }
+    if (!httpObj) return;
+
+    httpObj.onreadystatechange = function() {
+        if (httpObj.readyState == 4) { // when request is complete
+            callback(httpObj.responseText);
+        }
+    };
+    httpObj.open('GET', url, true);
+    httpObj.send(null);
+}
+
+function fillSelect(JSON) {
+    var selectTwo = document.getElementById('two');
+   	
+    // clear out existing options
+    while (selectTwo.options.length) {
+        selectTwo.options[0] = null;
+    }
+	
+    // fill with new options from JSON array
+    var data = eval(JSON);
+    for (var i=0;i < data.length;i++) {
+        selectTwo.options[selectTwo.options.length] = new Option(data[i]);
+    }
+}
+
+function onSelectChange() {
+    var selectOne = document.getElementById('one');
+    var selectedOption = selectOne.options[selectOne.selectedIndex].value;
+    if (selectedOption != "") {
+        httpRequest('select_' + selectedOption + '.js', fillSelect);
+    } else {
+        fillSelect('[]'); // empty array
+    }
+}
+
+window.onload = function() {
+    var selectOne = document.getElementById('one');
+    selectOne.onchange = onSelectChange;
+}
+//-->
+</script>
+</head>
+<body>
+
+<form action="">
+	<p>
+	    <select id="one">
+	        <option value="">Please choose one...</option>
+	        <option value="colours">Colours</option>
+	        <option value="numbers">Numbers</option>
+	        <option value="letters">Letters</option>
+	    </select>
+	
+	    <select id="two">
+	        <option></option>
+	    </select>
+	</p>
+</form>
+
+</body>
+</html>

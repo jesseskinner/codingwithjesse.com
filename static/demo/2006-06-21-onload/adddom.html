@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>addDOMLoadEvent Demo Page</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<script type="text/javascript" src="adddomloadevent-compressed.js"></script>
+<script type="text/javascript">
+
+function addListElement(text) {
+	var li = document.createElement("li");
+	li.appendChild(document.createTextNode(text));
+	var ol = document.getElementsByTagName('ol').item(0);
+	ol.appendChild(li);
+}
+
+function addFirstElement() {
+	addListElement("This was added after the DOM was finished loading!");
+}
+
+addDOMLoadEvent(addFirstElement);
+
+addDOMLoadEvent(function() {
+	addListElement("Thanks, addDOMLoadEvent!");
+});
+
+
+</script>
+<style type="text/css">
+* { font-family: Verdana, sans-serif; }
+li { margin: 25px; }
+</style>
+</head>
+<body>
+
+<h1>addDOMLoadEvent Demo Page</h1>
+<p>For an explanation, go to <a href="http://www.thefutureoftheweb.com/blog/2006/6/adddomloadevent">http://www.thefutureoftheweb.com/blog/2006/6/adddomloadevent</a>.</p>
+<ol>
+<li>This list will only come with 2 items. JavaScript will add the rest once the DOM is loaded.</li>
+<li>
+  <script type="text/javascript">
+   // politely stolen from Dean Edwards:
+   var src = "http://www.nasa.gov/images/content/84857main_EC04-0325-23_lg.jpg?" + Number(new Date);
+   document.write("<img src=" + src + " height=240 width=300>");
+  </script>
+</li>
+</ol>
+
+</body>
+</html>

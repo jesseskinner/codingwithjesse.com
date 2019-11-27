@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Deciphering Usability - Jesse Skinner - The Ajax Experience, October 2006</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.2a2" />
+<meta name="author" content="Jesse Skinner" />
+<meta name="company" content="The Future of the Web" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- embedded styles -->
+<style type="text/css" media="all">
+.imgcon {width: 525px; margin: 0 auto; padding: 0; text-align: center;}
+#anim {width: 270px; height: 320px; position: relative; margin-top: 0.5em;}
+#anim img {position: absolute; top: 42px; left: 24px;}
+img#me01 {top: 0; left: 0;}
+img#me02 {left: 23px;}
+img#me04 {top: 44px;}
+img#me05 {top: 43px;left: 36px;}
+.slide { height: 100%; font-size: 110% }
+.slide h1, .slide h3 { font-size: 100% }
+.card {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin: 0 auto;
+    -webkit-perspective: 400px;
+    perspective: 400px;
+    display: none;
+}
+.card .front, .card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    text-align: center;
+    background: #abc;
+    border: 1px solid #789;
+    font: 30px/100px sans-serif;
+    
+    transition: all .4s ease-in-out;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+.card .front {
+    z-index: 1;
+    
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+.card .back {
+    -webkit-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+
+.card:hover .front {
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+.card:hover .back {
+    z-index: 2;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+        
+</style>
+<!-- S5 JS -->
+<script src="ui/default/adddomloadevent-compressed.js" type="text/javascript"></script>
+<script src="ui/default/slides.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Deciphering Usability &#8226; September 2013</h1>
+<h2>Lasso Developer Conference</h2>
+</div>
+</div>
+
+<div class="presentation">
+
+<div class="slide">
+	<h1>Deciphering Usability</h1>
+	<h3>Jesse Skinner</h3>
+	<h4><a href="mailto:jesse&#64;thefutureoftheweb&#x2e;com">jesse&#64;thefutureoftheweb&#x2e;com</a></h4>
+</div>
+
+<div class="slide">
+	<h1>Deciphering Usability</h1>
+	<h3>Typical work flow:</h3>
+	<ol style="margin-left: 2em">
+		<li>Boss describes a feature</li>
+		<li>Artist designs the UI</li>
+		<li>Hacker develops the UI</li>
+	</ol>
+</div>
+
+<div class="slide">
+	<h1>Deciphering Usability</h1>
+	<h3>Today I will show you:</h3>
+	<ol style="margin-left: 2em">
+		<li>Developers can improve usability</li>
+		<li>Hover effects</li>
+		<li>JavaScript animations</li>
+		<li>CSS 3D animations</li>
+	</ol>
+</div>
+
+<div class="slide">
+	<h1>Deciphering Usability</h1>
+	<h3>What's missing from the design?</h3>
+	<ul style="margin-left: 2em">
+		<li>Mouse Cursors</li>
+		<li>Hover Effects</li>
+		<li>Animations</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Don't Make Me Think</h1>
+	<img src="img/dontmakemethink.jpg" style="position: absolute;left: 33%;top:15%;height:50%">
+</div>
+
+<div class="slide">
+	<h1>Don't Make Me Think</h1>
+	<h3>Users like interfaces that are</h3>
+	<ul style="margin-left: 2em">
+		<li>obvious</li>
+		<li>predictable</li>
+		<li>reassuring</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Mouse Cursors</h1>
+	<h3>If it's clickable, use</h3>
+		<p style="text-indent: 2em;cursor:pointer"><code>cursor:pointer</code> <img src="img/pointer.png" height=50 style="float:left"></p>
+	<br>
+	<h3>If it's draggable, use</h3>
+		<p style="text-indent: 2em;cursor:move"><code>cursor:move</code> <img src="img/move.png" height=50 style="float:left"></p>
+</div>
+
+<style type='text/css'>
+#hover1, #hover2, #hover3 { cursor: pointer; display: inline-block }
+#hover1 { border-bottom: 2px solid transparent }
+#hover1:hover { border-bottom: 2px solid #000 }
+#hover2:hover { background: yellow; }
+#hover3 { border: 1px solid #000; padding: 10px; position:absolute; }
+#hover3:hover { box-shadow: 3px 3px 6px #000; margin-top:-5px;margin-left:-5px;}
+button { font-size: 110%; cursor: pointer }
+.animate { float: right; display: none; background: url(img/sean.png); width:228px; height:313px}
+#resizediv { display: none; float: right }
+</style>
+<div class="slide">
+	<h1>Hover Effects</h1>
+	<h3>If it's clickable, consider a hover effect</h3>
+	<ul style="margin-left: 2em">
+		<li><span id="hover1">underline</span></li>
+		<li><code>#button:hover {<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;text-decoration: underline<br>
+		}</code></li>
+	</ul>
+</div>
+<div class="slide">
+	<h1>Hover Effects</h1>
+	<h3>If it's clickable, consider a hover effect</h3>
+	<ul style="margin-left: 2em">
+		<li><span id="hover2">colour</span></li>
+		<li><code>#button:hover {<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;background: yellow<br>
+		}</code></li>
+	</ul>
+</div>
+<div class="slide">
+	<h1>Hover Effects</h1>
+	<h3>If it's clickable, consider a hover effect</h3>
+	<ul style="margin-left: 2em">
+		<li><span id="hover3">movement</span></li>
+		<li><code>#button:hover {<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;box-shadow: 3px 3px 6px #000;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;margin-left: -5px;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;margin-top: -5px;<br>
+		}</code></li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Animations</h1>
+	<h3>Slide animations</h3>
+	<ul style="margin-left: 2em">
+		<li>eg. open a menu or section</li>
+		<li>
+			<button id="slidebutton">Click Me</button>
+			<div id="slidediv" class="animate"></div>
+		</li>
+	</ul>
+</div>
+<div class="slide">
+	<h1>Animations</h1>
+	<h3>Fade animations</h3>
+	<ul style="margin-left: 2em">
+		<li>eg. fade in an error message</li>
+		<li>
+			<button id="fadebutton">Click Me</button>
+			<div id="fadediv" class="animate"></div>
+		</li>
+	</ul>
+</div>
+<div class="slide">
+	<h1>Animations</h1>
+	<h3>Movement animations</h3>
+	<ul style="margin-left: 2em">
+		<li>eg. add to shopping cart</li>
+		<li>
+			<button id="movebutton">Click Me</button>
+			<div id="movediv" class="animate"></div>
+		</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Animations</h1>
+	<h3>Resize animations</h3>
+	<ul style="margin-left: 2em">
+		<li>eg. open popup</li>
+		<li>
+			<button id="resizebutton">Click Me</button>
+			<img id="resizediv" src="img/sean.png">
+		</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Animations</h1>
+	<h3>Flip animations</h3>
+	<ul style="margin-left: 2em">
+		<li>eg. have content on "back"</li>
+		<li>
+			<div class="card">
+			    <div class="front">FRONT</div>
+			    <div class="back">BACK</div>
+			</div>
+		</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Fine Tuning</h1>
+	<h3>Fine Tuning Animations</h3>
+	<ul style="margin-left: 2em">
+		<li>Natural feel</li>
+		<li>Real-world physics</li>
+		<li>Easings: <a href="http://easings.net/" target="_blank">http://easings.net/</a></li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Animations</h1>
+	<h3>jsFiddle Links</h3>
+	<ul style="margin-left: 2em">
+		<li>Slide: <a href="http://jsfiddle.net/XvS6h/3/" target="_blank">http://jsfiddle.net/XvS6h/3/</a></li>
+		<li>Flip: <a href="http://jsfiddle.net/Du4bJ/2/" target="_blank">http://jsfiddle.net/Du4bJ/2/</a></li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Deciphering Usability</h1>
+	<h3>Today you've seen</h3>
+	<ul style="margin-left: 2em">
+		<li>Hover Effects</li>
+		<li>jQuery Animations</li>
+		<li>CSS 3D Animations</li>
+		<li>How developers can boost usability</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Deciphering Usability</h1>
+	<h3>Thanks!</h3>
+	<p></p>
+	<p></p>
+	<h3>Jesse Skinner</h3>
+	<h4><a href="http://www.thefutureoftheweb.com/">www.thefutureoftheweb.com</a></h4>
+</div>
+
+</div>
+
+<script src="jquery.js"></script>
+<script>
+	$('#slidebutton').click(function(){
+		$('#slidediv').slideToggle();
+		return false;
+	});
+	$('#fadebutton').click(function(){
+		$('#fadediv').fadeToggle();
+		return false;
+	});
+	$('#movebutton').click(function(){
+		$('#movediv').show().css({
+			position: 'relative',
+			right: 0
+		}).animate({
+			right: 300
+		});
+		return false;
+	});
+	$('#resizebutton').click(function(){
+		$('#resizediv').show().css({
+			position: 'relative',
+			width: 0,
+			height: 0
+		}).animate({
+			width: 228,
+			height: 313
+		});
+		return false;
+	});
+	
+	setTimeout(function(){
+		$('.card').show();
+	}, 1000);
+</script>
+</body>
+</html>

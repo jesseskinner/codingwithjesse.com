@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>addDOMLoadEvent Demo Page</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<script type="text/javascript" src="adddomloadevent.js"></script>
+<script type="text/javascript">
+
+function addListElement(text) {
+	var li = document.createElement("li");
+	li.appendChild(document.createTextNode(text));
+	var ol = document.getElementsByTagName('ol').item(0);
+	ol.appendChild(li);
+}
+
+function addFirstElement() {
+	addListElement("This was added after the DOM was finished loading!");
+}
+
+window.onload = function() {
+	addListElement("This was added with window.onload.");
+}
+
+addDOMLoadEvent(addFirstElement);
+
+addDOMLoadEvent(function() {
+	addListElement("Thanks, addDOMLoadEvent!");
+});
+
+</script>
+<style type="text/css">
+* { font-family: Verdana, sans-serif; }
+li { margin: 25px; }
+</style>
+</head>
+<body>
+
+<h1>addDOMLoadEvent Demo Page</h1>
+<p>For an explanation, go to <a href="http://www.thefutureoftheweb.com/blog/adddomloadevent">http://www.thefutureoftheweb.com/blog/adddomloadevent</a>.</p>
+<ol>
+<li>This list will only come with 2 items. JavaScript will add the rest once the DOM is loaded.</li>
+<li>
+  <script type="text/javascript">
+   // politely stolen from Dean Edwards:
+   var src = "http://www.nasa.gov/images/content/84857main_EC04-0325-23_lg.jpg?" + Number(new Date);
+   document.write("<img src=" + src + " height=240 width=300>");
+  </script>
+</li>
+</ol>
+
+<p>Google ad frame for testing:</p>
+<script type="text/javascript">
+/* Customized Google Adsense codes */
+google_ad_client = "pub-3809601305027895";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "text";
+google_ad_channel ="8087340205";
+google_color_border = "ffffff";
+google_color_bg = "ffffff";
+google_color_link = "000000";
+google_color_url = "000000";
+google_color_text = "000000";
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+
+</body>
+</html>

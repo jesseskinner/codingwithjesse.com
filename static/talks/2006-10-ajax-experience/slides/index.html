@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Unobtrusive Ajax - Jesse Skinner - The Ajax Experience, October 2006</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.2a2" />
+<meta name="author" content="Jesse Skinner" />
+<meta name="company" content="The Future of the Web" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- embedded styles -->
+<style type="text/css" media="all">
+.imgcon {width: 525px; margin: 0 auto; padding: 0; text-align: center;}
+#anim {width: 270px; height: 320px; position: relative; margin-top: 0.5em;}
+#anim img {position: absolute; top: 42px; left: 24px;}
+img#me01 {top: 0; left: 0;}
+img#me02 {left: 23px;}
+img#me04 {top: 44px;}
+img#me05 {top: 43px;left: 36px;}
+</style>
+<!-- S5 JS -->
+<script src="ui/default/adddomloadevent-compressed.js" type="text/javascript"></script>
+<script src="ui/default/slides.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Unobtrusive Ajax</h1>
+<h2>The Ajax Experience &#8226; October 2006</h2>
+</div>
+</div>
+
+<div class="presentation">
+
+<div class="slide">
+	<h1>Unobtrusive Ajax</h1>
+	<h3>Jesse Skinner</h3>
+	<h4><a href="mailto:jesse&#64;thefutureoftheweb&#x2e;com">jesse&#64;thefutureoftheweb&#x2e;com</a></h4>
+</div>
+
+<div class="slide">
+	<h1>What is Unobtrusive Ajax?</h1>
+	<img src="img/cpb.png"/>
+	<ul>
+		<li>
+			It's the separation of:
+			<ul>
+				<li>Content (HTML),</li>
+				<li>Presentation (CSS),</li>
+				<li>and Behaviour (JavaScript)</li>
+			</ul>
+		</li>
+		<li>It involves separating these:
+			<ul>
+				<li>Physically (.html, .css &amp; .js files)</li>
+				<li>and Conceptually (independant layers)</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>What is Unobtrusive Ajax?</h1>
+	<img src="img/mvc.png"/>
+	<ul>
+		<li>
+			This is a lot like MVC separation:
+			<ul>
+				<li>Model (HTML),</li>
+				<li>View (CSS),</li>
+				<li>and Controller (JavaScript)</li>
+			</ul>
+		</li>
+		<li>MVC separation is very popular</li>
+		<li>Similar code is grouped in layers</li>
+		<li>Each layer is (mostly) independant</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Physical Separation</h1>
+	<img class="photo" src="img/physical-separation.jpg"/>
+	<ul>
+		<li>CSS in .css files, JavaScript in .js files</li>
+		<li>No <code>onload</code>, <code>onclick</code> or <code>style</code></li>
+		<li>No deprecated HTML like <code>&lt;font&gt;</code> or <code>align</code></li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Conceptual Separation</h1>
+	<img class="photo" src="img/separate.jpg"/>
+	<ul>
+		<li>Content and forms available in plain HTML</li>
+		<li>Forms and links work without JavaScript</li>
+		<li>Presentation is in CSS, not HTML or JavaScript</li>
+		<li>Anyone can access the content with any client,
+			without CSS, JavaScript, or even a mouse
+		</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>What's the difference?</h1>
+	<h3>How are physical separation and conceptual separation different?</h3>
+	<ul>
+		<li>Site can work great without CSS or JS but still
+			use <code>onclick</code> and <code>style</code>
+		</li>
+		<li>Site can be totally broken without JavaScript even
+			with all JS in a separate file</li>			
+		</li>
+		<li>Physical Separation benefits developers the most</li>
+		<li>Conceptual Separation benefits visitors the most</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Unobtrusive HTML</h1>
+	<img class="photo" src="img/html.jpg"/>
+	<ul>
+		<li>Use the full range of HTML tags
+			<ul>
+				<li><code>&lt;h1&gt;</code>, etc. for headers,</li>
+				<li><code>&lt;label&gt;</code> for form labels</li>
+			</ul>
+		</li>
+		<li>Use tables only for tabular data</li>
+		<li>Avoid <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code></li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Unobtrusive CSS</h1>
+	<img class="photo" src="img/css.jpg"/>
+	<ul>
+		<li>All CSS is unobtrusive</li>
+		<li>Use reusable classes when possible</li>
+		<li>Keep CSS in an external file or a <code>&lt;style&gt;</code></li>
+		<li><code>&lt;h1&gt;</code> is better than <code>&lt;div class="header"&gt;</code></li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Unobtrusive Flash Objects</h1>
+	<img class="photo" src="img/flash.jpg"/>
+	<ul>
+		<li>Replacing HTML with Flash using JavaScript</li>
+		<li>A script from Bobby van der Sluis (<a href="http://www.bobbyvandersluis.com">bobbyvandersluis.com</a>)</li>
+		<li>Content can be duplicated in HTML</li>
+		<li>Browsers that support Flash get a sexy Flash version</li>
+		<li>Keeps messy Flash code out of the HTML</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Unobtrusive JavaScript</h1>
+	<img class="photo" src="img/javascript.jpg"/>
+	<ul>
+		<li>Start with plain HTML</li>
+		<li>Enhance HTML with JavaScript</li>
+		<li>Don't assume: test everything</li>
+		<li>If JavaScript is broken, the page still works</li>
+		<li>Don't use <code>onclick</code> or <code>javascript:void(0)</code></li>
+		<li>Keep JavaScript in an external file or a <code>&lt;script&gt;</code></li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Why use Unobtrusive Ajax?</h1>
+	<img class="photo" src="img/lonely.jpg"/>
+	<ul>
+		<li>If you don't, nobody will want to hang out with you</li>
+		<li>You will have to eat alone at lunch</li>
+		<li>You won't get invited to all the good parties</li>
+		<li>Kids will throw eggs at your house</li>
+		<li class="incremental">Just kidding!</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Why use Unobtrusive Ajax?</h1>
+	<img class="photo" src="img/freedom.jpg"/>
+	<ul>
+		<li>Fact is, you don't have to</li>
+		<li>Most people don't</li>
+		<li>Some notable examples:
+			<ul>
+				<li>Google Maps (<a href="http://maps.google.com/" target="_blank">maps.google.com</a>)</li>
+				<li>TWERQ (<a href="http://www.twerq.com/" target="_blank">twerq.com</a>)</li>
+				<li>Marlboro (<a href="http://www.marlboro.com/" target="_blank">marlboro.com</a>)</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Why use Unobtrusive Ajax?</h1>
+	<img class="photo" src="img/repair.jpg"/>
+	<h3>It's not hard</h3>
+	<ul>
+		<li>You may need only a few changes</li>
+		<li>Sometimes it is easier to write Unobtrusive code</li>
+		<li>You can often gradually improve existing sites</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Why use Unobtrusive Ajax?</h1>
+	<img class="photo" src="img/clean.jpg"/>
+	<h3>Code is cleaner and easier to maintain</h3>
+	<ul>
+		<li>Easier to read and understand means easier to change</li>
+		<li>Redo entire look of site with just CSS</li>
+		<li>JavaScript can be changed easily</li>
+		<li>HTML can even change safely</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Why use Unobtrusive Ajax?</h1>
+	<img class="photo" src="img/access.jpg"/>
+	<h3>It improves Accessibility</h3>
+	<ul>
+		<li>Accessibility means letting everyone access the content</li>
+		<li>You can't make assumptions about everyone</li>
+		<li>You <b>can</b> assume that all browsers understand HTML</li>
+		<li>~10% have JavaScript disabled (<a href="http://www.w3schools.com/browsers/browsers_stats.asp" target="_blank">www.w3schools.com/browsers/browsers_stats.asp</a>)</li>
+		<li>Some use screenreaders, some can't use a mouse</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Why use Unobtrusive Ajax?</h1>
+	<img class="photo" src="img/spider.jpg"/>
+	<h3>It improves Search Engine Friendliness</h3>
+	<ul>
+		<li>Web spiders don't have JavaScript or CSS</li>
+		<li>Web spiders only follow <code>&lt;a&gt;</code> links</li>
+		<li>People can't search the content in your JavaScript/Flash</li>
+		<li>More content and structured HTML makes a page more relevant</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Why use Unobtrusive Ajax?</h1>
+	<img class="photo" src="img/wow.jpg"/>
+	<h3>Sometimes you need JavaScript</h3>
+	<ul>
+		<li>Of course, JavaScript games won't work without it</li>
+		<li>Many web statistic scripts depend on JavaScript</li>
+		<li>Google Ads require JavaScript</li>
+		<li>Just do the best you can</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>How do you use it?</h1>
+	<img class="photo" src="img/boss.jpg"/>
+	<h3>Just do it</h3>
+	<ul>
+		<li>Don't ask your client/boss "Can we assume everyone has JavaScript?"</li>
+		<li>You don't ask about other design decisions</li>
+		<li>It's up to you to keep your code clean and manageable</li>
+		<li>They don't know how easy Unobtrusive Ajax is</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>How do you use it?</h1>
+	<img class="photo" src="img/boring.jpg"/>
+	<h3>Start off without JavaScript</h3>
+	<ul>
+		<li>Use plain HTML with links and forms</li>
+		<li>Use CSS to add hover &amp; scroll effects</li>
+		<li>Use HTTP features (eg. "Location" header for redirect)</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>How do you use it?</h1>
+	<img class="photo" src="img/link.jpg"/>
+	<h3>Respect the link</h3>
+	<ul>
+		<li>All the links on your site should work without JavaScript</li>
+		<li>This means no <code>javascript:</code> protocol</li>
+		<li>Don't even use <code>&lt;a href="#"&gt;</code></li>
+		<li>If you need a JavaScript-only link, add it with JavaScript</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>How do you use it?</h1>
+	<img class="photo" src="img/hooks.jpg"/>
+	<h3>Add in hooks for CSS and JavaScript</h3>
+	<ul>
+		<li>Add IDs on elements that are unique on a page</li>
+		<li>Add classes on elements that are repeated</li>
+		<li>Use lists and other semantic structures</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>How do you use it?</h1>
+	<img class="photo" src="img/techniques.jpg"/>
+	<h3>Use proven techniques</h3>
+	<ul class="incremental">
+		<li>Start with plain HTML and CSS</li>
+		<li>Override links and forms to update page dynamically</li>
+		<li>Offer content through both HTML and JSON/XML</li>
+		<li>Have extra CSS for those with/without JavaScript</li>
+		<li>Have separate sites for JavaScript / non-JavaScript</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>How do you use it?</h1>
+	<img class="photo" src="img/browser-tools.png"/>
+	<h3>Browser tools</h3>
+	<ul>
+		<li>You need to be able to disable JavaScript and CSS</li>
+		<li>Get Web Developer toolbars for Firefox and IE</li>
+		<li>Get Firebug for Firefox! (<a href="http://www.joehewitt.com/software/firebug/">joehewitt.com</a>)</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>How do you use it?</h1>
+	<img class="photo" src="img/tools.jpg"/>
+	<h3>JavaScript tools</h3>
+	<ul class="incremental">
+		<li>addEvent and removeEvent (<a href="http://www.quirksmode.org/blog/archives/2005/10/_and_the_winner_1.html">QuirksBlog</a>)</li>
+		<li>httpRequest</li>
+		<li>addDOMLoadEvent (<a href="http://www.thefutureoftheweb.com/blog/2006/6/adddomloadevent">thefutureoftheweb.com</a>)</li>
+		<li>addClassName, removeClassName</li>
+		<li>DOM Scripting... and innerHTML</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Examples</h1>
+	<h3>Google Suggest</h3>
+	<ul>
+		<li>Simple: it becomes a regular search box without JavaScript</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Examples</h1>
+	<h3>Click to vote</h3>
+	<ul>
+		<li>Start with regular link or form submit</li>
+		<li>Override with <code>onclick</code></li>
+		<li>Do background Ajax call and update page dynamically</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Examples</h1>
+	<img src="img/google-maps.png" class="photo"/>
+	<h3>Google Maps</h3>
+	<ul>
+		<li>Remember MapQuest?</li>
+		<li>Could have regular links/buttons for move, zoom</li>
+		<li>Override controls with <code>onclick</code></li>
+		<li>Use Ajax to get new data</li>
+		<li>Update map dynamically</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Examples</h1>
+	<h3>Drag-n-drop</h3>
+	<ul>
+		<li>No way to implement without JavaScript</li>
+		<li>Offer alternative, eg. link or button to sort/add to cart</li>
+		<li>If functionality is trivial, just require JavaScript</li>
+		<li>May want to show move cursor for just JavaScript</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Examples</h1>
+	<h3>Calendar / Date Picker</h3>
+	<ul>
+		<li>Only show "view calendar" link with JavaScript</li>
+		<li>People without JavaScript can just type a date</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Examples</h1>
+	<h3>Form validation</h3>
+	<ul>
+		<li>Have server-side validation as well</li>
+		<li>Client-side is nice and faster, but not trustable</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Examples</h1>
+	<h3>Pop-up windows</h3>
+	<ul>
+		<li>Start with regular link and <code>target="_blank"</code></li>
+		<li>Override link with <code>onclick</code> and <code>window.open</code></li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Examples</h1>
+	<h3>Chat</h3>
+	<ul>
+		<li>Start with old-school frames, meta refresh and form + target</li>
+		<li>Replace frame with regular <code>&lt;div&gt;</code></li>
+		<li>Open Ajax communication for updates</li>
+		<li>Override form submit with Ajax call</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Examples</h1>
+	<h3>Tree</h3>
+	<ul>
+		<li>Start with it expanded completely</li>
+		<li>Use JavaScript to collapse it</li>
+		<li>Add clickable nodes that expand branches</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Examples</h1>
+	<h3>Sortable table columns</h3>
+	<ul>
+		<li>Start with regular table</li>
+		<li>Add <code>onclick</code> to table headers</li>
+		<li>Class names can specify how to sort (number, alpha)</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Conclusion</h1>
+	<img src="ui/default/bigpig.png"/>
+	<ul>
+		<li>Unobtrusive Ajax is easy</li>
+		<li>Ajax doesn't have to break the web</li>
+		<li><p>Thanks!</p>
+			<h3>Jesse Skinner</h3>
+			<h4><a href="http://www.thefutureoftheweb.com/">www.thefutureoftheweb.com</a></h4>
+		</li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

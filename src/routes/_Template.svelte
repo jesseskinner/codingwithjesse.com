@@ -97,6 +97,7 @@
   </h1>
   <nav>
     <a href="/">Home</a>
+    <a href="/blog/about-me">About Jesse</a>
     <a href="/contact/me">Contact Jesse</a>
     <form method="GET" action="/blog/search">
       <input type="search" name="terms" size="15" />
