@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<title>Coding with Jesse</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta
+			name="description"
+			content="Web development blog about Svelte, JavaScript, HTML and CSS"
+		/>
 		%sapper.base%
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="/global.css" />
+		<link rel="alternate" type="application/rss+xml" href="/blog/feed" />
+		<link rel="stylesheet" href="/prismjs-monokai.css" />
 		%sapper.styles% %sapper.head%
-		<link rel="alternate" type="application/rss+xml" title="RSS" href="https://codingwithjesse.com/blog/feed"/>
 	</head>
 	<body>
 		%sapper.html% %sapper.scripts%

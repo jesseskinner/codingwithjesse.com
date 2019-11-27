@@ -1,22 +1,21 @@
 <script>
   import { formatDate } from "../model/posts";
 
-  export let title = '';
+  export let title = "";
   export let date = false;
   export let link = false;
 </script>
 
 <style>
   article {
+    max-width: 800px;
     position: relative;
-    background: white;
-    padding: 2em 3em;
-    margin-bottom: 3em;
-    box-shadow: 2px 2px 2px #222;
+    margin: 3em 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
   h1 {
+    min-width: 70vw;
     margin-top: 0;
     font-size: 32px;
   }
@@ -29,35 +28,38 @@
     font-weight: bold;
   }
 
-  @media (min-width: 700px) {
-    article {
-      margin-right: 90px;
-    }
-
-    .date {
-      position: absolute;
-      top: 30px;
-      right: -90px;
-      background: #d3e4ff;
-      width: 90px;
-      padding: 5px 0;
-      font: 20px Georgia, sans-serif;
-      line-height: 30px;
-      text-align: center;
-      z-index: -1;
-      font-weight: normal;
-      box-shadow: 2px 2px 2px #222;
-    }
+  article :global(pre) {
+    padding: 2em 1em;
+    box-sizing: border-box;
+    overflow: auto;
+    background: #29292e;
+    color: #ffffff;
   }
 
-  article :global(pre) {
-    overflow: auto;
-    margin: 0 -3em;
-    padding: 2em 3em;
-    background: #29292e;
-    color: #fff;
+  article :global(pre),
+  .separator {
+    margin: 0 -1em;
+  }
+
+  .separator {
+    border-bottom: 1px solid #ccc;
+  }
+
+  @media (min-width: 1000px) {
+    article :global(pre) {
+      padding: 2em 15vw;
+    }
+    article :global(pre),
+    .separator {
+      margin: 0 0 0 -15vw;
+      width: 99vw;
+    }
   }
 </style>
+
+<svelte:head>
+  <title>{title}</title>
+</svelte:head>
 
 <article>
   <h1>
@@ -70,3 +72,5 @@
   {/if}
   <slot />
 </article>
+
+<div class="separator" />

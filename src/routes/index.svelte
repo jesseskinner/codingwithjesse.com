@@ -13,11 +13,9 @@
   export let posts;
 </script>
 
-<style>
-a {
-  background: #acf;
-}
-</style>
+<svelte:head>
+  <title>Coding with Jesse</title>
+</svelte:head>
 
 <Template>
   {#each posts as post}

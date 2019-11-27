@@ -1,5 +1,12 @@
+Today:
+    ☐ See about a perfect Lighthouse audit score
+    ☐ Fix the code styling for (some) old posts
+    ☐ Add links to the "hidden" blog posts
+    ☐ Add subscribe box newsletter
+    ☐ Maybe write a new About Me with photo
+
 Admin:
-    ☐ Maybe store everything in JSON in git repo instead of mysql database?
+    ☐ Maybe store everything in Markdown/JSON in git repo instead of mysql database?
     ☐ Header image (maybe with help from https://source.unsplash.com/ ?)
 
 Frontend:

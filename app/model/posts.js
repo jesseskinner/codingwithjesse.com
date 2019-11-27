@@ -164,6 +164,6 @@ function addHTMLToPosts(posts) {
 		if (p.html) {
 			return p;
 		}
-		return Object.assign({ html: marked(p.markdown) }, p);
+		return Object.assign({}, p, { html: marked(p.markdown) });
 	});
 }

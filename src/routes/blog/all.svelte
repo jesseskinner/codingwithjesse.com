@@ -39,5 +39,21 @@
         <br />
       {/each}
     </p>
+
+    <hr />
+
+    <p>
+      Here are some other pages on this site (so the static site
+      generation crawler will know about them).
+    </p>
+
+    <p>
+      <a href="/blog/rss">RSS</a>
+      <a href="/blog/feed">feed</a>
+      <br />
+      <a href="/blog">Recent posts</a>
+      <br />
+      <a href="/blog/search">Search</a>
+    </p>
   </Article>
 </Template>

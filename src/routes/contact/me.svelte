@@ -1,28 +1,52 @@
 <script>
   import Template from "../../components/Template.svelte";
-  import Post from "../../components/Post.svelte";
-
-  const post = { title: 'Contact Me', html: `
-    <p>Feel free to get in touch if you would like
-    my help on a project or have any questions or comments about the blog.</p>
-    <p>
-        <strong>Email:</strong>
-        <a href="mailto:jesse@codingwithjesse.com" target="_blank">jesse@codingwithjesse.com</a><br/>
-        <strong>Twitter:</strong>
-        <a href="https://twitter.com/jesseskinner" target="_blank">twitter.com/JesseSkinner</a><br/>
-        <strong>Twitch:</strong>
-        <a href="https://twitch.tv/jesseskinner" target="_blank">twitch.tv/JesseSkinner</a><br/>
-        <strong>GitHub:</strong>
-        <a href="https://github.com/jesseskinner" target="_blank">github.com/JesseSkinner</a><br/>
-        <strong>YouTube:</strong>
-        <a href="https://www.youtube.com/channel/UC6Ak0hMzttpQYAxzTe8kx7A" target="_blank">youtube.com/channel/UC6Ak0hMzttpQYAxzTe8kx7A</a><br/>
-        <strong>Discord:</strong>
-        <a href="https://discord.gg/3ZBDHb2" target="_blank">discord.gg/3ZBDHb2</a><br/>
-    </p>` }
+  import Article from "../../components/Article.svelte";
 </script>
 
 <Template>
-    <div>
-  <Post {post} link={false} />
-  </div>
+  <Article title="Contact Jesse">
+    <p>
+      Feel free to get in touch if you would like Jesse's help on a project or
+      have any questions or comments about the blog.
+    </p>
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:jesse@codingwithjesse.com" target="_blank">
+        jesse@codingwithjesse.com
+      </a>
+      <br />
+      <strong>Twitter:</strong>
+      <a href="https://twitter.com/jesseskinner" target="_blank">
+        twitter.com/JesseSkinner
+      </a>
+      <br />
+      <strong>YouTube:</strong>
+      <a
+        href="https://www.youtube.com/channel/UC6Ak0hMzttpQYAxzTe8kx7A"
+        target="_blank">
+        youtube.com/channel/UC6Ak0hMzttpQYAxzTe8kx7A
+      </a>
+      <br />
+      <strong>Twitch:</strong>
+      <a href="https://twitch.tv/jesseskinner" target="_blank">
+        twitch.tv/JesseSkinner
+      </a>
+      <br />
+      <strong>Discord:</strong>
+      <a href="https://discord.gg/3ZBDHb2" target="_blank">
+        discord.gg/3ZBDHb2
+      </a>
+      <br />
+      <strong>GitHub:</strong>
+      <a href="https://github.com/jesseskinner" target="_blank">
+        github.com/JesseSkinner
+      </a>
+      <br />
+      <strong>LinkedIn:</strong>
+      <a href="https://www.linkedin.com/in/jesseskinner/" target="_blank">
+        linkedin.com/in/jesseskinner
+      </a>
+      <br />
+    </p>
+  </Article>
 </Template>

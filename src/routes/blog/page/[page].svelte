@@ -19,9 +19,6 @@
     margin-bottom: 2em;
   }
 
-  a {
-    background: #acf;
-  }
   .newer {
     float: right;
   }
@@ -36,9 +33,7 @@
     {#if posts.length === 5}
       <a href={`/blog/page/${page + 1}`}>&lt;&lt; older posts</a>
     {:else}
-      <a href="/blog">Most recent posts</a>
       <a href="/blog/all">All posts</a>
-      <a href="/blog/search">Search</a>
     {/if}
     {#if page <= 2}
       <a class="newer" href="/">newer posts &gt;&gt;</a>

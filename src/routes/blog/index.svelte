@@ -13,12 +13,6 @@
   export let posts;
 </script>
 
-<style>
-a {
-  background: #acf;
-}
-</style>
-
 <Template>
   {#each posts as post}
     <Post {post} />
