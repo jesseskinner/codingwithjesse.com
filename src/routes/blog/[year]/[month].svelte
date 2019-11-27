@@ -8,7 +8,7 @@
 </script>
 
 <script>
-  import Posts from "../../../components/Posts.svelte";
+  import Posts from "../../_components/Posts.svelte";
   export let posts;
 </script>
 

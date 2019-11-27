@@ -8,8 +8,8 @@
 </script>
 
 <script>
-  import Template from "../../../components/Template.svelte";
-  import Post from "../../../components/Post.svelte";
+  import Template from "../../_Template.svelte";
+  import Post from "../../_components/Post.svelte";
   export let posts;
   export let page;
 </script>

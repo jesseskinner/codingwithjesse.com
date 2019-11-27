@@ -10,8 +10,8 @@
 </script>
 
 <script>
-  import PostForm from "../../../../components/PostForm.svelte";
-  import Template from "../../../../components/AdminTemplate.svelte";
+  import PostForm from "../_PostForm.svelte";
+  import Template from "../../_AdminTemplate.svelte";
 
   export let post;
 

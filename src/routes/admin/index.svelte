@@ -8,7 +8,7 @@
 </script>
 
 <script>
-  import Template from "../../components/AdminTemplate.svelte";
+  import Template from "./_AdminTemplate.svelte";
   export let posts;
 </script>
 

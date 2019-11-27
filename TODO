@@ -1,9 +1,10 @@
 Today:
     ☐ See about a perfect Lighthouse audit score
-    ☐ Fix the code styling for (some) old posts
+    ✔ Fix the code styling for (some) old posts @done(19-11-27 12:22)
     ☐ Add links to the "hidden" blog posts
     ☐ Add subscribe box newsletter
     ☐ Maybe write a new About Me with photo
+    ✔ Refactor by moving files around for no reason @done(19-11-27 12:11)
 
 Admin:
     ☐ Maybe store everything in Markdown/JSON in git repo instead of mysql database?

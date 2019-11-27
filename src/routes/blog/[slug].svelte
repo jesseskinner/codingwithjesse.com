@@ -8,8 +8,8 @@
 </script>
 
 <script>
-  import Template from "../../components/Template.svelte";
-  import Post from "../../components/Post.svelte";
+  import Template from "../_Template.svelte";
+  import Post from "../_components/Post.svelte";
 
   export let post;
 </script>
@@ -19,9 +19,9 @@
     background: white;
     padding: 2em 3em;
     margin-bottom: 3em;
-    box-shadow: 2px 2px 2px #222;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .comment {
   position: relative;
   min-height: 130px;

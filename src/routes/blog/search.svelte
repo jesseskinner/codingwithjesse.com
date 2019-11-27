@@ -8,8 +8,8 @@
 </script>
 
 <script>
-  import Template from "../../components/Template.svelte";
-  import Article from "../../components/Article.svelte";
+  import Template from "../_Template.svelte";
+  import Article from "../_components/Article.svelte";
   import { onMount } from "svelte";
 
   export let posts;
@@ -17,7 +17,7 @@
   let SearchResults;
 
   onMount(async () => {
-    const module = await import("../../components/SearchResults.svelte");
+    const module = await import("./_SearchResults.svelte");
     SearchResults = module.default;
   });
 </script>
