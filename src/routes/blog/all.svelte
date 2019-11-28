@@ -3,7 +3,9 @@
     const res = await this.fetch(`/blog/all.json`);
     const posts = await res.json();
 
-    return { posts };
+    return {
+      posts
+    };
   }
 </script>
 
@@ -14,7 +16,7 @@
   export let posts;
 
   function formatDate(timestamp) {
-    const date = new Date(1000 * timestamp);
+    const date = new Date(timestamp);
     const month = date.getMonth() + 1;
     const day = date.getDate();
 
@@ -43,8 +45,8 @@
     <hr />
 
     <p>
-      Here are some other pages on this site (so the static site
-      generation crawler will know about them).
+      Here are some other pages on this site (so the static site generation
+      crawler will know about them).
     </p>
 
     <p>

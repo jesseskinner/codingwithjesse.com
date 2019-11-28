@@ -19,7 +19,7 @@ function getRSS(articles) {
 		// image: "http://example.com/image.png",
 		// favicon: "http://example.com/favicon.ico",
 		copyright: `Copyright ${new Date().getFullYear()}, Jesse Skinner`,
-		updated: new Date(1000 * articles[0].posted_at), // optional, default = today
+		updated: new Date(articles[0].posted_at), // optional, default = today
 		generator: '', // optional, default = 'Feed for Node.js'
 		// feedLinks: {
 		//   json: "https://example.com/json",
@@ -32,14 +32,16 @@ function getRSS(articles) {
 		}
 	});
 
+	const footer = `<hr/><p>Interested in web development? <a href="https://tinyletter.com/JesseSkinner">Subscribe to my newsletter!</a></p>`;
+
 	articles.forEach(post => {
 		const url = `https://codingwithjesse.com/blog/${post.slug}`;
 		feed.addItem({
 			title: post.title,
 			id: url,
 			link: url,
-			content: post.html,
-			date: new Date(1000 * post.posted_at)
+			content: `${post.html}${footer}`,
+			date: new Date(post.posted_at)
 			// image: post.image
 		});
 	});

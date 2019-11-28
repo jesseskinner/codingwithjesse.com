@@ -100,7 +100,7 @@
     <a href="/blog/about-me">About Jesse</a>
     <a href="/contact/me">Contact Jesse</a>
     <form method="GET" action="/blog/search">
-      <input type="search" name="terms" size="15" />
+      <input type="search" name="terms" size="15" aria-label="Search" />
       <input type="submit" value="Search" />
     </form>
   </nav>

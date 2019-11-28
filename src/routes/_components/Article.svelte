@@ -3,8 +3,8 @@
   export let date = false;
   export let link = false;
 
-  export function formatDate(timestamp) {
-    const date = new Date(timestamp * 1000);
+  export function formatDate(time) {
+    const date = new Date(time);
 
     return `${getMonthName(date)} ${getDayOfTheMonthWithOrdinal(
       date

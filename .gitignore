@@ -5,3 +5,4 @@ build
 package-lock.json
 /src/node_modules/@sapper/
 /__sapper__/
+push.sh

@@ -31,8 +31,11 @@ export async function getArticle(slug) {
 
 function getArticleFromPost(post) {
 	return {
-		...post,
+		title: post.title,
+		html: post.html,
+		slug: post.slug,
+		display: post.display,
 		url: `/article/${post.slug}`,
-		posted_at: post.posted_at.getTime() / 1000
+		posted_at: post.posted_at.getTime()
 	};
 }

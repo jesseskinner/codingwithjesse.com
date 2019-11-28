@@ -1,12 +1,24 @@
 <script>
-  export let posts;
+  import { onMount } from "svelte";
+
+  let posts;
+
+  onMount(async () => {
+    const res = await fetch("/blog/all.json");
+    posts = await res.json();
+  });
 
   $: match = /^\?terms=([^&]*)/.exec(location.search);
-  $: terms = match && match[1] && decodeURIComponent(match[1]).toLowerCase().split(/\s+/);
+  $: terms =
+    match &&
+    match[1] &&
+    decodeURIComponent(match[1])
+      .toLowerCase()
+      .split(/\s+/);
   $: results = getSearchResults(posts, terms);
 
   function getSearchResults(posts, terms) {
-    if (terms) {
+    if (posts && terms) {
       return posts.filter(p => postMatchesTerms(p, terms));
     }
 
@@ -26,7 +38,7 @@
   }
 
   function formatDate(timestamp) {
-    const date = new Date(1000 * timestamp);
+    const date = new Date(timestamp);
     const month = date.getMonth() + 1;
     const day = date.getDate();
 
@@ -36,12 +48,14 @@
   }
 </script>
 
-<p>There are {results.length} articles matching "{terms.join(' ')}".</p>
-<p>
-  {#each results as p}
-    <em>{formatDate(p.posted_at)}</em>
-    &nbsp;
-    <a href="/blog/{p.slug}">{p.title}</a>
-    <br />
-  {/each}
-</p>
+{#if posts}
+  <p>There are {results.length} articles matching "{terms.join(' ')}".</p>
+  <p>
+    {#each results as p}
+      <em>{formatDate(p.posted_at)}</em>
+      &nbsp;
+      <a href="/blog/{p.slug}">{p.title}</a>
+      <br />
+    {/each}
+  </p>
+{/if}
