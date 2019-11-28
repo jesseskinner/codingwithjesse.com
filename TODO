@@ -1,27 +1,24 @@
-Today:
-    ☐ See about a perfect Lighthouse audit score
-    ✔ Add subscribe box newsletter @done(19-11-27 13:44)
-    ✔ Fix the code styling for (some) old posts @done(19-11-27 12:22)
-    ✔ Add links to the "hidden" blog posts @done(19-11-27 13:19)
-    ✔ Migrate demo/talks static folders from old site @done(19-11-27 13:30)
-    ✔ Maybe write a new About Me with photo @done(19-11-27 13:19)
-    ✔ Refactor by moving files around for no reason @done(19-11-27 12:11)
-
 Admin:
     ☐ Maybe store everything in Markdown/JSON in git repo instead of mysql database?
     ☐ Header image (maybe with help from https://source.unsplash.com/ ?)
 
 Frontend:
-    ✔ categories eg. /blog/cat/javascript @done(19-11-20 12:21)
-    ✔ month eg. /blog/2009/2 @done(19-11-20 12:28)
-    ✔ pagination eg. /blog/page/2 @done(19-11-20 13:14)
-    ✔ search box / results @done(19-11-20 14:33)
+    ✔ Add links to /blog/all for each category and month page @created(19-11-27 23:38) @done(19-11-28 06:56)
     ☐ embeded YouTube videos?
 
-Production:
-    ✘ Delete <script> block at end of each HTML file @cancelled(19-11-20 14:34)
-
 Archive:
+  ✔ See about a perfect Lighthouse audit score @done(19-11-27 23:38) @project(Today)
+  ✔ Add subscribe box newsletter @done(19-11-27 13:44) @project(Today)
+  ✔ Fix the code styling for (some) old posts @done(19-11-27 12:22) @project(Today)
+  ✔ Add links to the "hidden" blog posts @done(19-11-27 13:19) @project(Today)
+  ✔ Migrate demo/talks static folders from old site @done(19-11-27 13:30) @project(Today)
+  ✔ Maybe write a new About Me with photo @done(19-11-27 13:19) @project(Today)
+  ✔ Refactor by moving files around for no reason @done(19-11-27 12:11) @project(Today)
+  ✔ categories eg. /blog/cat/javascript @done(19-11-20 12:21) @project(Frontend)
+  ✔ month eg. /blog/2009/2 @done(19-11-20 12:28) @project(Frontend)
+  ✔ pagination eg. /blog/page/2 @done(19-11-20 13:14) @project(Frontend)
+  ✔ search box / results @done(19-11-20 14:33) @project(Frontend)
+  ✘ Delete <script> block at end of each HTML file @cancelled(19-11-20 14:34) @project(Production)
   ✔ comments on blog posts @done(19-11-20 12:13) @project(Frontend)
   ✔ RSS feed at /blog/feed (don't forget <meta> tag) @done(19-11-20 11:43) @project(Frontend)
   ✔ Add categories to posts @done(19-11-20 11:20) @project(Admin)

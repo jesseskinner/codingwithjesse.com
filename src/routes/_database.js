@@ -1,4 +1,9 @@
-import postsModel, { getAll, getComments, getByCategory, getByMonth } from '../../app/model/posts';
+import postsModel, {
+	getAll,
+	getComments,
+	getByCategory,
+	getByMonth,
+} from '../../app/model/posts';
 
 export async function getRecentArticles(count, page) {
 	const posts = await postsModel.getRecent(count, page);
@@ -35,7 +40,8 @@ function getArticleFromPost(post) {
 		html: post.html,
 		slug: post.slug,
 		display: post.display,
+		category: post.category,
 		url: `/article/${post.slug}`,
-		posted_at: post.posted_at.getTime()
+		posted_at: post.posted_at.getTime(),
 	};
 }

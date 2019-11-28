@@ -11,7 +11,8 @@ export async function get(req, res, next) {
 					title: article.title,
 					slug: article.slug,
 					html: article.html,
-					posted_at: article.posted_at
+					category: article.category,
+					posted_at: article.posted_at,
 				}))
 			)
 		);

@@ -36,10 +36,7 @@
       target="popupwindow"
       on:submit={openNewsletterWindow}>
       <hr />
-      <p>
-        Interested in web development? Subscribe to the Coding with Jesse
-        newsletter!
-      </p>
+      <p>Interested in web development? Subscribe to my newsletter!</p>
       <input type="hidden" value="1" name="embed" />
       <input
         name="email"

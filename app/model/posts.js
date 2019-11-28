@@ -9,7 +9,7 @@ marked.setOptions({
 			return Prism.highlight(code, Prism.languages[lang], lang);
 		}
 		return code;
-	}
+	},
 });
 
 exports.createTable = function() {
@@ -47,7 +47,7 @@ exports.add = function(params) {
 exports.remove = function(id) {
 	return database
 		.query('DELETE FROM posts WHERE ?', {
-			id: id
+			id: id,
 		})
 		.then(function(result) {
 			return result.affectedRows;
@@ -57,10 +57,11 @@ exports.remove = function(id) {
 exports.getAll = async function() {
 	return addHTMLToPosts(
 		await database.query(`
-			SELECT *
+			SELECT posts.title, posts.slug, posts.markdown, posts.html, posts.posted_at, categories.category
 			FROM posts
-			WHERE display = 1
-			ORDER BY posted_at DESC
+			LEFT JOIN categories ON categories.id = posts.category
+			WHERE posts.display = 1
+			ORDER BY posts.posted_at DESC
 		`)
 	);
 };
@@ -129,13 +130,16 @@ exports.getByMonth = async function(year, month) {
 	return posts;
 };
 
-exports.getComments = async function (id) {
-	const comments = await database.query(`
+exports.getComments = async function(id) {
+	const comments = await database.query(
+		`
 		SELECT *
 		FROM comments
 		WHERE item = ?
 		ORDER BY date ASC
-	`, [id]);
+	`,
+		[id]
+	);
 
 	return comments.map(c => {
 		return {
@@ -144,9 +148,9 @@ exports.getComments = async function (id) {
 			avatar: gravatar.url(c.email),
 			date: c.date,
 			body: c.body,
-		}
+		};
 	});
-}
+};
 
 exports.update = function(id, params) {
 	return database.query(
