@@ -54,7 +54,7 @@
     {#each results as p}
       <em>{formatDate(p.posted_at)}</em>
       &nbsp;
-      <a href="/blog/{p.slug}">{p.title}</a>
+      <a href="/blog/{p.slug}/">{p.title}</a>
       <br />
     {/each}
   </p>

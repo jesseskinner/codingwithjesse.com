@@ -3,6 +3,10 @@
   import Article from "../_components/Article.svelte";
 </script>
 
+<svelte:head>
+  <title>Contact Jesse Skinner - Coding with Jesse</title>
+</svelte:head>
+
 <Template>
   <Article title="Contact Jesse">
     <p>

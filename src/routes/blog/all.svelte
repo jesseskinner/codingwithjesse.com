@@ -71,7 +71,7 @@
       {#each posts as p}
         <em>{formatDate(p.posted_at)}</em>
         &nbsp;
-        <a href="/blog/{p.slug}">{p.title}</a>
+        <a href="/blog/{p.slug}/">{p.title}</a>
         <br />
       {/each}
     </p>
@@ -108,6 +108,8 @@
       <a href="/blog">Recent posts</a>
       <br />
       <a href="/blog/search">Search</a>
+      <br />
+      <a href="/newsletter">Subscribe to the Coding with Jesse newsletter</a>
     </p>
   </Article>
 </Template>

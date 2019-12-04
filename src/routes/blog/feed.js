@@ -28,20 +28,20 @@ function getRSS(articles) {
 		author: {
 			name: 'Jesse Skinner',
 			email: 'jesse@codingwithjesse.com',
-			link: 'https://codingwithjesse.com/'
-		}
+			link: 'https://codingwithjesse.com/',
+		},
 	});
 
-	const footer = `<hr/><p>Interested in web development? <a href="https://tinyletter.com/JesseSkinner">Subscribe to my newsletter!</a></p>`;
+	const footer = `<hr/><p>Interested in web development? <a href="https://www.codingwithjesse.com/newsletter">Subscribe to the Coding with Jesse newsletter!</a></p>`;
 
 	articles.forEach(post => {
-		const url = `https://codingwithjesse.com/blog/${post.slug}`;
+		const url = `https://www.codingwithjesse.com/blog/${post.slug}/`;
 		feed.addItem({
 			title: post.title,
 			id: url,
 			link: url,
 			content: `${post.html}${footer}`,
-			date: new Date(post.posted_at)
+			date: new Date(post.posted_at),
 			// image: post.image
 		});
 	});

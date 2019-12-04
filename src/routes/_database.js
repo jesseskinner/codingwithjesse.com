@@ -41,7 +41,6 @@ function getArticleFromPost(post) {
 		slug: post.slug,
 		display: post.display,
 		category: post.category,
-		url: `/article/${post.slug}`,
 		posted_at: post.posted_at.getTime(),
 	};
 }
