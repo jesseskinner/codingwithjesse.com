@@ -57,7 +57,7 @@ exports.remove = function(id) {
 exports.getAll = async function() {
 	return addHTMLToPosts(
 		await database.query(`
-			SELECT posts.title, posts.slug, posts.markdown, posts.html, posts.posted_at, categories.category
+			SELECT posts.id, posts.title, posts.slug, posts.markdown, posts.html, posts.posted_at, categories.category
 			FROM posts
 			LEFT JOIN categories ON categories.id = posts.category
 			WHERE posts.display = 1

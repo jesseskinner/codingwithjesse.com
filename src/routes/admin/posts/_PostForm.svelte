@@ -50,7 +50,7 @@
     name="html"
     class="form-control"
     rows="10"
-    value={post.html} />
+    value={post.markdown ? '' : post.html} />
 </fieldset>
 <fieldset>
   <label for="category">Category:</label>
