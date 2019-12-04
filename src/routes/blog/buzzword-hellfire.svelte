@@ -222,7 +222,7 @@
         {/if}
         <img
           bind:this={explosion}
-          src="/game/explosion.gif"
+          src="/images/explosion.gif"
           alt="boom"
           style="left:{explosionLeft}px; top:{explosionTop}px" />
         {#if activeWord}
