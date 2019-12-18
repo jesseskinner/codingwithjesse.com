@@ -109,6 +109,8 @@
       <br />
       <a href="/blog/search">Search</a>
       <br />
+      <a href="/blog/buzzword-hellfire">Buzzword Hellfire</a>
+      <br />
       <a href="/newsletter">Subscribe to the Coding with Jesse newsletter</a>
     </p>
   </Article>

@@ -41,6 +41,20 @@
     margin: 0 -1em;
   }
 
+  article :global(h2) {
+    font-size: 150%;
+  }
+
+  article :global(h3) {
+    font-size: 120%;
+  }
+
+  article :global(h4),
+  article :global(h5),
+  article :global(h6) {
+    font-size: 100%;
+  }
+
   .separator {
     border-bottom: 1px solid #ccc;
   }
