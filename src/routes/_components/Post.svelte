@@ -22,6 +22,13 @@
   }
 </script>
 
+<style>
+  :global(.twitter-tweet) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+
 <Article
   title={post.title}
   date={post.display ? post.posted_at : false}

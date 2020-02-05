@@ -1,10 +1,7 @@
 <script context="module">
   export async function preload(page, session) {
-    const res = await this.fetch(`/blog/all.json`);
-    const posts = await res.json();
-
     return {
-      posts
+      posts: await (await this.fetch(`/blog/all.json`)).json()
     };
   }
 </script>
@@ -15,19 +12,23 @@
 
   export let posts;
 
-  $: categories = posts.reduce((c, p) => {
-    return !p.category || c.includes(p.category) ? c : [...c, p.category];
-  }, []);
+  function getCategories(posts) {
+    return posts.reduce((c, p) => {
+      return !p.category || c.includes(p.category) ? c : [...c, p.category];
+    }, []);
+  }
 
-  $: months = posts.reduce((m, p) => {
-    const posted = new Date(p.posted_at);
-    const month = `${posted.getFullYear()}/${posted.getMonth() + 1}`;
+  function getMonths(posts) {
+    return posts.reduce((m, p) => {
+      const posted = new Date(p.posted_at);
+      const month = `${posted.getFullYear()}/${posted.getMonth() + 1}`;
 
-    if (m.includes(month)) {
-      return m;
-    }
-    return [...m, month];
-  }, []);
+      if (m.includes(month)) {
+        return m;
+      }
+      return [...m, month];
+    }, []);
+  }
 
   function formatDate(timestamp) {
     const date = new Date(timestamp);
@@ -79,7 +80,7 @@
     <hr />
     <h2>Categories</h2>
     <p>
-      {#each categories as c}
+      {#each getCategories(posts) as c}
         <a href="/blog/cat/{c}">{c}</a>
         {' '}
       {/each}
@@ -88,7 +89,7 @@
     <hr />
     <h2>Months</h2>
     <p>
-      {#each months as month}
+      {#each getMonths(posts) as month}
         <a href="/blog/{month}">{formatMonth(month)}</a>
         <br />
       {/each}
