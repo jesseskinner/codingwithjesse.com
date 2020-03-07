@@ -10,6 +10,7 @@
 <script>
   import Template from "../_Template.svelte";
   import Post from "../_components/Post.svelte";
+  import { formatDate } from "../_date.js";
 
   export let post;
 </script>
@@ -32,15 +33,16 @@
     margin: 0;
     font-size: 100%;
   }
+
   p {
-    margin: 0 0 0 120px;
+    margin: 5px 0 0 25px;
   }
 
   img {
-    position: absolute;
+    float: left;
     width: 80px;
     height: 80px;
-    margin: 10px 0 0 25px;
+    margin: 10px 15px 5px 25px;
   }
 
   @media (min-width: 700px) {
@@ -57,14 +59,14 @@
 <Template>
   <Post {post} link={false} />
 
-  {#if post.comments.length}
-    <section class="comments">
+  <section class="comments">
+    {#if post.comments.length}
       <h1>Comments</h1>
       {#each post.comments as { title, author, avatar, date, body }, i}
         <div id="comment{i + 1}" class="comment">
           <h2>
             <a href="/blog/{post.slug}/#comment{i + 1}">{i + 1}</a>
-            . {author} at {date}
+            . {author} on {formatDate(date)}
           </h2>
           <img src={avatar} alt={author} />
           <p>
@@ -72,7 +74,12 @@
           </p>
         </div>
       {/each}
-    </section>
-  {/if}
+
+      <div>
+        Comments are closed, but I'd still love to
+        <a href="/contact/me">hear your thoughts.</a>
+      </div>
+    {/if}
+  </section>
 
 </Template>

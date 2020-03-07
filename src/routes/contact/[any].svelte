@@ -10,7 +10,11 @@
 <Template>
   <Article title="Contact Jesse">
     <p>
-      Feel free to get in touch if you would like Jesse's help on a project or
+      I'm available for freelance work, including custom web development,
+      technical writing and video production, training, coaching and consulting.
+    </p>
+    <p>
+      Feel free to get in touch if you would like my help with something, or
       have any questions or comments about the blog.
     </p>
     <p>
