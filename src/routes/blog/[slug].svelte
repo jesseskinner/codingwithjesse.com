@@ -54,6 +54,12 @@
 
 <svelte:head>
   <title>{post.title} - Coding with Jesse</title>
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:creator" content="@JesseSkinner" />
+  <meta property="og:title" content="{post.title} - Coding with Jesse" />
+  <meta property="og:url" content="https://www.codingwithjesse.com/blog/{post.slug}" />
+  <meta property="og:type" content="website" />
 </svelte:head>
 
 <Template>
