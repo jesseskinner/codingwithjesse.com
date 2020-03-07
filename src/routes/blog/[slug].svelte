@@ -58,8 +58,13 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@JesseSkinner" />
   <meta property="og:title" content="{post.title} - Coding with Jesse" />
-  <meta property="og:url" content="https://www.codingwithjesse.com/blog/{post.slug}" />
+  <meta
+    property="og:url"
+    content="https://www.codingwithjesse.com/blog/{post.slug}" />
   <meta property="og:type" content="website" />
+  <meta
+    property="og:image"
+    content="https://www.codingwithjesse.com/images/background.gif" />
 </svelte:head>
 
 <Template>
