@@ -17,7 +17,6 @@
 
 <style>
   .comments {
-    background: white;
     padding: 2em 3em;
     margin-bottom: 3em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -70,8 +69,8 @@
 <Template>
   <Post {post} link={false} />
 
-  <section class="comments">
-    {#if post.comments.length}
+  {#if post.comments.length}
+    <section class="comments">
       <h1>Comments</h1>
       {#each post.comments as { title, author, avatar, date, body }, i}
         <div id="comment{i + 1}" class="comment">
@@ -90,7 +89,7 @@
         Comments are closed, but I'd still love to
         <a href="/contact/me">hear your thoughts.</a>
       </div>
-    {/if}
-  </section>
+    </section>
+  {/if}
 
 </Template>

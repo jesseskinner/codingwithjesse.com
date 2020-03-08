@@ -4,7 +4,21 @@
     border: 0;
     margin: 0;
     padding: 0;
-    font: 16px/1.58 Georgia, serif;
+    font: 16px/1.58 Verdana, Geneva, Tahoma, sans-serif;
+    background: #e0edff;
+    color: #000;
+  }
+
+  :global(a) {
+    color: blue;
+  }
+
+  :global(h1 a) {
+    color: black;
+  }
+
+  :global(a:visited) {
+    color: purple;
   }
 
   header {
@@ -12,15 +26,14 @@
   }
 
   nav {
-    background: #fff;
     line-height: 3em;
     overflow: auto;
     text-align: center;
   }
 
   nav a {
-    display: inline-block;
     color: #000;
+    display: inline-block;
     padding: 0 1em;
     text-decoration: none;
   }
@@ -32,6 +45,7 @@
   nav form {
     margin: 0 auto;
   }
+
   nav input {
     font-size: 100%;
   }
@@ -52,21 +66,6 @@
     max-width: 100%;
   }
 
-  @media (min-width: 700px) {
-    :global(body) {
-      font-size: 21px;
-    }
-
-    nav {
-      text-align: left;
-      padding-bottom: 0;
-    }
-    nav form {
-      float: right;
-      margin-right: 1em;
-    }
-  }
-
   main {
     max-width: 1000px;
     margin: 0 1em;
@@ -77,14 +76,36 @@
     text-align: right;
     margin-right: 5%;
     padding: 0 0.5em;
+  }
+
+  footer,
+  footer a {
     color: #666;
   }
 
-  @media (min-width: 1000px) {
+  @media (min-width: 700px) {
+    :global(body) {
+      font-size: 21px;
+    }
+
+    nav {
+      text-align: left;
+      padding-bottom: 0;
+    }
+
+    nav a {
+      display: inline-block;
+    }
+
+    nav form {
+      float: right;
+      margin-right: 1em;
+    }
+
     main {
-      width: 80vw;
+      width: 90vw;
       max-width: 1000px;
-      margin: 0 0 0 15vw;
+      margin: 0 0 0 5vw;
     }
   }
 </style>
@@ -95,16 +116,17 @@
       <img src="/images/title.svg" alt="Coding with Jesse" />
     </a>
   </h1>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/blog/about-me">About Jesse</a>
-    <a href="/contact/me">Contact Jesse</a>
-    <form method="GET" action="/blog/search">
-      <input type="search" name="terms" size="15" aria-label="Search" />
-      <input type="submit" value="Search" />
-    </form>
-  </nav>
 </header>
+
+<nav>
+  <a href="/">Home</a>
+  <a href="/blog/about-me">About Jesse</a>
+  <a href="/contact/me">Contact Jesse</a>
+  <form method="GET" action="/blog/search">
+    <input type="search" name="terms" size="15" aria-label="Search" />
+    <input type="submit" value="Search" />
+  </form>
+</nav>
 
 <main>
   <slot />

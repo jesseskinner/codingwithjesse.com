@@ -1,17 +1,13 @@
 <script>
-  import { onMount } from "svelte";
   import Article from "./Article.svelte";
   import NewsletterSubscribe from "./NewsletterSubscribe.svelte";
 
   export let post;
   export let link = true;
 
-  onMount(() => {
-    // check for embeds that needs JavaScript
-    if (document.querySelector(".twitter-tweet")) {
-      addScript("https://platform.twitter.com/widgets.js");
-    }
-  });
+  $: if (typeof window !== 'undefined' && /twitter-tweet/.test(post.html)) {
+    addScript("https://platform.twitter.com/widgets.js");
+  }
 
   function addScript(src) {
     const s = document.createElement("script");

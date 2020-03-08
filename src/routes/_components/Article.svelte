@@ -10,22 +10,18 @@
   article {
     max-width: 800px;
     position: relative;
-    margin: 3em 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 2em 0;
   }
 
   h1 {
     min-width: 70vw;
-    margin-top: 0;
+    margin: 0 0 .25em;
     font-size: 32px;
-  }
-
-  h1 a {
-    color: #000;
   }
 
   .date {
     font-weight: bold;
+    margin: 0 0 2em;
   }
 
   article :global(pre) {

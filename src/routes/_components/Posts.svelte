@@ -6,7 +6,7 @@
 </script>
 
 <Template>
-  {#each posts as post}
+  {#each posts as post (post.id)}
     <Post {post} />
   {/each}
 </Template>
