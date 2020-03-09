@@ -6,6 +6,8 @@
     padding: 0;
     font: 16px/1.58 Verdana, Geneva, Tahoma, sans-serif;
     background: #e0edff;
+    background: linear-gradient(#e0edff, #fff 80vh);
+    /* background: #fff linear-gradient(#acf, #fff 75vh); */
     color: #000;
   }
 
