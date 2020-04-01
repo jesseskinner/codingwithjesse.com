@@ -24,7 +24,7 @@
   }
 
   article :global(pre) {
-    padding: 2em 1em;
+    padding: 2em 5vw;
     box-sizing: border-box;
     overflow: auto;
     background: #29292e;
@@ -33,7 +33,7 @@
 
   article :global(pre),
   .separator {
-    margin: 0 -1em;
+    margin: 0 -2.5vw 0 -5vw;
   }
 
   article :global(h2) {
@@ -61,7 +61,13 @@
     article :global(pre),
     .separator {
       margin: 0 0 0 -15vw;
-      width: 99vw;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    article :global(pre),
+    .separator {
+      margin: 0 -10vw 0 -15vw;
     }
   }
 </style>

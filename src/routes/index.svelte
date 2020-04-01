@@ -26,7 +26,8 @@
   }
 
   .about {
-    padding-top: 1em;
+    padding-top: .5em;
+    max-width: 320px;
   }
 
   .post a {
@@ -47,8 +48,12 @@
     color: inherit;
   }
 
+  .videos {
+    max-width: 320px;
+  }
+
   .videos a {
-    font-size: 80%;
+    font-size: 18px;
   }
 
   .videos div a {
@@ -83,6 +88,10 @@
   }
 
   @media (min-width: 980px) {
+    .about {
+      max-width: 100%;
+    }
+    
     section {
       margin: 0;
       width: 28vw;
