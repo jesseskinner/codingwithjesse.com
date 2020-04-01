@@ -10,7 +10,6 @@
   article {
     max-width: 800px;
     position: relative;
-    margin: 2em 0;
   }
 
   h1 {

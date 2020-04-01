@@ -16,8 +16,12 @@
 </script>
 
 <style>
+  main {
+    clear: both;
+  }
+
   section {
-    margin: 2em auto;
+    margin: 0 auto 2em;
     max-width: 80vw;
   }
 
@@ -52,6 +56,7 @@
     display: block;
     position: relative;
     overflow: hidden;
+    margin-bottom: 1em;
   }
 
   .videos img {
@@ -79,6 +84,7 @@
 
   @media (min-width: 980px) {
     section {
+      margin: 0;
       width: 28vw;
       float: left;
       box-sizing: border-box;
@@ -109,6 +115,7 @@
     .videos {
       width: 42vw;
     }
+
     .videos a {
       margin-right: 1em;
     }
@@ -119,45 +126,47 @@
   <title>Coding with Jesse</title>
 </svelte:head>
 <Template>
-  <section class="about">
-    <AboutMe />
-  </section>
-  <section>
-    <h1>Recent articles</h1>
-    {#each posts as { title, html, posted_at, slug }}
-      <p class="post">
-        <a href="/blog/{slug}">{title}</a>
-        <span class="date">{formatDate(new Date(posted_at))}</span>
+  <main>
+    <section class="about">
+      <AboutMe />
+    </section>
+    <section>
+      <h1>Recent articles</h1>
+      {#each posts as { title, html, posted_at, slug }}
+        <p class="post">
+          <a href="/blog/{slug}">{title}</a>
+          <span class="date">{formatDate(new Date(posted_at))}</span>
 
-        <a href={slug} class="text">
-          {@html html
-            .replace(/<[^>]*>/g, '')
-            .split(/\s+/)
-            .slice(0, 25)
-            .join(' ') + '...'}
-        </a>
-      </p>
-    {/each}
-
-    <p>
-      <a href="/blog/all">See all posts...</a>
-    </p>
-  </section>
-
-  <section class="videos">
-    <h1>Recent videos</h1>
-
-    <div>
-      {#each videos.slice(0, 6) as { title, description, thumbnail, date, url }}
-        <a href={url} target="_blank">
-          <img src={thumbnail.url} alt={title} />
-          <span>{title}</span>
-        </a>
+          <a href={slug} class="text">
+            {@html html
+              .replace(/<[^>]*>/g, '')
+              .split(/\s+/)
+              .slice(0, 25)
+              .join(' ') + '...'}
+          </a>
+        </p>
       {/each}
-    </div>
 
-    <p>
-      <a href="https://www.youtube.com/codingwithjesse">See all videos...</a>
-    </p>
-  </section>
+      <p>
+        <a href="/blog/all">See all posts...</a>
+      </p>
+    </section>
+
+    <section class="videos">
+      <h1>Recent videos</h1>
+
+      <div>
+        {#each videos.slice(0, 6) as { title, description, thumbnail, date, url }}
+          <a href={url} target="_blank">
+            <img src={thumbnail.url} alt={title} />
+            <span>{title}</span>
+          </a>
+        {/each}
+      </div>
+
+      <p>
+        <a href="https://www.youtube.com/codingwithjesse">See all videos...</a>
+      </p>
+    </section>
+  </main>
 </Template>

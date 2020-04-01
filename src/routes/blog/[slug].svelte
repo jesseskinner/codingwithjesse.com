@@ -10,6 +10,7 @@
 <script>
   import Template from "../_Template.svelte";
   import Post from "../_components/Post.svelte";
+  import AboutMe from "../_components/AboutMe.svelte";
   import { formatDate } from "../_date.js";
 
   export let post;
@@ -42,6 +43,20 @@
     width: 80px;
     height: 80px;
     margin: 10px 15px 5px 25px;
+  }
+
+  aside {
+    max-width: 350px;
+    margin: 2em auto;
+  }
+
+  @media (min-width: 1300px) {
+    aside {
+      position: absolute;
+      top: 260px;
+      right: 5vw;
+      width: 600px;
+    }
   }
 
   @media (min-width: 700px) {
@@ -92,4 +107,7 @@
     </section>
   {/if}
 
+  <aside>
+    <AboutMe />
+  </aside>
 </Template>

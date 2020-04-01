@@ -36,28 +36,12 @@
     background: #acf url("/images/background.gif") repeat;
   }
 
-  nav {
-    line-height: 3em;
-    overflow: auto;
-    text-align: center;
+  form {
+    float: right;
+    margin: 1em;
   }
 
-  nav a {
-    color: #000;
-    display: inline-block;
-    padding: 0 1em;
-    text-decoration: none;
-  }
-
-  nav a:hover {
-    text-decoration: underline;
-  }
-
-  nav form {
-    margin: 0 auto;
-  }
-
-  nav input {
+  form input {
     font-size: 100%;
   }
 
@@ -78,7 +62,8 @@
   }
 
   main {
-    margin: 0 1em;
+    clear: both;
+    padding: 1em;
   }
 
   footer {
@@ -99,23 +84,20 @@
       font-size: 21px;
     }
 
-    nav {
-      text-align: left;
-      padding-bottom: 0;
-    }
-
-    nav a {
-      display: inline-block;
-    }
-
-    nav form {
-      float: right;
-      margin-right: 1em;
+    form {
+      margin-right: 5vw;
     }
 
     main {
       width: 90vw;
       margin: 0 0 0 5vw;
+      padding: 1em 0;
+    }
+  }
+
+  @media (min-width: 1300px) {
+    main {
+      clear: none;
     }
   }
 </style>
@@ -128,15 +110,10 @@
   </h1>
 </header>
 
-<nav>
-  <a href="/">Home</a>
-  <a href="/blog/about-me">About Jesse</a>
-  <a href="/contact/me">Contact Jesse</a>
-  <form method="GET" action="/blog/search">
-    <input type="search" name="terms" size="15" aria-label="Search" />
-    <input type="submit" value="Search" />
-  </form>
-</nav>
+<form method="GET" action="/blog/search">
+  <input type="search" name="terms" size="15" aria-label="Search" />
+  <input type="submit" value="Search" />
+</form>
 
 <main>
   <slot />

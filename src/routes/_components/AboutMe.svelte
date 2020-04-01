@@ -5,20 +5,28 @@
     border: 1px solid black;
   }
 
+  h1 {
+      font-size: 29px;
+  }
+
+  h1 a {
+      color: black;
+  }
+
   p {
-    font-size: 70%;
+    font-size: 16px;
     line-height: 1.66;
   }
 
   @media (min-width: 1100px) {
     p {
-      font-size: 80%;
+      font-size: 17px;
     }
   }
 </style>
 
-<img src="/images/me_umbrella.jpg" alt="Jesse Skinner" />
-<h1>Hi, I'm Jesse Skinner.</h1>
+<a href="/blog/about-me"><img src="/images/me_umbrella.jpg" alt="Jesse Skinner" /></a>
+<h1>Hi, I'm <a href="/blog/about-me">Jesse Skinner</a>.</h1>
 <p>
   <strong>Email:</strong>
   <a href="mailto:jesse@codingwithjesse.com" target="_blank">
