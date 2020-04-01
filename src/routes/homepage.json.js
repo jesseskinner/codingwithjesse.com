@@ -1,12 +1,10 @@
+import 'dotenv/config';
 import { getRecentArticles } from './_database.js';
+import videos from '../youtube-recent.json';
 
 export async function get(req, res, next) {
-	const articles = await getRecentArticles(5);
+	const posts = await getRecentArticles(6);
 
-	if (articles !== null) {
-		res.setHeader('Content-Type', 'application/json');
-		res.end(JSON.stringify(articles));
-	} else {
-		next();
-	}
+	res.setHeader('Content-Type', 'application/json');
+	res.end(JSON.stringify({ posts, videos }));
 }

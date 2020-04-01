@@ -30,9 +30,9 @@
       <br />
       <strong>YouTube:</strong>
       <a
-        href="https://www.youtube.com/channel/UC6Ak0hMzttpQYAxzTe8kx7A"
+        href="https://www.youtube.com/codingwithjesse"
         target="_blank">
-        youtube.com/channel/UC6Ak0hMzttpQYAxzTe8kx7A
+        youtube.com/codingwithjesse
       </a>
       <br />
       <strong>Twitch:</strong>

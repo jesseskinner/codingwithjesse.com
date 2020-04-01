@@ -15,6 +15,15 @@
     color: blue;
   }
 
+  :global(h1),
+  :global(h2),
+  :global(h3),
+  :global(h4),
+  :global(h5),
+  :global(h6) {
+    margin: 0;
+  }
+
   :global(h1 a) {
     color: black;
   }
@@ -69,11 +78,11 @@
   }
 
   main {
-    max-width: 1000px;
     margin: 0 1em;
   }
 
   footer {
+    clear: both;
     float: right;
     text-align: right;
     margin-right: 5%;
@@ -106,7 +115,6 @@
 
     main {
       width: 90vw;
-      max-width: 1000px;
       margin: 0 0 0 5vw;
     }
   }

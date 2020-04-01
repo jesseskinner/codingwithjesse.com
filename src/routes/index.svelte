@@ -1,28 +1,163 @@
 <script context="module">
   export async function preload(page, session) {
     const res = await this.fetch("/homepage.json");
-    const posts = await res.json();
-
-    return { posts };
+    return res.json();
   }
 </script>
 
 <script>
   import Template from "./_Template.svelte";
   import Post from "./_components/Post.svelte";
+  import AboutMe from "./_components/AboutMe.svelte";
+  import { formatDate } from "./_date.js";
+
   export let posts;
+  export let videos;
 </script>
+
+<style>
+  section {
+    margin: 2em auto;
+    max-width: 80vw;
+  }
+
+  .about {
+    padding-top: 1em;
+  }
+
+  .post a {
+    display: block;
+  }
+
+  .post .date {
+    font-size: 66%;
+    display: block;
+    font-style: italic;
+    margin-bottom: 0.5em;
+  }
+
+  .text {
+    font-size: 80%;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .videos a {
+    font-size: 80%;
+  }
+
+  .videos div a {
+    float: left;
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .videos img {
+    display: block;
+  }
+
+  .videos p {
+    clear: both;
+  }
+
+  .videos span {
+    position: absolute;
+    top: 0.3em;
+    left: 0.3em;
+    right: 3em;
+    color: #000;
+    background: rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .videos a:hover span {
+    background: #acf;
+  }
+
+  @media (min-width: 980px) {
+    section {
+      width: 28vw;
+      float: left;
+      box-sizing: border-box;
+      margin-right: 2.5vw;
+      border-right: 1px solid #aaa;
+      padding-right: 2.5vw;
+    }
+
+    .videos {
+      margin-right: 0;
+      border-right: 0;
+      padding-right: 0;
+      max-width: 100%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .videos a {
+      font-size: 100%;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    section {
+      width: 21vw;
+    }
+
+    .videos {
+      width: 42vw;
+    }
+    .videos a {
+      margin-right: 1em;
+    }
+  }
+</style>
 
 <svelte:head>
   <title>Coding with Jesse</title>
 </svelte:head>
-
 <Template>
-  {#each posts as post}
-    <Post {post} />
-  {/each}
-
+  <section class="about">
+    <AboutMe />
+  </section>
   <section>
-    <a href="/blog/page/2">&lt;&lt; older posts</a>
+    <h1>Recent articles</h1>
+    {#each posts as { title, html, posted_at, slug }}
+      <p class="post">
+        <a href="/blog/{slug}">{title}</a>
+        <span class="date">{formatDate(new Date(posted_at))}</span>
+
+        <a href={slug} class="text">
+          {@html html
+            .replace(/<[^>]*>/g, '')
+            .split(/\s+/)
+            .slice(0, 25)
+            .join(' ') + '...'}
+        </a>
+      </p>
+    {/each}
+
+    <p>
+      <a href="/blog/all">See all posts...</a>
+    </p>
+  </section>
+
+  <section class="videos">
+    <h1>Recent videos</h1>
+
+    <div>
+      {#each videos.slice(0, 6) as { title, description, thumbnail, date, url }}
+        <a href={url} target="_blank">
+          <img src={thumbnail.url} alt={title} />
+          <span>{title}</span>
+        </a>
+      {/each}
+    </div>
+
+    <p>
+      <a href="https://www.youtube.com/codingwithjesse">See all videos...</a>
+    </p>
   </section>
 </Template>

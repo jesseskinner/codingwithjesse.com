@@ -8,11 +8,12 @@
 	"scripts": {
 		"dev": "sapper dev",
 		"build": "sapper build --legacy",
-		"export": "sapper export --legacy",
+		"export": "npm run youtube; sapper export --legacy",
 		"start": "node __sapper__/build",
 		"setup": "node app/setup.js",
 		"test": "mocha --recursive",
-		"storybook": "start-storybook -p 9001 -c .storybook"
+		"storybook": "start-storybook -p 9001 -c .storybook",
+		"youtube": "node src/youtube.js"
 	},
 	"repository": {
 		"type": "git",
@@ -26,14 +27,18 @@
 	},
 	"homepage": "https://github.com/jesseskinner/codingwithjesse.com#readme",
 	"dependencies": {
+		"axios": "^0.19.2",
 		"compression": "^1.7.1",
+		"dotenv": "^8.2.0",
 		"express": "^4.17.1",
 		"feed": "^4.0.0",
 		"gravatar": "^1.8.0",
 		"highlight.js": "^9.16.2",
 		"marked": "^0.7.0",
 		"mysql2": "^1.6.5",
+		"node-fetch": "^2.6.0",
 		"prismjs": "^1.17.1",
+		"simple-youtube-api": "^5.2.1",
 		"sirv": "^0.4.0"
 	},
 	"devDependencies": {
