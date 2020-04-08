@@ -7,3 +7,4 @@ package-lock.json
 /__sapper__/
 push.sh
 .env
+static/example.mp4
