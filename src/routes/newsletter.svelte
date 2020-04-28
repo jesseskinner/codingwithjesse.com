@@ -10,6 +10,8 @@
 
 <Template>
   <Article title="Subscribe to the Coding with Jesse newsletter">
+    <p>Interested in web development? Subscribe to my newsletter!</p>
+
     <NewsletterSubscribe />
   </Article>
 </Template>
