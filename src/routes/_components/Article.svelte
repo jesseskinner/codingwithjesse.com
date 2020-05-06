@@ -38,6 +38,7 @@
 
   article :global(h2) {
     font-size: 150%;
+    margin-top: 1em;
   }
 
   article :global(h3) {
