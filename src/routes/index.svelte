@@ -146,7 +146,7 @@
           <a href="/blog/{slug}">{title}</a>
           <span class="date">{formatDate(new Date(posted_at))}</span>
 
-          <a href={slug} class="text">
+          <a href="/blog/{slug}" class="text">
             {@html html
               .replace(/<[^>]*>/g, '')
               .split(/\s+/)
