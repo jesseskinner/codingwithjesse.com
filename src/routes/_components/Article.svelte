@@ -15,7 +15,7 @@
 		border-bottom: 1px solid #eee;
 	}
 
-	article:last-child {
+	article:last-of-type {
 		border-bottom: 0;
 		margin-bottom: 0;
 	}

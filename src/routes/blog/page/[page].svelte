@@ -30,11 +30,9 @@
 </style>
 
 <Template>
-	<div>
-		{#each posts as post}
-			<Post {post} />
-		{/each}
-	</div>
+	{#each posts as post}
+		<Post {post} />
+	{/each}
 
 	<section class="pagination">
 		{#if posts.length === 5}
