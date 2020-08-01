@@ -66,7 +66,7 @@
 		<select name="category">
 			<option>Select a category...</option>
 			{#each categories as c}
-				<option value={c.id} selected={c.id === post.category}>
+				<option value={c.id} selected={c.category === post.category}>
 					{c.category}
 				</option>
 			{/each}
@@ -77,5 +77,5 @@
 </fieldset>
 <fieldset class="form-group">
 	<label for="tags">Tags</label>
-	<input name="tags" class="form-control" value={post.tags} />
+	<input name="tags" class="form-control" value={post.tags || ''} />
 </fieldset>
