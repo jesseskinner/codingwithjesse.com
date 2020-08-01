@@ -20,7 +20,7 @@ function handleRequest(response, promise) {
 
 app.get('/api/posts', async function(request, response) {
 	try {
-		const posts = await postsModel.getAll();
+		const posts = await postsModel.getAll(true);
 
 		response.send(posts);
 	} catch (error) {
