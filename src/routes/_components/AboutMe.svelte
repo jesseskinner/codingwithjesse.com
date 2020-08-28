@@ -22,6 +22,17 @@
 		color: black;
 	}
 
+	p a {
+		display: inline-block
+		font-size: 18px;
+		line-height: 48px;
+	}
+
+	p strong {
+		display: inline-block;
+		min-width: 5em;
+	}
+
 	.newsletter {
 		margin: 2em 0;
 		border-top: 1px solid #aaa;
