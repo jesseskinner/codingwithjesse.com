@@ -60,37 +60,52 @@
 	</div>
 	<p>
 		<strong>Email:</strong>
-		<a href="mailto:jesse@codingwithjesse.com" target="_blank">
+		<a
+			href="mailto:jesse@codingwithjesse.com"
+			target="_blank"
+			rel="noopener">
 			jesse@codingwithjesse.com
 		</a>
 		<br />
 		<strong>Twitter:</strong>
-		<a href="https://twitter.com/jesseskinner" target="_blank">
+		<a
+			href="https://twitter.com/jesseskinner"
+			target="_blank"
+			rel="noopener">
 			twitter.com/JesseSkinner
 		</a>
 		<br />
 		<strong>YouTube:</strong>
-		<a href="https://www.youtube.com/codingwithjesse" target="_blank">
+		<a
+			href="https://www.youtube.com/codingwithjesse"
+			target="_blank"
+			rel="noopener">
 			youtube.com/codingwithjesse
 		</a>
 		<br />
 		<strong>Twitch:</strong>
-		<a href="https://twitch.tv/jesseskinner" target="_blank">
+		<a href="https://twitch.tv/jesseskinner" target="_blank" rel="noopener">
 			twitch.tv/JesseSkinner
 		</a>
 		<br />
 		<strong>DEV:</strong>
-		<a href="https://dev.to/jesseskinner/" target="_blank">
+		<a href="https://dev.to/jesseskinner/" target="_blank" rel="noopener">
 			dev.to/jesseskinner
 		</a>
 		<br />
 		<strong>GitHub:</strong>
-		<a href="https://github.com/jesseskinner" target="_blank">
+		<a
+			href="https://github.com/jesseskinner"
+			target="_blank"
+			rel="noopener">
 			github.com/JesseSkinner
 		</a>
 		<br />
 		<strong>LinkedIn:</strong>
-		<a href="https://www.linkedin.com/in/jesseskinner/" target="_blank">
+		<a
+			href="https://www.linkedin.com/in/jesseskinner/"
+			target="_blank"
+			rel="noopener">
 			linkedin.com/in/jesseskinner
 		</a>
 		<br />
