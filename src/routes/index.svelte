@@ -143,10 +143,10 @@
 			<h1>Recent articles</h1>
 			{#each posts as { title, html, posted_at, slug }}
 				<p class="post">
-					<a href="/blog/{slug}">{title}</a>
+					<a href="/blog/{slug}/">{title}</a>
 					<span class="date">{formatDate(new Date(posted_at))}</span>
 
-					<a href="/blog/{slug}" class="text">
+					<a href="/blog/{slug}/" class="text">
 						{@html html
 							.replace(/<[^>]*>/g, '')
 							.split(/\s+/)
