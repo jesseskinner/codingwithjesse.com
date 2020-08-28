@@ -23,8 +23,7 @@
 	}
 
 	p a {
-		display: inline-block
-		font-size: 18px;
+		display: inline-block;
 		line-height: 48px;
 	}
 
@@ -47,7 +46,7 @@
 
 	@media (min-width: 1100px) {
 		p {
-			font-size: 16px;
+			font-size: 18px;
 		}
 	}
 </style>
