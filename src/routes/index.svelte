@@ -74,11 +74,11 @@
 
 	.videos span {
 		position: absolute;
-		top: 0.3em;
-		left: 0.3em;
-		right: 3em;
+		top: 0;
+		left: 0;
+		right: 18%;
 		color: #000;
-		background: rgba(255, 255, 255, 0.5);
+		background: rgba(255, 255, 255, 0.9);
 		font-weight: bold;
 		text-decoration: none;
 	}

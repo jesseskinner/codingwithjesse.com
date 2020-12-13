@@ -1,5 +1,5 @@
 <script>
-	import NewsletterSubscribe from '../_components/NewsletterSubscribe.svelte';
+	import NewsletterSubscribe from "../_components/NewsletterSubscribe.svelte";
 </script>
 
 <style>
@@ -55,17 +55,13 @@
 	<a href="/blog/about-me">
 		<img src="/images/me_umbrella.jpg" alt="Jesse Skinner" />
 	</a>
-	<h1>
-		Hi, I'm
-		<a href="/blog/about-me">Jesse Skinner.</a>
-	</h1>
+	<h1>Hi, I'm <a href="/blog/about-me">Jesse Skinner.</a></h1>
 	<p>
-		I'm a freelance web developer. I love writing code, especially Svelte,
-		JavaScript, HTML and CSS. I also love writing about writing code, and
-		teaching people how to write code.
+		I'm a freelance developer, author, college professor, youtuber, twitch streamer, husband
+		and father. I love coding, especially JavaScript, CSS, HTML and Svelte!
 	</p>
 	<div class="newsletter">
-		<p>Like web dev? Subscribe to my newsletter!</p>
+		<p>Want to stay in touch? Subscribe to my newsletter!</p>
 		<NewsletterSubscribe />
 	</div>
 	<p>
