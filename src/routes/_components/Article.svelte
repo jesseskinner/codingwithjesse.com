@@ -58,6 +58,12 @@
 		font-size: 100%;
 	}
 
+	article :global(blockquote) {
+		border-left: 5px solid #ccc;
+		display: block;
+		padding: 1px 0 1px 1em;
+	}
+
 	@media (min-width: 1000px) {
 		article :global(pre) {
 			padding: 2em 15vw;

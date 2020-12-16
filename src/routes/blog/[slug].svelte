@@ -46,16 +46,15 @@
 	}
 
 	aside {
-		max-width: 350px;
+		max-width: 380px;
 		margin: 2em auto;
 	}
 
-	@media (min-width: 1300px) {
+	@media (min-width: 1350px) {
 		aside {
 			position: absolute;
 			top: 260px;
 			right: 5vw;
-			width: 600px;
 		}
 	}
 

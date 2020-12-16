@@ -61,7 +61,7 @@
 		and father. I love coding, especially JavaScript, CSS, HTML and Svelte!
 	</p>
 	<div class="newsletter">
-		<p>Want to stay in touch? Subscribe to my newsletter!</p>
+		<p>Want to stay in touch?<br> Subscribe to my newsletter!</p>
 		<NewsletterSubscribe />
 	</div>
 	<p>
