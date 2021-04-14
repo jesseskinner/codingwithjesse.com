@@ -15,9 +15,9 @@
 	</a>
 	<h1>Hi, I'm <a href="/blog/about-me">Jesse Skinner.</a></h1>
 	<p>
-		I'm a freelance web developer, author, college professor, youtuber, twitch
-		streamer, husband and father. I love coding, especially JavaScript, CSS,
-		HTML and Svelte!
+		I'm a freelance web developer, author, college professor, youtuber,
+		twitch streamer, husband and father. I've been making web sites for over
+		25 years. I love coding, especially JavaScript, CSS, HTML and Svelte!
 	</p>
 	<div class="newsletter">
 		<p>Want to stay in touch?<br /> Subscribe to my newsletter!</p>
