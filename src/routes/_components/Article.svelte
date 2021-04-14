@@ -22,7 +22,7 @@
 	}
 
 	h1 {
-		min-width: 70vw;
+		min-width: 50vw;
 		margin: 0 0 0.25em;
 		font-size: 32px;
 	}

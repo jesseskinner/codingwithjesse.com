@@ -1,3 +1,25 @@
+<header>
+	<h1>
+		<a href="/">
+			<img src="/images/title.svg" alt="Coding with Jesse" />
+		</a>
+	</h1>
+</header>
+
+<form method="GET" action="/blog/search">
+	<input type="search" name="terms" size="15" aria-label="Search" />
+	<input type="submit" value="Search" />
+</form>
+
+<main>
+	<slot />
+</main>
+
+<footer>
+	Copyright © {new Date().getFullYear()}
+	<a href="/contact/me">Jesse Skinner</a>
+</footer>
+
 <style>
 	:global(html),
 	:global(body) {
@@ -102,25 +124,3 @@
 		}
 	}
 </style>
-
-<header>
-	<h1>
-		<a href="/">
-			<img src="/images/title.svg" alt="Coding with Jesse" />
-		</a>
-	</h1>
-</header>
-
-<form method="GET" action="/blog/search">
-	<input type="search" name="terms" size="15" aria-label="Search" />
-	<input type="submit" value="Search" />
-</form>
-
-<main>
-	<slot />
-</main>
-
-<footer>
-	Copyright © {new Date().getFullYear()}
-	<a href="/contact/me">Jesse Skinner</a>
-</footer>

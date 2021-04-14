@@ -56,7 +56,7 @@
 		max-width: 320px;
 	}
 
-	.videos a {
+	.videos p a {
 		font-size: 18px;
 	}
 
