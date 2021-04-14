@@ -4,6 +4,7 @@
 	export let title = '';
 	export let date = false;
 	export let link = false;
+	export let style = '';
 </script>
 
 <style>
@@ -80,7 +81,7 @@
 	}
 </style>
 
-<article>
+<article {style}>
 	<h1>
 		{#if link}
 			<a href={link}>{title}</a>

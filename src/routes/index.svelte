@@ -25,6 +25,10 @@
 		max-width: 80vw;
 	}
 
+	h1 a {
+		color: inherit;
+	}
+
 	.about {
 		padding-top: 0.5em;
 		max-width: 320px;
@@ -140,7 +144,7 @@
 			<AboutMe />
 		</section>
 		<section>
-			<h1>Recent articles</h1>
+			<h1><a href="/blog/all">Recent articles</a></h1>
 			{#each posts as { title, html, posted_at, slug }}
 				<p class="post">
 					<a href="/blog/{slug}/">{title}</a>
@@ -162,12 +166,12 @@
 		</section>
 
 		<section class="videos">
-			<h1>Recent videos</h1>
+			<h1><a href="/videos">Recent videos</a></h1>
 
 			<div>
 				{#each videos.slice(0, 6) as { title, description, thumbnail, date, url }}
 					<a href={url} target="_blank" rel="noopener">
-						<img src={thumbnail.url} alt={title} />
+						<img src={thumbnail} alt={title} />
 						<span>{title}</span>
 					</a>
 				{/each}
