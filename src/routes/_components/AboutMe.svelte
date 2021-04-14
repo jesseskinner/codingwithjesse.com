@@ -144,7 +144,7 @@
 
 	@media (min-width: 1100px) {
 		p {
-			font-size: 18px;
+			font-size: 17px;
 		}
 	}
 </style>
