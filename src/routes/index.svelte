@@ -169,7 +169,7 @@
 			<h1><a href="/videos">Recent videos</a></h1>
 
 			<div>
-				{#each videos.slice(0, 6) as { title, description, thumbnail, date, url }}
+				{#each videos as { title, description, thumbnail, date, url }}
 					<a href={url} target="_blank" rel="noopener">
 						<img src={thumbnail} alt={title} />
 						<span>{title}</span>
