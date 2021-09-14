@@ -27,6 +27,8 @@
 		position: relative;
 		min-height: 130px;
 		margin-bottom: 1em;
+		max-width: 100%;
+		overflow: auto;
 	}
 
 	h2 {
