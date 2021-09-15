@@ -16,7 +16,9 @@
 	}
 
 	.newsletter {
-		margin: 1em 0;
+		margin: 3em 0;
+		border-top: 1px solid #aaa;
+		padding-top: 1em;
 	}
 </style>
 
@@ -30,7 +32,6 @@
 	</div>
 
 	{#if post.display}
-		<hr />
 		<div class="newsletter">
 			Interested in web development? Subscribe to my newsletter!
 			<NewsletterSubscribe />
