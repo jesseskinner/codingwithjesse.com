@@ -1,24 +1,35 @@
-const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 const postsModel = require('../model/posts');
 const { getCategories } = require('../model/categories');
+const cookie = require('cookie');
+const axios = require('axios');
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
 function handleRequest(response, promise) {
 	promise
-		.then(function() {
+		.then(function () {
 			// successful, redirect to admin index
 			response.redirect('/admin/');
 			response.send();
 		})
-		.catch(function(error) {
+		.catch(function (error) {
 			response.send(error);
 		});
 }
 
-app.get('/api/posts', async function(request, response) {
+app.use(async (req, res, next) => {
+	const { auth } = cookie.parse(req.headers.cookie || '');
+
+	if (await isAdmin(auth)) {
+		next();
+	} else {
+		res.redirect('/user/login');
+	}
+});
+
+app.get('/api/posts', async function (request, response) {
 	try {
 		const posts = await postsModel.getAll(true);
 
@@ -30,12 +41,12 @@ app.get('/api/posts', async function(request, response) {
 });
 
 // add post
-app.post('/posts/add', function(request, response) {
+app.post('/posts/add', function (request, response) {
 	handleRequest(response, postsModel.add(request.body));
 });
 
 // edit post
-app.post('/posts/edit/:id', function(request, response) {
+app.post('/posts/edit/:id', function (request, response) {
 	if (request.body.submit === 'delete') {
 		handleRequest(response, postsModel.remove(request.params.id));
 	} else {
@@ -51,3 +62,17 @@ app.get('/categories', async (request, response) => {
 });
 
 module.exports = app;
+
+async function isAdmin(token) {
+	if (token) {
+		try {
+			const { data } = await axios.get(`${process.env.AUTH}check/${token}`);
+	
+			return !!data.email;
+		} catch (e) {
+			return false;
+		}
+	}
+
+	return false;
+}

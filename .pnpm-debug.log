@@ -1,0 +1,22 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 error pnpm": {
+    "code": "ELIFECYCLE",
+    "errno": "ENOENT",
+    "syscall": "spawn",
+    "file": "sh",
+    "pkgid": "codingwithjesse.com@1.0.0",
+    "stage": "dev",
+    "script": "sapper dev",
+    "pkgname": "codingwithjesse.com",
+    "err": {
+      "name": "pnpm",
+      "message": "codingwithjesse.com@1.0.0 dev: `sapper dev`\nspawn ENOENT",
+      "code": "ELIFECYCLE",
+      "stack": "pnpm: codingwithjesse.com@1.0.0 dev: `sapper dev`\nspawn ENOENT\n    at ChildProcess.<anonymous> (/usr/pnpm-global/5/node_modules/.pnpm/pnpm@6.15.0/node_modules/pnpm/dist/pnpm.cjs:92562:22)\n    at ChildProcess.emit (node:events:394:28)\n    at maybeClose (node:internal/child_process:1064:16)\n    at Process.ChildProcess._handle.onexit (node:internal/child_process:301:5)"
+    }
+  },
+  "2 warn pnpm:global": " Local package.json exists, but node_modules missing, did you mean to install?"
+}
