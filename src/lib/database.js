@@ -1,12 +1,14 @@
-import postsModel, {
+import {
 	getAll,
 	getComments,
 	getByCategory,
 	getByMonth,
-} from '../../app/model/posts';
+	getRecent,
+	getBySlug
+} from '$lib/model/posts.js';
 
 export async function getRecentArticles(count, page) {
-	const posts = await postsModel.getRecent(count, page);
+	const posts = await getRecent(count, page);
 	return posts.map(getArticleFromPost);
 }
 
@@ -26,12 +28,15 @@ export async function getAllArticles() {
 }
 
 export async function getArticle(slug) {
-	const post = await postsModel.getBySlug(slug);
-	const article = getArticleFromPost(post);
+	const post = await getBySlug(slug);
 
-	article.comments = await getComments(post.id);
+	if (post) {
+		const article = getArticleFromPost(post);
 
-	return article;
+		article.comments = await getComments(post.id);
+
+		return article;
+	}
 }
 
 function getArticleFromPost(post) {
@@ -41,6 +46,6 @@ function getArticleFromPost(post) {
 		slug: post.slug,
 		display: post.display,
 		category: post.category,
-		posted_at: post.posted_at.getTime(),
+		posted_at: post.posted_at.getTime()
 	};
 }

@@ -1,22 +1,17 @@
-import { getAllArticles } from '../_database.js';
+import { getAllArticles } from '$lib/database.js';
 
-export async function get(req, res, next) {
+export async function get() {
 	const article = await getAllArticles();
 
 	if (article !== null) {
-		res.setHeader('Content-Type', 'application/json');
-		res.end(
-			JSON.stringify(
-				article.map(article => ({
-					title: article.title,
-					slug: article.slug,
-					html: article.html,
-					category: article.category,
-					posted_at: article.posted_at,
-				}))
-			)
-		);
-	} else {
-		next();
+		return {
+			body: article.map((article) => ({
+				title: article.title,
+				slug: article.slug,
+				html: article.html,
+				category: article.category,
+				posted_at: article.posted_at
+			}))
+		};
 	}
 }

@@ -1,9 +1,11 @@
 <script context="module">
-	export async function preload(page, session) {
-		const res = await this.fetch('/admin/api/posts');
+	export async function load({ fetch }) {
+		const res = await fetch('/admin/api/posts.json');
 		const posts = await res.json();
 
-		return { posts };
+		return {
+			props: { posts }
+		};
 	}
 </script>
 

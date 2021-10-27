@@ -8,7 +8,7 @@
 
   <h1>Add Post</h1>
 
-  <form method="post" action="">
+  <form method="post" action="/admin/api/posts.json">
     <PostForm />
     <button type="submit" class="btn btn-default">Add Post</button>
   </form>

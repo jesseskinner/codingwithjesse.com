@@ -1,17 +1,18 @@
-const mysql = require('mysql2');
+import mysql from 'mysql2';
+
 let connection;
 
-exports.init = function (config) {
+export function init(config) {
 	connection = mysql.createConnection(config);
-};
+}
 
-exports.disconnect = function () {
+export function disconnect() {
 	connection.end();
-};
+}
 
-exports.query = function (sql, params) {
+export function query(sql, params) {
 	return new Promise(function (resolve, reject) {
-		connection.query(sql, params, function(error, result) {
+		connection.query(sql, params, function (error, result) {
 			if (error) {
 				return reject(error);
 			}
@@ -19,4 +20,4 @@ exports.query = function (sql, params) {
 			resolve(result);
 		});
 	});
-};
+}

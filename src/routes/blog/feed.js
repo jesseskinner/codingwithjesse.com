@@ -1,11 +1,13 @@
-import { getRecentArticles } from '../_database.js';
+import { getRecentArticles } from '$lib/database.js';
 import { Feed } from 'feed';
 
-export async function get(req, res, next) {
+export async function get() {
 	const articles = await getRecentArticles(10);
 
-	res.setHeader('Content-Type', 'application/rss+xml');
-	res.end(getRSS(articles));
+	return {
+		headers: { 'Content-Type': 'application/rss+xml' },
+		body: getRSS(articles)
+	};
 }
 
 function getRSS(articles) {
@@ -28,20 +30,20 @@ function getRSS(articles) {
 		author: {
 			name: 'Jesse Skinner',
 			email: 'jesse@codingwithjesse.com',
-			link: 'https://codingwithjesse.com/',
-		},
+			link: 'https://codingwithjesse.com/'
+		}
 	});
 
 	const footer = `<hr/><p>Interested in web development? <a href="https://www.codingwithjesse.com/newsletter">Subscribe to the Coding with Jesse newsletter!</a></p>`;
 
-	articles.forEach(post => {
+	articles.forEach((post) => {
 		const url = `https://www.codingwithjesse.com/blog/${post.slug}/`;
 		feed.addItem({
 			title: post.title,
 			id: url,
 			link: url,
 			content: `${post.html}${footer}`,
-			date: new Date(post.posted_at),
+			date: new Date(post.posted_at)
 			// image: post.image
 		});
 	});

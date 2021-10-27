@@ -1,6 +1,8 @@
 <script context="module">
-	export async function preload(page, session) {
-		return (await this.fetch(`/videos.json`)).json();
+	export async function load({ fetch }) {
+		return {
+			props: (await fetch(`/videos.json`)).json()
+		};
 	}
 </script>
 
@@ -24,8 +26,7 @@
 <Template>
 	<Article title="All Videos" style="max-width: 100%">
 		<p>
-			Here are my {videos.length} YouTube videos, from today back until December
-			15th, 2014.
+			Here are my {videos.length} YouTube videos, from today back until December 15th, 2014.
 		</p>
 
 		{#each videos as { url, title, thumbnail, date }}

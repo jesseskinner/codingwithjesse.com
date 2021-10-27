@@ -1,7 +1,9 @@
 <script context="module">
-	export async function preload(page, session) {
+	export async function load({ fetch }) {
 		return {
-			posts: await (await this.fetch(`/blog/all.json`)).json(),
+			props: {
+				posts: await (await fetch(`/blog/all.json`)).json()
+			}
 		};
 	}
 </script>
@@ -14,9 +16,7 @@
 
 	function getCategories(posts) {
 		return posts.reduce((c, p) => {
-			return !p.category || c.includes(p.category)
-				? c
-				: [...c, p.category];
+			return !p.category || c.includes(p.category) ? c : [...c, p.category];
 		}, []);
 	}
 
@@ -56,7 +56,7 @@
 			'September',
 			'October',
 			'November',
-			'December',
+			'December'
 		];
 
 		return `${months[month - 1]}, ${year}`;
@@ -66,8 +66,7 @@
 <Template>
 	<Article title="All Articles" style="max-width: 100%">
 		<p>
-			Here are the {posts.length} articles I've written, from today back until
-			April 6th, 2005.
+			Here are the {posts.length} articles I've written, from today back until April 6th, 2005.
 		</p>
 
 		<p>
@@ -100,8 +99,8 @@
 		<hr />
 
 		<p>
-			Here are some other pages on this site (so the static site
-			generation crawler will know about them).
+			Here are some other pages on this site (so the static site generation crawler will know about
+			them).
 		</p>
 
 		<p>
@@ -114,9 +113,7 @@
 			<br />
 			<a href="/blog/buzzword-hellfire">Buzzword Hellfire</a>
 			<br />
-			<a href="/newsletter"
-				>Subscribe to the Coding with Jesse newsletter</a
-			>
+			<a href="/newsletter">Subscribe to the Coding with Jesse newsletter</a>
 		</p>
 	</Article>
 </Template>

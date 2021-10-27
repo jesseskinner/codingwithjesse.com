@@ -1,7 +1,7 @@
 <script context="module">
-	export async function preload(page, session) {
-		const res = await this.fetch('/homepage.json');
-		return res.json();
+	export async function load({ fetch }) {
+		const res = await fetch('/homepage.json');
+		return { props: await res.json() };
 	}
 </script>
 
@@ -14,6 +14,55 @@
 	export let posts;
 	export let videos;
 </script>
+
+<svelte:head>
+	<title>Coding with Jesse</title>
+</svelte:head>
+<Template>
+	<main>
+		<section class="about">
+			<AboutMe />
+		</section>
+		<section>
+			<h1><a href="/blog/all">Recent articles</a></h1>
+			{#each posts as { title, html, posted_at, slug }}
+				<p class="post">
+					<a href="/blog/{slug}/">{title}</a>
+					<span class="date">{formatDate(new Date(posted_at))}</span>
+
+					<a href="/blog/{slug}/" class="text">
+						{@html html
+							.replace(/<[^>]*>/g, '')
+							.split(/\s+/)
+							.slice(0, 25)
+							.join(' ') + '...'}
+					</a>
+				</p>
+			{/each}
+
+			<p>
+				<a href="/blog/all">See all posts...</a>
+			</p>
+		</section>
+
+		<section class="videos">
+			<h1><a href="/videos">Recent videos</a></h1>
+
+			<div>
+				{#each videos as { title, description, thumbnail, date, url }}
+					<a href={url} target="_blank" rel="noopener">
+						<img src={thumbnail} alt={title} />
+						<span>{title}</span>
+					</a>
+				{/each}
+			</div>
+
+			<p>
+				<a href="https://www.youtube.com/codingwithjesse"> See all videos... </a>
+			</p>
+		</section>
+	</main>
+</Template>
 
 <style>
 	main {
@@ -134,54 +183,3 @@
 		}
 	}
 </style>
-
-<svelte:head>
-	<title>Coding with Jesse</title>
-</svelte:head>
-<Template>
-	<main>
-		<section class="about">
-			<AboutMe />
-		</section>
-		<section>
-			<h1><a href="/blog/all">Recent articles</a></h1>
-			{#each posts as { title, html, posted_at, slug }}
-				<p class="post">
-					<a href="/blog/{slug}/">{title}</a>
-					<span class="date">{formatDate(new Date(posted_at))}</span>
-
-					<a href="/blog/{slug}/" class="text">
-						{@html html
-							.replace(/<[^>]*>/g, '')
-							.split(/\s+/)
-							.slice(0, 25)
-							.join(' ') + '...'}
-					</a>
-				</p>
-			{/each}
-
-			<p>
-				<a href="/blog/all">See all posts...</a>
-			</p>
-		</section>
-
-		<section class="videos">
-			<h1><a href="/videos">Recent videos</a></h1>
-
-			<div>
-				{#each videos as { title, description, thumbnail, date, url }}
-					<a href={url} target="_blank" rel="noopener">
-						<img src={thumbnail} alt={title} />
-						<span>{title}</span>
-					</a>
-				{/each}
-			</div>
-
-			<p>
-				<a href="https://www.youtube.com/codingwithjesse">
-					See all videos...
-				</a>
-			</p>
-		</section>
-	</main>
-</Template>

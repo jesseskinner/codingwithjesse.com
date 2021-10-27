@@ -1,12 +1,9 @@
-import { getRecentArticles } from '../../_database.js';
+import { getRecentArticles } from '$lib/database.js';
 
-export async function get(req, res, next) {
-	const articles = await getRecentArticles(5, req.params.page);
+export async function get({ params: { page } }) {
+	const articles = await getRecentArticles(5, page);
 
 	if (articles !== null && articles.length) {
-		res.setHeader('Content-Type', 'application/json');
-		res.end(JSON.stringify(articles));
-	} else {
-		next();
+		return { body: articles };
 	}
 }

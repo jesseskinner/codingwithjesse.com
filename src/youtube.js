@@ -1,7 +1,8 @@
-require('dotenv/config');
-const axios = require('axios');
-const { writeFileSync } = require('fs');
+import 'dotenv/config';
+import axios from 'axios';
+import { writeFileSync } from 'fs';
 
+const __dirname = new URL('.', import.meta.url).pathname;
 const { YOUTUBE_RECENT_URL } = process.env;
 
 function getPage(token) {

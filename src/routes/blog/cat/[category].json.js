@@ -1,12 +1,9 @@
-import { getArticlesByCategory } from '../../_database.js';
+import { getArticlesByCategory } from '$lib/database.js';
 
-export async function get(req, res, next) {
-	const articles = await getArticlesByCategory(req.params.category);
+export async function get({ params: { category } }) {
+	const articles = await getArticlesByCategory(category);
 
 	if (articles !== null && articles.length) {
-		res.setHeader('Content-Type', 'application/json');
-		res.end(JSON.stringify(articles));
-	} else {
-		next();
+		return { body: articles };
 	}
 }

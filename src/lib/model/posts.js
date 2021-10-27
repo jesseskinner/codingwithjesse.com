@@ -1,19 +1,19 @@
-const database = require('./database');
-const marked = require('marked');
-const Prism = require('prismjs');
-const gravatar = require('gravatar');
+import { query } from './database';
+import marked from 'marked';
+import Prism from 'prismjs';
+import gravatar from 'gravatar';
 
 marked.setOptions({
-	highlight: function(code, lang) {
+	highlight: function (code, lang) {
 		if (lang in Prism.languages) {
 			return Prism.highlight(code, Prism.languages[lang], lang);
 		}
 		return code;
-	},
+	}
 });
 
-exports.createTable = function() {
-	return database.query(`
+export function createTable() {
+	return query(`
 		CREATE TABLE IF NOT EXISTS posts (
 			id int NOT NULL AUTO_INCREMENT,
 			title TEXT NOT NULL,
@@ -28,35 +28,31 @@ exports.createTable = function() {
 			KEY (slug)
 		) ENGINE=MyISAM DEFAULT CHARSET=utf8
 	`);
-};
+}
 
-exports.deleteAll = function() {
-	return database.query('DELETE FROM posts').then(function() {
-		return database.query('ALTER TABLE posts AUTO_INCREMENT = 1');
+export function deleteAll() {
+	return query('DELETE FROM posts').then(function () {
+		return query('ALTER TABLE posts AUTO_INCREMENT = 1');
 	});
-};
+}
 
-exports.add = function(params) {
-	return database
-		.query('INSERT INTO posts SET ?', params)
-		.then(function(result) {
-			return result.insertId;
-		});
-};
+export function add(params) {
+	return query('INSERT INTO posts SET ?', params).then(function (result) {
+		return result.insertId;
+	});
+}
 
-exports.remove = function(id) {
-	return database
-		.query('DELETE FROM posts WHERE ?', {
-			id: id,
-		})
-		.then(function(result) {
-			return result.affectedRows;
-		});
-};
+export function remove(id) {
+	return query('DELETE FROM posts WHERE ?', {
+		id: id
+	}).then(function (result) {
+		return result.affectedRows;
+	});
+}
 
-exports.getAll = async function(includeHidden = false) {
+export async function getAll(includeHidden = false) {
 	return addHTMLToPosts(
-		await database.query(`
+		await query(`
 			SELECT posts.id, posts.title, posts.slug, posts.markdown, posts.html, posts.posted_at, categories.category
 			FROM posts
 			LEFT JOIN categories ON categories.id = posts.category
@@ -64,11 +60,11 @@ exports.getAll = async function(includeHidden = false) {
 			ORDER BY posts.posted_at DESC
 		`)
 	);
-};
+}
 
-exports.getRecent = async function(count, page = 1) {
+export async function getRecent(count, page = 1) {
 	return addHTMLToPosts(
-		await database.query(`
+		await query(`
 			SELECT *
 			FROM posts
 			WHERE display = 1
@@ -76,11 +72,11 @@ exports.getRecent = async function(count, page = 1) {
 			LIMIT ${count * (page - 1)}, ${count}
 		`)
 	);
-};
+}
 
-exports.getBySlug = async function(slug) {
+export async function getBySlug(slug) {
 	const posts = addHTMLToPosts(
-		await database.query(
+		await query(
 			`
 				SELECT *
 				FROM posts
@@ -93,11 +89,11 @@ exports.getBySlug = async function(slug) {
 	);
 
 	return posts[0];
-};
+}
 
-exports.getByCategory = async function(category) {
+export async function getByCategory(category) {
 	const posts = addHTMLToPosts(
-		await database.query(
+		await query(
 			`
 				SELECT posts.*
 				FROM posts
@@ -111,11 +107,11 @@ exports.getByCategory = async function(category) {
 	);
 
 	return posts;
-};
+}
 
-exports.getByMonth = async function(year, month) {
+export async function getByMonth(year, month) {
 	const posts = addHTMLToPosts(
-		await database.query(
+		await query(
 			`
 				SELECT *
 				FROM posts
@@ -128,10 +124,10 @@ exports.getByMonth = async function(year, month) {
 	);
 
 	return posts;
-};
+}
 
-exports.getComments = async function(id) {
-	const comments = await database.query(
+export async function getComments(id) {
+	const comments = await query(
 		`
 		SELECT *
 		FROM comments
@@ -141,19 +137,19 @@ exports.getComments = async function(id) {
 		[id]
 	);
 
-	return comments.map(c => {
+	return comments.map((c) => {
 		return {
 			title: c.title,
 			author: c.author,
 			avatar: gravatar.url(c.email),
 			date: c.date,
-			body: c.body,
+			body: c.body
 		};
 	});
-};
+}
 
-exports.update = function(id, params) {
-	return database.query(
+export function update(id, params) {
+	return query(
 		`
 			UPDATE posts
 			SET ?
@@ -161,10 +157,10 @@ exports.update = function(id, params) {
 		`,
 		[params, id]
 	);
-};
+}
 
 function addHTMLToPosts(posts) {
-	return posts.map(p => {
+	return posts.map((p) => {
 		if (p.html) {
 			return p;
 		}

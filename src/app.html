@@ -8,13 +8,13 @@
 			name="description"
 			content="Web development blog about Svelte, JavaScript, HTML and CSS"
 		/>
-		%sapper.base%
+		%svelte.head%
 		<link rel="alternate" type="application/rss+xml" href="/blog/feed" />
 		<link rel="stylesheet" href="/prismjs-monokai.css" />
-		%sapper.styles% %sapper.head%
 	</head>
 	<body>
-		%sapper.html% %sapper.scripts%
+		%svelte.body%
+		
 		<script
 			async
 			src="https://www.googletagmanager.com/gtag/js?id=G-3NF0XY7Y0M"

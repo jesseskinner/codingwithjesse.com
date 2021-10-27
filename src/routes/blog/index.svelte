@@ -1,24 +1,26 @@
 <script context="module">
-  export async function preload(page, session) {
-    const res = await this.fetch("/homepage.json");
-    const posts = await res.json();
+	export async function load({ fetch }) {
+		const res = await fetch('/homepage.json');
+		const posts = await res.json();
 
-    return { posts };
-  }
+		return {
+			props: { posts }
+		};
+	}
 </script>
 
 <script>
-  import Template from "../_Template.svelte";
-  import Post from "../_components/Post.svelte";
-  export let posts;
+	import Template from '../_Template.svelte';
+	import Post from '../_components/Post.svelte';
+	export let posts;
 </script>
 
 <Template>
-  {#each posts as post}
-    <Post {post} />
-  {/each}
+	{#each posts as post}
+		<Post {post} />
+	{/each}
 
-  <section>
-    <a href="/blog/page/2">&lt;&lt; older posts</a>
-  </section>
+	<section>
+		<a href="/blog/page/2">&lt;&lt; older posts</a>
+	</section>
 </Template>

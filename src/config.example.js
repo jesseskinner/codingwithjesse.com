@@ -1,9 +1,9 @@
-module.exports = {
-	port: 1234,
-	staticFolder: 'src',
+export default {
+	port: 4321,
+	staticFolder: 'public',
 
 	database: {
-		host: 'localhost',
+		socketPath: '/run/mysqld/mysqld.sock',
 		user: 'root',
 		password: '',
 		database: 'codingwithjesse'
@@ -11,7 +11,7 @@ module.exports = {
 
 	test: {
 		database: {
-			host: 'localhost',
+			socketPath: '/run/mysqld/mysqld.sock',
 			user: 'root',
 			password: '',
 			database: 'test_codingwithjesse'

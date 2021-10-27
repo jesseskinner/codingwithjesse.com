@@ -20,7 +20,7 @@
 
 	async function getCategories() {
 		if (typeof fetch !== 'undefined') {
-			const res = await fetch('/admin/categories');
+			const res = await fetch('/admin/api/categories.json');
 			return res.json();
 		}
 	}

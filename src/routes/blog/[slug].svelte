@@ -1,9 +1,14 @@
 <script context="module">
-	export async function preload(page, session) {
-		const res = await this.fetch(`/blog/${page.params.slug}.json`);
-		const post = await res.json();
+	export async function load({ page, fetch }) {
+		const res = await fetch(`/api/article/${page.params.slug}.json`);
 
-		return { post };
+		if (res.status === 200) {
+			const post = await res.json();
+
+			return {
+				props: { post }
+			};
+		}
 	}
 </script>
 
@@ -22,15 +27,9 @@
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:creator" content="@JesseSkinner" />
 	<meta property="og:title" content="{post.title} - Coding with Jesse" />
-	<meta
-		property="og:url"
-		content="https://www.codingwithjesse.com/blog/{post.slug}/"
-	/>
+	<meta property="og:url" content="https://www.codingwithjesse.com/blog/{post.slug}/" />
 	<meta property="og:type" content="website" />
-	<meta
-		property="og:image"
-		content="https://www.codingwithjesse.com/images/background.gif"
-	/>
+	<meta property="og:image" content="https://www.codingwithjesse.com/images/background.gif" />
 </svelte:head>
 
 <Template>

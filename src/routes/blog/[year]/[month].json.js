@@ -1,15 +1,9 @@
-import { getArticlesByMonth } from '../../_database.js';
+import { getArticlesByMonth } from '$lib/database.js';
 
-export async function get(req, res, next) {
-	const articles = await getArticlesByMonth(
-		req.params.year,
-		req.params.month
-	);
+export async function get({ params: { month, year } }) {
+	const articles = await getArticlesByMonth(year, month);
 
 	if (articles !== null && articles.length) {
-		res.setHeader('Content-Type', 'application/json');
-		res.end(JSON.stringify(articles));
-	} else {
-		next();
+		return { body: articles };
 	}
 }
