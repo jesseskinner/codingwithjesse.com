@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Using Svelte in your legacy projects (without rewriting everything)</title>
+		<link
+			rel="stylesheet"
+			href="reveal/reveal.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="reveal/night.css"
+			id="theme"
+		/>
+		<style type="text/css">
+			img {
+				background: none !important;
+				border: 0 !important;
+				box-shadow: none !important;
+			}
+			.reveal .slides {
+				margin: 0;
+			}
+
+			table u {
+				background: #330;
+				color: #fff;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal" style="color: #ddd">
+			<div class="slides">
+				<section>
+					<h2>Adding Svelte to your legacy projects</h2>
+				</section>
+				
+				<section>
+					<h2>I'm Jesse Skinner</h2>
+
+					<img src="images/me_umbrella.jpg" width="25%" style="vertical-align: top;">
+
+					<ul>
+						<li style="margin-bottom:1em">Freelance Svelte Developer</li>
+						<li style="margin-bottom:1em">Coding with Jesse<br><a href="https://www.codingwithjesse.com">codingwithjesse.com</a></li>
+						<li style="margin-bottom:1em">The Joy of Svelte<br><a href="https://www.joyofsvelte.com">joyofsvelte.com</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>I've been making web sites for 25 years</h2>
+				</section>
+
+				<section>
+					<img src="images/php.png" width="50%">
+				</section>
+
+				<section>
+					<img src="images/jquery.png">
+				</section>
+
+				<section>
+					<img src="images/react.svg" width="50%">
+				</section>
+
+				<section>
+					<img src="images/svelte-logo.svg">
+				</section>
+
+				<section>
+					<h2>Imagine you're a web developer</h2>
+					<p style="font-size:400%">💻</p>
+				</section>
+
+				<section>
+					<h2>You fall in love with Svelte</h2>
+					<p style="font-size:400%">❤️</p>
+				</section>
+
+				<section>
+					<h2>You're stuck working on an ancient web site</h2>
+					<p style="font-size:400%">😭</p>
+				</section>
+
+				<section>
+					<h2>Can you use Svelte without rewriting everything?</h2>
+					<p style="font-size:400%">🤔</p>
+				</section>
+
+				<section>
+					<h2>Your boss asks you to add a new feature</h2>
+					<p style="font-size:400%">👨‍💼</p>
+				</section>
+
+				<section>
+					<h2>You try writing it for fun in the Svelte REPL</h2>
+					<p style="font-size:400%">🥷</p>
+				</section>
+
+				<section>
+					<h2>You remember that Svelte compiles to JavaScript</h2>
+					<p style="font-size:400%">💡</p>
+				</section>
+
+				<section>
+					<h2>You discover a magic button on the REPL</h2>
+					<img src="images/download.png">
+				</section>
+
+				<section>
+					<h2>You can build your Svelte components in a separate folder</h2>
+				</section>
+
+				<section>
+					<p>In the default rollup.config.js:</p>
+					<table>
+						<tr><th>before</th><th>after</th></tr>
+						<tr><td><pre>input: 'src/<u>main.js</u>',
+output: {
+	sourcemap: true,
+	format: '<u>iife</u>',
+	name: '<u>app</u>',
+	file: 'public/build/bundle.js'
+},
+</pre></td><td><pre>input: 'src/<u>App.svelte</u>',
+output: {
+	sourcemap: true,
+	format: '<u>umd</u>',
+	name: '<u>MySvelteComponent</u>',
+	file: 'public/build/bundle.js'
+},
+</pre></td></tr>
+					</table>
+				</section>
+
+				<section>
+					<h2>What if you're already using a JavaScript framework?</h2>
+					<p>React? Vue? Angular???</p>
+				</section>
+
+				<section>
+					<p>In the default package.json:</p>
+					<table>
+						<tr><th>before</th><th>after</th></tr>
+						<tr><td><pre>{
+	"name": "svelte-app",
+	"version": "1.0.0",
+	
+</pre></td><td><pre>{
+	"name": "<u>my-svelte-component</u>",
+	"main": "<u>public/build/bundle.js</u>",
+	"version": "1.0.0",
+</pre></td></tr>
+					</table>
+				</section>
+
+				<section>
+					<h2>You can install your Svelte component from a local folder</h2>
+					<p style="font-size:400%">📁</p>
+					<p><pre style="text-align:center">npm install ./my-svelte-component</pre></p>
+				</section>
+
+				<section>
+					<h2>Or you can install from a Git repo:</h2>
+					<p style="font-size:400%">📁</p>
+					<p><pre style="text-align:center">npm install git+https://my.git.server/my-svelte-component.git</pre></p>
+				</section>
+
+				<section>
+					<h2>Import your Svelte component like any other node module</h2>
+					<p><pre style="background:#222;padding:1em;">const MySvelteComponent = require('my-svelte-component');
+require('my-svelte-component/public/build/bundle.css');</pre></p>
+					<h2>or</h2>
+					<p><pre style="background:#222;padding:1em;">import MySvelteComponent from 'my-svelte-component';
+import 'my-svelte-component/public/build/bundle.css';</pre></p>
+				</section>
+
+				<section>
+					<h2>Use the same instantiation code</h2>
+					<p><pre style="background:#222;padding:1em;">new MySvelteComponent({
+	target: root,
+	props: {
+		// props here
+	}
+});</pre></p>
+				</section>
+
+				<section>
+					<h2>Two build processes too much?</h2>
+				</section>
+					
+				<section>
+					<h2>Webpack?</h2>
+					<h2>svelte-loader!</h2>
+					<p><pre style="background:#222;padding:1em;">module: {
+	rules: [
+		{
+			test: /\.(html|svelte)$/,
+			use: 'svelte-loader'
+		},
+	]
+}</pre></p>
+				</section>
+
+				<section>
+					<h2>Rollup?</h2>
+					<h2>rollup-plugin-svelte!</h2>
+					<p><pre style="background:#222;padding:1em;">import svelte from 'rollup-plugin-svelte';
+
+...
+
+plugins: [
+	svelte()
+]</pre></p>
+				</section>
+
+				<section>
+					<h2>One day, all your dreams come true</h2>
+					<p style="font-size:400%">🌥</p>
+				</section>
+					
+				<section>
+					<h2>You get to rewrite your app with Svelte and Svelte Kit!!!</h2>
+					<p style="font-size:400%">🌈</p>
+				</section>
+
+				<section>
+					<h2>Do you have to throw away all your old components?</h2>
+				</section>
+
+				<section>
+					<h2>svelte-react<br>to the rescue</h2>
+					<p>https://github.com/jesseskinner/svelte-react</p>
+				</section>
+
+				<section>
+					<h2>Now you're a fulltime Svelte developer!</h2>
+				</section>
+
+				<section>
+					<h2>Thanks for watching!</h2>
+
+					<ul>
+						<li style="margin-bottom:1em">Coding with Jesse<br><a href="https://www.codingwithjesse.com">codingwithjesse.com</a></li>
+						<li style="margin-bottom:1em">The Joy of Svelte<br><a href="https://www.joyofsvelte.com">joyofsvelte.com</a></li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="reveal/reveal.js"></script>
+		<script>
+			Reveal.initialize({
+				transition: 'none',
+				controls: true,
+				progress: false,
+				center: true,
+				hash: true,
+			});
+		</script>
+	</body>
+</html>
