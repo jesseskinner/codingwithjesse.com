@@ -27,7 +27,7 @@
 </script>
 
 <fieldset class="form-group">
-	<label htmlFor="title">Title</label>
+	<label for="title">Title</label>
 	<input
 		name="title"
 		class="form-control"
@@ -35,7 +35,7 @@
 		on:input={(event) => setSlug(event.target.value)} />
 </fieldset>
 <fieldset class="form-group">
-	<label htmlFor="slug">Slug</label>
+	<label for="slug">Slug</label>
 	<input
 		name="slug"
 		class="form-control"
@@ -43,7 +43,7 @@
 		on:input={(event) => setSlug(event.target.value)} />
 </fieldset>
 <fieldset class="form-group">
-	<label htmlFor="markdown">Body</label>
+	<label for="markdown">Body</label>
 	<textarea
 		name="markdown"
 		class="form-control"
@@ -51,7 +51,7 @@
 		value={post.markdown} />
 </fieldset>
 <fieldset class="form-group">
-	<label htmlFor="markdown">HTML</label>
+	<label for="markdown">HTML</label>
 	<textarea
 		name="html"
 		class="form-control"

@@ -5,49 +5,41 @@
 <section>
 	<aside>
 		<a href="https://www.joyofsvelte.com/">
-			Check out my new video course,<br />
-			<span>The Joy of Svelte</span>!</a
+			<img
+				src="https://www.joyofsvelte.com/svelte-logo.svg"
+				width="107"
+				height="128"
+				alt="Svelte"
+			/>
+			<span>
+				Want to learn Svelte?<br />
+				Check out my video course!<br />
+				<u>The Joy of Svelte</u>
+			</span></a
 		>
 	</aside>
 
 	<a href="/blog/about-me">
-		<img src="/images/me_umbrella.jpg" alt="Jesse Skinner" />
+		<img src="/images/me_umbrella.jpg" alt="Jesse Skinner" class="me" />
 	</a>
 	<h1>Hi, I'm <a href="/blog/about-me">Jesse Skinner.</a></h1>
 	<p>
-		I'm a freelance web developer, author, college professor, youtuber,
-		twitch streamer, husband and father. I've been making web sites for over
-		25 years. I love coding, especially JavaScript, CSS, HTML and Svelte!
+		I'm a freelance web developer, author, college professor, youtuber, twitch streamer, husband and
+		father. I've been making web sites for over 25 years. I love coding, especially JavaScript, CSS,
+		HTML and Svelte!
 	</p>
 	<div class="newsletter">
-		<p>Want to stay in touch?<br /> Subscribe to my newsletter!</p>
+		<p>Want to stay in the loop?<br /> Subscribe to my newsletter!</p>
 		<NewsletterSubscribe />
 	</div>
 	<p>
 		<strong>Email:</strong>
-		<a
-			href="mailto:jesse@codingwithjesse.com"
-			target="_blank"
-			rel="noopener"
-		>
+		<a href="mailto:jesse@codingwithjesse.com" target="_blank" rel="noopener">
 			jesse@codingwithjesse.com
 		</a>
 		<br />
-		<strong>Twitter:</strong>
-		<a
-			href="https://twitter.com/jesseskinner"
-			target="_blank"
-			rel="noopener"
-		>
-			twitter.com/JesseSkinner
-		</a>
-		<br />
 		<strong>YouTube:</strong>
-		<a
-			href="https://www.youtube.com/codingwithjesse"
-			target="_blank"
-			rel="noopener"
-		>
+		<a href="https://www.youtube.com/codingwithjesse" target="_blank" rel="noopener">
 			youtube.com/codingwithjesse
 		</a>
 		<br />
@@ -56,31 +48,33 @@
 			twitch.tv/JesseSkinner
 		</a>
 		<br />
+		<strong>Discord:</strong>
+		<a href="https://discord.gg/3ZBDHb2" target="_blank" rel="noopener"> discord.gg/3ZBDHb2 </a>
+		<br />
 		<strong>DEV:</strong>
-		<a href="https://dev.to/jesseskinner/" target="_blank" rel="noopener">
-			dev.to/jesseskinner
+		<a href="https://dev.to/jesseskinner/" target="_blank" rel="noopener"> dev.to/jesseskinner </a>
+		<br />
+		<strong>Twitter:</strong>
+		<a href="https://twitter.com/jesseskinner" target="_blank" rel="noopener">
+			twitter.com/JesseSkinner
 		</a>
 		<br />
 		<strong>GitHub:</strong>
-		<a
-			href="https://github.com/jesseskinner"
-			target="_blank"
-			rel="noopener"
-		>
+		<a href="https://github.com/jesseskinner" target="_blank" rel="noopener">
 			github.com/JesseSkinner
 		</a>
 		<br />
 		<strong>LinkedIn:</strong>
-		<a
-			href="https://www.linkedin.com/in/jesseskinner/"
-			target="_blank"
-			rel="noopener"
-		>
+		<a href="https://www.linkedin.com/in/jesseskinner/" target="_blank" rel="noopener">
 			linkedin.com/in/jesseskinner
 		</a>
 		<br />
 	</p>
 </section>
+
+<svelte:head
+	><link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" /></svelte:head
+>
 
 <style>
 	section {
@@ -88,7 +82,8 @@
 		line-height: 1.66;
 	}
 
-	img {
+	img.me,
+	aside a {
 		width: 100%;
 		max-width: 500px;
 		border: 1px solid black;
@@ -127,19 +122,38 @@
 	aside a {
 		text-decoration: none;
 		color: black;
-		display: block;
-		font-size: 18px;
+		display: flex;
+		font-size: 1.25em;
 		padding: 0.5em;
 		background: white;
 		box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
 		border: 1px solid #666;
 		margin-bottom: 2em;
 		text-align: center;
+		justify-content: center;
+		align-items: center;
+		box-sizing: border-box;
+	}
+
+	aside img {
+		flex: auto;
+		max-height: 5em;
+		margin: 0;
+		vertical-align: top;
 	}
 
 	aside span {
-		color: blue;
-		text-decoration: underline;
+		flex: auto;
+		white-space: nowrap;
+		font-weight: bold;
+	}
+
+	aside u {
+		font-size: 200%;
+		font-family: Lobster;
+		text-decoration: none;
+		color: #ff3e00;
+		font-weight: normal;
 	}
 
 	@media (min-width: 1100px) {
