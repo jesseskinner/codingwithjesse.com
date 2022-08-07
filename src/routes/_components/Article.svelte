@@ -7,6 +7,18 @@
 	export let style = '';
 </script>
 
+<article {style}>
+	<h1>
+		{#if link}
+			<a href={link}>{title}</a>
+		{:else}{title}{/if}
+	</h1>
+	{#if date}
+		<div class="date">{formatDate(date)}</div>
+	{/if}
+	<slot />
+</article>
+
 <style>
 	article {
 		max-width: 800px;
@@ -41,7 +53,7 @@
 	}
 
 	article :global(pre) {
-		margin: 0 -2.5vw 0 -5vw;
+		margin: 0 0 0 -5vw;
 	}
 
 	article :global(h2) {
@@ -68,27 +80,14 @@
 	@media (min-width: 1000px) {
 		article :global(pre) {
 			padding: 2em 15vw;
-		}
-		article :global(pre) {
+			border-radius: 0.25em;
 			margin: 0 0 0 -15vw;
 		}
 	}
 
 	@media (min-width: 1500px) {
 		article :global(pre) {
-			margin: 0 -10vw 0 -15vw;
+			margin: 0 -25vw 0 -15vw;
 		}
 	}
 </style>
-
-<article {style}>
-	<h1>
-		{#if link}
-			<a href={link}>{title}</a>
-		{:else}{title}{/if}
-	</h1>
-	{#if date}
-		<div class="date">{formatDate(date)}</div>
-	{/if}
-	<slot />
-</article>

@@ -24,9 +24,9 @@
 	</a>
 	<h1>Hi, I'm <a href="/blog/about-me">Jesse Skinner.</a></h1>
 	<p>
-		I'm a freelance web developer, author, college professor, youtuber, twitch streamer, husband and
-		father. I've been making web sites for over 25 years. I love coding, especially JavaScript, CSS,
-		HTML and Svelte!
+		I'm a web consultant, developer, author, college professor, youtuber, twitch streamer, husband
+		and father. I've been making web sites for {new Date().getFullYear() - 1995} years. I love coding,
+		especially JavaScript, CSS, HTML and Svelte!
 	</p>
 	<div class="newsletter">
 		<p>Want to stay in the loop?<br /> Subscribe to my newsletter!</p>
@@ -36,6 +36,11 @@
 		<strong>Email:</strong>
 		<a href="mailto:jesse@codingwithjesse.com" target="_blank" rel="noopener">
 			jesse@codingwithjesse.com
+		</a>
+		<br />
+		<strong>LinkedIn:</strong>
+		<a href="https://www.linkedin.com/in/jesseskinner/" target="_blank" rel="noopener">
+			linkedin.com/in/jesseskinner
 		</a>
 		<br />
 		<strong>YouTube:</strong>
@@ -62,11 +67,6 @@
 		<strong>GitHub:</strong>
 		<a href="https://github.com/jesseskinner" target="_blank" rel="noopener">
 			github.com/JesseSkinner
-		</a>
-		<br />
-		<strong>LinkedIn:</strong>
-		<a href="https://www.linkedin.com/in/jesseskinner/" target="_blank" rel="noopener">
-			linkedin.com/in/jesseskinner
 		</a>
 		<br />
 	</p>
@@ -123,7 +123,7 @@
 		text-decoration: none;
 		color: black;
 		display: flex;
-		font-size: 1.25em;
+		font-size: 1.1em;
 		padding: 0.5em;
 		background: white;
 		box-shadow: 5px 5px rgba(0, 0, 0, 0.5);

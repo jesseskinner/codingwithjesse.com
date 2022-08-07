@@ -65,55 +65,77 @@
 
 <Template>
 	<Article title="All Articles" style="max-width: 100%">
-		<p>
-			Here are the {posts.length} articles I've written, from today back until April 6th, 2005.
-		</p>
+		<section>
+			<p>
+				Here are the {posts.length} articles I've written, from today back until April 6th, 2005.
+			</p>
 
-		<p>
-			{#each posts as p}
-				<em>{formatDate(p.posted_at)}</em>
-				&nbsp;
-				<a href="/blog/{p.slug}/">{p.title}</a>
-				<br />
-			{/each}
-		</p>
-
-		<hr />
-		<h2>Categories</h2>
-		<p>
-			{#each getCategories(posts) as c}
-				<a href="/blog/cat/{c}">{c}</a>
-				{' '}
-			{/each}
-		</p>
+			<p>
+				{#each posts as p}
+					<em>{formatDate(p.posted_at)}</em>
+					&nbsp;
+					<a href="/blog/{p.slug}/">{p.title}</a>
+					<br />
+				{/each}
+			</p>
+		</section>
 
 		<hr />
-		<h2>Months</h2>
-		<p>
-			{#each getMonths(posts) as month}
-				<a href="/blog/{month}">{formatMonth(month)}</a>
-				<br />
-			{/each}
-		</p>
+		<section>
+			<h2>Categories</h2>
+			<p>
+				{#each getCategories(posts) as c}
+					<a href="/blog/cat/{c}">{c}</a>
+					{' '}
+				{/each}
+			</p>
+		</section>
 
 		<hr />
+		<section>
+			<h2>Months</h2>
+			<p>
+				{#each getMonths(posts) as month}
+					<a href="/blog/{month}">{formatMonth(month)}</a>
+					<br />
+				{/each}
+			</p>
 
-		<p>
-			Here are some other pages on this site (so the static site generation crawler will know about
-			them).
-		</p>
+			<hr />
 
-		<p>
-			<a href="/blog/rss">RSS</a>
-			<a href="/blog/feed">feed</a>
-			<br />
-			<a href="/blog">Recent posts</a>
-			<br />
-			<a href="/blog/search">Search</a>
-			<br />
-			<a href="/blog/buzzword-hellfire">Buzzword Hellfire</a>
-			<br />
-			<a href="/newsletter">Subscribe to the Coding with Jesse newsletter</a>
-		</p>
-	</Article>
+			<section>
+				<h2>Svelte resources</h2>
+
+				<p>
+					<a href="https://www.joyofsvelte.com/">Learn Svelte with "The Joy of Svelte"</a><br />
+					<a href="https://svelte.dev/docs">Svelte documentation</a><br />
+					<a href="https://svelte.dev/tutorial">Svelte tutorial</a><br />
+					<a href="https://sustainablewww.org/principles/svelte-training-here-you-can-learn-svelte"
+						>Svelte training resources</a
+					>
+				</p>
+			</section>
+
+			<hr />
+			<section>
+				<p>
+					Here are some other pages on this site (so the static site generation crawler will know
+					about them).
+				</p>
+
+				<p>
+					<a href="/blog/rss">RSS</a>
+					<a href="/blog/feed">feed</a>
+					<br />
+					<a href="/blog">Recent posts</a>
+					<br />
+					<a href="/blog/search">Search</a>
+					<br />
+					<a href="/blog/buzzword-hellfire">Buzzword Hellfire</a>
+					<br />
+					<a href="/newsletter">Subscribe to the Coding with Jesse newsletter</a>
+				</p>
+			</section>
+		</section></Article
+	>
 </Template>

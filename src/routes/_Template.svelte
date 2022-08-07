@@ -27,10 +27,8 @@
 		margin: 0;
 		padding: 0;
 		font: 16px/1.58 Verdana, Geneva, Tahoma, sans-serif;
-		background: #e0edff;
-		background: linear-gradient(#e0edff, #fff 80vh);
-		/* background: #fff linear-gradient(#acf, #fff 75vh); */
 		color: #000;
+		background: #fff;
 	}
 
 	:global(a) {
@@ -87,6 +85,8 @@
 		clear: both;
 		padding: 1em;
 		min-height: 1000px; /* give space for profile on side */
+		background: #e0edff;
+		background: linear-gradient(#e0edff, #fff 80vh);
 	}
 
 	footer {
@@ -112,14 +112,13 @@
 		}
 
 		main {
-			width: 90vw;
-			margin: 0 0 0 5vw;
-			padding: 1em 0;
+			padding: 1em 0 1em 5vw;
 		}
 	}
 
 	@media (min-width: 1300px) {
 		main {
+			min-height: 1400px; /* give space for aside */
 			clear: none;
 		}
 	}
