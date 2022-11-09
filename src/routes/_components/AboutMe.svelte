@@ -32,44 +32,47 @@
 		<p>Want to stay in the loop?<br /> Subscribe to my newsletter!</p>
 		<NewsletterSubscribe />
 	</div>
-	<p>
-		<strong>Email:</strong>
-		<a href="mailto:jesse@codingwithjesse.com" target="_blank" rel="noopener">
-			jesse@codingwithjesse.com
-		</a>
-		<br />
-		<strong>LinkedIn:</strong>
-		<a href="https://www.linkedin.com/in/jesseskinner/" target="_blank" rel="noopener">
-			linkedin.com/in/jesseskinner
-		</a>
-		<br />
-		<strong>YouTube:</strong>
-		<a href="https://www.youtube.com/codingwithjesse" target="_blank" rel="noopener">
-			youtube.com/codingwithjesse
-		</a>
-		<br />
-		<strong>Twitch:</strong>
-		<a href="https://twitch.tv/jesseskinner" target="_blank" rel="noopener">
-			twitch.tv/JesseSkinner
-		</a>
-		<br />
-		<strong>Discord:</strong>
-		<a href="https://discord.gg/3ZBDHb2" target="_blank" rel="noopener"> discord.gg/3ZBDHb2 </a>
-		<br />
-		<strong>DEV:</strong>
-		<a href="https://dev.to/jesseskinner/" target="_blank" rel="noopener"> dev.to/jesseskinner </a>
-		<br />
-		<strong>Twitter:</strong>
-		<a href="https://twitter.com/jesseskinner" target="_blank" rel="noopener">
-			twitter.com/JesseSkinner
-		</a>
-		<br />
-		<strong>GitHub:</strong>
-		<a href="https://github.com/jesseskinner" target="_blank" rel="noopener">
-			github.com/JesseSkinner
-		</a>
-		<br />
-	</p>
+	<div class="social">
+		<p>
+			<strong>Email:</strong>
+			<a href="mailto:jesse@codingwithjesse.com" target="_blank" rel="me">
+				jesse@codingwithjesse.com
+			</a>
+			<br />
+			<strong>Mastodon:</strong>
+			<a rel="me" href="https://mastodon.social/@JesseSkinner">mastodon.social/@JesseSkinner</a><br
+			/>
+			<strong>YouTube:</strong>
+			<a href="https://www.youtube.com/codingwithjesse" target="_blank" rel="me">
+				youtube.com/codingwithjesse
+			</a>
+			<br />
+			<strong>LinkedIn:</strong>
+			<a href="https://www.linkedin.com/in/jesseskinner/" target="_blank" rel="me">
+				linkedin.com/in/jesseskinner
+			</a>
+			<br />
+			<strong>Twitter:</strong>
+			<a href="https://twitter.com/jesseskinner" target="_blank" rel="me">
+				twitter.com/JesseSkinner
+			</a>
+			<br />
+			<strong>GitHub:</strong>
+			<a href="https://github.com/jesseskinner" target="_blank" rel="me">
+				github.com/JesseSkinner
+			</a>
+			<br />
+			<strong>Twitch:</strong>
+			<a href="https://twitch.tv/jesseskinner" target="_blank" rel="me"> twitch.tv/JesseSkinner </a>
+			<br />
+			<strong>Discord:</strong>
+			<a href="https://discord.gg/3ZBDHb2" target="_blank" rel="me"> discord.gg/3ZBDHb2 </a>
+			<br />
+			<strong>DEV:</strong>
+			<a href="https://dev.to/jesseskinner/" target="_blank" rel="me"> dev.to/jesseskinner </a>
+			<br />
+		</p>
+	</div>
 </section>
 
 <svelte:head
@@ -99,12 +102,12 @@
 
 	p a {
 		display: inline-block;
-		line-height: 48px;
+		line-height: 36px;
 	}
 
 	p strong {
 		display: inline-block;
-		min-width: 5em;
+		min-width: 5.5em;
 	}
 
 	.newsletter {
@@ -154,6 +157,29 @@
 		text-decoration: none;
 		color: #ff3e00;
 		font-weight: normal;
+	}
+
+	.social {
+		text-align: center;
+	}
+
+	.social p {
+		display: inline-block;
+		text-align: left;
+		font-size: 17px;
+		white-space: nowrap;
+	}
+
+	@media (min-width: 980px) {
+		.social p {
+			font-size: 14px;
+		}
+	}
+
+	@media (min-width: 1250px) {
+		.social p {
+			font-size: 17px;
+		}
 	}
 
 	@media (min-width: 1100px) {

@@ -140,7 +140,7 @@
 		background: #acf;
 	}
 
-	@media (min-width: 980px) {
+	@media (min-width: 1170px) {
 		.about {
 			max-width: 100%;
 		}
@@ -169,7 +169,7 @@
 		}
 	}
 
-	@media (min-width: 1600px) {
+	@media (min-width: 1750px) {
 		section {
 			width: 21vw;
 		}
