@@ -34,41 +34,41 @@
 	</div>
 	<div class="social">
 		<p>
-			<strong>Email:</strong>
+			<strong>Email</strong>
 			<a href="mailto:jesse@codingwithjesse.com" target="_blank" rel="me">
 				jesse@codingwithjesse.com
 			</a>
 			<br />
-			<strong>Mastodon:</strong>
-			<a rel="me" href="https://mastodon.social/@JesseSkinner">mastodon.social/@JesseSkinner</a><br
-			/>
-			<strong>YouTube:</strong>
+			<strong>YouTube</strong>
 			<a href="https://www.youtube.com/codingwithjesse" target="_blank" rel="me">
 				youtube.com/codingwithjesse
 			</a>
 			<br />
-			<strong>LinkedIn:</strong>
+			<strong>LinkedIn</strong>
 			<a href="https://www.linkedin.com/in/jesseskinner/" target="_blank" rel="me">
 				linkedin.com/in/jesseskinner
 			</a>
 			<br />
-			<strong>Twitter:</strong>
+			<!-- <strong>Twitter</strong>
 			<a href="https://twitter.com/jesseskinner" target="_blank" rel="me">
 				twitter.com/JesseSkinner
 			</a>
-			<br />
-			<strong>GitHub:</strong>
+			<br /> -->
+			<strong>GitHub</strong>
 			<a href="https://github.com/jesseskinner" target="_blank" rel="me">
 				github.com/JesseSkinner
 			</a>
 			<br />
-			<strong>Twitch:</strong>
+			<strong>Mastodon</strong>
+			<a href="https://toot.cafe/@JesseSkinner" target="_blank" rel="me">toot.cafe/@JesseSkinner</a
+			><br />
+			<strong>Twitch</strong>
 			<a href="https://twitch.tv/jesseskinner" target="_blank" rel="me"> twitch.tv/JesseSkinner </a>
 			<br />
-			<strong>Discord:</strong>
+			<!-- <strong>Discord</strong>
 			<a href="https://discord.gg/3ZBDHb2" target="_blank" rel="me"> discord.gg/3ZBDHb2 </a>
-			<br />
-			<strong>DEV:</strong>
+			<br /> -->
+			<strong>DEV</strong>
 			<a href="https://dev.to/jesseskinner/" target="_blank" rel="me"> dev.to/jesseskinner </a>
 			<br />
 		</p>
@@ -107,7 +107,7 @@
 
 	p strong {
 		display: inline-block;
-		min-width: 5.5em;
+		min-width: 6em;
 	}
 
 	.newsletter {
@@ -169,19 +169,6 @@
 		font-size: 17px;
 		white-space: nowrap;
 	}
-
-	@media (min-width: 980px) {
-		.social p {
-			font-size: 14px;
-		}
-	}
-
-	@media (min-width: 1250px) {
-		.social p {
-			font-size: 17px;
-		}
-	}
-
 	@media (min-width: 1100px) {
 		p {
 			font-size: 17px;
