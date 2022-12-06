@@ -13,17 +13,39 @@
 	let boosts;
 	let replies;
 
-	onMount(async () => {
-		const { children } = await fetch(`https://webmention.io/api/mentions.jf2?target=${url}`).then(
-			(r) => r.json()
+	async function getMentions(url) {
+		let mentions = [];
+		let page = 0;
+		let perPage = 20;
+
+		while (true) {
+			const results = await fetch(
+				`https://webmention.io/api/mentions.jf2?target=${url}&per-page=${perPage}&page=${page}`
+			).then((r) => r.json());
+
+			mentions = mentions.concat(results.children);
+
+			if (results.children.length < 20) {
+				break;
+			}
+
+			page++;
+		}
+
+		return mentions.sort((a, b) =>
+			(a.published || a['wm-received']) < (b.published || b['wm-received']) ? -1 : 1
 		);
+	}
 
-		if (children.length) {
-			const mentions = children.sort((a, b) => (a['wm-received'] < b['wm-received'] ? 1 : -1));
+	onMount(async () => {
+		const mentions = await getMentions(url);
 
+		if (mentions.length) {
 			link = mentions
-				.find((m) => m.url.startsWith('https://toot.cafe/@JesseSkinner/'))
-				?.url.split('#')[0];
+				.filter((m) => m.url.startsWith('https://toot.cafe/@JesseSkinner/'))
+				.map(({ url }) => url.split('#')[0])
+				.sort()
+				.shift();
 
 			likes = mentions.filter((m) => m['wm-property'] === 'like-of');
 			boosts = mentions.filter((m) => m['wm-property'] === 'repost-of');

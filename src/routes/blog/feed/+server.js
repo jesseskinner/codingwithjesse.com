@@ -1,6 +1,8 @@
 import { getRecentArticles } from '$lib/database.js';
 import { Feed } from 'feed';
 
+export const prerender = true;
+
 export async function GET() {
 	const articles = await getRecentArticles(10);
 
