@@ -1,1 +1,1 @@
-export * from './feed.js';
+export * from '../feed/+server.js';

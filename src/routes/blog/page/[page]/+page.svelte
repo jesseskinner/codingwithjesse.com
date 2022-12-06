@@ -12,17 +12,19 @@
 		<Post {post} />
 	{/each}
 
-	<section class="pagination">
-		{#if posts.length === 5}
-			<a class="older" href={`/blog/page/${page + 1}`}> &lt;&lt; older posts </a>
-		{/if}
-		{#if page <= 2}
-			<a class="newer" href="/">newer posts &gt;&gt;</a>
-		{:else}
-			<a class="newer" href={`/blog/page/${page - 1}`}> newer posts &gt;&gt; </a>
-		{/if}
-		<a href="/blog/all">All posts</a>
-	</section>
+	{#if posts.length}
+		<section class="pagination">
+			{#if posts.length === 5}
+				<a class="older" href={`/blog/page/${page + 1}`}> &lt;&lt; older posts </a>
+			{/if}
+			{#if page <= 2}
+				<a class="newer" href="/">newer posts &gt;&gt;</a>
+			{:else}
+				<a class="newer" href={`/blog/page/${page - 1}`}> newer posts &gt;&gt; </a>
+			{/if}
+			<a href="/blog/all">All posts</a>
+		</section>
+	{/if}
 </Template>
 
 <style>

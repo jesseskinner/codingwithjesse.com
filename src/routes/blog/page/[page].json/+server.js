@@ -7,4 +7,6 @@ export async function GET({ params: { page } }) {
 	if (articles !== null && articles.length) {
 		return json(articles);
 	}
+
+	return json([]);
 }

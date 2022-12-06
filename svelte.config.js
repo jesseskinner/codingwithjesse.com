@@ -6,7 +6,8 @@ export default {
 			// default options are shown
 			pages: 'build',
 			assets: 'build',
-			fallback: null
+			fallback: null,
+			strict: false
 		})
 	}
 };
