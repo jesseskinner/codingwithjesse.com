@@ -1,12 +1,13 @@
 <script>
-	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
-
 	import Template from '../../_Template.svelte';
 	import Post from '../../_components/Post.svelte';
 	import AboutMe from '../../_components/AboutMe.svelte';
 	import Comments from '../../_components/Comments.svelte';
+	import NewsletterSubscribe from '../../_components/NewsletterSubscribe.svelte';
 
-	export let post;
+	export let data;
+
+	$: post = data.post;
 </script>
 
 <svelte:head>
@@ -23,8 +24,13 @@
 <Template>
 	<Post {post} link={false} />
 
-	{#if post.comments.length}
-		<Comments comments={post.comments} url="/blog/{post.slug}/" />
+	<Comments {post} url="https://www.codingwithjesse.com/blog/{post.slug}/" />
+
+	{#if post.display}
+		<div class="newsletter">
+			Interested in web development? Subscribe to my newsletter!
+			<NewsletterSubscribe />
+		</div>
 	{/if}
 
 	<aside>
@@ -36,6 +42,12 @@
 	aside {
 		max-width: 380px;
 		margin: 2em auto;
+	}
+
+	.newsletter {
+		margin: 3em 0;
+		border-top: 1px solid #aaa;
+		padding-top: 1em;
 	}
 
 	@media (min-width: 1350px) {

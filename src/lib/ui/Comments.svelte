@@ -57,7 +57,7 @@
 					<a href="{url}#comment{i + 1}">{i + 1}</a>
 					. {author} on {formatDate(date)}
 				</h2>
-				<img src={avatar} alt={author} />
+				<img src={avatar} alt={author} width="50" />
 				<p>
 					{@html body}
 				</p>
@@ -157,8 +157,8 @@
 	.mentions img {
 		display: block;
 		border: 0;
-		width: 50px;
-		height: 50px;
+		width: 80px;
+		height: 80px;
 		margin-right: 5px;
 	}
 </style>

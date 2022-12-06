@@ -1,13 +1,13 @@
 <script>
-	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
-
 	import Template from './_Template.svelte';
 	import Post from './_components/Post.svelte';
 	import AboutMe from './_components/AboutMe.svelte';
 	import { formatDate } from './_date.js';
 
-	export let posts;
-	export let videos;
+	export let data;
+
+	$: posts = data.posts;
+	$: videos = data.videos;
 </script>
 
 <svelte:head>

@@ -1,27 +1,9 @@
-<script context="module">
-	throw new Error("@migration task: Check code was safely removed (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292722)");
-
-	// import { months } from '../../../_date.js';
-
-	// export async function load({ page, fetch }) {
-	// 	const res = await fetch(`/blog/${page.params.year}/${page.params.month}.json`);
-	// 	const posts = await res.json();
-
-	// 	return {
-	// 		props: {
-	// 			posts,
-	// 			month: `${months[page.params.month - 1]}, ${page.params.year}`
-	// 		}
-	// 	};
-	// }
-</script>
-
 <script>
-	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
-
 	import Posts from '../../../_components/Posts.svelte';
-	export let posts;
-	export let month;
+	export let data;
+
+	$: posts = data.posts;
+	$: month = data.month;
 </script>
 
 <svelte:head>

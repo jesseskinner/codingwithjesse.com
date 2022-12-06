@@ -1,10 +1,10 @@
 <script>
-	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
-
 	import Template from '../../_Template.svelte';
 	import Article from '../../_components/Article.svelte';
 
-	export let posts;
+	export let data;
+
+	$: posts = data.posts;
 
 	function getCategories(posts) {
 		return posts.reduce((c, p) => {

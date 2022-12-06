@@ -31,13 +31,6 @@
 	<div class="content">
 		{@html post.html}
 	</div>
-
-	{#if post.display}
-		<div class="newsletter">
-			Interested in web development? Subscribe to my newsletter!
-			<NewsletterSubscribe />
-		</div>
-	{/if}
 </Article>
 
 <style>
@@ -47,11 +40,5 @@
 		max-width: 100%;
 		margin-left: auto;
 		margin-right: auto;
-	}
-
-	.newsletter {
-		margin: 3em 0;
-		border-top: 1px solid #aaa;
-		padding-top: 1em;
 	}
 </style>

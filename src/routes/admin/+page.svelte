@@ -1,8 +1,6 @@
 <script>
-	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
-
 	import Template from './_AdminTemplate.svelte';
-	export let posts;
+	export let data;
 </script>
 
 <Template>
@@ -15,7 +13,7 @@
 			<th scope="col">Title</th>
 			<th scope="col">Date</th>
 		</tr>
-		{#each posts as { title, posted_at, id }}
+		{#each data.posts as { title, posted_at, id }}
 			<tr>
 				<td>{title}</td>
 				<td>{posted_at}</td>

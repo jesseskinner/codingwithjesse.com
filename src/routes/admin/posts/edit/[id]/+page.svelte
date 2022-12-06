@@ -1,10 +1,10 @@
 <script>
-	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
-
 	import PostForm from '../../_PostForm.svelte';
 	import Template from '../../../_AdminTemplate.svelte';
 
-	export let post;
+	export let data;
+
+	$: post = data.post;
 </script>
 
 <Template>
@@ -13,7 +13,7 @@
 	<h1>Edit Post #{post.id}</h1>
 
 	<form method="post" action="/admin/api/posts.json">
-		<input type="hidden" name="id" value={post.id}/>
+		<input type="hidden" name="id" value={post.id} />
 		<PostForm {post} />
 
 		<button type="submit" class="btn btn-default">Save Post</button>

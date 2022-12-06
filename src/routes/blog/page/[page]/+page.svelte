@@ -1,10 +1,10 @@
 <script>
-	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
-
 	import Template from '../../../_Template.svelte';
 	import Post from '../../../_components/Post.svelte';
-	export let posts;
-	export let page;
+	export let data;
+
+	$: posts = data.posts;
+	$: page = data.page;
 </script>
 
 <Template>

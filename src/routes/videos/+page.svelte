@@ -1,10 +1,10 @@
 <script>
-	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
-
 	import Template from '../_Template.svelte';
 	import Article from '../_components/Article.svelte';
 
-	export let videos = [];
+	export let data;
+
+	$: videos = data.videos || [];
 
 	function formatDate(timestamp) {
 		const date = new Date(timestamp);
