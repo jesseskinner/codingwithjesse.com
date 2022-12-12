@@ -35,48 +35,56 @@
 	<div class="social">
 		<p>
 			<strong>Email</strong>
-			<a href="mailto:jesse@codingwithjesse.com" target="_blank" rel="me">
+			<a href="mailto:jesse@codingwithjesse.com" target="_blank" rel="noreferrer me">
 				jesse@codingwithjesse.com
 			</a>
 			<br />
 			<strong>YouTube</strong>
-			<a href="https://www.youtube.com/codingwithjesse" target="_blank" rel="me">
+			<a href="https://www.youtube.com/codingwithjesse" target="_blank" rel="noreferrer me">
 				youtube.com/codingwithjesse
 			</a>
 			<br />
 			<strong>LinkedIn</strong>
-			<a href="https://www.linkedin.com/in/jesseskinner/" target="_blank" rel="me">
+			<a href="https://www.linkedin.com/in/jesseskinner/" target="_blank" rel="noreferrer me">
 				linkedin.com/in/jesseskinner
 			</a>
 			<br />
 			<!-- <strong>Twitter</strong>
-			<a href="https://twitter.com/jesseskinner" target="_blank" rel="me">
+			<a href="https://twitter.com/jesseskinner" target="_blank" rel="noreferrer me">
 				twitter.com/JesseSkinner
 			</a>
 			<br /> -->
 			<strong>GitHub</strong>
-			<a href="https://github.com/jesseskinner" target="_blank" rel="me">
+			<a href="https://github.com/jesseskinner" target="_blank" rel="noreferrer me">
 				github.com/JesseSkinner
 			</a>
 			<br />
 			<strong>Mastodon</strong>
-			<a href="https://toot.cafe/@JesseSkinner" target="_blank" rel="me">toot.cafe/@JesseSkinner</a
+			<a href="https://toot.cafe/@JesseSkinner" target="_blank" rel="noreferrer me"
+				>toot.cafe/@JesseSkinner</a
 			><br />
 			<strong>Twitch</strong>
-			<a href="https://twitch.tv/jesseskinner" target="_blank" rel="me"> twitch.tv/JesseSkinner </a>
+			<a href="https://twitch.tv/jesseskinner" target="_blank" rel="noreferrer me">
+				twitch.tv/JesseSkinner
+			</a>
 			<br />
 			<!-- <strong>Discord</strong>
-			<a href="https://discord.gg/3ZBDHb2" target="_blank" rel="me"> discord.gg/3ZBDHb2 </a>
+			<a href="https://discord.gg/3ZBDHb2" target="_blank" rel="noreferrer me"> discord.gg/3ZBDHb2 </a>
 			<br /> -->
 			<strong>DEV</strong>
-			<a href="https://dev.to/jesseskinner/" target="_blank" rel="me"> dev.to/jesseskinner </a>
+			<a href="https://dev.to/jesseskinner/" target="_blank" rel="noreferrer me">
+				dev.to/jesseskinner
+			</a>
 			<br />
 		</p>
 	</div>
 </section>
 
 <svelte:head
-	><link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" /></svelte:head
+	><link
+		href="https://fonts.googleapis.com/css?family=Lobster"
+		rel="noreferrer stylesheet"
+	/></svelte:head
 >
 
 <style>
