@@ -122,4 +122,11 @@
 			clear: none;
 		}
 	}
+
+	@media (prefers-color-scheme: dark) {
+		main {
+			background: #171d2b;
+			color: #fff;
+		}
+	}
 </style>
