@@ -185,13 +185,13 @@
 		display: block;
 		margin: 0 0 2em 0;
 		text-align: center;
-		border: 1px solid #aaa;
+		border: 1px solid rgba(128, 128, 128, 0.25);
 		padding: 1em 0;
 		border-radius: 1em;
 	}
 
 	.action:hover {
-		background: #eee;
+		background: rgba(128, 128, 128, 0.25);
 	}
 
 	.comment {
@@ -199,7 +199,7 @@
 		margin-bottom: 1em;
 		max-width: 100%;
 		overflow: auto;
-		border: 1px solid #ccc;
+		border: 1px solid rgba(128, 128, 128, 0.25);
 		border-radius: 1em;
 		padding: 1em 1em 0;
 	}
@@ -242,7 +242,7 @@
 	}
 
 	header a {
-		color: #000;
+		color: inherit;
 		text-decoration: none;
 	}
 
@@ -265,7 +265,7 @@
 		text-transform: uppercase;
 		padding-bottom: 0;
 		margin-bottom: 0.5em;
-		border-bottom: 1px solid #ccc;
+		border-bottom: 1px solid rgba(128, 128, 128, 0.25);
 	}
 
 	.mentions {

@@ -22,14 +22,14 @@
 	<a href="/blog/about-me">
 		<img src="/images/me_umbrella.jpg" alt="Jesse Skinner" class="me" />
 	</a>
-	<h1>Hi, I'm <a href="/blog/about-me">Jesse Skinner.</a></h1>
+	<h1>Hi, I'm <a href="/blog/about-me" class="about-me">Jesse Skinner.</a></h1>
 	<p>
 		I'm a web consultant, developer, author, college professor, youtuber, twitch streamer, husband
 		and father. I've been making web sites for {new Date().getFullYear() - 1995} years. I love coding,
 		especially JavaScript, CSS, HTML and Svelte!
 	</p>
 	<div class="newsletter">
-		<p>Want to stay in the loop?<br /> Subscribe to my newsletter!</p>
+		<p>Subscribe to my newsletter for updates:</p>
 		<NewsletterSubscribe />
 	</div>
 	<div class="social">
@@ -91,6 +91,7 @@
 	section {
 		font-size: 15px;
 		line-height: 1.66;
+		text-align: left;
 	}
 
 	img.me,
@@ -102,10 +103,6 @@
 
 	h1 {
 		font-size: 27px;
-	}
-
-	h1 a {
-		color: black;
 	}
 
 	p a {
@@ -120,8 +117,8 @@
 
 	.newsletter {
 		margin: 2em 0;
-		border-top: 1px solid #aaa;
-		border-bottom: 1px solid #aaa;
+		border-top: 1px solid rgba(128, 128, 128, 0.4);
+		border-bottom: 1px solid rgba(128, 128, 128, 0.4);
 		padding: 2em 0;
 		text-align: center;
 	}

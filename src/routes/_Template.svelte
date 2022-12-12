@@ -27,12 +27,6 @@
 		margin: 0;
 		padding: 0;
 		font: 16px/1.58 Verdana, Geneva, Tahoma, sans-serif;
-		color: #000;
-		background: #fff;
-	}
-
-	:global(a) {
-		color: blue;
 	}
 
 	:global(h1),
@@ -44,21 +38,13 @@
 		margin: 0;
 	}
 
-	:global(h1 a) {
-		color: black;
-	}
-
-	:global(a:visited) {
-		color: purple;
-	}
-
 	header {
 		background: #acf url('/images/background.gif') repeat;
 	}
 
 	form {
-		float: right;
-		margin: 1em;
+		text-align: right;
+		padding: 1em 1em 0 0;
 	}
 
 	form input {
@@ -85,8 +71,6 @@
 		clear: both;
 		padding: 1em;
 		min-height: 1000px; /* give space for profile on side */
-		background: #e0edff;
-		background: linear-gradient(#e0edff, #fff 80vh);
 	}
 
 	footer {
@@ -109,6 +93,9 @@
 
 		form {
 			margin-right: 5vw;
+			background: transparent;
+			float: right;
+			padding: 1em 0 0 0;
 		}
 
 		main {
@@ -123,10 +110,57 @@
 		}
 	}
 
-	@media (prefers-color-scheme: dark) {
+	@media (prefers-color-scheme: light) {
+		:global(html),
+		:global(body) {
+			color: #000;
+			background: #fff;
+		}
+
+		:global(a) {
+			color: blue;
+		}
+
+		:global(h1 a) {
+			color: black;
+		}
+
+		:global(a:visited) {
+			color: purple;
+		}
+
 		main {
-			background: #171d2b;
-			color: #fff;
+			background: #e0edff;
+			background: linear-gradient(#e0edff, #fff 80vh);
+		}
+
+		form {
+			background: #e0edff;
 		}
 	}
+
+	/* @media (prefers-color-scheme: dark) { */
+	:global(html),
+	:global(body) {
+		color: #ccc;
+		background: #171d2b;
+	}
+
+	:global(a),
+	:global(h1 a) {
+		color: #acf;
+	}
+
+	:global(a:visited) {
+		color: #caf;
+	}
+
+	main {
+		background: none;
+	}
+
+	form {
+		background: transparent;
+	}
+	/* } */
 </style>

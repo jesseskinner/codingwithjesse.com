@@ -28,26 +28,37 @@
 
 	{#if post.display}
 		<div class="newsletter">
-			Interested in web development? Subscribe to my newsletter!
+			Subscribe to my newsletter to get updates on new articles &amp; videos:
 			<NewsletterSubscribe />
 		</div>
 	{/if}
 
 	<aside>
-		<AboutMe />
+		<main>
+			<AboutMe />
+		</main>
 	</aside>
 </Template>
 
 <style>
-	aside {
-		max-width: 380px;
-		margin: 2em auto;
+	.newsletter {
+		max-width: 800px;
+		margin: 3em 0;
+		border: 1px solid rgba(128, 128, 128, 0.25);
+		padding: 1.5em;
+		box-sizing: border-box;
+		text-align: center;
 	}
 
-	.newsletter {
-		margin: 3em 0;
-		border-top: 1px solid #aaa;
-		padding-top: 1em;
+	aside {
+		margin: 2em 0;
+		max-width: 800px;
+		text-align: center;
+	}
+
+	aside main {
+		max-width: 380px;
+		margin: 2em auto;
 	}
 
 	@media (min-width: 1350px) {

@@ -25,7 +25,7 @@
 		position: relative;
 		padding-bottom: 2.5em;
 		margin-bottom: 2.5em;
-		border-bottom: 1px solid #eee;
+		border-bottom: 1px solid rgba(128, 128, 128, 0.25);
 	}
 
 	article:last-of-type {
@@ -35,13 +35,17 @@
 
 	h1 {
 		min-width: 50vw;
-		margin: 0 0 0.25em;
-		font-size: 32px;
+		margin: 90px 0 0.3em;
+		font-size: 48px;
+		font-family: Times New Roman, serif;
+		line-height: 1.1;
 	}
 
 	.date {
 		font-weight: bold;
 		margin: 0 0 2em;
+		opacity: 0.7;
+		font-family: Times New Roman, serif;
 	}
 
 	article :global(pre) {
@@ -82,6 +86,10 @@
 			padding: 2em 15vw;
 			border-radius: 0.25em;
 			margin: 0 0 0 -15vw;
+		}
+
+		h1 {
+			font-size: 3vw;
 		}
 	}
 
