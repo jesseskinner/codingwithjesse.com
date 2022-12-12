@@ -8,6 +8,7 @@
 
 	$: comments = post.comments;
 
+	let mentions;
 	let link;
 	let likes;
 	let boosts;
@@ -16,7 +17,7 @@
 	async function getMentions(url) {
 		let mentions = [];
 		let page = 0;
-		let perPage = 20;
+		let perPage = 100;
 
 		while (true) {
 			const results = await fetch(
@@ -25,7 +26,7 @@
 
 			mentions = mentions.concat(results.children);
 
-			if (results.children.length < 20) {
+			if (results.children.length < perPage) {
 				break;
 			}
 
@@ -38,7 +39,7 @@
 	}
 
 	onMount(async () => {
-		const mentions = await getMentions(url);
+		mentions = await getMentions(url);
 
 		if (mentions.length) {
 			link = mentions
@@ -73,93 +74,95 @@
 </script>
 
 <main>
-	{#if link}
-		<a class="action" href={link} target="_blank" rel="noreferrer"
-			>Discuss this article on Mastodon</a
-		>
-	{:else if typeof window !== 'undefined'}
-		<!-- svelte-ignore a11y-invalid-attribute -->
-		<a class="action" href="javascript:;" on:click={onShare}>Share this article on Mastodon</a>
-	{/if}
+	{#if mentions}
+		{#if link}
+			<a class="action" href={link} target="_blank" rel="noreferrer"
+				>Discuss this article on Mastodon</a
+			>
+		{:else}
+			<!-- svelte-ignore a11y-invalid-attribute -->
+			<a class="action" href="javascript:;" on:click={onShare}>Share this article on Mastodon</a>
+		{/if}
 
-	{#if comments.length}
-		<section class="comments">
-			<h1>Comments</h1>
-			{#each comments as { title, author, avatar, date, body }, i}
-				<div id="comment{i + 1}" class="comment">
-					<header>
-						<span class="avatar">
-							<img src={avatar} alt={author} />
-						</span>
+		{#if comments.length}
+			<section class="comments">
+				<h1>Comments</h1>
+				{#each comments as { title, author, avatar, date, body }, i}
+					<div id="comment{i + 1}" class="comment">
+						<header>
+							<span class="avatar">
+								<img src={avatar} alt={author} />
+							</span>
 
+							<div>
+								{author}
+								<span class="date">{formatDate(date)}</span>
+							</div>
+						</header>
 						<div>
-							{author}
-							<span class="date">{formatDate(date)}</span>
+							<p>{@html body}</p>
+							<br />
 						</div>
-					</header>
-					<div>
-						<p>{@html body}</p>
-						<br />
 					</div>
-				</div>
-			{/each}
-		</section>
-	{/if}
+				{/each}
+			</section>
+		{/if}
 
-	{#if replies?.length}
-		<section class="comments">
-			<h1>Replies</h1>
-			{#each replies as { author, url, published, content }}
-				{@const name =
-					'https://toot.cafe/@JesseSkinner' === author.url ? 'Jesse Skinner' : author.name}
-				<div class="comment">
-					<header>
-						<span class="avatar">
-							<a href={author.url} target="_blank" rel="noreferrer" title={name}>
-								<img src={author.photo} alt={name} />
-							</a>
-						</span>
+		{#if replies?.length}
+			<section class="comments">
+				<h1>Replies</h1>
+				{#each replies as { author, url, published, content }}
+					{@const name =
+						'https://toot.cafe/@JesseSkinner' === author.url ? 'Jesse Skinner' : author.name}
+					<div class="comment">
+						<header>
+							<span class="avatar">
+								<a href={author.url} target="_blank" rel="noreferrer" title={name}>
+									<img src={author.photo} alt={name} />
+								</a>
+							</span>
 
-						<div>
-							<a href={author.url} target="_blank" rel="noreferrer" title={name}>
-								{name}
-							</a>
-							<a class="date" href={url} target="_blank" rel="noreferrer" title={published}
-								>{formatDate(published)}</a
-							>
-						</div>
-					</header>
-					{@html sanitizeHtml(
-						content.html.replace(/<a /gi, '<a target="_blank" rel="noreferrer" ')
-					)}
-					<a class="reply" href={url} target="_blank" rel="noreferrer" title="Reply on Mastodon">
-						Reply
+							<div>
+								<a href={author.url} target="_blank" rel="noreferrer" title={name}>
+									{name}
+								</a>
+								<a class="date" href={url} target="_blank" rel="noreferrer" title={published}
+									>{formatDate(published)}</a
+								>
+							</div>
+						</header>
+						{@html sanitizeHtml(
+							content.html.replace(/<a /gi, '<a target="_blank" rel="noreferrer" ')
+						)}
+						<a class="reply" href={url} target="_blank" rel="noreferrer" title="Reply on Mastodon">
+							Reply
+						</a>
+					</div>
+				{/each}
+			</section>
+		{/if}
+
+		{#if likes?.length}
+			<section class="mentions">
+				<h1>Favourited</h1>
+				{#each likes as { author: { name, photo, url } }}
+					<a href={url} target="_blank" rel="noreferrer" title={name}>
+						<img src={photo} alt={name} />
 					</a>
-				</div>
-			{/each}
-		</section>
-	{/if}
+				{/each}
+			</section>
+		{/if}
 
-	{#if likes?.length}
-		<section class="mentions">
-			<h1>Favourites</h1>
-			{#each likes as { author: { name, photo, url } }}
-				<a href={url} target="_blank" rel="noreferrer" title={name}>
-					<img src={photo} alt={name} />
-				</a>
-			{/each}
-		</section>
-	{/if}
-
-	{#if boosts?.length}
-		<section class="mentions">
-			<h1>Boosts</h1>
-			{#each boosts as { author: { name, photo, url } }}
-				<a href={url} target="_blank" rel="noreferrer" title={name}>
-					<img src={photo} alt={name} />
-				</a>
-			{/each}
-		</section>
+		{#if boosts?.length}
+			<section class="mentions">
+				<h1>Boosted</h1>
+				{#each boosts as { author: { name, photo, url } }}
+					<a href={url} target="_blank" rel="noreferrer" title={name}>
+						<img src={photo} alt={name} />
+					</a>
+				{/each}
+			</section>
+		{/if}
 	{/if}
 </main>
 
@@ -211,7 +214,8 @@
 	}
 
 	.comments img {
-		width: 50px;
+		width: 64px;
+		height: 64px;
 	}
 
 	.comments h1 {
@@ -221,12 +225,12 @@
 	header {
 		display: flex;
 		gap: 1em;
-		height: 50px;
+		height: 64px;
 		align-items: center;
 	}
 
 	header > .avatar {
-		flex: 0 0 50px;
+		flex: 0 0 64px;
 	}
 
 	header > div {
@@ -276,8 +280,8 @@
 	.mentions img {
 		display: block;
 		border: 0;
-		width: 50px;
-		height: 50px;
+		width: 64px;
+		height: 64px;
 		margin-right: 5px;
 	}
 </style>
