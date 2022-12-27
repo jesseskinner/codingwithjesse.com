@@ -11,8 +11,8 @@
 <Template>
 	<Article title="Subscribe to the Coding with Jesse newsletter">
 		<p>
-			Sign up to receive updates about any new articles and videos. You'll also keep up to date with
-			what I'm most excited about, what I've been working on, and what I've been learning about.
+			Sign up to receive updates about any new articles and videos. Stay up-to-date with what I'm
+			most excited about, what I've been working on, and what I've been learning about.
 		</p>
 
 		<NewsletterSubscribe />

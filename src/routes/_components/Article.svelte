@@ -37,7 +37,7 @@
 		min-width: 50vw;
 		margin: 90px 0 0.3em;
 		font-size: 48px;
-		font-family: Times New Roman, serif;
+		font-family: 'Times New Roman', Times, serif;
 		line-height: 1.1;
 	}
 
@@ -45,7 +45,7 @@
 		font-weight: bold;
 		margin: 0 0 2em;
 		opacity: 0.7;
-		font-family: Times New Roman, serif;
+		font-family: 'Times New Roman', Times, serif;
 	}
 
 	article :global(pre) {
@@ -61,8 +61,9 @@
 	}
 
 	article :global(h2) {
+		font-family: 'Times New Roman', Times, serif;
 		font-size: 150%;
-		margin-top: 1em;
+		margin-top: 2em;
 	}
 
 	article :global(h3) {

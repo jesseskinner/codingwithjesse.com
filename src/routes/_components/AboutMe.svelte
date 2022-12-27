@@ -3,26 +3,10 @@
 </script>
 
 <section>
-	<aside>
-		<a href="https://www.joyofsvelte.com/">
-			<img
-				src="https://www.joyofsvelte.com/svelte-logo.svg"
-				width="107"
-				height="128"
-				alt="Svelte"
-			/>
-			<span>
-				Want to learn Svelte?<br />
-				Check out my video course!<br />
-				<u>The Joy of Svelte</u>
-			</span></a
-		>
-	</aside>
-
-	<a href="/blog/about-me">
+	<a href="/contact/me">
 		<img src="/images/me_umbrella.jpg" alt="Jesse Skinner" class="me" />
 	</a>
-	<h1>Hi, I'm <a href="/blog/about-me" class="about-me">Jesse Skinner.</a></h1>
+	<h1>Hi, I'm <a href="/contact/me" class="about-me">Jesse Skinner.</a></h1>
 	<p>
 		I'm a web consultant, developer, author, college professor, youtuber, twitch streamer, husband
 		and father. I've been making web sites for {new Date().getFullYear() - 1995} years. I love coding,
@@ -94,8 +78,7 @@
 		text-align: left;
 	}
 
-	img.me,
-	aside a {
+	img.me {
 		width: 100%;
 		max-width: 500px;
 		border: 1px solid black;
@@ -125,43 +108,6 @@
 
 	.newsletter p {
 		margin: 0 0 0.5em;
-	}
-
-	aside a {
-		text-decoration: none;
-		color: black;
-		display: flex;
-		font-size: 1.1em;
-		padding: 0.5em;
-		background: white;
-		box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
-		border: 1px solid #666;
-		margin-bottom: 2em;
-		text-align: center;
-		justify-content: center;
-		align-items: center;
-		box-sizing: border-box;
-	}
-
-	aside img {
-		flex: auto;
-		max-height: 5em;
-		margin: 0;
-		vertical-align: top;
-	}
-
-	aside span {
-		flex: auto;
-		white-space: nowrap;
-		font-weight: bold;
-	}
-
-	aside u {
-		font-size: 200%;
-		font-family: Lobster;
-		text-decoration: none;
-		color: #ff3e00;
-		font-weight: normal;
 	}
 
 	.social {

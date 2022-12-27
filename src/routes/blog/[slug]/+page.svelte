@@ -4,6 +4,7 @@
 	import AboutMe from '../../_components/AboutMe.svelte';
 	import Comments from '../../_components/Comments.svelte';
 	import NewsletterSubscribe from '../../_components/NewsletterSubscribe.svelte';
+	import JoyOfSvelte from '../../_components/JoyOfSvelte.svelte';
 
 	export let data;
 
@@ -24,9 +25,9 @@
 <Template>
 	<Post {post} link={false} />
 
-	<Comments {post} url="https://www.codingwithjesse.com/blog/{post.slug}/" />
-
 	{#if post.display}
+		<Comments {post} url="https://www.codingwithjesse.com/blog/{post.slug}/" />
+
 		<div class="newsletter">
 			Subscribe to my newsletter to get updates on new articles &amp; videos:
 			<NewsletterSubscribe />
@@ -35,6 +36,7 @@
 
 	<aside>
 		<main>
+			<JoyOfSvelte />
 			<AboutMe />
 		</main>
 	</aside>
