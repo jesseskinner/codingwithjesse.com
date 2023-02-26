@@ -13,7 +13,7 @@ function getRSS(articles) {
 	const feed = new Feed({
 		title: 'Coding with Jesse',
 		description:
-			'JavaScript, CSS, HTML, and anything else of interest to standards-loving web designers and developers',
+			'Svelte, JavaScript, CSS, HTML, and anything else of interest to standards-loving web designers and developers',
 		id: 'https://codingwithjesse.com/',
 		link: 'https://codingwithjesse.com/',
 		language: 'en', // optional, used only in RSS 2.0, possible values: http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
@@ -30,7 +30,8 @@ function getRSS(articles) {
 			name: 'Jesse Skinner',
 			email: 'jesse@codingwithjesse.com',
 			link: 'https://codingwithjesse.com/'
-		}
+		},
+		image: 'https://www.codingwithjesse.com/images/me_umbrella.jpg'
 	});
 
 	const footer = `<hr/><p>Interested in web development? <a href="https://www.codingwithjesse.com/newsletter">Subscribe to the Coding with Jesse newsletter!</a></p>`;

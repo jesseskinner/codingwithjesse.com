@@ -52,12 +52,18 @@
 		padding: 2em 5vw;
 		box-sizing: border-box;
 		overflow: auto;
+		margin: 0 0 0 -5vw;
+	}
+
+	article :global(pre),
+	article :global(code) {
+		font-family: 'Courier New', Courier, monospace;
 		background: #29292e;
 		color: #ffffff;
 	}
 
-	article :global(pre) {
-		margin: 0 0 0 -5vw;
+	article :global(code) {
+		display: inline-block;
 	}
 
 	article :global(h2) {

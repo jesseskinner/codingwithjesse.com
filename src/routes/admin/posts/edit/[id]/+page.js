@@ -1,7 +1,7 @@
-export async function load({ page, fetch }) {
+export async function load({ params, fetch }) {
 	const res = await fetch('/admin/api/posts.json');
 	const posts = await res.json();
-	const id = +page.params.id;
+	const id = +params.id;
 	const post = posts.find((post) => post.id === id);
 
 	return { post };

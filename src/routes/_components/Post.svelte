@@ -1,6 +1,5 @@
 <script>
 	import Article from './Article.svelte';
-	import NewsletterSubscribe from './NewsletterSubscribe.svelte';
 
 	export let post;
 	export let link = true;
@@ -38,6 +37,7 @@
 		display: block;
 		border: 0;
 		max-width: 100%;
+		height: auto;
 		margin-left: auto;
 		margin-right: auto;
 	}

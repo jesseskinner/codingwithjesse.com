@@ -1,13 +1,17 @@
-import adapter from '@sveltejs/adapter-static';
+import nodeAdapter from '@sveltejs/adapter-node';
+import staticAdapter from '@sveltejs/adapter-static';
 
 export default {
 	kit: {
-		adapter: adapter({
-			// default options are shown
-			pages: 'build',
-			assets: 'build',
-			fallback: null,
-			strict: false
-		})
+		adapter:
+			process.env.NODE_ENV === 'production'
+				? staticAdapter({
+						// default options are shown
+						pages: 'build',
+						assets: 'build',
+						fallback: null,
+						strict: false
+				  })
+				: nodeAdapter()
 	}
 };

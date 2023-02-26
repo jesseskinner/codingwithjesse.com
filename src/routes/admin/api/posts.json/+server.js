@@ -5,9 +5,9 @@ export async function GET() {
 	return json(await getAll(true));
 }
 
-export async function POST({ body }) {
-	body = body && body.entries ? Object.fromEntries(body.entries()) : body;
-
+export async function POST({ request }) {
+	// body = body && body.entries ? Object.fromEntries(body.entries()) : body;
+	const body = Object.fromEntries(await request.formData());
 	const { id } = body;
 
 	if (id) {

@@ -43,6 +43,12 @@ function getArticleFromPost(post) {
 	return {
 		title: post.title,
 		html: post.html,
+		description:
+			post.markdown
+				?.split('\n')
+				.map((n) => n.trim().replace(/[\[\]]|\([^)]+\)/g, ''))
+				.filter((n) => n && !n.startsWith('<'))
+				.shift() || '',
 		slug: post.slug,
 		display: post.display,
 		category: post.category,

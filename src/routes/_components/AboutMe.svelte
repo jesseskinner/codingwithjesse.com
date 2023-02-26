@@ -6,12 +6,15 @@
 	<a href="/contact/me">
 		<img src="/images/me_umbrella.jpg" alt="Jesse Skinner" class="me" />
 	</a>
-	<h1>Hi, I'm <a href="/contact/me" class="about-me">Jesse Skinner.</a></h1>
+	<h1>Hi, I'm <a href="/contact/me/" class="about-me">Jesse Skinner.</a></h1>
 	<p>
-		I'm a web consultant, developer, author, college professor, youtuber, twitch streamer, husband
-		and father. I've been making web sites for {new Date().getFullYear() - 1995} years. I love coding,
-		especially JavaScript, CSS, HTML and Svelte!
+		I'm a technical strategist and developer. I help entrepreneurs scale web apps and reduce costs.
 	</p>
+	<p>
+		I'd love to learn about your business challenges and see how I can help. If you're interested,
+		please <a href="/contact/me/">get in touch</a> to set up a free video call.
+	</p>
+
 	<div class="newsletter">
 		<p>Subscribe to my newsletter for updates:</p>
 		<NewsletterSubscribe />

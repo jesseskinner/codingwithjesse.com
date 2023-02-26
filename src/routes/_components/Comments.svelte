@@ -48,18 +48,28 @@
 				.sort()
 				.shift();
 
-			likes = mentions.filter((m) => m['wm-property'] === 'like-of');
-			boosts = mentions.filter((m) => m['wm-property'] === 'repost-of');
+			likes = unique(mentions.filter((m) => m['wm-property'] === 'like-of'));
+			boosts = unique(mentions.filter((m) => m['wm-property'] === 'repost-of'));
 			replies = mentions.filter((m) => m['wm-property'] === 'in-reply-to');
 		}
 	});
+
+	function unique(mentions) {
+		const seen = {};
+
+		return mentions.filter((m) => {
+			if (!seen[m.author.url]) {
+				return (seen[m.author.url] = true);
+			}
+		});
+	}
 
 	function onShare() {
 		const server = prompt('Mastodon Instance / Server Name?');
 
 		if (server) {
 			// test if server looks like a domain
-			if (!server.match(/^[a-z0-9-]+\.[a-z0-9-]+$/)) {
+			if (!server.match(/^[^\s]+\.[^\s]+$/)) {
 				alert('Invalid server name');
 				return;
 			}
@@ -73,7 +83,7 @@
 	}
 </script>
 
-<main>
+<main id="comments">
 	{#if mentions}
 		{#if link}
 			<a class="action" href={link} target="_blank" rel="noreferrer"
@@ -131,8 +141,9 @@
 								>
 							</div>
 						</header>
-						{@html sanitizeHtml(
-							content.html.replace(/<a /gi, '<a target="_blank" rel="noreferrer" ')
+						{@html sanitizeHtml(content.html).replace(
+							/<a /gi,
+							'<a target="_blank" rel="noopener noreferrer" '
 						)}
 						<a class="reply" href={url} target="_blank" rel="noreferrer" title="Reply on Mastodon">
 							Reply
