@@ -10,8 +10,8 @@
 <Template>
 	<Article title="Contact Jesse" style="padding: 0; margin: 0; border-bottom: 0">
 		<p>
-			Feel free to get in touch if you would like to set up a free video call, or have any questions
-			or comments about the blog.
+			Feel free to get in touch if you need my help with your web app, or have any questions or
+			comments about the blog.
 		</p>
 		<p style:font-size="150%">
 			<a href="mailto:jesse@codingwithjesse.com" target="_blank" rel="noreferrer me">
