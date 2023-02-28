@@ -7,11 +7,10 @@
 		<img src="/images/me_umbrella.jpg" alt="Jesse Skinner" class="me" />
 	</a>
 	<h1>Hi, I'm <a href="/contact/me/" class="about-me">Jesse Skinner.</a></h1>
-	<p>I'm a technical strategist. I help entrepreneurs avoid slow, unstable web apps.</p>
+	<p>I'm a technical strategist. I can help you speed up and stabilize your website.</p>
 	<p>
-		Whether you're struggling with an existing system or planning a new one, feel free to
-		<a href="/contact/me/">get in touch</a>. I'd love to hear from you and see how I can help
-		improve your business.
+		Whether you're struggling with an existing system or planning a new one,
+		<a href="/contact/me/">I'd love to hear from you</a> and see how I can help improve your business.
 	</p>
 
 	<div class="newsletter">
@@ -56,12 +55,12 @@
 			<br />
 			<!-- <strong>Discord</strong>
 			<a href="https://discord.gg/3ZBDHb2" target="_blank" rel="noreferrer me"> discord.gg/3ZBDHb2 </a>
-			<br /> -->
+			<br /> 
 			<strong>DEV</strong>
 			<a href="https://dev.to/jesseskinner/" target="_blank" rel="noreferrer me">
 				dev.to/jesseskinner
 			</a>
-			<br />
+			<br />-->
 		</p>
 	</div>
 </section>

@@ -36,10 +36,10 @@
 		<a href="/contact/me/" style:float="left" style:margin="0.15em 1em 0 0"
 			><img src="/images/me_umbrella.jpg" alt="Jesse Skinner" class="me" width="140" /></a
 		>
-		Hi, I'm <a href="/contact/me/">Jesse Skinner</a>. I help entrepreneurs avoid slow, unstable web
-		apps. Whether you're struggling with an existing system or planning a new one, feel free to
-		<a href="/contact/me/">get in touch</a>. I'd love to hear from you and see how I can help
-		improve your business.
+		Hi, I'm <a href="/contact/me/">Jesse Skinner</a>. I'm a technical strategist. I can help you
+		speed up and stabilize your website. Whether you're struggling with an existing system or
+		planning a new one,
+		<a href="/contact/me/">I'd love to hear from you</a> and see how I can help improve your business.
 	</p>
 
 	{#if post.display}
