@@ -7,12 +7,14 @@
 		<img src="/images/me_umbrella.jpg" alt="Jesse Skinner" class="me" />
 	</a>
 	<h1>Hi, I'm <a href="/contact/me/" class="about-me">Jesse Skinner.</a></h1>
-	<p>I'm a technical strategist. I can help you speed up and stabilize your website.</p>
 	<p>
-		Whether you're struggling with an existing system or planning a new one,
-		<a href="/contact/me/">I'd love to hear from you</a> and see how I can help improve your business.
+		I work with development teams to speed up and stabilize web applications, reduce server costs,
+		fix difficult bugs, modernize legacy applications, and improve developer productivity.
 	</p>
-
+	<p>
+		If you're interested, please <a href="/contact/me/">contact me</a> to find out how I can make your
+		life easier.
+	</p>
 	<div class="newsletter">
 		<p>Subscribe to my newsletter for updates:</p>
 		<NewsletterSubscribe />

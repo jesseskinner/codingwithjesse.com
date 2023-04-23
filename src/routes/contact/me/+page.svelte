@@ -10,9 +10,15 @@
 <Template>
 	<Article title="Contact Jesse" style="padding: 0; margin: 0; border-bottom: 0">
 		<p>
-			Feel free to get in touch if you need my help with your website, or have any questions or
-			comments about the blog.
+			I work with development teams to speed up and stabilize web applications, reduce server costs,
+			fix difficult bugs, modernize legacy applications, and improve developer productivity.
 		</p>
+
+		<p>
+			Whether you're struggling with an existing system or planning a new one, I'd love to hear from
+			you and see how I can help.
+		</p>
+
 		<p style:font-size="150%">
 			<a href="mailto:jesse@codingwithjesse.com" target="_blank" rel="noreferrer me">
 				jesse@codingwithjesse.com
@@ -23,8 +29,8 @@
 	<Article title="About Jesse">
 		<p>
 			<img src="/images/me_umbrella.jpg" alt="Jesse Skinner" class="me" /> My name is Jesse Skinner.
-			I'm a technical strategist, developer, author, speaker, husband and father. I'm a Canadian from
-			Barrie, Ontario, near Toronto.
+			I'm a web developer, author, speaker, husband and father. I'm a Canadian from Barrie, Ontario,
+			near Toronto.
 		</p>
 		<p>
 			I started working as web developer in 2001, and graduated in 2004 with a Computer Science

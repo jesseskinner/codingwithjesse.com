@@ -62,10 +62,6 @@
 		color: #ffffff;
 	}
 
-	article :global(code) {
-		display: inline-block;
-	}
-
 	article :global(h2) {
 		font-family: 'Times New Roman', Times, serif;
 		font-size: 150%;
