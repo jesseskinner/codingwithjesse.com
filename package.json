@@ -46,7 +46,7 @@
 		"highlight.js": "^9.16.2",
 		"marked": "^0.7.0",
 		"mysql2": "^1.6.5",
-		"node-fetch": "^2.6.0",
+		"node-fetch": "^2.6.7",
 		"prismjs": "^1.17.1",
 		"sanitize-html": "^2.7.3",
 		"simple-youtube-api": "^5.2.1",
