@@ -38,7 +38,7 @@
 		"@fontsource/fira-mono": "^4.5.0",
 		"@lukeed/uuid": "^2.0.0",
 		"@sveltejs/adapter-node": "^1.2.0",
-		"axios": "^0.19.2",
+		"axios": "^0.21.2",
 		"cookie": "^0.4.1",
 		"dotenv": "^8.2.0",
 		"feed": "^4.0.0",
