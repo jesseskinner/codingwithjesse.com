@@ -47,7 +47,7 @@
 		"marked": "^0.7.0",
 		"mysql2": "^1.6.5",
 		"node-fetch": "^2.6.0",
-		"prismjs": "^1.17.1",
+		"prismjs": "^1.27.0",
 		"sanitize-html": "^2.7.3",
 		"simple-youtube-api": "^5.2.1",
 		"wrangler": "^2.11.0"
